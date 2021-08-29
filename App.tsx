@@ -1,11 +1,12 @@
 import "react-native-gesture-handler";
+import { SafeAreaProvider } from "react-native-safe-area-context";
 import * as React from "react";
-import { View, Text } from "react-native";
+import Navigation from "./src/navigation";
 
 export default function App() {
   return (
-    <View>
-      <Text>Hello World!</Text>
-    </View>
+    <SafeAreaProvider>
+      <Navigation/>
+    </SafeAreaProvider>
   );
 }
