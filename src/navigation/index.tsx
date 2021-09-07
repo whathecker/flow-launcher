@@ -2,6 +2,11 @@ import React from "react";
 import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { GoalsScreen, PriorIntroScreen } from "../screens";
+import {
+  RootStackParamList,
+  GoalStackParamList,
+  PriorStackParamList,
+} from "../types/navigation";
 
 const Navigation: React.FC = () => {
   return (
@@ -11,9 +16,7 @@ const Navigation: React.FC = () => {
   );
 };
 
-const RootStack = createNativeStackNavigator();
-const GoalStack = createNativeStackNavigator();
-const PriorStack = createNativeStackNavigator();
+const RootStack = createNativeStackNavigator<RootStackParamList>();
 
 const RootNav: React.FC = () => {
   return (
@@ -27,6 +30,8 @@ const RootNav: React.FC = () => {
   );
 };
 
+const GoalStack = createNativeStackNavigator<GoalStackParamList>();
+
 const GoalNav: React.FC = () => {
   return (
     <GoalStack.Navigator>
@@ -38,6 +43,8 @@ const GoalNav: React.FC = () => {
     </GoalStack.Navigator>
   );
 };
+
+const PriorStack = createNativeStackNavigator<PriorStackParamList>();
 
 const PriorNav: React.FC = () => {
   return (
