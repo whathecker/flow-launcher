@@ -16,6 +16,12 @@ const GoalsScreen: React.FC<Props> = ({ navigation }: Props) => {
       </View>
       <View style={styles.buttonAreaWrapper}>
         <Button
+          title="Go to goal detail"
+          onPress={() => {
+            navigation.navigate("GoalDetail");
+          }}
+        />
+        <Button
           title="Add a Goal"
           onPress={() => {
             navigation.navigate("AddGoal");
