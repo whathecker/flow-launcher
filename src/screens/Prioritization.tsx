@@ -3,24 +3,28 @@ import { View, Text, Button, StyleSheet } from "react-native";
 import { Container, Typography } from "../styles";
 import { PriorStackScreenProps } from "../types/navigation";
 
-type Props = PriorStackScreenProps<"PriorIntro">;
+type Props = PriorStackScreenProps<"Prioritization">;
 
-const PriorIntroScreen: React.FC<Props> = ({ navigation }: Props) => {
+const PrioritizationScreen: React.FC<Props> = ({ navigation }: Props) => {
   return (
     <>
       <View style={styles.headerWrapper}>
-        <Text style={styles.headerText}>
-          Hello, This is your PriorIntro screen
-        </Text>
+        <Text style={styles.headerText}>Prioritization Screen</Text>
       </View>
-      <View style={styles.explanationAreaWrapper}>
-        <Text>Explain what we are going to do here</Text>
+      <View style={styles.headerWrapper}>
+        <Text>Title of the goal</Text>
       </View>
-      <View style={styles.buttonWrapper}>
+      <View style={styles.headerWrapper}>
+        <Text>motivation of the goal</Text>
+      </View>
+      <View style={styles.inputAreaWrapper}>
+        <Text>Input area</Text>
+      </View>
+      <View>
         <Button
-          title="Let's start prioritization"
+          title="Go back"
           onPress={() => {
-            navigation.navigate("Prioritization");
+            navigation.goBack();
           }}
         />
       </View>
@@ -36,7 +40,7 @@ const styles = StyleSheet.create({
   headerText: {
     ...Typography.h1,
   },
-  explanationAreaWrapper: {
+  inputAreaWrapper: {
     ...Container.centerAligned,
     height: "30%",
   },
@@ -46,4 +50,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default PriorIntroScreen;
+export default PrioritizationScreen;

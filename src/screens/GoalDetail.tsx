@@ -27,6 +27,12 @@ const GoalDetailScreen: React.FC<Props> = ({ navigation }: Props) => {
       </View>
       <View style={styles.prioritizedTasksWrapper}>
         <Text>Prioritized Task Area</Text>
+        <Button
+          title="Start Pritorize"
+          onPress={() => {
+            navigation.navigate("Prior");
+          }}
+        />
       </View>
     </>
   );

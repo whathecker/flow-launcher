@@ -26,6 +26,7 @@ export type GoalStackScreenProps<Screen extends keyof GoalStackParamList> =
 
 export type PriorStackParamList = {
   PriorIntro: undefined;
+  Prioritization: undefined;
 };
 
 export type PriorStackScreenProps<Screen extends keyof PriorStackParamList> =
