@@ -14,6 +14,7 @@ export type RootStackScreenProps<Screen extends keyof RootStackParamList> =
 
 export type GoalStackParamList = {
   Goals: undefined;
+  AddGoal: undefined;
 };
 
 export type GoalStackScreenProps<Screen extends keyof GoalStackParamList> =

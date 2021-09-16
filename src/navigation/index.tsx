@@ -1,7 +1,7 @@
 import React from "react";
 import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
-import { GoalsScreen, PriorIntroScreen } from "../screens";
+import { GoalsScreen, AddGoalScreen, PriorIntroScreen } from "../screens";
 import {
   RootStackParamList,
   GoalStackParamList,
@@ -39,6 +39,11 @@ const GoalNav: React.FC = () => {
         name="Goals"
         options={{ headerShown: false }}
         component={GoalsScreen}
+      />
+      <GoalStack.Screen
+        name="AddGoal"
+        options={{ presentation: "modal", headerShown: false }}
+        component={AddGoalScreen}
       />
     </GoalStack.Navigator>
   );
