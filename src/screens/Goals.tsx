@@ -1,8 +1,11 @@
 import React from "react";
 import { View, Text, Button, StyleSheet } from "react-native";
 import { Container, Typography } from "../styles";
+import { GoalStackScreenProps } from "../types/navigation";
 
-const GoalsScreen: React.FC = () => {
+type Props = GoalStackScreenProps<"Goals">;
+
+const GoalsScreen: React.FC<Props> = ({ navigation }: Props) => {
   return (
     <>
       <View style={styles.headerWrapper}>
@@ -13,9 +16,15 @@ const GoalsScreen: React.FC = () => {
       </View>
       <View style={styles.buttonAreaWrapper}>
         <Button
+          title="Go to goal detail"
+          onPress={() => {
+            navigation.navigate("GoalDetail");
+          }}
+        />
+        <Button
           title="Add a Goal"
           onPress={() => {
-            alert("Button pressed");
+            navigation.navigate("AddGoal");
           }}
         />
       </View>

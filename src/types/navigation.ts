@@ -14,6 +14,8 @@ export type RootStackScreenProps<Screen extends keyof RootStackParamList> =
 
 export type GoalStackParamList = {
   Goals: undefined;
+  AddGoal: undefined;
+  GoalDetail: undefined;
 };
 
 export type GoalStackScreenProps<Screen extends keyof GoalStackParamList> =
@@ -24,6 +26,7 @@ export type GoalStackScreenProps<Screen extends keyof GoalStackParamList> =
 
 export type PriorStackParamList = {
   PriorIntro: undefined;
+  Prioritization: undefined;
 };
 
 export type PriorStackScreenProps<Screen extends keyof PriorStackParamList> =
