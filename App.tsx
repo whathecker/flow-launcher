@@ -4,7 +4,6 @@ import React, { useEffect } from "react";
 import Navigation from "./src/navigation";
 import Realm from "realm";
 
-
 async function openDatabase() {
   const Cat = {
     name: "Cat",
@@ -24,7 +23,6 @@ async function openDatabase() {
 }
 
 export default function App() {
-
   useEffect(() => {
     openDatabase();
   }, []);
