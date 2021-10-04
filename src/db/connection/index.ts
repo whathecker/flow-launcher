@@ -1,12 +1,14 @@
 /* eslint-disable no-console */
 import Realm from "realm";
-import { GoalSchema, TaskSchema, PrioritySchema } from "./model";
+import { GoalSchema, TaskSchema, PrioritySchema } from "../model";
 
 interface OpenDatabaseStatus {
   status: "SUCCESS" | "FAILED";
   databaseInstance?: Realm;
   error?: Error;
 }
+
+let realm: Realm;
 
 const openDatabase = async (): Promise<OpenDatabaseStatus> => {
   try {
@@ -28,4 +30,10 @@ const openDatabase = async (): Promise<OpenDatabaseStatus> => {
   }
 };
 
-export { openDatabase };
+const closeDatabase = (): void => {
+  realm
+    ? realm.close()
+    : console.log("closeDatabase is called when db is not connected");
+};
+
+export { openDatabase, closeDatabase };

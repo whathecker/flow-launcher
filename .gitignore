@@ -11,3 +11,9 @@ web-build/
 
 # macOS
 .DS_Store
+
+# localdata files & folder from relam
+localdata.management
+localdata.lock
+localdata.note
+localdata
