@@ -1,3 +1,5 @@
+/* eslint-disable no-console  */
+/* eslint-disable @typescript-eslint/no-non-null-assertion */
 import { openDatabase, closeDatabase } from "../../connection";
 
 /*
@@ -24,6 +26,7 @@ const dropGoals = async (): Promise<void> => {
     closeDatabase();
   } catch (error) {
     console.error(error);
+    //TODO: add error handling
   }
 };
 
