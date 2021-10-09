@@ -1,4 +1,4 @@
-import taskDB from "../task";
+import taskDB from "../task-db";
 
 describe("Test db access module of Task object", () => {
   beforeEach(async () => {

@@ -1,6 +1,6 @@
 /* eslint-disable no-console */
 import Realm from "realm";
-import { GoalSchema, TaskSchema, PrioritySchema } from "../model";
+import { GoalModel, TaskModel, PriorityModel } from "../model";
 
 interface OpenDatabaseStatus {
   status: "SUCCESS" | "FAILED";
@@ -8,18 +8,16 @@ interface OpenDatabaseStatus {
   error?: Error;
 }
 
-let realm: Realm;
-
 const openDatabase = async (): Promise<OpenDatabaseStatus> => {
   try {
-    const relam = await Realm.open({
+    const realm = await Realm.open({
       path: "localdata",
-      schema: [GoalSchema, TaskSchema, PrioritySchema],
+      schema: [GoalModel.schema, TaskModel.schema, PriorityModel.schema],
       schemaVersion: 7,
     });
     return Promise.resolve({
       status: "SUCCESS",
-      databaseInstance: relam,
+      databaseInstance: realm,
     });
   } catch (error) {
     console.error("Failed to open local database: " + error); //TODO: use logger instead
@@ -30,10 +28,9 @@ const openDatabase = async (): Promise<OpenDatabaseStatus> => {
   }
 };
 
-const closeDatabase = (): void => {
-  realm
-    ? realm.close()
-    : console.log("closeDatabase is called when db is not connected");
+const closeDatabase = (realm: Realm): void => {
+  if (!realm) return;
+  realm.close();
 };
 
 export { openDatabase, closeDatabase };

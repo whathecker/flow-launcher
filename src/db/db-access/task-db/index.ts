@@ -1,6 +1,6 @@
 /* eslint-disable no-console  */
 /* eslint-disable @typescript-eslint/no-non-null-assertion */
-import { openDatabase, closeDatabase } from "../../connection";
+import { openDatabase } from "../../connection";
 
 const dropTasks = async (): Promise<void> => {
   try {
@@ -9,8 +9,6 @@ const dropTasks = async (): Promise<void> => {
     realm.write(() => {
       realm.delete(realm.objects("Task"));
     });
-    console.log("Delete went through");
-    closeDatabase();
   } catch (error) {
     console.error(error);
     //TODO: add error handling
