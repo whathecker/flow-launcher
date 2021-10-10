@@ -38,9 +38,19 @@ describe("Test db access module of Goal object", () => {
     expect(goal._id).toBe(goal_id);
   });
 
-  test("Add a goal", () => {
-    // TODO: write a test case here
-    expect(1).toBe(1);
+  test("Add a goal", async () => {
+    const payload: addGoalInput = {
+      title: "let's add a new goal",
+      motivation: "I want to get this data through",
+      reminder: "daily",
+    };
+
+    const result = await goalDB.addGoal(payload);
+    const goal = result.data!;
+
+    expect(goal.title).toBe(payload.title);
+    expect(goal.motivation).toBe(payload.motivation);
+    expect(goal.reminder).toBe(payload.reminder);
   });
 
   test("Delete a goal", async () => {
