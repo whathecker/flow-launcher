@@ -1,10 +1,19 @@
 /* eslint-disable @typescript-eslint/no-non-null-assertion */
-import { BSON } from "realm";
-import goalDB from "../goal-db";
+import * as Realm from "realm";
+import { openDatabase, closeDatabase } from "../../connection";
+import GoalDBAccessor from "../goal-db";
 import { addGoalInput } from "../types/goal-db";
 
 describe("Test db access module of Goal object", () => {
-  let goal_id: BSON.ObjectId;
+  let realm: Realm;
+  let goalDB: GoalDBAccessor;
+  let goal_id: Realm.BSON.ObjectId;
+
+  beforeAll(async () => {
+    const connection = await openDatabase();
+    realm = connection.databaseInstance!;
+    goalDB = new GoalDBAccessor(realm);
+  });
 
   beforeEach(async () => {
     await goalDB.dropGoals();
@@ -22,6 +31,7 @@ describe("Test db access module of Goal object", () => {
 
   afterAll(async () => {
     await goalDB.dropGoals();
+    closeDatabase(realm);
   });
 
   test("List all goals should return 1 result", async () => {
