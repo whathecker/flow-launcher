@@ -25,6 +25,7 @@ describe("Test db access module of Goal object", () => {
     };
 
     const result = await goalDB.addGoal(payload);
+
     goal_id = result.data!._id;
   });
 
@@ -47,7 +48,7 @@ describe("Test db access module of Goal object", () => {
     expect(goal._id).toBe(goal_id);
   });
 
-  test("Add a goal", async () => {
+  test("Add a goal success", async () => {
     const payload: addGoalInput = {
       title: "let's add a new goal",
       motivation: "I want to get this data through",
@@ -62,6 +63,14 @@ describe("Test db access module of Goal object", () => {
     expect(goal.motivation).toBe(payload.motivation);
     expect(goal.reminder).toBe(payload.reminder);
     expect(goal.tasks).toHaveLength(0);
+  });
+
+  test("Add a goal fail - invalid input", () => {
+    // invalid value in reminders
+    // invalid status
+    // TODO: think about how to validate task object
+    // Should goal object just hold the ids of tasks?
+    expect(1).toBe(1);
   });
 
   test("Delete a goal", async () => {

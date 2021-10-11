@@ -8,7 +8,7 @@ class GoalModel {
     public title: string,
     public motivation: string,
     public reminder: string,
-    public tasks: TaskModel[] | [],
+    public tasks: TaskModel[],
   ) {}
 
   public static schema: Realm.ObjectSchema = {
@@ -19,7 +19,7 @@ class GoalModel {
       title: "string",
       motivation: "string",
       reminder: "string",
-      tasks: "Task[]",
+      tasks: { type: "list", objectType: "Task" },
     },
     primaryKey: "_id",
   };
