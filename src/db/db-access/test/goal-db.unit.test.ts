@@ -25,7 +25,6 @@ describe("Test db access module of Goal object", () => {
     };
 
     const result = await goalDB.addGoal(payload);
-
     goal_id = result.data!._id;
   });
 
@@ -58,9 +57,11 @@ describe("Test db access module of Goal object", () => {
     const result = await goalDB.addGoal(payload);
     const goal = result.data!;
 
+    expect(goal.status).toBe("open");
     expect(goal.title).toBe(payload.title);
     expect(goal.motivation).toBe(payload.motivation);
     expect(goal.reminder).toBe(payload.reminder);
+    expect(goal.tasks).toHaveLength(0);
   });
 
   test("Delete a goal", async () => {

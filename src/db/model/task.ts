@@ -14,7 +14,7 @@ class TaskModel {
     properties: {
       title: "string",
       description: "string",
-      status: "string",
+      status: { type: "string", default: "open" },
       priority: "Priority?",
       _id: "objectId?",
     },
