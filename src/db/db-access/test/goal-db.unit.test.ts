@@ -65,14 +65,6 @@ describe("Test db access module of Goal object", () => {
     expect(goal.tasks).toHaveLength(0);
   });
 
-  test("Add a goal fail - invalid input", () => {
-    // invalid value in reminders
-    // invalid status
-    // TODO: think about how to validate task object
-    // Should goal object just hold the ids of tasks?
-    expect(1).toBe(1);
-  });
-
   test("Delete a goal", async () => {
     await goalDB.removeGoal(goal_id);
     const result = await goalDB.listGoals();

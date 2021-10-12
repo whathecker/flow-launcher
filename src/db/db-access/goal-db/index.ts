@@ -61,8 +61,6 @@ class GoalDBAccessor {
 
   public async addGoal(payload: addGoalInput): Promise<singleEntityStatus> {
     try {
-      //TODO: valiidate input and return appropriate result
-
       const newGoal: RealmInsertionModel<GoalModel> = {
         _id: new Realm.BSON.ObjectId(),
         ...payload,

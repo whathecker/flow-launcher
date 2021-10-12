@@ -3,21 +3,24 @@ import PriorityModel from "./priority";
 
 class TaskModel {
   constructor(
+    public _id: BSON.ObjectId,
+    public goal_id: BSON.ObjectId,
     public title: string,
     public description: string,
     public status: string,
     public priority?: PriorityModel,
-    public _id?: BSON.ObjectId,
   ) {}
   public static schema: Realm.ObjectSchema = {
     name: "Task",
     properties: {
+      _id: "objectId",
+      goal_id: "objectId",
       title: "string",
       description: "string",
       status: { type: "string", default: "open" },
       priority: "Priority?",
-      _id: "objectId?",
     },
+    primaryKey: "_id",
   };
 }
 

@@ -7,7 +7,7 @@ export type Reminder = "daily" | "three_days" | "seven_days";
 
 export class Goal {
   constructor(
-    public id: ID,
+    public _id: ID,
     public status: GoalStatus,
     public title: string,
     public motivation: string,
@@ -20,10 +20,11 @@ export type TaskStatus = "open" | "finished";
 
 export class Task {
   constructor(
+    public _id: ID,
+    public goal_id: ID,
     public title: string,
     public description: string,
     public status: TaskStatus,
     public priority?: Priority,
-    public id?: ID,
   ) {}
 }
