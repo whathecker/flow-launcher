@@ -62,7 +62,11 @@ describe("Test db access module of Goal object", () => {
     expect(goal.title).toBe(payload.title);
     expect(goal.motivation).toBe(payload.motivation);
     expect(goal.reminder).toBe(payload.reminder);
-    expect(goal.tasks).toHaveLength(0);
+    expect(goal.recentlyAddedTasks).toHaveLength(0);
+    expect(goal.tierOneTasks).toHaveLength(0);
+    expect(goal.tierTwoTasks).toHaveLength(0);
+    expect(goal.tierThreeTasks).toHaveLength(0);
+    expect(goal.tierFourTasks).toHaveLength(0);
   });
 
   test("Delete a goal", async () => {

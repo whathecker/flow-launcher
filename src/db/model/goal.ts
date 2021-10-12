@@ -8,7 +8,11 @@ class GoalModel {
     public title: string,
     public motivation: string,
     public reminder: string,
-    public tasks: TaskModel[],
+    public recentlyAddedTasks: TaskModel[],
+    public tierOneTasks: TaskModel[],
+    public tierTwoTasks: TaskModel[],
+    public tierThreeTasks: TaskModel[],
+    public tierFourTasks: TaskModel[],
   ) {}
 
   public static schema: Realm.ObjectSchema = {
@@ -19,7 +23,11 @@ class GoalModel {
       title: "string",
       motivation: "string",
       reminder: "string",
-      tasks: { type: "list", objectType: "Task" },
+      recentlyAddedTasks: { type: "list", objectType: "Task" },
+      tierOneTasks: { type: "list", objectType: "Task" },
+      tierTwoTasks: { type: "list", objectType: "Task" },
+      tierThreeTasks: { type: "list", objectType: "Task" },
+      tierFourTasks: { type: "list", objectType: "Task" },
     },
     primaryKey: "_id",
   };
