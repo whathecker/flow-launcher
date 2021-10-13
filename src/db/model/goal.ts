@@ -1,5 +1,5 @@
 import Realm from "realm";
-import TaskModel from "./priority";
+import TaskModel from "./task";
 
 class GoalModel {
   constructor(
