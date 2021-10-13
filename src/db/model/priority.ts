@@ -8,7 +8,7 @@ class PriorityModel {
     name: "Priority",
     embedded: true,
     properties: {
-      tier: "string",
+      tier: { type: "string", default: "n/a" },
       importance: "bool",
       urgency: "bool",
     },

@@ -1,4 +1,4 @@
-export type PriorityTier = "highest" | "high" | "mid" | "low";
+export type PriorityTier = "n/a" | "highest" | "high" | "mid" | "low";
 
 export class Priority {
   constructor(

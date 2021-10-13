@@ -1,11 +1,9 @@
-import { GoalModel, TaskModel } from "../../model";
+import { GoalModel } from "../../model";
 
 export interface addGoalInput {
   title: string;
   motivation: string;
   reminder: string;
-  status?: string;
-  tasks?: TaskModel[] | [];
 }
 
 export interface goalDBAccessStatus {
