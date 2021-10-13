@@ -2,7 +2,7 @@
 import * as Realm from "realm";
 import { openDatabase, closeDatabase } from "../../connection";
 import GoalDBAccessor from "../goal-db";
-import { addGoalInput } from "../types/goal-db";
+import { addGoalInput, updateGoalInput } from "../types/goal-db";
 
 describe("Test db access module of Goal object", () => {
   let realm: Realm;
@@ -63,6 +63,27 @@ describe("Test db access module of Goal object", () => {
     expect(goal.motivation).toBe(payload.motivation);
     expect(goal.reminder).toBe(payload.reminder);
     expect(goal.tasks).toHaveLength(0);
+  });
+
+  test("Update a goal success", async () => {
+    const payload: updateGoalInput = {
+      title: "updated title",
+      motivation: "this is my new motivation",
+      reminder: "three_days",
+      status: "finished",
+    };
+
+    await goalDB.updateGoal(goal_id, payload);
+
+    const result = await goalDB.findGoalById(goal_id);
+    const updated = result.data!;
+
+    expect(updated._id).toBe(goal_id);
+    expect(updated.status).toBe(payload.status);
+    expect(updated.title).toBe(payload.title);
+    expect(updated.motivation).toBe(payload.motivation);
+    expect(updated.reminder).toBe(payload.reminder);
+    expect(updated.tasks).toHaveLength(0);
   });
 
   test("Delete a goal", async () => {

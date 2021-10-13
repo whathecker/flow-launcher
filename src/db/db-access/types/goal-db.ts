@@ -6,6 +6,13 @@ export interface addGoalInput {
   reminder: string;
 }
 
+export interface updateGoalInput {
+  title?: string;
+  motivation?: string;
+  reminder?: string;
+  status?: string;
+}
+
 export interface goalDBAccessStatus {
   status: "success" | "failed";
   reason?: string;

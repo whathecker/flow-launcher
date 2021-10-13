@@ -2,6 +2,7 @@ import * as Realm from "realm";
 import { GoalModel } from "../../model";
 import {
   addGoalInput,
+  updateGoalInput,
   goalDBAccessStatus,
   singleEntityStatus,
   multiEntityStatus,
@@ -85,6 +86,41 @@ class GoalDBAccessor {
     }
   }
 
+  public async updateGoal(
+    _id: Realm.BSON.ObjectId,
+    payload: updateGoalInput,
+  ): Promise<singleEntityStatus> {
+    try {
+      let updatedGoal;
+
+      this.realm.write(() => {
+        const goal = this._findGoalByIdSync(_id);
+
+        if (goal) {
+          updatedGoal = this.realm.create(
+            "Goal",
+            {
+              _id: new Realm.BSON.ObjectID(_id),
+              ...payload,
+            },
+            "modified",
+          );
+        }
+      });
+
+      return Promise.resolve({
+        status: "success",
+        data: updatedGoal,
+      });
+    } catch (error) {
+      return Promise.reject({
+        status: "failed",
+        reason: "error",
+        error: error,
+      });
+    }
+  }
+
   public async removeGoal(
     _id: Realm.BSON.ObjectId,
   ): Promise<goalDBAccessStatus> {
@@ -118,6 +154,20 @@ class GoalDBAccessor {
         error: error,
       });
     }
+  }
+
+  private _findGoalByIdSync(_id: Realm.BSON.ObjectId): Realm.Object | null {
+    const goal = this.realm.objects("Goal").find((e) => {
+      const idFromDatabase = new Realm.BSON.ObjectID(
+        e.toJSON()._id,
+      ).toHexString();
+      const idFromPayload = new Realm.BSON.ObjectID(_id).toHexString();
+      return idFromDatabase === idFromPayload;
+    });
+
+    if (goal) return goal;
+
+    return null;
   }
 
   private _serialize(data: Realm.Object | Realm.Results<Realm.Object>) {
