@@ -1,35 +1,66 @@
-/* eslint-disable no-console  */
-/* eslint-disable @typescript-eslint/no-non-null-assertion */
-import { openDatabase } from "../../connection";
+import * as Realm from "realm";
+import { TaskModel } from "../../model";
+import { addTaskInput, singleEntityStatus } from "../types/task-db";
 
-const dropTasks = async (): Promise<void> => {
-  try {
-    const result = await openDatabase();
-    const realm = result.databaseInstance!;
-    realm.write(() => {
-      realm.delete(realm.objects("Task"));
-    });
-  } catch (error) {
-    console.error(error);
-    //TODO: add error handling
+class TaskDBAccessor {
+  private realm;
+
+  constructor(realm: Realm) {
+    this.realm = realm;
   }
-};
 
-export default {
-  dropTasks,
-};
+  public async addTask(payload: addTaskInput): Promise<singleEntityStatus> {
+    try {
+      const newTask: RealmInsertionModel<TaskModel> = {
+        _id: new Realm.BSON.ObjectID(),
+        ...payload,
+        status: "open",
+        priority: {
+          tier: "n/a",
+          importance: "n/a",
+          urgency: "n/a",
+        },
+      };
 
-/*
-const listTasksByGoal = () => {};
+      let task;
 
-const addTask = () => {};
+      this.realm.write(() => {
+        task = this.realm.create("Task", newTask) as Realm.Object;
+      });
 
-const updateTaskPriority = () => {};
+      return Promise.resolve({
+        status: "success",
+        data: JSON.parse(JSON.stringify(task)),
+      });
+    } catch (error) {
+      return Promise.reject({
+        status: "failed",
+        reason: "error",
+        error: error,
+      });
+    }
+  }
 
-const batchUpdateTaskPriority = () => {};
+  public async dropTasks(): Promise<void> {
+    try {
+      this.realm.write(() => {
+        this.realm.delete(this.realm.objects("Task"));
+      });
+    } catch (error) {
+      return Promise.reject({
+        status: "failed",
+        reason: "error",
+        error: error,
+      });
+    }
+  }
+  // public: removeTask
+  // public: findTaskById
+  // public: listTaskByGoal (may not needed)
+  // public: dropTasks
 
-const updateTaskStatus = () => {};
+  // public: updateTask (priority)
+  // public: batchUpdateTask (priority)
+}
 
-const removeTask = () => {};
-
-const dropTasks = () => {}; */
+export default TaskDBAccessor;

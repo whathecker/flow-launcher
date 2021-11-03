@@ -7,7 +7,7 @@ class TaskModel {
     public _id: Realm.BSON.ObjectId,
     public goalOfTask: Realm.Results<GoalModel>,
     public title: string,
-    public description: string,
+    public description: string, // should made optional
     public status: string,
     public priority: PriorityModel,
   ) {}
