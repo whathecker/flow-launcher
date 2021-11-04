@@ -1,3 +1,4 @@
+import DBAccessorBase from "../base";
 import * as Realm from "realm";
 import { GoalModel } from "../../model";
 import {
@@ -8,13 +9,7 @@ import {
   multiEntityStatus,
 } from "../types/goal-db";
 
-class GoalDBAccessor {
-  private realm;
-
-  constructor(realm: Realm) {
-    this.realm = realm;
-  }
-
+class GoalDBAccessor extends DBAccessorBase {
   public async listGoals(): Promise<multiEntityStatus> {
     try {
       const goals = this.realm.objects("Goal");
@@ -154,24 +149,6 @@ class GoalDBAccessor {
         error: error,
       });
     }
-  }
-
-  private _findGoalByIdSync(_id: Realm.BSON.ObjectId): Realm.Object | null {
-    const goal = this.realm.objects("Goal").find((e) => {
-      const idFromDatabase = new Realm.BSON.ObjectID(
-        e.toJSON()._id,
-      ).toHexString();
-      const idFromPayload = new Realm.BSON.ObjectID(_id).toHexString();
-      return idFromDatabase === idFromPayload;
-    });
-
-    if (goal) return goal;
-
-    return null;
-  }
-
-  private _serialize(data: Realm.Object | Realm.Results<Realm.Object>) {
-    return JSON.parse(JSON.stringify(data));
   }
 }
 

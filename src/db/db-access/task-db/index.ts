@@ -1,14 +1,9 @@
 import * as Realm from "realm";
+import DBAccessorBase from "../base";
 import { TaskModel } from "../../model";
 import { addTaskInput, singleEntityStatus } from "../types/task-db";
 
-class TaskDBAccessor {
-  private realm;
-
-  constructor(realm: Realm) {
-    this.realm = realm;
-  }
-
+class TaskDBAccessor extends DBAccessorBase {
   public async addTask(payload: addTaskInput): Promise<singleEntityStatus> {
     try {
       const newTask: RealmInsertionModel<TaskModel> = {
