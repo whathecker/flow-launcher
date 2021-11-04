@@ -19,7 +19,7 @@ class GoalModel {
       title: "string",
       motivation: "string",
       reminder: "string",
-      tasks: { type: "list", objectType: "Task" },
+      tasks: { type: "list", objectType: "string" },
     },
     primaryKey: "_id",
   };

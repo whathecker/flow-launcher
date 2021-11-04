@@ -1,11 +1,10 @@
 import Realm from "realm";
-import GoalModel from "./goal";
 import PriorityModel from "./priority";
 
 class TaskModel {
   constructor(
     public _id: Realm.BSON.ObjectId,
-    public goalOfTask: Realm.Results<GoalModel>,
+    public goal_id: Realm.BSON.ObjectId,
     public title: string,
     public description: string, // should made optional
     public status: string,
@@ -15,11 +14,7 @@ class TaskModel {
     name: "Task",
     properties: {
       _id: "objectId",
-      goalOfTask: {
-        type: "linkingObjects",
-        objectType: "Goal",
-        property: "tasks",
-      },
+      goal_id: "objectId",
       title: "string",
       description: "string",
       status: { type: "string", default: "open" },

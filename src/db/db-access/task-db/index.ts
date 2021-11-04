@@ -6,21 +6,18 @@ import { addTaskInput, singleEntityStatus } from "../types/task-db";
 class TaskDBAccessor extends DBAccessorBase {
   public async addTask(payload: addTaskInput): Promise<singleEntityStatus> {
     try {
-      const newTask: RealmInsertionModel<TaskModel> = {
-        _id: new Realm.BSON.ObjectID(),
-        ...payload,
-        status: "open",
-        priority: {
-          tier: "n/a",
-          importance: "n/a",
-          urgency: "n/a",
-        },
-      };
-
       let task;
+      const goal = this._findGoalByIdSync(payload.goal_id);
+
+      if (!goal) {
+        throw new Error(
+          "AddTask failed: cannot find a goal, please check your input: goal_id",
+        );
+      }
 
       this.realm.write(() => {
-        task = this.realm.create("Task", newTask) as Realm.Object;
+        task = this._writeNewTask(payload);
+        this._updateGoalWithNewTask(goal, task._id);
       });
 
       return Promise.resolve({
@@ -52,10 +49,36 @@ class TaskDBAccessor extends DBAccessorBase {
   // public: removeTask
   // public: findTaskById
   // public: listTaskByGoal (may not needed)
-  // public: dropTasks
 
   // public: updateTask (priority)
   // public: batchUpdateTask (priority)
+
+  private _writeNewTask(input: addTaskInput): TaskModel {
+    const newTask: RealmInsertionModel<TaskModel> = {
+      _id: new Realm.BSON.ObjectID(),
+      ...input,
+      goal_id: new Realm.BSON.ObjectID(input.goal_id),
+      status: "open",
+      priority: {
+        tier: "n/a",
+        importance: "n/a",
+        urgency: "n/a",
+      },
+    };
+
+    return this.realm.create("Task", newTask);
+  }
+
+  private _updateGoalWithNewTask(
+    goal: Realm.Object,
+    task_id: Realm.BSON.ObjectId,
+  ): void {
+    const serializedGoal = this._serialize(goal);
+    serializedGoal.tasks.push(task_id.toHexString());
+    serializedGoal._id = new Realm.BSON.ObjectID(serializedGoal._id);
+
+    this.realm.create("Goal", serializedGoal, "modified");
+  }
 }
 
 export default TaskDBAccessor;
