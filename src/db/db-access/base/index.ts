@@ -10,11 +10,7 @@ abstract class DBAccessorBase {
 
   protected _findGoalByIdSync(_id: Realm.BSON.ObjectId): Realm.Object | null {
     const goal = this.realm.objects("Goal").find((e) => {
-      const idFromDatabase = new Realm.BSON.ObjectID(
-        e.toJSON()._id,
-      ).toHexString();
-      const idFromPayload = new Realm.BSON.ObjectID(_id).toHexString();
-      return idFromDatabase === idFromPayload;
+      return this._checkIdenticalIds(e.toJSON()._id, _id);
     });
 
     if (goal) return goal;
@@ -26,6 +22,18 @@ abstract class DBAccessorBase {
     data: Realm.Object | Realm.Results<Realm.Object> | Realm.Object[],
   ) {
     return JSON.parse(JSON.stringify(data));
+  }
+
+  protected _checkIdenticalIds(
+    first_id: Realm.BSON.ObjectId,
+    second_id: Realm.BSON.ObjectId,
+  ): boolean {
+    const converted_first_id = new Realm.BSON.ObjectID(first_id).toHexString();
+    const converted_second_id = new Realm.BSON.ObjectID(
+      second_id,
+    ).toHexString();
+
+    return converted_first_id === converted_second_id;
   }
 }
 

@@ -42,14 +42,8 @@ class TaskDBAccessor extends DBAccessorBase {
 
       const filteredTasks = tasks.filter((task) => {
         const taskInJSON = task.toJSON();
-        const convertedIdFromDatabase = new Realm.BSON.ObjectID(
-          taskInJSON.goal_id,
-        ).toHexString();
-        const convertedIdFromPayload = new Realm.BSON.ObjectID(
-          goal_id,
-        ).toHexString();
 
-        return convertedIdFromDatabase === convertedIdFromPayload;
+        return this._checkIdenticalIds(taskInJSON.goal_id, goal_id);
       });
 
       return Promise.resolve({
