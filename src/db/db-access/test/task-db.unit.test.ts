@@ -48,6 +48,12 @@ describe("Test db access module of Task object", () => {
     closeDatabase(realm);
   });
 
+  test("Find a task by id success", async () => {
+    const result = await taskDB.findTaskById(task_id);
+
+    expect(result.data?._id).toBe(task_id);
+  });
+
   test("Add a task success", async () => {
     const payload: addTaskInput = {
       goal_id: goal_id,

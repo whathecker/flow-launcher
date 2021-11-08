@@ -4,6 +4,35 @@ import { TaskModel } from "../../model";
 import { addTaskInput, singleEntityStatus } from "../types/task-db";
 
 class TaskDBAccessor extends DBAccessorBase {
+  public async findTaskById(
+    id: Realm.BSON.ObjectId,
+  ): Promise<singleEntityStatus> {
+    try {
+      const task = this.realm.objectForPrimaryKey(
+        "Task",
+        new Realm.BSON.ObjectID(id),
+      );
+
+      if (!task) {
+        return Promise.reject({
+          status: "failed",
+          reason: "task not found",
+        });
+      }
+
+      return Promise.resolve({
+        status: "success",
+        data: this._serialize(task),
+      });
+    } catch (error) {
+      return Promise.reject({
+        status: "failed",
+        reason: "error",
+        error: error,
+      });
+    }
+  }
+
   public async addTask(payload: addTaskInput): Promise<singleEntityStatus> {
     try {
       let task;
@@ -46,10 +75,9 @@ class TaskDBAccessor extends DBAccessorBase {
       });
     }
   }
-  // public: removeTask
-  // public: findTaskById
-  // public: listTaskByGoal (may not needed)
 
+  // public: listTaskByGoal (may not needed)
+  // public: removeTask
   // public: updateTask (priority)
   // public: batchUpdateTask (priority)
 
