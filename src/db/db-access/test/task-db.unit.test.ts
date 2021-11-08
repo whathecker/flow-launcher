@@ -51,7 +51,14 @@ describe("Test db access module of Task object", () => {
   test("Find a task by id success", async () => {
     const result = await taskDB.findTaskById(task_id);
 
-    expect(result.data?._id).toBe(task_id);
+    expect(result.data!._id).toBe(task_id);
+  });
+
+  test("List tasks by goal_id success", async () => {
+    const result = await taskDB.listTasksByGoalId(goal_id);
+
+    expect(result.data!).toHaveLength(1);
+    expect(result.data![0]._id).toBe(task_id);
   });
 
   test("Add a task success", async () => {

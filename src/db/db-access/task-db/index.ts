@@ -2,15 +2,16 @@ import * as Realm from "realm";
 import DBAccessorBase from "../base";
 import { TaskModel } from "../../model";
 import { addTaskInput, singleEntityStatus } from "../types/task-db";
+import { multiEntityStatus } from "../types/goal-db";
 
 class TaskDBAccessor extends DBAccessorBase {
   public async findTaskById(
-    id: Realm.BSON.ObjectId,
+    _id: Realm.BSON.ObjectId,
   ): Promise<singleEntityStatus> {
     try {
       const task = this.realm.objectForPrimaryKey(
         "Task",
-        new Realm.BSON.ObjectID(id),
+        new Realm.BSON.ObjectID(_id),
       );
 
       if (!task) {
@@ -23,6 +24,37 @@ class TaskDBAccessor extends DBAccessorBase {
       return Promise.resolve({
         status: "success",
         data: this._serialize(task),
+      });
+    } catch (error) {
+      return Promise.reject({
+        status: "failed",
+        reason: "error",
+        error: error,
+      });
+    }
+  }
+
+  public async listTasksByGoalId(
+    goal_id: Realm.BSON.ObjectId,
+  ): Promise<multiEntityStatus> {
+    try {
+      const tasks = this.realm.objects("Task");
+
+      const filteredTasks = tasks.filter((task) => {
+        const taskInJSON = task.toJSON();
+        const convertedIdFromDatabase = new Realm.BSON.ObjectID(
+          taskInJSON.goal_id,
+        ).toHexString();
+        const convertedIdFromPayload = new Realm.BSON.ObjectID(
+          goal_id,
+        ).toHexString();
+
+        return convertedIdFromDatabase === convertedIdFromPayload;
+      });
+
+      return Promise.resolve({
+        status: "success",
+        data: this._serialize(filteredTasks),
       });
     } catch (error) {
       return Promise.reject({

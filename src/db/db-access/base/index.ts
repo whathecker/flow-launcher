@@ -22,7 +22,9 @@ abstract class DBAccessorBase {
     return null;
   }
 
-  protected _serialize(data: Realm.Object | Realm.Results<Realm.Object>) {
+  protected _serialize(
+    data: Realm.Object | Realm.Results<Realm.Object> | Realm.Object[],
+  ) {
     return JSON.parse(JSON.stringify(data));
   }
 }

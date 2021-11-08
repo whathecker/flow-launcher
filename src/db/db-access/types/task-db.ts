@@ -1,6 +1,5 @@
 import * as Realm from "realm";
 import { TaskModel } from "../../model";
-import { goalDBAccessStatus } from "./goal-db";
 
 export interface addTaskInput {
   goal_id: Realm.BSON.ObjectId;
@@ -14,6 +13,10 @@ export interface taskDBAccessStatus {
   error?: Error;
 }
 
-export interface singleEntityStatus extends goalDBAccessStatus {
+export interface singleEntityStatus extends taskDBAccessStatus {
   data?: TaskModel;
+}
+
+export interface multiEntityStatus extends taskDBAccessStatus {
+  data?: TaskModel[];
 }
