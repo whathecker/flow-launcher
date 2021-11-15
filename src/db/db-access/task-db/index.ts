@@ -1,7 +1,11 @@
 import * as Realm from "realm";
 import DBAccessorBase from "../base";
 import { TaskModel } from "../../model";
-import { addTaskInput, singleEntityStatus } from "../types/task-db";
+import {
+  addTaskInput,
+  singleEntityStatus,
+  taskDBAccessStatus,
+} from "../types/task-db";
 import { multiEntityStatus } from "../types/goal-db";
 
 class TaskDBAccessor extends DBAccessorBase {
@@ -15,7 +19,7 @@ class TaskDBAccessor extends DBAccessorBase {
       );
 
       if (!task) {
-        return Promise.reject({
+        return Promise.resolve({
           status: "failed",
           reason: "task not found",
         });
@@ -88,6 +92,48 @@ class TaskDBAccessor extends DBAccessorBase {
     }
   }
 
+  public async removeTask(
+    task_id: Realm.BSON.ObjectId,
+    goal_id: Realm.BSON.ObjectId,
+  ): Promise<taskDBAccessStatus> {
+    try {
+      const task = this.realm.objectForPrimaryKey(
+        "Task",
+        new Realm.BSON.ObjectID(task_id),
+      );
+      const goal = this._findGoalByIdSync(goal_id);
+
+      if (!task) {
+        return Promise.reject({
+          status: "failed",
+          reason: "task not found",
+        });
+      }
+
+      if (!goal) {
+        return Promise.reject({
+          status: "failed",
+          reason: "goal not found - check the goal_id to remove the task",
+        });
+      }
+
+      this.realm.write(() => {
+        this.realm.delete(task);
+        this._removeTaskFromGoal(goal, task_id);
+      });
+
+      return Promise.resolve({
+        status: "success",
+      });
+    } catch (error) {
+      return Promise.reject({
+        status: "failed",
+        reason: "error",
+        error: error,
+      });
+    }
+  }
+
   public async dropTasks(): Promise<void> {
     try {
       this.realm.write(() => {
@@ -101,9 +147,6 @@ class TaskDBAccessor extends DBAccessorBase {
       });
     }
   }
-
-  // public: listTaskByGoal (may not needed)
-  // public: removeTask
   // public: updateTask (priority)
   // public: batchUpdateTask (priority)
 
@@ -131,6 +174,20 @@ class TaskDBAccessor extends DBAccessorBase {
     serializedGoal.tasks.push(task_id.toHexString());
     serializedGoal._id = new Realm.BSON.ObjectID(serializedGoal._id);
 
+    this.realm.create("Goal", serializedGoal, "modified");
+  }
+
+  private _removeTaskFromGoal(
+    goal: Realm.Object,
+    task_id: Realm.BSON.ObjectId,
+  ): void {
+    const serializedGoal = this._serialize(goal);
+    const updatedTasks = serializedGoal.tasks.filter((task_id_ref: string) => {
+      const convered_task_id = new Realm.BSON.ObjectID(task_id).toHexString();
+      return convered_task_id !== task_id_ref;
+    });
+    serializedGoal.tasks = updatedTasks;
+    serializedGoal._id = new Realm.BSON.ObjectID(serializedGoal._id);
     this.realm.create("Goal", serializedGoal, "modified");
   }
 }

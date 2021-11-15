@@ -85,6 +85,19 @@ describe("Test db access module of Task object", () => {
     expect(goal.tasks[goal.tasks.length - 1]).toBe(task._id);
   });
 
+  test("Remove a task success", async () => {
+    const result = await taskDB.removeTask(task_id, goal_id);
+    const result_find = await taskDB.findTaskById(task_id);
+    const result_goal = await goalDB.findGoalById(goal_id);
+
+    expect(result.status).toBe("success");
+    expect(result_find).toMatchObject({
+      status: "failed",
+      reason: "task not found",
+    });
+    expect(result_goal.data!.tasks).toHaveLength(0);
+  });
+
   test("Delete all tasks", () => {
     // delete all tasks here
     expect(1).toBe(1);
