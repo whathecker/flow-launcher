@@ -7,6 +7,10 @@ export interface addTaskInput {
   description: string; //TODO: should be optional
 }
 
+export interface updateeTaskStatusInput {
+  status: string;
+}
+
 export interface taskDBAccessStatus {
   status: "success" | "failed";
   reason?: string;

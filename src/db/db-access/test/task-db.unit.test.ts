@@ -4,7 +4,7 @@ import * as Realm from "realm";
 import { openDatabase, closeDatabase } from "../../connection";
 import GoalDBAccessor from "../goal-db";
 import TaskDBAccessor from "../task-db";
-import { addTaskInput } from "../types/task-db";
+import { addTaskInput, updateeTaskStatusInput } from "../types/task-db";
 import { addGoalInput } from "../types/goal-db";
 
 describe("Test db access module of Task object", () => {
@@ -85,15 +85,62 @@ describe("Test db access module of Task object", () => {
     expect(goal.tasks[goal.tasks.length - 1]).toBe(task._id);
   });
 
+  test("Update task status success", async () => {
+    const payload: updateeTaskStatusInput = {
+      status: "finished",
+    };
+
+    await taskDB.updateTaskStatus(task_id, payload);
+    const result = await taskDB.findTaskById(task_id);
+    const task = result.data!;
+
+    expect(task.status).toBe(payload.status);
+  });
+
+  test("Update task status fail - task not found", async () => {
+    const fakeId = new Realm.BSON.ObjectID();
+    const payload: updateeTaskStatusInput = {
+      status: "closed",
+    };
+
+    await expect(taskDB.updateTaskStatus(fakeId, payload)).rejects.toEqual({
+      status: "failed",
+      reason: "error",
+      error: new Error("task not found"),
+    });
+  });
+
+  test("Update task status fail - invalid status in payload", async () => {
+    const payload: updateeTaskStatusInput = {
+      status: "closed",
+    };
+    await expect(taskDB.updateTaskStatus(task_id, payload)).rejects.toEqual({
+      status: "failed",
+      reason: "error",
+      error: new Error("invalid status in the payload"),
+    });
+  });
+
+  test("Update task status fail - request to update to the same status", async () => {
+    const payload: updateeTaskStatusInput = {
+      status: "open",
+    };
+    await expect(taskDB.updateTaskStatus(task_id, payload)).rejects.toEqual({
+      status: "failed",
+      reason: "error",
+      error: new Error("requested to update to the same status"),
+    });
+  });
+
   test("Remove a task success", async () => {
     const result = await taskDB.removeTask(task_id, goal_id);
-    const result_find = await taskDB.findTaskById(task_id);
     const result_goal = await goalDB.findGoalById(goal_id);
 
     expect(result.status).toBe("success");
-    expect(result_find).toMatchObject({
+    await expect(taskDB.findTaskById(task_id)).rejects.toEqual({
       status: "failed",
-      reason: "task not found",
+      reason: "error",
+      error: new Error("task not found"),
     });
     expect(result_goal.data!.tasks).toHaveLength(0);
   });

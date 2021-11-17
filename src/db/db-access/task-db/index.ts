@@ -3,6 +3,7 @@ import DBAccessorBase from "../base";
 import { TaskModel } from "../../model";
 import {
   addTaskInput,
+  updateeTaskStatusInput,
   singleEntityStatus,
   taskDBAccessStatus,
 } from "../types/task-db";
@@ -19,10 +20,7 @@ class TaskDBAccessor extends DBAccessorBase {
       );
 
       if (!task) {
-        return Promise.resolve({
-          status: "failed",
-          reason: "task not found",
-        });
+        throw new Error("task not found");
       }
 
       return Promise.resolve({
@@ -82,6 +80,57 @@ class TaskDBAccessor extends DBAccessorBase {
       return Promise.resolve({
         status: "success",
         data: JSON.parse(JSON.stringify(task)),
+      });
+    } catch (error) {
+      return Promise.reject({
+        status: "failed",
+        reason: "error",
+        error: error,
+      });
+    }
+  }
+
+  public async updateTaskStatus(
+    _id: Realm.BSON.ObjectId,
+    payload: updateeTaskStatusInput,
+  ): Promise<singleEntityStatus> {
+    try {
+      const task = this.realm.objectForPrimaryKey(
+        "Task",
+        new Realm.BSON.ObjectID(_id),
+      );
+
+      if (!task) {
+        throw new Error("task not found");
+      }
+
+      if (!this._validateUpdateTaskStatusInput(payload.status)) {
+        throw new Error("invalid status in the payload");
+      }
+
+      const serializedTask = this._serialize(task) as TaskModel;
+
+      if (payload.status === serializedTask.status) {
+        throw new Error("requested to update to the same status");
+      }
+
+      let updatedTask;
+
+      this.realm.write(() => {
+        updatedTask = this.realm.create(
+          "Task",
+          {
+            ...task,
+            _id: new Realm.BSON.ObjectID(_id),
+            status: payload.status,
+          },
+          "modified",
+        );
+      });
+
+      return Promise.resolve({
+        status: "success",
+        data: updatedTask,
       });
     } catch (error) {
       return Promise.reject({
@@ -175,6 +224,16 @@ class TaskDBAccessor extends DBAccessorBase {
     serializedGoal._id = new Realm.BSON.ObjectID(serializedGoal._id);
 
     this.realm.create("Goal", serializedGoal, "modified");
+  }
+
+  private _validateUpdateTaskStatusInput(status: string): boolean {
+    let result = false;
+
+    if (status === "open" || status === "finished") {
+      result = true;
+    }
+
+    return result;
   }
 
   private _removeTaskFromGoal(
