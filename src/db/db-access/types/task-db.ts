@@ -16,6 +16,11 @@ export interface updateTaskDetailInput {
   description?: string;
 }
 
+export interface updateTaskPriorityInput {
+  importance: string;
+  urgency: string;
+}
+
 export interface taskDBAccessStatus {
   status: "success" | "failed";
   reason?: string;

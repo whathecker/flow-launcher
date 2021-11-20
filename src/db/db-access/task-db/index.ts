@@ -1,10 +1,11 @@
 import * as Realm from "realm";
 import DBAccessorBase from "../base";
-import { TaskModel } from "../../model";
+import { TaskModel, PriorityModel } from "../../model";
 import {
   addTaskInput,
   updateTaskDetailInput,
   updateTaskStatusInput,
+  updateTaskPriorityInput,
   singleEntityStatus,
   taskDBAccessStatus,
 } from "../types/task-db";
@@ -183,6 +184,53 @@ class TaskDBAccessor extends DBAccessorBase {
     }
   }
 
+  public updateTaskPriority(
+    _id: Realm.BSON.ObjectId,
+    payload: updateTaskPriorityInput,
+  ): Promise<singleEntityStatus> {
+    try {
+      const task = this.realm.objectForPrimaryKey(
+        "Task",
+        new Realm.BSON.ObjectID(_id),
+      );
+
+      if (!task) {
+        throw new Error("task not found");
+      }
+
+      if (!this._validateUpdateTaskPriorityInput(payload)) {
+        throw new Error("invalid value in the payload");
+      }
+
+      const priority = this._createNewPriorityObj(payload);
+
+      let updatedTask;
+
+      this.realm.write(() => {
+        updatedTask = this.realm.create(
+          "Task",
+          {
+            ...task,
+            _id: new Realm.BSON.ObjectID(_id),
+            priority: priority,
+          },
+          "modified",
+        );
+      });
+
+      return Promise.resolve({
+        status: "success",
+        data: updatedTask,
+      });
+    } catch (error) {
+      return Promise.reject({
+        status: "failed",
+        reason: "error",
+        error: error,
+      });
+    }
+  }
+
   public async removeTask(
     task_id: Realm.BSON.ObjectId,
     goal_id: Realm.BSON.ObjectId,
@@ -276,6 +324,44 @@ class TaskDBAccessor extends DBAccessorBase {
     }
 
     return result;
+  }
+
+  private _validateUpdateTaskPriorityInput({
+    importance,
+    urgency,
+  }: updateTaskPriorityInput): boolean {
+    let result = true;
+    const validValues = ["yes", "no"];
+
+    const validityImportance = validValues.find((e) => e === importance);
+    const validityUrgency = validValues.find((e) => e === urgency);
+
+    !validityImportance || !validityUrgency ? (result = false) : null;
+
+    return result;
+  }
+
+  private _createNewPriorityObj({
+    importance,
+    urgency,
+  }: updateTaskPriorityInput): PriorityModel {
+    let tier = "n/a";
+
+    if (importance === "yes" && urgency === "yes") {
+      tier = "highest";
+    } else if (importance === "yes" && urgency === "no") {
+      tier = "high";
+    } else if (importance === "no" && urgency === "yes") {
+      tier = "mid";
+    } else if (importance === "no" && urgency === "no") {
+      tier = "low";
+    }
+
+    return {
+      tier,
+      importance,
+      urgency,
+    };
   }
 
   private _removeTaskFromGoal(

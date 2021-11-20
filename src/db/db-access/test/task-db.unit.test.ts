@@ -8,6 +8,7 @@ import {
   addTaskInput,
   updateTaskStatusInput,
   updateTaskDetailInput,
+  updateTaskPriorityInput,
 } from "../types/task-db";
 import { addGoalInput } from "../types/goal-db";
 
@@ -148,6 +149,97 @@ describe("Test db access module of Task object", () => {
       status: "failed",
       reason: "error",
       error: new Error("requested to update to the same status"),
+    });
+  });
+
+  test("Update task priority success - to highest tier", async () => {
+    const payload: updateTaskPriorityInput = {
+      importance: "yes",
+      urgency: "yes",
+    };
+
+    await taskDB.updateTaskPriority(task_id, payload);
+    const result = await taskDB.findTaskById(task_id);
+    const task = result.data!;
+
+    expect(task.priority.tier).toBe("highest");
+    expect(task.priority.importance).toBe(payload.importance);
+    expect(task.priority.urgency).toBe(payload.urgency);
+    expect(task._id).toBe(task_id);
+  });
+
+  test("Update task priority success - to high tier", async () => {
+    const payload: updateTaskPriorityInput = {
+      importance: "yes",
+      urgency: "no",
+    };
+
+    await taskDB.updateTaskPriority(task_id, payload);
+    const result = await taskDB.findTaskById(task_id);
+    const task = result.data!;
+
+    expect(task.priority.tier).toBe("high");
+    expect(task.priority.importance).toBe(payload.importance);
+    expect(task.priority.urgency).toBe(payload.urgency);
+    expect(task._id).toBe(task_id);
+  });
+
+  test("Update task priority success - to mid tier", async () => {
+    const payload: updateTaskPriorityInput = {
+      importance: "no",
+      urgency: "yes",
+    };
+
+    await taskDB.updateTaskPriority(task_id, payload);
+    const result = await taskDB.findTaskById(task_id);
+    const task = result.data!;
+
+    expect(task.priority.tier).toBe("mid");
+    expect(task.priority.importance).toBe(payload.importance);
+    expect(task.priority.urgency).toBe(payload.urgency);
+    expect(task._id).toBe(task_id);
+  });
+
+  test("Update task priority success - to low tier", async () => {
+    const payload: updateTaskPriorityInput = {
+      importance: "no",
+      urgency: "no",
+    };
+
+    await taskDB.updateTaskPriority(task_id, payload);
+    const result = await taskDB.findTaskById(task_id);
+    const task = result.data!;
+
+    expect(task.priority.tier).toBe("low");
+    expect(task.priority.importance).toBe(payload.importance);
+    expect(task.priority.urgency).toBe(payload.urgency);
+    expect(task._id).toBe(task_id);
+  });
+
+  test("Update task priority fail - task not found", async () => {
+    const fakeId = new Realm.BSON.ObjectID();
+    const payload: updateTaskPriorityInput = {
+      importance: "no",
+      urgency: "no",
+    };
+
+    await expect(taskDB.updateTaskPriority(fakeId, payload)).rejects.toEqual({
+      status: "failed",
+      reason: "error",
+      error: new Error("task not found"),
+    });
+  });
+
+  test("Update task priority fail - invalid input in the payload", async () => {
+    const payload: updateTaskPriorityInput = {
+      importance: "no",
+      urgency: "nop",
+    };
+
+    await expect(taskDB.updateTaskPriority(task_id, payload)).rejects.toEqual({
+      status: "failed",
+      reason: "error",
+      error: new Error("invalid value in the payload"),
     });
   });
 
