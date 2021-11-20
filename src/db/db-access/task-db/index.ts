@@ -3,7 +3,8 @@ import DBAccessorBase from "../base";
 import { TaskModel } from "../../model";
 import {
   addTaskInput,
-  updateeTaskStatusInput,
+  updateTaskDetailInput,
+  updateTaskStatusInput,
   singleEntityStatus,
   taskDBAccessStatus,
 } from "../types/task-db";
@@ -90,9 +91,50 @@ class TaskDBAccessor extends DBAccessorBase {
     }
   }
 
+  public async updateTaskDetail(
+    _id: Realm.BSON.ObjectId,
+    payload: updateTaskDetailInput,
+  ): Promise<singleEntityStatus> {
+    try {
+      const task = this.realm.objectForPrimaryKey(
+        "Task",
+        new Realm.BSON.ObjectID(_id),
+      );
+
+      if (!task) {
+        throw new Error("task not found");
+      }
+
+      let updatedTask;
+
+      this.realm.write(() => {
+        updatedTask = this.realm.create(
+          "Task",
+          {
+            ...task,
+            _id: new Realm.BSON.ObjectID(_id),
+            ...payload,
+          },
+          "modified",
+        );
+      });
+
+      return Promise.resolve({
+        status: "success",
+        data: updatedTask,
+      });
+    } catch (error) {
+      return Promise.reject({
+        status: "failed",
+        reason: "error",
+        error: error,
+      });
+    }
+  }
+
   public async updateTaskStatus(
     _id: Realm.BSON.ObjectId,
-    payload: updateeTaskStatusInput,
+    payload: updateTaskStatusInput,
   ): Promise<singleEntityStatus> {
     try {
       const task = this.realm.objectForPrimaryKey(

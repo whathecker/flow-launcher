@@ -7,8 +7,13 @@ export interface addTaskInput {
   description: string; //TODO: should be optional
 }
 
-export interface updateeTaskStatusInput {
+export interface updateTaskStatusInput {
   status: string;
+}
+
+export interface updateTaskDetailInput {
+  title?: string;
+  description?: string;
 }
 
 export interface taskDBAccessStatus {

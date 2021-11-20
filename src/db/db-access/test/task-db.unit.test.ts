@@ -4,7 +4,11 @@ import * as Realm from "realm";
 import { openDatabase, closeDatabase } from "../../connection";
 import GoalDBAccessor from "../goal-db";
 import TaskDBAccessor from "../task-db";
-import { addTaskInput, updateeTaskStatusInput } from "../types/task-db";
+import {
+  addTaskInput,
+  updateTaskStatusInput,
+  updateTaskDetailInput,
+} from "../types/task-db";
 import { addGoalInput } from "../types/goal-db";
 
 describe("Test db access module of Task object", () => {
@@ -85,8 +89,23 @@ describe("Test db access module of Task object", () => {
     expect(goal.tasks[goal.tasks.length - 1]).toBe(task._id);
   });
 
+  test("Update task detail success", async () => {
+    const payload: updateTaskDetailInput = {
+      title: "new title",
+      description: "new desciption",
+    };
+
+    await taskDB.updateTaskDetail(task_id, payload);
+    const result = await taskDB.findTaskById(task_id);
+    const task = result.data!;
+
+    expect(task.title).toBe(payload.title);
+    expect(task.description).toBe(payload.description);
+    expect(task._id).toBe(task_id);
+  });
+
   test("Update task status success", async () => {
-    const payload: updateeTaskStatusInput = {
+    const payload: updateTaskStatusInput = {
       status: "finished",
     };
 
@@ -99,7 +118,7 @@ describe("Test db access module of Task object", () => {
 
   test("Update task status fail - task not found", async () => {
     const fakeId = new Realm.BSON.ObjectID();
-    const payload: updateeTaskStatusInput = {
+    const payload: updateTaskStatusInput = {
       status: "closed",
     };
 
@@ -111,7 +130,7 @@ describe("Test db access module of Task object", () => {
   });
 
   test("Update task status fail - invalid status in payload", async () => {
-    const payload: updateeTaskStatusInput = {
+    const payload: updateTaskStatusInput = {
       status: "closed",
     };
     await expect(taskDB.updateTaskStatus(task_id, payload)).rejects.toEqual({
@@ -122,7 +141,7 @@ describe("Test db access module of Task object", () => {
   });
 
   test("Update task status fail - request to update to the same status", async () => {
-    const payload: updateeTaskStatusInput = {
+    const payload: updateTaskStatusInput = {
       status: "open",
     };
     await expect(taskDB.updateTaskStatus(task_id, payload)).rejects.toEqual({
