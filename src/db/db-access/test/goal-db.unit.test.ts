@@ -48,6 +48,14 @@ describe("Test db access module of Goal object", () => {
     expect(goal._id).toBe(goal_id);
   });
 
+  test("Find a goal by id fail - goal not found", async () => {
+    const fakeId = new Realm.BSON.ObjectID();
+    await expect(goalDB.findGoalById(fakeId)).rejects.toEqual({
+      status: "failed",
+      reason: "goal not found",
+    });
+  });
+
   test("Add a goal success", async () => {
     const payload: addGoalInput = {
       title: "let's add a new goal",

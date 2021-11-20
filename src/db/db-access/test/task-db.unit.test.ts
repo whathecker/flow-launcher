@@ -59,6 +59,14 @@ describe("Test db access module of Task object", () => {
     expect(result.data!._id).toBe(task_id);
   });
 
+  test("Find a task by id fail", async () => {
+    const fakeId = new Realm.BSON.ObjectID();
+    await expect(taskDB.findTaskById(fakeId)).rejects.toEqual({
+      status: "failed",
+      reason: "task not found",
+    });
+  });
+
   test("List tasks by goal_id success", async () => {
     const result = await taskDB.listTasksByGoalId(goal_id);
 
@@ -90,6 +98,19 @@ describe("Test db access module of Task object", () => {
     expect(goal.tasks[goal.tasks.length - 1]).toBe(task._id);
   });
 
+  test("Add a task fail: non-existing goal_id", async () => {
+    const payload: addTaskInput = {
+      goal_id: new Realm.BSON.ObjectID(),
+      title: "let's add a new task",
+      description: "I want to get this data through",
+    };
+
+    await expect(taskDB.addTask(payload)).rejects.toEqual({
+      status: "failed",
+      reason: "cannot find a goal, please check your input: goal_id",
+    });
+  });
+
   test("Update task detail success", async () => {
     const payload: updateTaskDetailInput = {
       title: "new title",
@@ -103,6 +124,19 @@ describe("Test db access module of Task object", () => {
     expect(task.title).toBe(payload.title);
     expect(task.description).toBe(payload.description);
     expect(task._id).toBe(task_id);
+  });
+
+  test("Update task detail fail - task not found", async () => {
+    const fakeId = new Realm.BSON.ObjectID();
+    const payload: updateTaskDetailInput = {
+      title: "new title",
+      description: "new desciption",
+    };
+
+    await expect(taskDB.updateTaskDetail(fakeId, payload)).rejects.toEqual({
+      status: "failed",
+      reason: "task not found",
+    });
   });
 
   test("Update task status success", async () => {
@@ -125,8 +159,7 @@ describe("Test db access module of Task object", () => {
 
     await expect(taskDB.updateTaskStatus(fakeId, payload)).rejects.toEqual({
       status: "failed",
-      reason: "error",
-      error: new Error("task not found"),
+      reason: "task not found",
     });
   });
 
@@ -136,8 +169,7 @@ describe("Test db access module of Task object", () => {
     };
     await expect(taskDB.updateTaskStatus(task_id, payload)).rejects.toEqual({
       status: "failed",
-      reason: "error",
-      error: new Error("invalid status in the payload"),
+      reason: "invalid status in the payload",
     });
   });
 
@@ -147,8 +179,7 @@ describe("Test db access module of Task object", () => {
     };
     await expect(taskDB.updateTaskStatus(task_id, payload)).rejects.toEqual({
       status: "failed",
-      reason: "error",
-      error: new Error("requested to update to the same status"),
+      reason: "requested to update to the same status",
     });
   });
 
@@ -225,8 +256,7 @@ describe("Test db access module of Task object", () => {
 
     await expect(taskDB.updateTaskPriority(fakeId, payload)).rejects.toEqual({
       status: "failed",
-      reason: "error",
-      error: new Error("task not found"),
+      reason: "task not found",
     });
   });
 
@@ -238,8 +268,7 @@ describe("Test db access module of Task object", () => {
 
     await expect(taskDB.updateTaskPriority(task_id, payload)).rejects.toEqual({
       status: "failed",
-      reason: "error",
-      error: new Error("invalid value in the payload"),
+      reason: "invalid value in the payload",
     });
   });
 
@@ -250,14 +279,8 @@ describe("Test db access module of Task object", () => {
     expect(result.status).toBe("success");
     await expect(taskDB.findTaskById(task_id)).rejects.toEqual({
       status: "failed",
-      reason: "error",
-      error: new Error("task not found"),
+      reason: "task not found",
     });
     expect(result_goal.data!.tasks).toHaveLength(0);
-  });
-
-  test("Delete all tasks", () => {
-    // delete all tasks here
-    expect(1).toBe(1);
   });
 });

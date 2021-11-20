@@ -22,7 +22,10 @@ class TaskDBAccessor extends DBAccessorBase {
       );
 
       if (!task) {
-        throw new Error("task not found");
+        return Promise.reject({
+          status: "failed",
+          reason: "task not found",
+        });
       }
 
       return Promise.resolve({
@@ -69,9 +72,10 @@ class TaskDBAccessor extends DBAccessorBase {
       const goal = this._findGoalByIdSync(payload.goal_id);
 
       if (!goal) {
-        throw new Error(
-          "AddTask failed: cannot find a goal, please check your input: goal_id",
-        );
+        return Promise.reject({
+          status: "failed",
+          reason: "cannot find a goal, please check your input: goal_id",
+        });
       }
 
       this.realm.write(() => {
@@ -103,7 +107,10 @@ class TaskDBAccessor extends DBAccessorBase {
       );
 
       if (!task) {
-        throw new Error("task not found");
+        return Promise.reject({
+          status: "failed",
+          reason: "task not found",
+        });
       }
 
       let updatedTask;
@@ -144,17 +151,26 @@ class TaskDBAccessor extends DBAccessorBase {
       );
 
       if (!task) {
-        throw new Error("task not found");
+        return Promise.reject({
+          status: "failed",
+          reason: "task not found",
+        });
       }
 
       if (!this._validateUpdateTaskStatusInput(payload.status)) {
-        throw new Error("invalid status in the payload");
+        return Promise.reject({
+          status: "failed",
+          reason: "invalid status in the payload",
+        });
       }
 
       const serializedTask = this._serialize(task) as TaskModel;
 
       if (payload.status === serializedTask.status) {
-        throw new Error("requested to update to the same status");
+        return Promise.reject({
+          status: "failed",
+          reason: "requested to update to the same status",
+        });
       }
 
       let updatedTask;
@@ -195,11 +211,17 @@ class TaskDBAccessor extends DBAccessorBase {
       );
 
       if (!task) {
-        throw new Error("task not found");
+        return Promise.reject({
+          status: "failed",
+          reason: "task not found",
+        });
       }
 
       if (!this._validateUpdateTaskPriorityInput(payload)) {
-        throw new Error("invalid value in the payload");
+        return Promise.reject({
+          status: "failed",
+          reason: "invalid value in the payload",
+        });
       }
 
       const priority = this._createNewPriorityObj(payload);
