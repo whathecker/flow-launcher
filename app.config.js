@@ -26,9 +26,10 @@ export default {
   ios: {
     supportsTablet: true,
     //usesAppleSignIn: true,
-    //bundleIdentifier: "com.koelkast.surfjournalapp",
+    bundleIdentifier: "com.koelkast.flowlauncher",
   },
   android: {
+    package: "com.koelkast.flowlauncher",
     adaptiveIcon: {
       foregroundImage: "./assets/images/adaptive-icon.png",
       backgroundColor: "#FFFFFF",
