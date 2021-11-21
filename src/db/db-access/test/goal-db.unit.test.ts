@@ -5,7 +5,7 @@ import GoalDBAccessor from "../goal-db";
 import {
   addGoalInput,
   updateGoalStatusInput,
-  updateGoalInput,
+  updateGoalDetailInput,
 } from "../types/goal-db";
 
 describe("Test db access module of Goal object", () => {
@@ -124,25 +124,38 @@ describe("Test db access module of Goal object", () => {
     });
   });
 
-  test("Update a goal success", async () => {
-    const payload: updateGoalInput = {
+  test("Update a goal detail success", async () => {
+    const payload: updateGoalDetailInput = {
       title: "updated title",
       motivation: "this is my new motivation",
       reminder: "three_days",
-      status: "finished",
     };
 
-    await goalDB.updateGoal(goal_id, payload);
+    await goalDB.updateGoalDetail(goal_id, payload);
 
     const result = await goalDB.findGoalById(goal_id);
     const updated = result.data!;
 
     expect(updated._id).toBe(goal_id);
-    expect(updated.status).toBe(payload.status);
+    expect(updated.status).toBe("open");
     expect(updated.title).toBe(payload.title);
     expect(updated.motivation).toBe(payload.motivation);
     expect(updated.reminder).toBe(payload.reminder);
     expect(updated.tasks).toHaveLength(0);
+  });
+
+  test("Update a goal detail fail - goal not found", async () => {
+    const fakeId = new Realm.BSON.ObjectID();
+    const payload: updateGoalDetailInput = {
+      title: "updated title",
+      motivation: "this is my new motivation",
+      reminder: "three_days",
+    };
+
+    await expect(goalDB.updateGoalDetail(fakeId, payload)).rejects.toEqual({
+      status: "failed",
+      reason: "goal not found",
+    });
   });
 
   test("Delete a goal", async () => {

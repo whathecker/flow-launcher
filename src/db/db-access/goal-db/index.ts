@@ -4,7 +4,7 @@ import { GoalModel } from "../../model";
 import {
   addGoalInput,
   updateGoalStatusInput,
-  updateGoalInput,
+  updateGoalDetailInput,
   goalDBAccessStatus,
   singleEntityStatus,
   multiEntityStatus,
@@ -139,26 +139,32 @@ class GoalDBAccessor extends DBAccessorBase {
     }
   }
 
-  public async updateGoal(
+  public async updateGoalDetail(
     _id: Realm.BSON.ObjectId,
-    payload: updateGoalInput,
+    payload: updateGoalDetailInput,
   ): Promise<singleEntityStatus> {
     try {
+      const goal = this._findGoalByIdSync(_id);
+
+      if (!goal) {
+        return Promise.reject({
+          status: "failed",
+          reason: "goal not found",
+        });
+      }
+
       let updatedGoal;
 
       this.realm.write(() => {
-        const goal = this._findGoalByIdSync(_id);
-
-        if (goal) {
-          updatedGoal = this.realm.create(
-            "Goal",
-            {
-              _id: new Realm.BSON.ObjectID(_id),
-              ...payload,
-            },
-            "modified",
-          );
-        }
+        updatedGoal = this.realm.create(
+          "Goal",
+          {
+            ...goal,
+            _id: new Realm.BSON.ObjectID(_id),
+            ...payload,
+          },
+          "modified",
+        );
       });
 
       return Promise.resolve({

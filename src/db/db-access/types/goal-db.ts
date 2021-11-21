@@ -10,11 +10,10 @@ export interface updateGoalStatusInput {
   status: string;
 }
 
-export interface updateGoalInput {
+export interface updateGoalDetailInput {
   title?: string;
   motivation?: string;
   reminder?: string;
-  status?: string;
 }
 
 export interface goalDBAccessStatus {
