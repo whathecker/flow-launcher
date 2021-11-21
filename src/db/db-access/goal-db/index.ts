@@ -3,6 +3,7 @@ import * as Realm from "realm";
 import { GoalModel } from "../../model";
 import {
   addGoalInput,
+  updateGoalStatusInput,
   updateGoalInput,
   goalDBAccessStatus,
   singleEntityStatus,
@@ -81,6 +82,63 @@ class GoalDBAccessor extends DBAccessorBase {
     }
   }
 
+  public async updateGoalStatus(
+    _id: Realm.BSON.ObjectId,
+    payload: updateGoalStatusInput,
+  ): Promise<singleEntityStatus> {
+    try {
+      const goal = this._findGoalByIdSync(_id);
+
+      if (!goal) {
+        return Promise.reject({
+          status: "failed",
+          reason: "goal not found",
+        });
+      }
+
+      if (!this._validateUpdateGoalStatusInput(payload.status)) {
+        return Promise.reject({
+          status: "failed",
+          reason: "invalid status in the payload",
+        });
+      }
+
+      const serializedGoal = this._serialize(goal) as GoalModel;
+
+      if (serializedGoal.status === payload.status) {
+        return Promise.reject({
+          status: "failed",
+          reason: "requested to update to the same status",
+        });
+      }
+
+      let updateGoal;
+
+      this.realm.write(() => {
+        updateGoal = this.realm.create(
+          "Goal",
+          {
+            ...goal,
+            _id: new Realm.BSON.ObjectID(_id),
+            status: payload.status,
+          },
+          "modified",
+        );
+      });
+
+      return Promise.resolve({
+        status: "success",
+        data: updateGoal,
+      });
+    } catch (error) {
+      return Promise.reject({
+        status: "failed",
+        reason: "error",
+        error: error,
+      });
+    }
+  }
+
   public async updateGoal(
     _id: Realm.BSON.ObjectId,
     payload: updateGoalInput,
@@ -149,6 +207,16 @@ class GoalDBAccessor extends DBAccessorBase {
         error: error,
       });
     }
+  }
+
+  private _validateUpdateGoalStatusInput(status: string): boolean {
+    let result = false;
+
+    if (status === "open" || status === "finished") {
+      result = true;
+    }
+
+    return result;
   }
 }
 

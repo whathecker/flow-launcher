@@ -6,6 +6,10 @@ export interface addGoalInput {
   reminder: string;
 }
 
+export interface updateGoalStatusInput {
+  status: string;
+}
+
 export interface updateGoalInput {
   title?: string;
   motivation?: string;

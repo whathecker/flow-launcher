@@ -2,7 +2,11 @@
 import * as Realm from "realm";
 import { openDatabase, closeDatabase } from "../../connection";
 import GoalDBAccessor from "../goal-db";
-import { addGoalInput, updateGoalInput } from "../types/goal-db";
+import {
+  addGoalInput,
+  updateGoalStatusInput,
+  updateGoalInput,
+} from "../types/goal-db";
 
 describe("Test db access module of Goal object", () => {
   let realm: Realm;
@@ -71,6 +75,53 @@ describe("Test db access module of Goal object", () => {
     expect(goal.motivation).toBe(payload.motivation);
     expect(goal.reminder).toBe(payload.reminder);
     expect(goal.tasks).toHaveLength(0);
+  });
+
+  test("Update goal status success", async () => {
+    const payload: updateGoalStatusInput = {
+      status: "finished",
+    };
+    await goalDB.updateGoalStatus(goal_id, payload);
+
+    const result = await goalDB.findGoalById(goal_id);
+    const updated = result.data!;
+
+    expect(updated._id).toBe(goal_id);
+    expect(updated.status).toBe(payload.status);
+  });
+
+  test("Update a goal status fail - goal not found", async () => {
+    const fakeId = new Realm.BSON.ObjectID();
+    const payload: updateGoalStatusInput = {
+      status: "finished",
+    };
+
+    await expect(goalDB.updateGoalStatus(fakeId, payload)).rejects.toEqual({
+      status: "failed",
+      reason: "goal not found",
+    });
+  });
+
+  test("Update a goal status - invalid status in the input", async () => {
+    const payload: updateGoalStatusInput = {
+      status: "finishing",
+    };
+
+    await expect(goalDB.updateGoalStatus(goal_id, payload)).rejects.toEqual({
+      status: "failed",
+      reason: "invalid status in the payload",
+    });
+  });
+
+  test("Update a goal status - try to update to the same status", async () => {
+    const payload: updateGoalStatusInput = {
+      status: "open",
+    };
+
+    await expect(goalDB.updateGoalStatus(goal_id, payload)).rejects.toEqual({
+      status: "failed",
+      reason: "requested to update to the same status",
+    });
   });
 
   test("Update a goal success", async () => {
