@@ -4,9 +4,15 @@
     "development": {
       "developmentClient": true,
       "distribution": "internal"
+    },
+    "preview": {
+      "distribution": "internal"
     }
   },
   "submit": {
     "release": {}
+  },
+  "cli": {
+    "version": ">= 0.38.3"
   }
 }
