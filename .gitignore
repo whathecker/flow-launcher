@@ -12,8 +12,9 @@ web-build/
 # macOS
 .DS_Store
 
-# localdata files & folder from relam
-localdata.management
-localdata.lock
+# localdata files & folder from realm
+localdata.realm.management
+localdata.realm.lock
+localdata.realm.note
+localdata.realm
 localdata.note
-localdata

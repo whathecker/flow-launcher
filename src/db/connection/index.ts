@@ -11,7 +11,7 @@ interface OpenDatabaseStatus {
 const openDatabase = async (): Promise<OpenDatabaseStatus> => {
   try {
     const realm = await Realm.open({
-      path: "localdata",
+      path: "localdata.realm",
       schema: [GoalModel.schema, TaskModel.schema, PriorityModel.schema],
       schemaVersion: 27,
     });
