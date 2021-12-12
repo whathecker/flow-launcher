@@ -1,4 +1,5 @@
 import React from "react";
+import { Themed } from "../components";
 import { View, Text, Button, StyleSheet } from "react-native";
 import { Container, Typography } from "../styles";
 import { GoalStackScreenProps } from "../types/navigation";
@@ -8,12 +9,14 @@ type Props = GoalStackScreenProps<"Goals">;
 const GoalsScreen: React.FC<Props> = ({ navigation }: Props) => {
   return (
     <>
-      <View style={styles.headerWrapper}>
-        <Text style={styles.headerText}>Your Goals</Text>
-      </View>
-      <View style={styles.goalsAreaWrapper}>
+      <Themed.View style={styles.headerWrapper}>
+        <Themed.Text style={styles.headerText} lightColor="#554F4F">
+          Your Goals
+        </Themed.Text>
+      </Themed.View>
+      <Themed.View style={styles.goalsAreaWrapper}>
         <Text>Emoji goes here</Text>
-      </View>
+      </Themed.View>
       <View style={styles.buttonAreaWrapper}>
         <Button
           title="Go to goal detail"
@@ -45,15 +48,15 @@ const styles = StyleSheet.create({
   goalsAreaWrapper: {
     ...Container.centerAligned,
     height: "70%",
-    borderWidth: 2,
-    borderColor: "black",
+    //borderWidth: 2,
+    //borderColor: "black",
   },
   buttonAreaWrapper: {
     ...Container.centerAligned,
     height: "10%",
     marginTop: 15,
-    borderWidth: 2,
-    borderColor: "black",
+    //borderWidth: 2,
+    //borderColor: "black",
   },
 });
 
