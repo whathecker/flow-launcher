@@ -1,6 +1,6 @@
 import React from "react";
 import { View, Text } from "../components/Themed";
-import { Button, StyleSheet } from "react-native";
+import { Image, Button, StyleSheet } from "react-native";
 import { Container, Typography } from "../styles";
 import { GoalStackScreenProps } from "../types/navigation";
 
@@ -10,20 +10,32 @@ const GoalsScreen: React.FC<Props> = ({ navigation }: Props) => {
   return (
     <>
       <View style={styles.headerWrapper}>
-        <Text style={styles.headerText} lightColor="#554F4F">
+        <Text
+          style={styles.headerText}
+          lightColor="#554F4F"
+          darkColor="#554F4F"
+        >
           Your Goals
         </Text>
       </View>
       <View style={styles.goalsAreaWrapper}>
-        <Text>Emoji goes here</Text>
+        <View style={styles.goalAreaBodyWrapper}>
+          <Image
+            style={styles.bodyImage}
+            source={require(`../../assets/images/sauropod_1f995.png`)}
+          />
+        </View>
+        <View style={styles.goalAreaBodyWrapper}>
+          <Text
+            style={styles.bodyText}
+          >{`The journey of a thousand miles`}</Text>
+          <Text style={styles.bodyText}>{`begins with a single step.`}</Text>
+        </View>
+        <View style={styles.goalAreaBodyWrapper}>
+          <Text style={styles.bodyText}>{`LAO TZU`}</Text>
+        </View>
       </View>
       <View style={styles.buttonAreaWrapper}>
-        <Button
-          title="Go to goal detail"
-          onPress={() => {
-            navigation.navigate("GoalDetail");
-          }}
-        />
         <Button
           title="Add a Goal"
           onPress={() => {
@@ -38,25 +50,36 @@ const GoalsScreen: React.FC<Props> = ({ navigation }: Props) => {
 const styles = StyleSheet.create({
   headerWrapper: {
     ...Container.flexStart,
-    height: "10%",
-    marginTop: 55,
-    marginLeft: 40,
+    height: "15%",
+    paddingTop: 60,
+    paddingLeft: 50,
+    paddingBottom: 15,
   },
   headerText: {
     ...Typography.h1,
   },
   goalsAreaWrapper: {
-    ...Container.centerAligned,
+    ...Container.centerAlignedVertical,
     height: "70%",
-    //borderWidth: 2,
-    //borderColor: "black",
+  },
+  goalAreaBodyWrapper: {
+    paddingTop: 5,
+    paddingBottom: 18,
+  },
+  bodyImage: {
+    width: 95,
+    height: 95,
+  },
+  bodyText: {
+    ...Typography.p,
+    textAlign: "center",
   },
   buttonAreaWrapper: {
     ...Container.centerAligned,
-    height: "10%",
-    marginTop: 15,
-    //borderWidth: 2,
-    //borderColor: "black",
+    height: "15%",
+    paddingTop: 15,
+    borderWidth: 2,
+    borderColor: "black",
   },
 });
 
