@@ -39,6 +39,7 @@ exports[`Test Button component Should renders Button correctly 1`] = `
           "color": "#fff",
         },
         Object {
+          "fontFamily": "Forum-Regular",
           "fontSize": 16,
         },
       ]

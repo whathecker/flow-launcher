@@ -3,17 +3,28 @@ import { SafeAreaProvider } from "react-native-safe-area-context";
 import React, { useEffect } from "react";
 import Navigation from "./src/navigation";
 import { openDatabase } from "./src/db/connection";
+import { useFonts } from "expo-font";
+import AppLoading from "expo-app-loading";
 
 export default function App() {
+  const [fontLoaded] = useFonts({
+    "EB-Garamond": require("./assets/fonts/EBGaramond-VariableFont_wght.ttf"),
+    "Forum-Regular": require("./assets/fonts/Forum-Regular.ttf"),
+  });
+
   useEffect(() => {
     (async function loadDatabase() {
       await openDatabase();
     })();
   }, []);
 
-  return (
-    <SafeAreaProvider>
-      <Navigation />
-    </SafeAreaProvider>
-  );
+  if (!fontLoaded) {
+    return <AppLoading />;
+  } else {
+    return (
+      <SafeAreaProvider>
+        <Navigation />
+      </SafeAreaProvider>
+    );
+  }
 }
