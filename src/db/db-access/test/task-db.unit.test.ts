@@ -27,6 +27,7 @@ describe("Test db access module of Task object", () => {
   });
 
   beforeEach(async () => {
+    await goalDB.dropGoals();
     await taskDB.dropTasks();
 
     const payloadForGoal: addGoalInput = {
@@ -49,6 +50,7 @@ describe("Test db access module of Task object", () => {
   });
 
   afterAll(async () => {
+    await goalDB.dropGoals();
     await taskDB.dropTasks();
     closeDatabase(realm);
   });
