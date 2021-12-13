@@ -1,5 +1,9 @@
 import * as React from "react";
-import { Text as DefaultText, View as DefaultView } from "react-native";
+import {
+  Text as DefaultText,
+  View as DefaultView,
+  TouchableOpacity as DefaultTouchable,
+} from "react-native";
 
 import { useThemeColor } from "../hooks";
 
@@ -10,6 +14,7 @@ type ThemeProps = {
 
 export type TextProps = ThemeProps & DefaultText["props"];
 export type ViewProps = ThemeProps & DefaultView["props"];
+export type PressableProps = ThemeProps & DefaultTouchable["props"];
 
 export const Text: React.FC<TextProps> = (props: TextProps) => {
   const { style, lightColor, darkColor, ...otherProps } = props;
@@ -26,4 +31,16 @@ export const View: React.FC<ViewProps> = (props: ViewProps) => {
   );
 
   return <DefaultView style={[{ backgroundColor }, style]} {...otherProps} />;
+};
+
+export const Touchable: React.FC<PressableProps> = (props: PressableProps) => {
+  const { style, lightColor, darkColor, ...otherProps } = props;
+  const backgroundColor = useThemeColor(
+    { light: lightColor, dark: darkColor },
+    "background",
+  );
+
+  return (
+    <DefaultTouchable style={[{ backgroundColor }, style]} {...otherProps} />
+  );
 };

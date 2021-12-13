@@ -1,8 +1,11 @@
 import React from "react";
 import { View, Text } from "../components/Themed";
-import { Image, Button, StyleSheet } from "react-native";
+import { Image, StyleSheet } from "react-native";
 import { Container, Typography } from "../styles";
+
 import { GoalStackScreenProps } from "../types/navigation";
+
+import { Button } from "../components";
 
 type Props = GoalStackScreenProps<"Goals">;
 
@@ -15,7 +18,7 @@ const GoalsScreen: React.FC<Props> = ({ navigation }: Props) => {
           lightColor="#554F4F"
           darkColor="#554F4F"
         >
-          Your Goals
+          {`Your Goals`}
         </Text>
       </View>
       <View style={styles.goalsAreaWrapper}>
@@ -36,12 +39,14 @@ const GoalsScreen: React.FC<Props> = ({ navigation }: Props) => {
         </View>
       </View>
       <View style={styles.buttonAreaWrapper}>
-        <Button
-          title="Add a Goal"
-          onPress={() => {
-            navigation.navigate("AddGoal");
-          }}
-        />
+        <View style={styles.buttonWrapper}>
+          <Button
+            pressHandler={() => {
+              navigation.navigate("AddGoal");
+            }}
+            ctaTxt="Add a Goal"
+          />
+        </View>
       </View>
     </>
   );
@@ -77,9 +82,10 @@ const styles = StyleSheet.create({
   buttonAreaWrapper: {
     ...Container.centerAligned,
     height: "15%",
-    paddingTop: 15,
-    borderWidth: 2,
-    borderColor: "black",
+    paddingTop: 5,
+  },
+  buttonWrapper: {
+    width: "90%",
   },
 });
 
