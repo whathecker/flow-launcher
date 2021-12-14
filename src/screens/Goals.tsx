@@ -1,11 +1,11 @@
 import React from "react";
-import { View, Text } from "../components/Themed";
 import { Image, StyleSheet } from "react-native";
+import { View, Text } from "../components/Themed";
+import { Button } from "../components";
+
 import { Container, Typography } from "../styles";
 
 import { GoalStackScreenProps } from "../types/navigation";
-
-import { Button } from "../components";
 
 type Props = GoalStackScreenProps<"Goals">;
 

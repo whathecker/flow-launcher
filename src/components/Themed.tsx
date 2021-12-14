@@ -16,6 +16,8 @@ export type TextProps = ThemeProps & DefaultText["props"];
 export type ViewProps = ThemeProps & DefaultView["props"];
 export type PressableProps = ThemeProps & DefaultTouchable["props"];
 
+//TODO: consider to separate Text into BodyText & HeaderText
+
 export const Text: React.FC<TextProps> = (props: TextProps) => {
   const { style, lightColor, darkColor, ...otherProps } = props;
   const color = useThemeColor({ light: lightColor, dark: darkColor }, "text");
