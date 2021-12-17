@@ -1,8 +1,8 @@
 import React from "react";
-import { Touchable } from "../Themed";
+import { Touchable } from "../../Themed";
 import { Image, StyleSheet } from "react-native";
 
-import { Container } from "../../styles";
+import { Container } from "../../../styles";
 
 type CloseIconProps = {
   pressHandler: () => void;
@@ -16,7 +16,7 @@ const CloseIcon: React.FC<CloseIconProps> = ({
     <Touchable style={styles.closeIcon} onPress={pressHandler}>
       <Image
         style={styles.closeIconImg}
-        source={require(`../../../assets/images/close.png`)}
+        source={require(`../../../../assets/images/close.png`)}
       />
     </Touchable>
   );

@@ -1,7 +1,7 @@
 import React from "react";
-import { Touchable, Text } from "../Themed";
+import { Touchable, Text } from "../../Themed";
 import { StyleSheet } from "react-native";
-import { Container, Typography } from "../../styles";
+import { Container, Typography } from "../../../styles";
 
 type ButtonProps = {
   ctaTxt: string;

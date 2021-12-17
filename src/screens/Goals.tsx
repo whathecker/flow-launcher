@@ -1,7 +1,7 @@
 import React from "react";
 import { Image, StyleSheet } from "react-native";
 import { View, Text } from "../components/Themed";
-import { Button } from "../components";
+import { Button } from "../components/shared";
 
 import { Container, Typography } from "../styles";
 
