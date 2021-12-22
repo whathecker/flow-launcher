@@ -52,7 +52,7 @@ exports[`Test AddGoalButton component Should renders AddGoalButton correctly 1`]
           },
           Object {
             "fontFamily": "Forum-Regular",
-            "fontSize": 16,
+            "fontSize": 20,
           },
         ]
       }

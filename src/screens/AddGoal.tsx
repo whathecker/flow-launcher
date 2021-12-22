@@ -1,8 +1,8 @@
 import React from "react";
 import { StyleSheet } from "react-native";
 
-import { View, Text } from "../components/Themed";
-import { AddGoalHeader, AddGoalButton } from "../components/AddGoal";
+import { View } from "../components/Themed";
+import { AddGoalHeader, AddGoalForm } from "../components/AddGoal";
 
 import { Container } from "../styles";
 
@@ -21,10 +21,7 @@ const AddGoalScreen: React.FC<Props> = ({ navigation }: Props) => {
         />
       </View>
       <View style={styles.formAreaWrapper}>
-        <Text>Form area</Text>
-      </View>
-      <View style={styles.buttonAreaWrapper}>
-        <AddGoalButton
+        <AddGoalForm
           submitHandler={() => {
             navigation.goBack();
           }}
@@ -40,19 +37,11 @@ const styles = StyleSheet.create({
     height: "13%",
   },
   formAreaWrapper: {
-    ...Container.centerAligned,
-    height: "67%",
+    ...Container.flexStart,
+    height: "87%",
     borderStyle: "solid",
     borderWidth: 1,
     borderColor: "black",
-  },
-  inputWrapper: {
-    ...Container.centerAligned,
-    height: "20%",
-  },
-  buttonAreaWrapper: {
-    ...Container.centerAligned,
-    height: "20%",
   },
 });
 
