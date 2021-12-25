@@ -3,25 +3,52 @@
 import React from "react";
 import { Keyboard, TextInput, StyleSheet } from "react-native";
 import { View, TouchableWithoutFeedback } from "../Themed";
-import { AddGoalFormLabel, AddGoalRadioOption } from "./components";
+import {
+  AddGoalFormLabel,
+  AddGoalRadioOption,
+  AddGoalErrMsg,
+} from "./components";
 import { Button } from "../shared";
 
 import { Container, Typography } from "../../styles";
 import { Formik } from "formik";
+import * as Yup from "yup";
 
 type AddGoalFormProps = {
   submitHandler: () => void;
 };
+
+interface AddGoalFormValues {
+  title: string;
+  motivation: string;
+  reminder: string;
+}
+
+const ValidationScheme = Yup.object().shape({
+  title: Yup.string().required("Required"),
+  motivation: Yup.string().required("Required"),
+  reminder: Yup.string().required("Please select one of the options"),
+});
 
 const AddGoalForm: React.FC<AddGoalFormProps> = ({
   submitHandler,
 }: AddGoalFormProps) => {
   return (
     <Formik
-      initialValues={{ title: "", motivation: "", reminder: "" }}
+      initialValues={
+        { title: "", motivation: "", reminder: "" } as AddGoalFormValues
+      }
+      validationSchema={ValidationScheme}
       onSubmit={(values) => console.log(values)}
     >
-      {({ handleChange, setFieldValue, handleSubmit, values }) => (
+      {({
+        handleChange,
+        setFieldValue,
+        handleSubmit,
+        values,
+        errors,
+        touched,
+      }) => (
         <TouchableWithoutFeedback onPress={() => Keyboard.dismiss()}>
           <View>
             <View style={styles.goalTitleInputWrapper}>
@@ -33,7 +60,11 @@ const AddGoalForm: React.FC<AddGoalFormProps> = ({
                 placeholderTextColor={"#848484"}
                 value={values.title}
               />
+              {touched.title && errors.title && (
+                <AddGoalErrMsg msg={errors.title} />
+              )}
             </View>
+
             <View style={styles.movitationInputWrapper}>
               <AddGoalFormLabel text="Movivation" type="motivation" />
               <TextInput
@@ -44,6 +75,9 @@ const AddGoalForm: React.FC<AddGoalFormProps> = ({
                 placeholderTextColor={"#848484"}
                 value={values.motivation}
               />
+              {touched.motivation && errors.motivation && (
+                <AddGoalErrMsg msg={errors.motivation} />
+              )}
             </View>
             <View style={styles.reminderInputWrapper}>
               <AddGoalFormLabel text="Reminder" type="reminder" />
@@ -79,6 +113,9 @@ const AddGoalForm: React.FC<AddGoalFormProps> = ({
                     setFieldValue("reminder", "seven_days");
                   }}
                 />
+                {touched.reminder && errors.reminder && (
+                  <AddGoalErrMsg msg={errors.reminder} />
+                )}
               </View>
             </View>
             <View style={styles.buttonWrapper}>
