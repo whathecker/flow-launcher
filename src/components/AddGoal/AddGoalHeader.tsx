@@ -41,8 +41,8 @@ const styles = StyleSheet.create({
   },
   headerWrapper: {
     ...Container.flexStart,
-    paddingLeft: 30,
-    paddingTop: 75,
+    paddingLeft: 15,
+    paddingTop: 80,
   },
   rocketImage: {
     width: 32,

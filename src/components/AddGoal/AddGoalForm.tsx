@@ -82,7 +82,7 @@ const AddGoalForm: React.FC<AddGoalFormProps> = ({
               </View>
             </View>
             <View style={styles.buttonWrapper}>
-              <Button ctaTxt={"Add Goal"} pressHandler={handleSubmit} />
+              <Button ctaTxt={"Add goal"} pressHandler={handleSubmit} />
             </View>
           </View>
         </TouchableWithoutFeedback>
@@ -94,15 +94,14 @@ const AddGoalForm: React.FC<AddGoalFormProps> = ({
 const styles = StyleSheet.create({
   goalTitleInputWrapper: {
     paddingTop: 70,
-    paddingLeft: 75,
+    paddingLeft: 60,
     paddingBottom: 70,
   },
   goalTitleInput: {
     ...Typography.h1,
   },
   movitationInputWrapper: {
-    height: "20%",
-    paddingLeft: 75,
+    paddingLeft: 60,
     paddingBottom: 50,
   },
   motivationInput: {
@@ -111,9 +110,8 @@ const styles = StyleSheet.create({
     paddingBottom: 20,
   },
   reminderInputWrapper: {
-    height: "30%",
-    paddingLeft: 75,
-    paddingBottom: 50,
+    paddingLeft: 60,
+    paddingBottom: 30,
   },
   buttonWrapper: {
     ...Container.centerAligned,

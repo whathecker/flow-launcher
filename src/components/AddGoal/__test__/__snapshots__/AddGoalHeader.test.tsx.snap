@@ -56,8 +56,8 @@ Array [
           "alignItems": "center",
           "flexDirection": "row",
           "justifyContent": "flex-start",
-          "paddingLeft": 30,
-          "paddingTop": 75,
+          "paddingLeft": 15,
+          "paddingTop": 80,
         },
       ]
     }

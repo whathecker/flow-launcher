@@ -44,7 +44,7 @@ const GoalsScreen: React.FC<Props> = ({ navigation }: Props) => {
             pressHandler={() => {
               navigation.navigate("AddGoal");
             }}
-            ctaTxt="Add a Goal"
+            ctaTxt="Add a new goal"
           />
         </View>
       </View>
