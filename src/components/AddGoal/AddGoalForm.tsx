@@ -81,14 +81,7 @@ const AddGoalForm: React.FC<AddGoalFormProps> = ({
             </View>
             <View style={styles.reminderInputWrapper}>
               <AddGoalFormLabel text="Reminder" type="reminder" />
-              <View
-                style={{
-                  paddingTop: 30,
-                  width: "80%",
-                  marginLeft: "5%",
-                  marginRight: "10%",
-                }}
-              >
+              <View style={styles.reminderRadioOptionsWrapper}>
                 <AddGoalRadioOption
                   displayText="Every Day"
                   name="daily"
@@ -144,17 +137,24 @@ const styles = StyleSheet.create({
   motivationInput: {
     ...Typography.p,
     paddingTop: 2,
-    paddingBottom: 20,
+    paddingBottom: 10,
   },
   reminderInputWrapper: {
-    paddingLeft: 60,
+    paddingLeft: 55,
     paddingBottom: 30,
+  },
+  reminderRadioOptionsWrapper: {
+    paddingTop: 18,
+    width: "80%",
+    marginLeft: "5%",
+    marginRight: "5%",
   },
   buttonWrapper: {
     ...Container.centerAligned,
     flex: 1,
-    width: "95%",
-    margin: "2.5%",
+    width: "85%",
+    marginLeft: "7.5%",
+    marginRight: "7.5%",
   },
 });
 

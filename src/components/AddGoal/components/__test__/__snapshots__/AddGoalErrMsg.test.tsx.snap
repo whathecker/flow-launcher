@@ -7,7 +7,11 @@ exports[`Test AddGoalErrMsg component Should renders AddGoalFormLabel correctly 
       Object {
         "backgroundColor": "#fff",
       },
-      undefined,
+      Object {
+        "paddingBottom": 3,
+        "paddingLeft": 5,
+        "paddingTop": 5,
+      },
     ]
   }
 >
@@ -15,9 +19,12 @@ exports[`Test AddGoalErrMsg component Should renders AddGoalFormLabel correctly 
     style={
       Array [
         Object {
-          "color": "#000000",
+          "color": "#c84827",
         },
-        undefined,
+        Object {
+          "fontFamily": "Forum-Regular",
+          "fontSize": 16,
+        },
       ]
     }
   >
