@@ -1,5 +1,5 @@
 /* eslint-disable no-console */
-/* eslint-disable @typescript-eslint/no-unused-vars */
+/* eslint-disable @typescript-eslint/no-non-null-assertion */
 import React from "react";
 import { Keyboard, TextInput, StyleSheet } from "react-native";
 import { View, TouchableWithoutFeedback } from "../Themed";
@@ -14,9 +14,8 @@ import { Container, Typography } from "../../styles";
 import { Formik } from "formik";
 import * as Yup from "yup";
 
-type AddGoalFormProps = {
-  submitHandler: () => void;
-};
+import { openDatabase, closeDatabase } from "../../db/connection";
+import GoalDBAccessor from "../../db/db-access/goal-db";
 
 interface AddGoalFormValues {
   title: string;
@@ -30,16 +29,27 @@ const ValidationScheme = Yup.object().shape({
   reminder: Yup.string().required("Please select one of the options"),
 });
 
-const AddGoalForm: React.FC<AddGoalFormProps> = ({
-  submitHandler,
-}: AddGoalFormProps) => {
+const AddGoalForm: React.FC = () => {
   return (
     <Formik
       initialValues={
         { title: "", motivation: "", reminder: "" } as AddGoalFormValues
       }
       validationSchema={ValidationScheme}
-      onSubmit={(values) => console.log(values)}
+      onSubmit={async (values) => {
+        try {
+          const result = await openDatabase();
+          const db = result.databaseInstance!;
+
+          const goalDB = new GoalDBAccessor(db);
+          await goalDB.addGoal(values);
+
+          closeDatabase(db);
+        } catch (error) {
+          // TODO: handle error here
+          console.error(error);
+        }
+      }}
     >
       {({
         handleChange,
