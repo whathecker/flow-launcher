@@ -1,0 +1,65 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Test Goal component Should renders Goal correctly 1`] = `
+<View
+  style={
+    Array [
+      Object {
+        "backgroundColor": "#fff",
+      },
+      Object {
+        "alignItems": "flex-start",
+        "borderColor": "black",
+        "borderRadius": 10,
+        "borderStyle": "solid",
+        "borderWidth": 5,
+        "flexDirection": "column",
+        "height": 150,
+        "justifyContent": "center",
+        "marginBottom": 10,
+        "marginLeft": "2.5%",
+        "marginRight": "2.5%",
+        "marginTop": 10,
+        "paddingBottom": 30,
+        "paddingLeft": 40,
+        "paddingRight": 80,
+        "paddingTop": 30,
+        "width": "95%",
+      },
+    ]
+  }
+>
+  <Text
+    style={
+      Array [
+        Object {
+          "color": "#000000",
+        },
+        Object {
+          "fontFamily": "EB-Garamond",
+          "fontSize": 20,
+          "paddingBottom": 20,
+          "textAlign": "left",
+        },
+      ]
+    }
+  >
+    test goal
+  </Text>
+  <Text
+    style={
+      Array [
+        Object {
+          "color": "#000000",
+        },
+        Object {
+          "fontFamily": "Forum-Regular",
+          "fontSize": 20,
+        },
+      ]
+    }
+  >
+    test it!
+  </Text>
+</View>
+`;

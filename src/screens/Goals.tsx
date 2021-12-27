@@ -2,7 +2,7 @@ import React from "react";
 import { StyleSheet } from "react-native";
 
 import { View, Text } from "../components/Themed";
-import { EmptyGoalList } from "../components/Goals";
+import { EmptyGoalList, GoalList } from "../components/Goals";
 import { Button } from "../components/shared";
 
 import { Container, Typography } from "../styles";
@@ -12,6 +12,9 @@ import { GoalStackScreenProps } from "../types/navigation";
 type Props = GoalStackScreenProps<"Goals">;
 
 const GoalsScreen: React.FC<Props> = ({ navigation }: Props) => {
+  //TODO: This should be later replaced by fetched data
+  const isEmpty = false;
+
   return (
     <>
       <View style={styles.headerWrapper}>
@@ -24,7 +27,7 @@ const GoalsScreen: React.FC<Props> = ({ navigation }: Props) => {
         </Text>
       </View>
       <View style={styles.goalsAreaWrapper}>
-        <EmptyGoalList />
+        {isEmpty ? <EmptyGoalList /> : <GoalList />}
       </View>
       <View style={styles.buttonAreaWrapper}>
         <View style={styles.buttonWrapper}>
@@ -53,6 +56,7 @@ const styles = StyleSheet.create({
   },
   goalsAreaWrapper: {
     ...Container.centerAlignedVertical,
+    width: "100%",
     height: "70%",
   },
   goalAreaBodyWrapper: {
