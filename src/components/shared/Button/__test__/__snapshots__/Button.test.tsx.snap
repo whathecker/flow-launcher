@@ -40,7 +40,7 @@ exports[`Test Button component Should renders Button correctly 1`] = `
         },
         Object {
           "fontFamily": "Forum-Regular",
-          "fontSize": 16,
+          "fontSize": 20,
         },
       ]
     }

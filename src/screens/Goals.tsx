@@ -1,11 +1,11 @@
 import React from "react";
-import { View, Text } from "../components/Themed";
 import { Image, StyleSheet } from "react-native";
+import { View, Text } from "../components/Themed";
+import { Button } from "../components/shared";
+
 import { Container, Typography } from "../styles";
 
 import { GoalStackScreenProps } from "../types/navigation";
-
-import { Button } from "../components";
 
 type Props = GoalStackScreenProps<"Goals">;
 
@@ -44,7 +44,7 @@ const GoalsScreen: React.FC<Props> = ({ navigation }: Props) => {
             pressHandler={() => {
               navigation.navigate("AddGoal");
             }}
-            ctaTxt="Add a Goal"
+            ctaTxt="Add a new goal"
           />
         </View>
       </View>

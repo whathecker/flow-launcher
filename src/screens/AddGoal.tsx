@@ -1,52 +1,44 @@
 import React from "react";
-import { View, Text, Button, StyleSheet } from "react-native";
-import { Container, Typography } from "../styles";
+import { StyleSheet, ScrollView } from "react-native";
+
+import { View } from "../components/Themed";
+import { AddGoalHeader, AddGoalForm } from "../components/AddGoal";
+
+import { Container } from "../styles";
+
 import { GoalStackScreenProps } from "../types/navigation";
 
 type Props = GoalStackScreenProps<"AddGoal">;
 
 const AddGoalScreen: React.FC<Props> = ({ navigation }: Props) => {
   return (
-    <>
-      <View style={styles.headerWrapper}>
-        <Text style={styles.headerText}>New Goal</Text>
-      </View>
-      <View style={styles.inputWrapper}>
-        <Text>Title Input goes here</Text>
-      </View>
-      <View style={styles.inputWrapper}>
-        <Text>Motivation input goes here</Text>
-      </View>
-      <View style={styles.inputWrapper}>
-        <Text>Reminder input goes here</Text>
-      </View>
-      <View style={styles.buttonWrapper}>
-        <Button
-          title="Go back (later to be add button)"
-          onPress={() => {
-            navigation.goBack();
-          }}
-        />
-      </View>
-    </>
+    <View style={{ flex: 1 }}>
+      <ScrollView>
+        <View style={styles.headerAreaWrapper}>
+          <AddGoalHeader
+            backBtnHandler={() => {
+              navigation.goBack();
+            }}
+          />
+        </View>
+        <View style={styles.formAreaWrapper}>
+          <AddGoalForm
+            submitHandler={() => {
+              navigation.goBack();
+            }}
+          />
+        </View>
+      </ScrollView>
+    </View>
   );
 };
 
 const styles = StyleSheet.create({
-  headerWrapper: {
+  headerAreaWrapper: {
     ...Container.flexStart,
-    height: "20%",
   },
-  inputWrapper: {
-    ...Container.centerAligned,
-    height: "20%",
-  },
-  headerText: {
-    ...Typography.h1,
-  },
-  buttonWrapper: {
-    ...Container.centerAligned,
-    height: "20%",
+  formAreaWrapper: {
+    ...Container.flexStart,
   },
 });
 

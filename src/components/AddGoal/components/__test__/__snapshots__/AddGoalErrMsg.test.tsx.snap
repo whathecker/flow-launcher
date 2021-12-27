@@ -1,0 +1,34 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Test AddGoalErrMsg component Should renders AddGoalFormLabel correctly 1`] = `
+<View
+  style={
+    Array [
+      Object {
+        "backgroundColor": "#fff",
+      },
+      Object {
+        "paddingBottom": 3,
+        "paddingLeft": 5,
+        "paddingTop": 5,
+      },
+    ]
+  }
+>
+  <Text
+    style={
+      Array [
+        Object {
+          "color": "#c84827",
+        },
+        Object {
+          "fontFamily": "Forum-Regular",
+          "fontSize": 16,
+        },
+      ]
+    }
+  >
+    Error Message
+  </Text>
+</View>
+`;

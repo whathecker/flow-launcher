@@ -1,0 +1,44 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Test AddGoalFormLabel component Should renders AddGoalFormLabel correctly 1`] = `
+<View
+  style={
+    Array [
+      Object {
+        "backgroundColor": "#fff",
+      },
+      Object {
+        "alignItems": "center",
+        "flexDirection": "row",
+        "justifyContent": "flex-start",
+      },
+    ]
+  }
+>
+  <Text
+    style={
+      Array [
+        Object {
+          "color": "#655C5C",
+        },
+        Object {
+          "fontFamily": "EB-Garamond",
+          "fontSize": 20,
+          "paddingRight": 12,
+        },
+      ]
+    }
+  >
+    Motivation
+  </Text>
+  <Image
+    source={1}
+    style={
+      Object {
+        "height": 32,
+        "width": 32,
+      }
+    }
+  />
+</View>
+`;

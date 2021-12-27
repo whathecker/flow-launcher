@@ -14,6 +14,9 @@ export default function App() {
 
   useEffect(() => {
     (async function loadDatabase() {
+      // TODO: this has to be changed to
+      // something like loadCachedDB
+      // and close database when it's done
       await openDatabase();
     })();
   }, []);
