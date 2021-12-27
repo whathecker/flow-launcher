@@ -1,6 +1,8 @@
 import React from "react";
-import { Image, StyleSheet } from "react-native";
+import { StyleSheet } from "react-native";
+
 import { View, Text } from "../components/Themed";
+import { EmptyGoalList } from "../components/Goals";
 import { Button } from "../components/shared";
 
 import { Container, Typography } from "../styles";
@@ -22,21 +24,7 @@ const GoalsScreen: React.FC<Props> = ({ navigation }: Props) => {
         </Text>
       </View>
       <View style={styles.goalsAreaWrapper}>
-        <View style={styles.goalAreaBodyWrapper}>
-          <Image
-            style={styles.bodyImage}
-            source={require(`../../assets/images/sauropod_1f995.png`)}
-          />
-        </View>
-        <View style={styles.goalAreaBodyWrapper}>
-          <Text
-            style={styles.bodyText}
-          >{`The journey of a thousand miles`}</Text>
-          <Text style={styles.bodyText}>{`begins with a single step.`}</Text>
-        </View>
-        <View style={styles.goalAreaBodyWrapper}>
-          <Text style={styles.bodyText}>{`LAO TZU`}</Text>
-        </View>
+        <EmptyGoalList />
       </View>
       <View style={styles.buttonAreaWrapper}>
         <View style={styles.buttonWrapper}>
