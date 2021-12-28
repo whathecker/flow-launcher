@@ -7,12 +7,12 @@ export type Reminder = "daily" | "three_days" | "seven_days";
 
 export class Goal {
   constructor(
-    public _id: ID,
     public status: GoalStatus,
     public title: string,
     public motivation: string,
     public reminder: Reminder,
     public tasks: Task[] | [],
+    public _id?: ID,
   ) {}
 }
 
