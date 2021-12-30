@@ -1,19 +1,23 @@
-import React from "react";
+import React, { useContext, useEffect } from "react";
 import { StyleSheet } from "react-native";
-
 import { View, Text } from "../components/Themed";
 import { EmptyGoalList, GoalList } from "../components/Goals";
 import { Button } from "../components/shared";
-
 import { Container, Typography } from "../styles";
-
 import { GoalStackScreenProps } from "../types/navigation";
+import { GoalsContext } from "../contexts/goals";
 
 type Props = GoalStackScreenProps<"Goals">;
 
 const GoalsScreen: React.FC<Props> = ({ navigation }: Props) => {
   //TODO: This should be later replaced by fetched data
   const isEmpty = false;
+
+  const { state, fetchGoals } = useContext(GoalsContext);
+
+  useEffect(() => {
+    fetchGoals();
+  }, [state.goals?.length]);
 
   return (
     <>
