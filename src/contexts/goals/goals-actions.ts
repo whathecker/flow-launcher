@@ -4,7 +4,7 @@ import { openDatabase, closeDatabase } from "../../db/connection";
 import GoalDBAccessor from "../../db/db-access/goal-db";
 
 import { GoalsAction, GoalsActionType } from "../../types/contexts/goals";
-import { IAddGoalInput } from "../../types/entity";
+import { IAddGoalInput } from "../../types/core/entity";
 
 export const fetchGoals = (dispatch: React.Dispatch<GoalsAction>) => {
   return async (): Promise<void> => {

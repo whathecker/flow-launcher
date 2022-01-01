@@ -11,7 +11,7 @@ import {
 import { Button } from "../shared";
 import { Container, Typography } from "../../styles";
 
-import { IAddGoalInput } from "../../types/entity";
+import { IAddGoalInput } from "../../types/core/entity";
 import { Formik } from "formik";
 import * as Yup from "yup";
 

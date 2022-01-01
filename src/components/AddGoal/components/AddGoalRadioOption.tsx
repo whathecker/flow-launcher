@@ -1,7 +1,7 @@
 import React from "react";
 import { Text, Touchable } from "../../Themed";
 import { Container, Typography } from "../../../styles";
-import { Reminder } from "../../../types/entity";
+import { Reminder } from "../../../types/core/entity";
 
 type AddGoalRadioOptionProps = {
   pressHandler: () => void;
