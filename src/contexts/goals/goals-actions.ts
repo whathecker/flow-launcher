@@ -2,7 +2,6 @@
 import React from "react";
 import { openDatabase, closeDatabase } from "../../db/connection";
 import GoalDBAccessor from "../../db/db-access/goal-db";
-
 import { GoalsAction, GoalsActionType } from "../../types/contexts/goals";
 import { IAddGoalInput } from "../../types/core/entity";
 
@@ -16,7 +15,6 @@ export const fetchGoals = (dispatch: React.Dispatch<GoalsAction>) => {
       closeDatabase(realm);
       dispatch({
         type: GoalsActionType.fetch,
-        //TODO: serialize from GoalModel to Goal
         payload: { goals: data },
       });
     } catch (error) {
