@@ -1,9 +1,10 @@
 /* eslint-disable @typescript-eslint/no-non-null-assertion  */
 import React from "react";
-import { GoalsAction, GoalsActionType } from "./types";
-import { IAddGoalInput } from "../../types/entity";
 import { openDatabase, closeDatabase } from "../../db/connection";
 import GoalDBAccessor from "../../db/db-access/goal-db";
+
+import { GoalsAction, GoalsActionType } from "../../types/contexts/goals";
+import { IAddGoalInput } from "../../types/entity";
 
 export const fetchGoals = (dispatch: React.Dispatch<GoalsAction>) => {
   return async (): Promise<void> => {

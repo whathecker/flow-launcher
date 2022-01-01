@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-non-null-assertion  */
-import { GoalsState, GoalsAction } from "./types";
+import { GoalsState, GoalsAction } from "../../types/contexts/goals";
 
 export default (state: GoalsState, action: GoalsAction): GoalsState => {
   switch (action.type) {

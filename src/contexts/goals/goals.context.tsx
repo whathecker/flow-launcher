@@ -1,7 +1,7 @@
 import React, { useReducer } from "react";
 import goalsReducer from "./goals-reducer";
 import { fetchGoals, addGoal } from "./goals-actions";
-import { GoalsState, ContextProviderProps } from "./types";
+import { GoalsState, ContextProviderProps } from "../../types/contexts/goals";
 
 const defaultState: GoalsState = {
   goals: [],

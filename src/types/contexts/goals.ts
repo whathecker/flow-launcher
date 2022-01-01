@@ -1,4 +1,4 @@
-import { Goal, IAddGoalInput } from "../../types/entity";
+import { Goal, IAddGoalInput } from "../entity";
 
 export type GoalsState = {
   goals?: Goal[];
