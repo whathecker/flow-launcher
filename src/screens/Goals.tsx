@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-non-null-assertion */
 import React, { useContext, useEffect } from "react";
 import { StyleSheet } from "react-native";
 import { View, Text } from "../components/Themed";
@@ -10,10 +11,10 @@ import { GoalsContext } from "../contexts/goals";
 type Props = GoalStackScreenProps<"Goals">;
 
 const GoalsScreen: React.FC<Props> = ({ navigation }: Props) => {
-  //TODO: This should be later replaced by fetched data
-  const isEmpty = false;
-
   const { state, fetchGoals } = useContext(GoalsContext);
+
+  const isGoalListEmpty =
+    !state.goals || state.goals.length === 0 ? true : false;
 
   useEffect(() => {
     fetchGoals();
@@ -31,7 +32,11 @@ const GoalsScreen: React.FC<Props> = ({ navigation }: Props) => {
         </Text>
       </View>
       <View style={styles.goalsAreaWrapper}>
-        {isEmpty ? <EmptyGoalList /> : <GoalList />}
+        {isGoalListEmpty ? (
+          <EmptyGoalList />
+        ) : (
+          <GoalList goals={state.goals!} />
+        )}
       </View>
       <View style={styles.buttonAreaWrapper}>
         <View style={styles.buttonWrapper}>
