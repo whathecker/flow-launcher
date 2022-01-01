@@ -1,6 +1,6 @@
 import React, { useReducer } from "react";
 import goalsReducer from "./goals-reducer";
-import { fetchGoals } from "./goals-actions";
+import { fetchGoals, addGoal } from "./goals-actions";
 import { GoalsState, ContextProviderProps } from "./types";
 
 const defaultState: GoalsState = {
@@ -10,6 +10,7 @@ const defaultState: GoalsState = {
 const defaultCtxProviderProps: ContextProviderProps = {
   state: defaultState,
   fetchGoals: () => Promise.resolve(),
+  addGoal: () => Promise.resolve(),
 };
 
 export const GoalsContext = React.createContext(defaultCtxProviderProps);
@@ -19,6 +20,7 @@ export const GoalsContextProvider: React.FC = ({ children }) => {
 
   const boundActions = {
     fetchGoals: fetchGoals(dispatch),
+    addGoal: addGoal(dispatch),
   };
 
   return (

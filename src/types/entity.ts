@@ -16,6 +16,12 @@ export class Goal {
   ) {}
 }
 
+export interface IAddGoalInput {
+  title: string;
+  motivation: string;
+  reminder: string;
+}
+
 export type TaskStatus = "open" | "finished";
 
 export class Task {
