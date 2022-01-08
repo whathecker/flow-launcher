@@ -5,7 +5,7 @@ exports[`Test Goal component Should renders Goal correctly 1`] = `
   style={
     Array [
       Object {
-        "backgroundColor": "#fff",
+        "backgroundColor": "#84C5E8",
       },
       Object {
         "alignItems": "flex-start",

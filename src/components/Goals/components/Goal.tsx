@@ -6,11 +6,20 @@ import { Container, Typography } from "../../../styles";
 type GoalProps = {
   title: string;
   motivation: string;
+  backgroundColor: string;
 };
 
-const Goal: React.FC<GoalProps> = ({ title, motivation }: GoalProps) => {
+const Goal: React.FC<GoalProps> = ({
+  title,
+  motivation,
+  backgroundColor,
+}: GoalProps) => {
   return (
-    <View style={styles.goalWrapper}>
+    <View
+      lightColor={backgroundColor}
+      darkColor={backgroundColor}
+      style={styles.goalWrapper}
+    >
       <Text style={styles.goalTitleText}>{title}</Text>
       <Text style={styles.goalMotiviationText}>{motivation}</Text>
     </View>

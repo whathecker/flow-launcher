@@ -5,7 +5,13 @@ import Goal from "../Goal";
 describe("Test Goal component", () => {
   it("Should renders Goal correctly", () => {
     const tree = renderer
-      .create(<Goal title="test goal" motivation="test it!" />)
+      .create(
+        <Goal
+          backgroundColor="#84C5E8"
+          title="test goal"
+          motivation="test it!"
+        />,
+      )
       .toJSON();
 
     expect(tree).toMatchSnapshot();
