@@ -9,22 +9,26 @@ exports[`Test Goal component Should renders Goal correctly 1`] = `
       },
       Object {
         "alignItems": "flex-start",
-        "borderColor": "black",
         "borderRadius": 10,
-        "borderStyle": "solid",
-        "borderWidth": 5,
         "flexDirection": "column",
-        "height": 150,
+        "height": 160,
         "justifyContent": "center",
-        "marginBottom": 10,
-        "marginLeft": "2.5%",
-        "marginRight": "2.5%",
-        "marginTop": 10,
+        "marginBottom": 15,
+        "marginLeft": "5%",
+        "marginRight": "5%",
+        "marginTop": 15,
         "paddingBottom": 30,
         "paddingLeft": 40,
-        "paddingRight": 80,
+        "paddingRight": 60,
         "paddingTop": 30,
-        "width": "95%",
+        "shadowColor": "#171717",
+        "shadowOffset": Object {
+          "height": 5,
+          "width": 3,
+        },
+        "shadowOpacity": 0.2,
+        "shadowRadius": 3,
+        "width": "90%",
       },
     ]
   }
@@ -33,11 +37,11 @@ exports[`Test Goal component Should renders Goal correctly 1`] = `
     style={
       Array [
         Object {
-          "color": "#000000",
+          "color": "white",
         },
         Object {
           "fontFamily": "EB-Garamond",
-          "fontSize": 20,
+          "fontSize": 22,
           "paddingBottom": 20,
           "textAlign": "left",
         },
@@ -50,11 +54,11 @@ exports[`Test Goal component Should renders Goal correctly 1`] = `
     style={
       Array [
         Object {
-          "color": "#000000",
+          "color": "white",
         },
         Object {
           "fontFamily": "Forum-Regular",
-          "fontSize": 20,
+          "fontSize": 18,
         },
       ]
     }

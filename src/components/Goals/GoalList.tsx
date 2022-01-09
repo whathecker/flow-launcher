@@ -2,6 +2,7 @@ import React from "react";
 import { FlatList, ListRenderItem } from "react-native";
 import { Goal } from "./components";
 import { Goal as GoalEntity } from "../../types/core/entity";
+import { View } from "../Themed";
 
 type GoalListProps = {
   goals: GoalEntity[];
@@ -54,11 +55,17 @@ const GoalList: React.FC<GoalListProps> = ({ goals }: GoalListProps) => {
   };
 
   return (
-    <FlatList
-      data={goals}
-      renderItem={renderGoal}
-      keyExtractor={(item) => item._id as string}
-    />
+    <View
+      style={{
+        width: "85%",
+      }}
+    >
+      <FlatList
+        data={goals}
+        renderItem={renderGoal}
+        keyExtractor={(item) => item._id as string}
+      />
+    </View>
   );
 };
 

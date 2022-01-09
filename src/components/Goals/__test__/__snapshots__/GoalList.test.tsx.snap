@@ -1,404 +1,437 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Test GoalList component Should renders GoalList correctly 1`] = `
-<RCTScrollView
-  data={
+<View
+  style={
     Array [
       Object {
-        "_id": "sjdiodfi103jsldicsd",
-        "motivation": "this is my motivation",
-        "reminder": "daily",
-        "status": "open",
-        "tasks": Array [],
-        "title": "dummy goal -1",
+        "backgroundColor": "#fff",
       },
       Object {
-        "_id": "sjdiodfi103jsldicsd123123",
-        "motivation": "this is my motivation",
-        "reminder": "daily",
-        "status": "open",
-        "tasks": Array [],
-        "title": "dummy goal -2",
-      },
-      Object {
-        "_id": "sjdiodfi103jsldicsdasdasdd123123",
-        "motivation": "this is my motivation",
-        "reminder": "daily",
-        "status": "open",
-        "tasks": Array [],
-        "title": "dummy goal -3",
-      },
-      Object {
-        "_id": "sjdiodfi103jsldicsdasdasdd123121234",
-        "motivation": "this is my motivation",
-        "reminder": "daily",
-        "status": "open",
-        "tasks": Array [],
-        "title": "dummy goal -4",
-      },
-      Object {
-        "_id": "sjdiodfi103jsldicsdasdasdd12312sdfsd",
-        "motivation": "this is my motivation",
-        "reminder": "daily",
-        "status": "open",
-        "tasks": Array [],
-        "title": "dummy goal -5",
+        "width": "85%",
       },
     ]
   }
-  disableVirtualization={false}
-  getItem={[Function]}
-  getItemCount={[Function]}
-  horizontal={false}
-  initialNumToRender={10}
-  keyExtractor={[Function]}
-  maxToRenderPerBatch={10}
-  onContentSizeChange={[Function]}
-  onEndReachedThreshold={2}
-  onLayout={[Function]}
-  onMomentumScrollEnd={[Function]}
-  onScroll={[Function]}
-  onScrollBeginDrag={[Function]}
-  onScrollEndDrag={[Function]}
-  removeClippedSubviews={false}
-  renderItem={[Function]}
-  scrollEventThrottle={50}
-  stickyHeaderIndices={Array []}
-  updateCellsBatchingPeriod={50}
-  viewabilityConfigCallbackPairs={Array []}
-  windowSize={21}
 >
-  <View>
-    <View
-      onLayout={[Function]}
-      style={null}
-    >
+  <RCTScrollView
+    data={
+      Array [
+        Object {
+          "_id": "sjdiodfi103jsldicsd",
+          "motivation": "this is my motivation",
+          "reminder": "daily",
+          "status": "open",
+          "tasks": Array [],
+          "title": "dummy goal -1",
+        },
+        Object {
+          "_id": "sjdiodfi103jsldicsd123123",
+          "motivation": "this is my motivation",
+          "reminder": "daily",
+          "status": "open",
+          "tasks": Array [],
+          "title": "dummy goal -2",
+        },
+        Object {
+          "_id": "sjdiodfi103jsldicsdasdasdd123123",
+          "motivation": "this is my motivation",
+          "reminder": "daily",
+          "status": "open",
+          "tasks": Array [],
+          "title": "dummy goal -3",
+        },
+        Object {
+          "_id": "sjdiodfi103jsldicsdasdasdd123121234",
+          "motivation": "this is my motivation",
+          "reminder": "daily",
+          "status": "open",
+          "tasks": Array [],
+          "title": "dummy goal -4",
+        },
+        Object {
+          "_id": "sjdiodfi103jsldicsdasdasdd12312sdfsd",
+          "motivation": "this is my motivation",
+          "reminder": "daily",
+          "status": "open",
+          "tasks": Array [],
+          "title": "dummy goal -5",
+        },
+      ]
+    }
+    disableVirtualization={false}
+    getItem={[Function]}
+    getItemCount={[Function]}
+    horizontal={false}
+    initialNumToRender={10}
+    keyExtractor={[Function]}
+    maxToRenderPerBatch={10}
+    onContentSizeChange={[Function]}
+    onEndReachedThreshold={2}
+    onLayout={[Function]}
+    onMomentumScrollEnd={[Function]}
+    onScroll={[Function]}
+    onScrollBeginDrag={[Function]}
+    onScrollEndDrag={[Function]}
+    removeClippedSubviews={false}
+    renderItem={[Function]}
+    scrollEventThrottle={50}
+    stickyHeaderIndices={Array []}
+    updateCellsBatchingPeriod={50}
+    viewabilityConfigCallbackPairs={Array []}
+    windowSize={21}
+  >
+    <View>
       <View
-        style={
-          Array [
-            Object {
-              "backgroundColor": "#E9695B",
-            },
-            Object {
-              "alignItems": "flex-start",
-              "borderColor": "black",
-              "borderRadius": 10,
-              "borderStyle": "solid",
-              "borderWidth": 5,
-              "flexDirection": "column",
-              "height": 150,
-              "justifyContent": "center",
-              "marginBottom": 10,
-              "marginLeft": "2.5%",
-              "marginRight": "2.5%",
-              "marginTop": 10,
-              "paddingBottom": 30,
-              "paddingLeft": 40,
-              "paddingRight": 80,
-              "paddingTop": 30,
-              "width": "95%",
-            },
-          ]
-        }
+        onLayout={[Function]}
+        style={null}
       >
-        <Text
+        <View
           style={
             Array [
               Object {
-                "color": "#000000",
+                "backgroundColor": "#E9695B",
               },
               Object {
-                "fontFamily": "EB-Garamond",
-                "fontSize": 20,
-                "paddingBottom": 20,
-                "textAlign": "left",
+                "alignItems": "flex-start",
+                "borderRadius": 10,
+                "flexDirection": "column",
+                "height": 160,
+                "justifyContent": "center",
+                "marginBottom": 15,
+                "marginLeft": "5%",
+                "marginRight": "5%",
+                "marginTop": 15,
+                "paddingBottom": 30,
+                "paddingLeft": 40,
+                "paddingRight": 60,
+                "paddingTop": 30,
+                "shadowColor": "#171717",
+                "shadowOffset": Object {
+                  "height": 5,
+                  "width": 3,
+                },
+                "shadowOpacity": 0.2,
+                "shadowRadius": 3,
+                "width": "90%",
               },
             ]
           }
         >
-          dummy goal -1
-        </Text>
-        <Text
+          <Text
+            style={
+              Array [
+                Object {
+                  "color": "white",
+                },
+                Object {
+                  "fontFamily": "EB-Garamond",
+                  "fontSize": 22,
+                  "paddingBottom": 20,
+                  "textAlign": "left",
+                },
+              ]
+            }
+          >
+            dummy goal -1
+          </Text>
+          <Text
+            style={
+              Array [
+                Object {
+                  "color": "white",
+                },
+                Object {
+                  "fontFamily": "Forum-Regular",
+                  "fontSize": 18,
+                },
+              ]
+            }
+          >
+            this is my motivation
+          </Text>
+        </View>
+      </View>
+      <View
+        onLayout={[Function]}
+        style={null}
+      >
+        <View
           style={
             Array [
               Object {
-                "color": "#000000",
+                "backgroundColor": "#84C5E8",
               },
               Object {
-                "fontFamily": "Forum-Regular",
-                "fontSize": 20,
+                "alignItems": "flex-start",
+                "borderRadius": 10,
+                "flexDirection": "column",
+                "height": 160,
+                "justifyContent": "center",
+                "marginBottom": 15,
+                "marginLeft": "5%",
+                "marginRight": "5%",
+                "marginTop": 15,
+                "paddingBottom": 30,
+                "paddingLeft": 40,
+                "paddingRight": 60,
+                "paddingTop": 30,
+                "shadowColor": "#171717",
+                "shadowOffset": Object {
+                  "height": 5,
+                  "width": 3,
+                },
+                "shadowOpacity": 0.2,
+                "shadowRadius": 3,
+                "width": "90%",
               },
             ]
           }
         >
-          this is my motivation
-        </Text>
+          <Text
+            style={
+              Array [
+                Object {
+                  "color": "white",
+                },
+                Object {
+                  "fontFamily": "EB-Garamond",
+                  "fontSize": 22,
+                  "paddingBottom": 20,
+                  "textAlign": "left",
+                },
+              ]
+            }
+          >
+            dummy goal -2
+          </Text>
+          <Text
+            style={
+              Array [
+                Object {
+                  "color": "white",
+                },
+                Object {
+                  "fontFamily": "Forum-Regular",
+                  "fontSize": 18,
+                },
+              ]
+            }
+          >
+            this is my motivation
+          </Text>
+        </View>
+      </View>
+      <View
+        onLayout={[Function]}
+        style={null}
+      >
+        <View
+          style={
+            Array [
+              Object {
+                "backgroundColor": "#1C88BA",
+              },
+              Object {
+                "alignItems": "flex-start",
+                "borderRadius": 10,
+                "flexDirection": "column",
+                "height": 160,
+                "justifyContent": "center",
+                "marginBottom": 15,
+                "marginLeft": "5%",
+                "marginRight": "5%",
+                "marginTop": 15,
+                "paddingBottom": 30,
+                "paddingLeft": 40,
+                "paddingRight": 60,
+                "paddingTop": 30,
+                "shadowColor": "#171717",
+                "shadowOffset": Object {
+                  "height": 5,
+                  "width": 3,
+                },
+                "shadowOpacity": 0.2,
+                "shadowRadius": 3,
+                "width": "90%",
+              },
+            ]
+          }
+        >
+          <Text
+            style={
+              Array [
+                Object {
+                  "color": "white",
+                },
+                Object {
+                  "fontFamily": "EB-Garamond",
+                  "fontSize": 22,
+                  "paddingBottom": 20,
+                  "textAlign": "left",
+                },
+              ]
+            }
+          >
+            dummy goal -3
+          </Text>
+          <Text
+            style={
+              Array [
+                Object {
+                  "color": "white",
+                },
+                Object {
+                  "fontFamily": "Forum-Regular",
+                  "fontSize": 18,
+                },
+              ]
+            }
+          >
+            this is my motivation
+          </Text>
+        </View>
+      </View>
+      <View
+        onLayout={[Function]}
+        style={null}
+      >
+        <View
+          style={
+            Array [
+              Object {
+                "backgroundColor": "#F0B541",
+              },
+              Object {
+                "alignItems": "flex-start",
+                "borderRadius": 10,
+                "flexDirection": "column",
+                "height": 160,
+                "justifyContent": "center",
+                "marginBottom": 15,
+                "marginLeft": "5%",
+                "marginRight": "5%",
+                "marginTop": 15,
+                "paddingBottom": 30,
+                "paddingLeft": 40,
+                "paddingRight": 60,
+                "paddingTop": 30,
+                "shadowColor": "#171717",
+                "shadowOffset": Object {
+                  "height": 5,
+                  "width": 3,
+                },
+                "shadowOpacity": 0.2,
+                "shadowRadius": 3,
+                "width": "90%",
+              },
+            ]
+          }
+        >
+          <Text
+            style={
+              Array [
+                Object {
+                  "color": "white",
+                },
+                Object {
+                  "fontFamily": "EB-Garamond",
+                  "fontSize": 22,
+                  "paddingBottom": 20,
+                  "textAlign": "left",
+                },
+              ]
+            }
+          >
+            dummy goal -4
+          </Text>
+          <Text
+            style={
+              Array [
+                Object {
+                  "color": "white",
+                },
+                Object {
+                  "fontFamily": "Forum-Regular",
+                  "fontSize": 18,
+                },
+              ]
+            }
+          >
+            this is my motivation
+          </Text>
+        </View>
+      </View>
+      <View
+        onLayout={[Function]}
+        style={null}
+      >
+        <View
+          style={
+            Array [
+              Object {
+                "backgroundColor": "#E9695B",
+              },
+              Object {
+                "alignItems": "flex-start",
+                "borderRadius": 10,
+                "flexDirection": "column",
+                "height": 160,
+                "justifyContent": "center",
+                "marginBottom": 15,
+                "marginLeft": "5%",
+                "marginRight": "5%",
+                "marginTop": 15,
+                "paddingBottom": 30,
+                "paddingLeft": 40,
+                "paddingRight": 60,
+                "paddingTop": 30,
+                "shadowColor": "#171717",
+                "shadowOffset": Object {
+                  "height": 5,
+                  "width": 3,
+                },
+                "shadowOpacity": 0.2,
+                "shadowRadius": 3,
+                "width": "90%",
+              },
+            ]
+          }
+        >
+          <Text
+            style={
+              Array [
+                Object {
+                  "color": "white",
+                },
+                Object {
+                  "fontFamily": "EB-Garamond",
+                  "fontSize": 22,
+                  "paddingBottom": 20,
+                  "textAlign": "left",
+                },
+              ]
+            }
+          >
+            dummy goal -5
+          </Text>
+          <Text
+            style={
+              Array [
+                Object {
+                  "color": "white",
+                },
+                Object {
+                  "fontFamily": "Forum-Regular",
+                  "fontSize": 18,
+                },
+              ]
+            }
+          >
+            this is my motivation
+          </Text>
+        </View>
       </View>
     </View>
-    <View
-      onLayout={[Function]}
-      style={null}
-    >
-      <View
-        style={
-          Array [
-            Object {
-              "backgroundColor": "#84C5E8",
-            },
-            Object {
-              "alignItems": "flex-start",
-              "borderColor": "black",
-              "borderRadius": 10,
-              "borderStyle": "solid",
-              "borderWidth": 5,
-              "flexDirection": "column",
-              "height": 150,
-              "justifyContent": "center",
-              "marginBottom": 10,
-              "marginLeft": "2.5%",
-              "marginRight": "2.5%",
-              "marginTop": 10,
-              "paddingBottom": 30,
-              "paddingLeft": 40,
-              "paddingRight": 80,
-              "paddingTop": 30,
-              "width": "95%",
-            },
-          ]
-        }
-      >
-        <Text
-          style={
-            Array [
-              Object {
-                "color": "#000000",
-              },
-              Object {
-                "fontFamily": "EB-Garamond",
-                "fontSize": 20,
-                "paddingBottom": 20,
-                "textAlign": "left",
-              },
-            ]
-          }
-        >
-          dummy goal -2
-        </Text>
-        <Text
-          style={
-            Array [
-              Object {
-                "color": "#000000",
-              },
-              Object {
-                "fontFamily": "Forum-Regular",
-                "fontSize": 20,
-              },
-            ]
-          }
-        >
-          this is my motivation
-        </Text>
-      </View>
-    </View>
-    <View
-      onLayout={[Function]}
-      style={null}
-    >
-      <View
-        style={
-          Array [
-            Object {
-              "backgroundColor": "#1C88BA",
-            },
-            Object {
-              "alignItems": "flex-start",
-              "borderColor": "black",
-              "borderRadius": 10,
-              "borderStyle": "solid",
-              "borderWidth": 5,
-              "flexDirection": "column",
-              "height": 150,
-              "justifyContent": "center",
-              "marginBottom": 10,
-              "marginLeft": "2.5%",
-              "marginRight": "2.5%",
-              "marginTop": 10,
-              "paddingBottom": 30,
-              "paddingLeft": 40,
-              "paddingRight": 80,
-              "paddingTop": 30,
-              "width": "95%",
-            },
-          ]
-        }
-      >
-        <Text
-          style={
-            Array [
-              Object {
-                "color": "#000000",
-              },
-              Object {
-                "fontFamily": "EB-Garamond",
-                "fontSize": 20,
-                "paddingBottom": 20,
-                "textAlign": "left",
-              },
-            ]
-          }
-        >
-          dummy goal -3
-        </Text>
-        <Text
-          style={
-            Array [
-              Object {
-                "color": "#000000",
-              },
-              Object {
-                "fontFamily": "Forum-Regular",
-                "fontSize": 20,
-              },
-            ]
-          }
-        >
-          this is my motivation
-        </Text>
-      </View>
-    </View>
-    <View
-      onLayout={[Function]}
-      style={null}
-    >
-      <View
-        style={
-          Array [
-            Object {
-              "backgroundColor": "#F0B541",
-            },
-            Object {
-              "alignItems": "flex-start",
-              "borderColor": "black",
-              "borderRadius": 10,
-              "borderStyle": "solid",
-              "borderWidth": 5,
-              "flexDirection": "column",
-              "height": 150,
-              "justifyContent": "center",
-              "marginBottom": 10,
-              "marginLeft": "2.5%",
-              "marginRight": "2.5%",
-              "marginTop": 10,
-              "paddingBottom": 30,
-              "paddingLeft": 40,
-              "paddingRight": 80,
-              "paddingTop": 30,
-              "width": "95%",
-            },
-          ]
-        }
-      >
-        <Text
-          style={
-            Array [
-              Object {
-                "color": "#000000",
-              },
-              Object {
-                "fontFamily": "EB-Garamond",
-                "fontSize": 20,
-                "paddingBottom": 20,
-                "textAlign": "left",
-              },
-            ]
-          }
-        >
-          dummy goal -4
-        </Text>
-        <Text
-          style={
-            Array [
-              Object {
-                "color": "#000000",
-              },
-              Object {
-                "fontFamily": "Forum-Regular",
-                "fontSize": 20,
-              },
-            ]
-          }
-        >
-          this is my motivation
-        </Text>
-      </View>
-    </View>
-    <View
-      onLayout={[Function]}
-      style={null}
-    >
-      <View
-        style={
-          Array [
-            Object {
-              "backgroundColor": "#E9695B",
-            },
-            Object {
-              "alignItems": "flex-start",
-              "borderColor": "black",
-              "borderRadius": 10,
-              "borderStyle": "solid",
-              "borderWidth": 5,
-              "flexDirection": "column",
-              "height": 150,
-              "justifyContent": "center",
-              "marginBottom": 10,
-              "marginLeft": "2.5%",
-              "marginRight": "2.5%",
-              "marginTop": 10,
-              "paddingBottom": 30,
-              "paddingLeft": 40,
-              "paddingRight": 80,
-              "paddingTop": 30,
-              "width": "95%",
-            },
-          ]
-        }
-      >
-        <Text
-          style={
-            Array [
-              Object {
-                "color": "#000000",
-              },
-              Object {
-                "fontFamily": "EB-Garamond",
-                "fontSize": 20,
-                "paddingBottom": 20,
-                "textAlign": "left",
-              },
-            ]
-          }
-        >
-          dummy goal -5
-        </Text>
-        <Text
-          style={
-            Array [
-              Object {
-                "color": "#000000",
-              },
-              Object {
-                "fontFamily": "Forum-Regular",
-                "fontSize": 20,
-              },
-            ]
-          }
-        >
-          this is my motivation
-        </Text>
-      </View>
-    </View>
-  </View>
-</RCTScrollView>
+  </RCTScrollView>
+</View>
 `;
