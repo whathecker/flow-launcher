@@ -1,0 +1,105 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Test EmptyGoalList component Should renders EmptyGoalList correctly 1`] = `
+Array [
+  <View
+    style={
+      Array [
+        Object {
+          "backgroundColor": "#fff",
+        },
+        Object {
+          "paddingBottom": 18,
+          "paddingTop": 5,
+        },
+      ]
+    }
+  >
+    <Image
+      source={1}
+      style={
+        Object {
+          "height": 95,
+          "width": 95,
+        }
+      }
+    />
+  </View>,
+  <View
+    style={
+      Array [
+        Object {
+          "backgroundColor": "#fff",
+        },
+        Object {
+          "paddingBottom": 18,
+          "paddingTop": 5,
+        },
+      ]
+    }
+  >
+    <Text
+      style={
+        Array [
+          Object {
+            "color": "#000000",
+          },
+          Object {
+            "fontFamily": "Forum-Regular",
+            "fontSize": 20,
+            "textAlign": "center",
+          },
+        ]
+      }
+    >
+      The journey of a thousand miles
+    </Text>
+    <Text
+      style={
+        Array [
+          Object {
+            "color": "#000000",
+          },
+          Object {
+            "fontFamily": "Forum-Regular",
+            "fontSize": 20,
+            "textAlign": "center",
+          },
+        ]
+      }
+    >
+      begins with a single step.
+    </Text>
+  </View>,
+  <View
+    style={
+      Array [
+        Object {
+          "backgroundColor": "#fff",
+        },
+        Object {
+          "paddingBottom": 18,
+          "paddingTop": 5,
+        },
+      ]
+    }
+  >
+    <Text
+      style={
+        Array [
+          Object {
+            "color": "#000000",
+          },
+          Object {
+            "fontFamily": "Forum-Regular",
+            "fontSize": 20,
+            "textAlign": "center",
+          },
+        ]
+      }
+    >
+      LAO TZU
+    </Text>
+  </View>,
+]
+`;

@@ -22,11 +22,7 @@ const AddGoalScreen: React.FC<Props> = ({ navigation }: Props) => {
           />
         </View>
         <View style={styles.formAreaWrapper}>
-          <AddGoalForm
-            submitHandler={() => {
-              navigation.goBack();
-            }}
-          />
+          <AddGoalForm />
         </View>
       </ScrollView>
     </View>

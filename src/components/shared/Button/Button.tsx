@@ -1,7 +1,7 @@
 import React from "react";
 import { Touchable, Text } from "../../Themed";
 import { StyleSheet } from "react-native";
-import { Container, Typography } from "../../../styles";
+import { Container, Typography, Shadow } from "../../../styles";
 
 type ButtonProps = {
   ctaTxt: string;
@@ -33,10 +33,7 @@ const styles = StyleSheet.create({
     paddingTop: 20,
     paddingBottom: 20,
     borderRadius: 10,
-    shadowColor: "#171717",
-    shadowOffset: { width: 3, height: 5 },
-    shadowOpacity: 0.2,
-    shadowRadius: 3,
+    ...Shadow.regularbackDrop,
   },
   buttonText: {
     ...Typography.p,

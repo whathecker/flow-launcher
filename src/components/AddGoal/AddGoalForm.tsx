@@ -1,6 +1,6 @@
 /* eslint-disable no-console */
-/* eslint-disable @typescript-eslint/no-non-null-assertion */
-import React from "react";
+import React, { useContext } from "react";
+import { GoalsContext } from "../../contexts/goals";
 import { Keyboard, TextInput, StyleSheet } from "react-native";
 import { View, TouchableWithoutFeedback } from "../Themed";
 import {
@@ -9,19 +9,11 @@ import {
   AddGoalErrMsg,
 } from "./components";
 import { Button } from "../shared";
-
 import { Container, Typography } from "../../styles";
+
+import { IAddGoalInput } from "../../types/core/entity";
 import { Formik } from "formik";
 import * as Yup from "yup";
-
-import { openDatabase, closeDatabase } from "../../db/connection";
-import GoalDBAccessor from "../../db/db-access/goal-db";
-
-interface AddGoalFormValues {
-  title: string;
-  motivation: string;
-  reminder: string;
-}
 
 const ValidationScheme = Yup.object().shape({
   title: Yup.string().required("Required"),
@@ -30,21 +22,16 @@ const ValidationScheme = Yup.object().shape({
 });
 
 const AddGoalForm: React.FC = () => {
+  const { addGoal } = useContext(GoalsContext);
   return (
     <Formik
       initialValues={
-        { title: "", motivation: "", reminder: "" } as AddGoalFormValues
+        { title: "", motivation: "", reminder: "" } as IAddGoalInput
       }
       validationSchema={ValidationScheme}
       onSubmit={async (values) => {
         try {
-          const result = await openDatabase();
-          const db = result.databaseInstance!;
-
-          const goalDB = new GoalDBAccessor(db);
-          await goalDB.addGoal(values);
-
-          closeDatabase(db);
+          await addGoal(values);
         } catch (error) {
           // TODO: handle error here
           console.error(error);

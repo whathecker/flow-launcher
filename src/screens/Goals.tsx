@@ -1,15 +1,25 @@
-import React from "react";
-import { Image, StyleSheet } from "react-native";
+/* eslint-disable @typescript-eslint/no-non-null-assertion */
+import React, { useContext, useEffect } from "react";
+import { StyleSheet } from "react-native";
 import { View, Text } from "../components/Themed";
+import { EmptyGoalList, GoalList } from "../components/Goals";
 import { Button } from "../components/shared";
-
 import { Container, Typography } from "../styles";
-
 import { GoalStackScreenProps } from "../types/navigation";
+import { GoalsContext } from "../contexts/goals";
 
 type Props = GoalStackScreenProps<"Goals">;
 
 const GoalsScreen: React.FC<Props> = ({ navigation }: Props) => {
+  const { state, fetchGoals } = useContext(GoalsContext);
+
+  const isGoalListEmpty =
+    !state.goals || state.goals.length === 0 ? true : false;
+
+  useEffect(() => {
+    fetchGoals();
+  }, [state.goals?.length]);
+
   return (
     <>
       <View style={styles.headerWrapper}>
@@ -22,21 +32,11 @@ const GoalsScreen: React.FC<Props> = ({ navigation }: Props) => {
         </Text>
       </View>
       <View style={styles.goalsAreaWrapper}>
-        <View style={styles.goalAreaBodyWrapper}>
-          <Image
-            style={styles.bodyImage}
-            source={require(`../../assets/images/sauropod_1f995.png`)}
-          />
-        </View>
-        <View style={styles.goalAreaBodyWrapper}>
-          <Text
-            style={styles.bodyText}
-          >{`The journey of a thousand miles`}</Text>
-          <Text style={styles.bodyText}>{`begins with a single step.`}</Text>
-        </View>
-        <View style={styles.goalAreaBodyWrapper}>
-          <Text style={styles.bodyText}>{`LAO TZU`}</Text>
-        </View>
+        {isGoalListEmpty ? (
+          <EmptyGoalList />
+        ) : (
+          <GoalList goals={state.goals!} />
+        )}
       </View>
       <View style={styles.buttonAreaWrapper}>
         <View style={styles.buttonWrapper}>
@@ -65,6 +65,7 @@ const styles = StyleSheet.create({
   },
   goalsAreaWrapper: {
     ...Container.centerAlignedVertical,
+    width: "100%",
     height: "70%",
   },
   goalAreaBodyWrapper: {
