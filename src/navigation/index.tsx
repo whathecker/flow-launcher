@@ -1,5 +1,8 @@
 import React from "react";
-import { NavigationContainer } from "@react-navigation/native";
+import {
+  NavigationContainer,
+  NavigationContainerRef,
+} from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import {
   GoalsScreen,
@@ -13,10 +16,16 @@ import {
   GoalStackParamList,
   PriorStackParamList,
 } from "../types/navigation";
+import { navigationRef } from "../utils";
 
 const Navigation: React.FC = () => {
   return (
-    <NavigationContainer>
+    <NavigationContainer
+      ref={(navigator) => {
+        const nav = navigator as NavigationContainerRef<RootStackParamList>;
+        navigationRef.setNavigator(nav);
+      }}
+    >
       <RootNav />
     </NavigationContainer>
   );

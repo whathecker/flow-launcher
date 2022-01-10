@@ -1,36 +1,36 @@
 import React from "react";
 import { StyleSheet } from "react-native";
-import { View, Text } from "../../Themed";
+import { Touchable, Text } from "../../Themed";
 import { Container, Typography, Shadow } from "../../../styles";
+import { Goal as GoalEntity } from "../../../types/core/entity";
+import { navigationRef } from "../../../utils";
 
 type GoalProps = {
-  title: string;
-  motivation: string;
+  goal: GoalEntity;
   backgroundColor: string;
 };
 
-const Goal: React.FC<GoalProps> = ({
-  title,
-  motivation,
-  backgroundColor,
-}: GoalProps) => {
+const Goal: React.FC<GoalProps> = ({ goal, backgroundColor }: GoalProps) => {
   return (
-    <View
+    <Touchable
       lightColor={backgroundColor}
       darkColor={backgroundColor}
       style={styles.goalWrapper}
+      onPress={() => {
+        navigationRef.navigate("GoalDetail", { goal });
+      }}
     >
       <Text lightColor="white" darkColor="white" style={styles.goalTitleText}>
-        {title}
+        {goal.title}
       </Text>
       <Text
         lightColor="white"
         darkColor="white"
         style={styles.goalMotiviationText}
       >
-        {motivation}
+        {goal.motivation}
       </Text>
-    </View>
+    </Touchable>
   );
 };
 

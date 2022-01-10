@@ -86,35 +86,41 @@ exports[`Test GoalList component Should renders GoalList correctly 1`] = `
         style={null}
       >
         <View
+          accessible={true}
+          focusable={true}
+          onClick={[Function]}
+          onResponderGrant={[Function]}
+          onResponderMove={[Function]}
+          onResponderRelease={[Function]}
+          onResponderTerminate={[Function]}
+          onResponderTerminationRequest={[Function]}
+          onStartShouldSetResponder={[Function]}
           style={
-            Array [
-              Object {
-                "backgroundColor": "#E9695B",
+            Object {
+              "alignItems": "flex-start",
+              "backgroundColor": "#E9695B",
+              "borderRadius": 10,
+              "flexDirection": "column",
+              "height": 160,
+              "justifyContent": "center",
+              "marginBottom": 15,
+              "marginLeft": "5%",
+              "marginRight": "5%",
+              "marginTop": 15,
+              "opacity": 1,
+              "paddingBottom": 30,
+              "paddingLeft": 40,
+              "paddingRight": 60,
+              "paddingTop": 30,
+              "shadowColor": "#171717",
+              "shadowOffset": Object {
+                "height": 5,
+                "width": 3,
               },
-              Object {
-                "alignItems": "flex-start",
-                "borderRadius": 10,
-                "flexDirection": "column",
-                "height": 160,
-                "justifyContent": "center",
-                "marginBottom": 15,
-                "marginLeft": "5%",
-                "marginRight": "5%",
-                "marginTop": 15,
-                "paddingBottom": 30,
-                "paddingLeft": 40,
-                "paddingRight": 60,
-                "paddingTop": 30,
-                "shadowColor": "#171717",
-                "shadowOffset": Object {
-                  "height": 5,
-                  "width": 3,
-                },
-                "shadowOpacity": 0.2,
-                "shadowRadius": 3,
-                "width": "90%",
-              },
-            ]
+              "shadowOpacity": 0.2,
+              "shadowRadius": 3,
+              "width": "90%",
+            }
           }
         >
           <Text
@@ -156,35 +162,41 @@ exports[`Test GoalList component Should renders GoalList correctly 1`] = `
         style={null}
       >
         <View
+          accessible={true}
+          focusable={true}
+          onClick={[Function]}
+          onResponderGrant={[Function]}
+          onResponderMove={[Function]}
+          onResponderRelease={[Function]}
+          onResponderTerminate={[Function]}
+          onResponderTerminationRequest={[Function]}
+          onStartShouldSetResponder={[Function]}
           style={
-            Array [
-              Object {
-                "backgroundColor": "#84C5E8",
+            Object {
+              "alignItems": "flex-start",
+              "backgroundColor": "#84C5E8",
+              "borderRadius": 10,
+              "flexDirection": "column",
+              "height": 160,
+              "justifyContent": "center",
+              "marginBottom": 15,
+              "marginLeft": "5%",
+              "marginRight": "5%",
+              "marginTop": 15,
+              "opacity": 1,
+              "paddingBottom": 30,
+              "paddingLeft": 40,
+              "paddingRight": 60,
+              "paddingTop": 30,
+              "shadowColor": "#171717",
+              "shadowOffset": Object {
+                "height": 5,
+                "width": 3,
               },
-              Object {
-                "alignItems": "flex-start",
-                "borderRadius": 10,
-                "flexDirection": "column",
-                "height": 160,
-                "justifyContent": "center",
-                "marginBottom": 15,
-                "marginLeft": "5%",
-                "marginRight": "5%",
-                "marginTop": 15,
-                "paddingBottom": 30,
-                "paddingLeft": 40,
-                "paddingRight": 60,
-                "paddingTop": 30,
-                "shadowColor": "#171717",
-                "shadowOffset": Object {
-                  "height": 5,
-                  "width": 3,
-                },
-                "shadowOpacity": 0.2,
-                "shadowRadius": 3,
-                "width": "90%",
-              },
-            ]
+              "shadowOpacity": 0.2,
+              "shadowRadius": 3,
+              "width": "90%",
+            }
           }
         >
           <Text
@@ -226,35 +238,41 @@ exports[`Test GoalList component Should renders GoalList correctly 1`] = `
         style={null}
       >
         <View
+          accessible={true}
+          focusable={true}
+          onClick={[Function]}
+          onResponderGrant={[Function]}
+          onResponderMove={[Function]}
+          onResponderRelease={[Function]}
+          onResponderTerminate={[Function]}
+          onResponderTerminationRequest={[Function]}
+          onStartShouldSetResponder={[Function]}
           style={
-            Array [
-              Object {
-                "backgroundColor": "#1C88BA",
+            Object {
+              "alignItems": "flex-start",
+              "backgroundColor": "#1C88BA",
+              "borderRadius": 10,
+              "flexDirection": "column",
+              "height": 160,
+              "justifyContent": "center",
+              "marginBottom": 15,
+              "marginLeft": "5%",
+              "marginRight": "5%",
+              "marginTop": 15,
+              "opacity": 1,
+              "paddingBottom": 30,
+              "paddingLeft": 40,
+              "paddingRight": 60,
+              "paddingTop": 30,
+              "shadowColor": "#171717",
+              "shadowOffset": Object {
+                "height": 5,
+                "width": 3,
               },
-              Object {
-                "alignItems": "flex-start",
-                "borderRadius": 10,
-                "flexDirection": "column",
-                "height": 160,
-                "justifyContent": "center",
-                "marginBottom": 15,
-                "marginLeft": "5%",
-                "marginRight": "5%",
-                "marginTop": 15,
-                "paddingBottom": 30,
-                "paddingLeft": 40,
-                "paddingRight": 60,
-                "paddingTop": 30,
-                "shadowColor": "#171717",
-                "shadowOffset": Object {
-                  "height": 5,
-                  "width": 3,
-                },
-                "shadowOpacity": 0.2,
-                "shadowRadius": 3,
-                "width": "90%",
-              },
-            ]
+              "shadowOpacity": 0.2,
+              "shadowRadius": 3,
+              "width": "90%",
+            }
           }
         >
           <Text
@@ -296,35 +314,41 @@ exports[`Test GoalList component Should renders GoalList correctly 1`] = `
         style={null}
       >
         <View
+          accessible={true}
+          focusable={true}
+          onClick={[Function]}
+          onResponderGrant={[Function]}
+          onResponderMove={[Function]}
+          onResponderRelease={[Function]}
+          onResponderTerminate={[Function]}
+          onResponderTerminationRequest={[Function]}
+          onStartShouldSetResponder={[Function]}
           style={
-            Array [
-              Object {
-                "backgroundColor": "#F0B541",
+            Object {
+              "alignItems": "flex-start",
+              "backgroundColor": "#F0B541",
+              "borderRadius": 10,
+              "flexDirection": "column",
+              "height": 160,
+              "justifyContent": "center",
+              "marginBottom": 15,
+              "marginLeft": "5%",
+              "marginRight": "5%",
+              "marginTop": 15,
+              "opacity": 1,
+              "paddingBottom": 30,
+              "paddingLeft": 40,
+              "paddingRight": 60,
+              "paddingTop": 30,
+              "shadowColor": "#171717",
+              "shadowOffset": Object {
+                "height": 5,
+                "width": 3,
               },
-              Object {
-                "alignItems": "flex-start",
-                "borderRadius": 10,
-                "flexDirection": "column",
-                "height": 160,
-                "justifyContent": "center",
-                "marginBottom": 15,
-                "marginLeft": "5%",
-                "marginRight": "5%",
-                "marginTop": 15,
-                "paddingBottom": 30,
-                "paddingLeft": 40,
-                "paddingRight": 60,
-                "paddingTop": 30,
-                "shadowColor": "#171717",
-                "shadowOffset": Object {
-                  "height": 5,
-                  "width": 3,
-                },
-                "shadowOpacity": 0.2,
-                "shadowRadius": 3,
-                "width": "90%",
-              },
-            ]
+              "shadowOpacity": 0.2,
+              "shadowRadius": 3,
+              "width": "90%",
+            }
           }
         >
           <Text
@@ -366,35 +390,41 @@ exports[`Test GoalList component Should renders GoalList correctly 1`] = `
         style={null}
       >
         <View
+          accessible={true}
+          focusable={true}
+          onClick={[Function]}
+          onResponderGrant={[Function]}
+          onResponderMove={[Function]}
+          onResponderRelease={[Function]}
+          onResponderTerminate={[Function]}
+          onResponderTerminationRequest={[Function]}
+          onStartShouldSetResponder={[Function]}
           style={
-            Array [
-              Object {
-                "backgroundColor": "#E9695B",
+            Object {
+              "alignItems": "flex-start",
+              "backgroundColor": "#E9695B",
+              "borderRadius": 10,
+              "flexDirection": "column",
+              "height": 160,
+              "justifyContent": "center",
+              "marginBottom": 15,
+              "marginLeft": "5%",
+              "marginRight": "5%",
+              "marginTop": 15,
+              "opacity": 1,
+              "paddingBottom": 30,
+              "paddingLeft": 40,
+              "paddingRight": 60,
+              "paddingTop": 30,
+              "shadowColor": "#171717",
+              "shadowOffset": Object {
+                "height": 5,
+                "width": 3,
               },
-              Object {
-                "alignItems": "flex-start",
-                "borderRadius": 10,
-                "flexDirection": "column",
-                "height": 160,
-                "justifyContent": "center",
-                "marginBottom": 15,
-                "marginLeft": "5%",
-                "marginRight": "5%",
-                "marginTop": 15,
-                "paddingBottom": 30,
-                "paddingLeft": 40,
-                "paddingRight": 60,
-                "paddingTop": 30,
-                "shadowColor": "#171717",
-                "shadowOffset": Object {
-                  "height": 5,
-                  "width": 3,
-                },
-                "shadowOpacity": 0.2,
-                "shadowRadius": 3,
-                "width": "90%",
-              },
-            ]
+              "shadowOpacity": 0.2,
+              "shadowRadius": 3,
+              "width": "90%",
+            }
           }
         >
           <Text
