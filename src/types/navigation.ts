@@ -3,6 +3,7 @@ import {
   NavigatorScreenParams,
 } from "@react-navigation/native";
 import { NativeStackScreenProps } from "@react-navigation/native-stack";
+import { Goal } from "./core/entity";
 
 export type RootStackParamList = {
   Goal: NavigatorScreenParams<GoalStackParamList> | undefined;
@@ -15,7 +16,7 @@ export type RootStackScreenProps<Screen extends keyof RootStackParamList> =
 export type GoalStackParamList = {
   Goals: undefined;
   AddGoal: undefined;
-  GoalDetail: undefined;
+  GoalDetail: { goal: Goal };
 };
 
 export type GoalStackScreenProps<Screen extends keyof GoalStackParamList> =

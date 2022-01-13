@@ -5,7 +5,9 @@ import { GoalStackScreenProps } from "../types/navigation";
 
 type Props = GoalStackScreenProps<"GoalDetail">;
 
-const GoalDetailScreen: React.FC<Props> = ({ navigation }: Props) => {
+const GoalDetailScreen: React.FC<Props> = ({ route, navigation }: Props) => {
+  const { goal } = route.params;
+
   return (
     <>
       <View style={styles.buttonWrapper}>
@@ -17,7 +19,7 @@ const GoalDetailScreen: React.FC<Props> = ({ navigation }: Props) => {
         />
       </View>
       <View style={styles.headerWrapper}>
-        <Text style={styles.headerText}>Here your title of the goal</Text>
+        <Text style={styles.headerText}>{goal.title}</Text>
       </View>
       <View style={styles.bodyTextWrapper}>
         <Text style={styles.bodyText}>Motivation of the goal goes here</Text>
