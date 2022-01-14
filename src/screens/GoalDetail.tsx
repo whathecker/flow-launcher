@@ -1,59 +1,28 @@
 import React from "react";
-import { View, Text, Button, StyleSheet } from "react-native";
-import { Container, Typography } from "../styles";
+import { StyleSheet } from "react-native";
+import { View } from "../components/Themed";
+import { Container } from "../styles";
 import { GoalStackScreenProps } from "../types/navigation";
+
+import { GoalDetailHeader } from "../components/GoalDetail";
 
 type Props = GoalStackScreenProps<"GoalDetail">;
 
-const GoalDetailScreen: React.FC<Props> = ({ route, navigation }: Props) => {
+const GoalDetailScreen: React.FC<Props> = ({ route }: Props) => {
   const { goal } = route.params;
 
   return (
-    <>
-      <View style={styles.buttonWrapper}>
-        <Button
-          title="Go back (later to be replaced by icon in the header"
-          onPress={() => {
-            navigation.goBack();
-          }}
-        />
-      </View>
+    <View style={{ flex: 1 }}>
       <View style={styles.headerWrapper}>
-        <Text style={styles.headerText}>{goal.title}</Text>
+        <GoalDetailHeader title={goal.title} movitation={goal.motivation} />
       </View>
-      <View style={styles.bodyTextWrapper}>
-        <Text style={styles.bodyText}>Motivation of the goal goes here</Text>
-      </View>
-      <View style={styles.recentTasksWrapper}>
-        <Text>Recently added tasks</Text>
-      </View>
-      <View style={styles.prioritizedTasksWrapper}>
-        <Text>Prioritized Task Area</Text>
-        <Button
-          title="Start Pritorize"
-          onPress={() => {
-            navigation.navigate("Prior");
-          }}
-        />
-      </View>
-    </>
+    </View>
   );
 };
 
 const styles = StyleSheet.create({
   headerWrapper: {
-    ...Container.centerAligned,
-    height: "10%",
-  },
-  headerText: {
-    ...Typography.h1,
-  },
-  bodyTextWrapper: {
-    ...Container.centerAligned,
-    height: "2%",
-  },
-  bodyText: {
-    ...Typography.p,
+    height: "25%",
   },
   recentTasksWrapper: {
     ...Container.centerAligned,
