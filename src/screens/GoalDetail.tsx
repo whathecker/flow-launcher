@@ -4,7 +4,7 @@ import { View } from "../components/Themed";
 import { Container } from "../styles";
 import { GoalStackScreenProps } from "../types/navigation";
 
-import { GoalDetailHeader } from "../components/GoalDetail";
+import { GoalDetailHeader, UnprioritizedTasks } from "../components/GoalDetail";
 
 type Props = GoalStackScreenProps<"GoalDetail">;
 
@@ -15,6 +15,9 @@ const GoalDetailScreen: React.FC<Props> = ({ route }: Props) => {
     <View style={{ flex: 1 }}>
       <View style={styles.headerWrapper}>
         <GoalDetailHeader title={goal.title} movitation={goal.motivation} />
+      </View>
+      <View style={styles.recentTasksWrapper}>
+        <UnprioritizedTasks />
       </View>
     </View>
   );
