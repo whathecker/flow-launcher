@@ -47,7 +47,7 @@ const styles = StyleSheet.create({
   },
   emptyTasksMsgWrapper: {
     ...Container.centerAlignedVertical,
-    height: "55%",
+    height: "80%",
     padding: 20,
   },
   emptyTasksImage: {
