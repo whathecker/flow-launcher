@@ -4,6 +4,7 @@ type Colors = {
   background: string;
   defaultBorder: string;
   activeBorder: string;
+  overlay: string;
 };
 
 export const light: Colors = {
@@ -12,6 +13,7 @@ export const light: Colors = {
   background: "#fff",
   defaultBorder: "#636262",
   activeBorder: "#0FA858",
+  overlay: "#3a3a39",
 };
 
 export const dark: Colors = {
@@ -20,4 +22,5 @@ export const dark: Colors = {
   background: "#fff",
   defaultBorder: "#636262",
   activeBorder: "#0FA858",
+  overlay: "#3a3a39",
 };

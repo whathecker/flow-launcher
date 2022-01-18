@@ -1,4 +1,3 @@
-/* eslint-disable no-console */
 import React, { useState } from "react";
 import { StyleSheet, Keyboard } from "react-native";
 import { View, TouchableWithoutFeedback } from "../components/Themed";
@@ -28,6 +27,7 @@ const GoalDetailScreen: React.FC<Props> = ({ route }: Props) => {
         }}
       >
         <View>
+          {addTaskFormOpened ? <View style={styles.grayOverlay}></View> : null}
           <View style={styles.headerWrapper}>
             <GoalDetailHeader title={goal.title} movitation={goal.motivation} />
           </View>
@@ -101,6 +101,14 @@ const styles = StyleSheet.create({
     borderColor: Color.light.defaultBorder,
     borderRadius: 5,
     ...Shadow.regularbackDrop,
+  },
+  grayOverlay: {
+    position: "absolute",
+    zIndex: 1,
+    width: "100%",
+    height: "100%",
+    backgroundColor: Color.light.overlay,
+    opacity: 0.35,
   },
 });
 
