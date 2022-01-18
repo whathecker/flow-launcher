@@ -25,15 +25,9 @@ const AddTaskForm: React.FC = () => {
         touched,
       }) => (
         <View>
-          <View
-            style={{
-              paddingLeft: 20,
-              paddingTop: 30,
-              height: "20%",
-            }}
-          >
+          <View style={styles.titleInputWrapper}>
             <TextInput
-              style={{ ...Typography.p, fontSize: 26 }}
+              style={styles.titleInput}
               multiline
               autoFocus={true}
               onChangeText={handleChange("title")}
@@ -42,9 +36,9 @@ const AddTaskForm: React.FC = () => {
               value={values.title}
             />
           </View>
-          <View style={{ paddingLeft: 20, paddingTop: 20, height: "60.5%" }}>
+          <View style={styles.descInputWrapper}>
             <TextInput
-              style={{ ...Typography.p, height: "125%" }}
+              style={styles.descInput}
               multiline
               onChangeText={handleChange("description")}
               placeholder={"Write the description of your task"}
@@ -52,17 +46,8 @@ const AddTaskForm: React.FC = () => {
               value={values.description}
             />
           </View>
-          <View
-            style={{
-              ...Container.flexStart,
-              justifyContent: "flex-end",
-            }}
-          >
-            <View
-              style={{
-                width: "50%",
-              }}
-            >
+          <View style={styles.buttonAreaWrapper}>
+            <View style={styles.buttonWrapper}>
               <Button
                 ctaTxt="Add"
                 pressHandler={() => console.log("pressed")}
@@ -74,5 +59,33 @@ const AddTaskForm: React.FC = () => {
     </Formik>
   );
 };
+
+const styles = StyleSheet.create({
+  titleInputWrapper: {
+    paddingLeft: 20,
+    paddingTop: 30,
+    height: "20%",
+  },
+  titleInput: {
+    ...Typography.p,
+    fontSize: 26,
+  },
+  descInputWrapper: {
+    paddingLeft: 20,
+    paddingTop: 20,
+    height: "60.5%",
+  },
+  descInput: {
+    ...Typography.p,
+    height: "125%",
+  },
+  buttonAreaWrapper: {
+    ...Container.flexStart,
+    justifyContent: "flex-end",
+  },
+  buttonWrapper: {
+    width: "50%",
+  },
+});
 
 export default AddTaskForm;
