@@ -15,7 +15,7 @@ import { IAddGoalInput } from "../../types/core/entity";
 import { Formik } from "formik";
 import * as Yup from "yup";
 
-const ValidationScheme = Yup.object().shape({
+const ValidationSchema = Yup.object().shape({
   title: Yup.string().required("Required"),
   motivation: Yup.string().required("Required"),
   reminder: Yup.string().required("Please select one of the options"),
@@ -28,7 +28,7 @@ const AddGoalForm: React.FC = () => {
       initialValues={
         { title: "", motivation: "", reminder: "" } as IAddGoalInput
       }
-      validationSchema={ValidationScheme}
+      validationSchema={ValidationSchema}
       onSubmit={async (values) => {
         try {
           await addGoal(values);
