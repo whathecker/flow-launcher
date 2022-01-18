@@ -20,39 +20,41 @@ const GoalDetailScreen: React.FC<Props> = ({ route }: Props) => {
   const [addTaskFormOpened, setAddTaskFormOpened] = useState(false);
 
   return (
-    <TouchableWithoutFeedback
-      onPress={() => {
-        setAddTaskFormOpened(false);
-        Keyboard.dismiss();
-      }}
-    >
-      <View>
-        <View style={styles.headerWrapper}>
-          <GoalDetailHeader title={goal.title} movitation={goal.motivation} />
-        </View>
-        <View style={styles.recentTasksWrapper}>
-          <UnprioritizedTasks />
-        </View>
-        <View style={styles.prioritizedTasksWrapper}>
-          <PrioritizedTasks />
-        </View>
-        <View style={styles.buttonAreaWrapper}>
-          <View style={styles.buttonWrapper}>
-            <Button
-              ctaTxt="Add Task"
-              pressHandler={() => {
-                setAddTaskFormOpened(true);
-              }}
-            />
+    <>
+      <TouchableWithoutFeedback
+        onPress={() => {
+          setAddTaskFormOpened(false);
+          Keyboard.dismiss();
+        }}
+      >
+        <View>
+          <View style={styles.headerWrapper}>
+            <GoalDetailHeader title={goal.title} movitation={goal.motivation} />
+          </View>
+          <View style={styles.recentTasksWrapper}>
+            <UnprioritizedTasks />
+          </View>
+          <View style={styles.prioritizedTasksWrapper}>
+            <PrioritizedTasks />
+          </View>
+          <View style={styles.buttonAreaWrapper}>
+            <View style={styles.buttonWrapper}>
+              <Button
+                ctaTxt="Add Task"
+                pressHandler={() => {
+                  setAddTaskFormOpened(true);
+                }}
+              />
+            </View>
           </View>
         </View>
-        {addTaskFormOpened === true ? (
-          <View style={styles.addTaskFormWrapper}>
-            <AddTaskForm />
-          </View>
-        ) : null}
-      </View>
-    </TouchableWithoutFeedback>
+      </TouchableWithoutFeedback>
+      {addTaskFormOpened === true ? (
+        <View style={styles.addTaskFormWrapper}>
+          <AddTaskForm />
+        </View>
+      ) : null}
+    </>
   );
 };
 
@@ -89,7 +91,7 @@ const styles = StyleSheet.create({
   },
   addTaskFormWrapper: {
     position: "absolute",
-    zIndex: 100,
+    zIndex: 200,
     marginTop: "63%",
     marginLeft: "0.5%",
     marginRight: "0.5%",

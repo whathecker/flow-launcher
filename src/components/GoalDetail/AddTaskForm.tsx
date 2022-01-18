@@ -44,7 +44,7 @@ const AddTaskForm: React.FC = () => {
           </View>
           <View style={{ paddingLeft: 20, paddingTop: 20, height: "60.5%" }}>
             <TextInput
-              style={{ ...Typography.p, height: "95%" }}
+              style={{ ...Typography.p, height: "125%" }}
               multiline
               onChangeText={handleChange("description")}
               placeholder={"Write the description of your task"}
