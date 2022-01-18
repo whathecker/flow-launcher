@@ -6,24 +6,25 @@ import { View } from "../Themed";
 import { Button } from "../shared";
 import { Container, Typography, Color } from "../../styles";
 
+import { IAddTaskInput } from "../../types/core/entity";
 import { Formik } from "formik";
+import * as Yup from "yup";
+
+const ValidationSchema = Yup.object().shape({
+  title: Yup.string().required("Required"),
+  description: Yup.string(),
+});
 
 const AddTaskForm: React.FC = () => {
   return (
     <Formik
-      initialValues={{ title: "", description: "" }}
+      initialValues={{ title: "", description: "" } as IAddTaskInput}
+      validationSchema={ValidationSchema}
       onSubmit={() => {
         console.log("Submit pressed!!");
       }}
     >
-      {({
-        handleChange,
-        setFieldValue,
-        handleSubmit,
-        values,
-        errors,
-        touched,
-      }) => (
+      {({ handleChange, handleSubmit, values, errors, touched }) => (
         <View>
           <View style={styles.titleInputWrapper}>
             <TextInput
@@ -48,10 +49,7 @@ const AddTaskForm: React.FC = () => {
           </View>
           <View style={styles.buttonAreaWrapper}>
             <View style={styles.buttonWrapper}>
-              <Button
-                ctaTxt="Add"
-                pressHandler={() => console.log("pressed")}
-              />
+              <Button ctaTxt="Add" pressHandler={handleSubmit} />
             </View>
           </View>
         </View>

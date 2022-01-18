@@ -22,6 +22,12 @@ export interface IAddGoalInput {
   reminder: string;
 }
 
+export interface IAddTaskInput {
+  title: string;
+  description: string;
+  //TODO: add goal_id
+}
+
 export type TaskStatus = "open" | "finished";
 
 export class Task {
