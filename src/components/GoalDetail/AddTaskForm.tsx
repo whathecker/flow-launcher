@@ -15,6 +15,10 @@ const ValidationSchema = Yup.object().shape({
   description: Yup.string(),
 });
 
+function isFormReadyToSubmit(values: IAddTaskInput): boolean {
+  return values.title.length > 0;
+}
+
 const AddTaskForm: React.FC = () => {
   return (
     <Formik
@@ -24,36 +28,42 @@ const AddTaskForm: React.FC = () => {
         console.log("Submit pressed!!");
       }}
     >
-      {({ handleChange, handleSubmit, values, errors, touched }) => (
-        <View>
-          <View style={styles.titleInputWrapper}>
-            <TextInput
-              style={styles.titleInput}
-              multiline
-              autoFocus={true}
-              onChangeText={handleChange("title")}
-              placeholder={"Write your task in a sentence"}
-              placeholderTextColor={Color.light.subtleLabel}
-              value={values.title}
-            />
-          </View>
-          <View style={styles.descInputWrapper}>
-            <TextInput
-              style={styles.descInput}
-              multiline
-              onChangeText={handleChange("description")}
-              placeholder={"Write the description of your task"}
-              placeholderTextColor={Color.light.subtleLabel}
-              value={values.description}
-            />
-          </View>
-          <View style={styles.buttonAreaWrapper}>
-            <View style={styles.buttonWrapper}>
-              <Button disable={true} ctaTxt="Add" pressHandler={handleSubmit} />
+      {({ handleChange, handleSubmit, values, errors, touched }) => {
+        return (
+          <View>
+            <View style={styles.titleInputWrapper}>
+              <TextInput
+                style={styles.titleInput}
+                multiline
+                autoFocus={true}
+                onChangeText={handleChange("title")}
+                placeholder={"Write your task in a sentence"}
+                placeholderTextColor={Color.light.subtleLabel}
+                value={values.title}
+              />
+            </View>
+            <View style={styles.descInputWrapper}>
+              <TextInput
+                style={styles.descInput}
+                multiline
+                onChangeText={handleChange("description")}
+                placeholder={"Write the description of your task"}
+                placeholderTextColor={Color.light.subtleLabel}
+                value={values.description}
+              />
+            </View>
+            <View style={styles.buttonAreaWrapper}>
+              <View style={styles.buttonWrapper}>
+                <Button
+                  disable={isFormReadyToSubmit(values) ? false : true}
+                  ctaTxt="Add"
+                  pressHandler={handleSubmit}
+                />
+              </View>
             </View>
           </View>
-        </View>
-      )}
+        );
+      }}
     </Formik>
   );
 };

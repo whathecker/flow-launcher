@@ -15,7 +15,6 @@ const Button: React.FC<ButtonProps> = ({
   disable,
 }: ButtonProps) => {
   const backgroundColor = disable ? "#848785" : "#0FA858";
-
   return (
     <Touchable
       onPress={pressHandler}
