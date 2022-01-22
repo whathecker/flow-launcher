@@ -49,7 +49,7 @@ const AddTaskForm: React.FC = () => {
           </View>
           <View style={styles.buttonAreaWrapper}>
             <View style={styles.buttonWrapper}>
-              <Button ctaTxt="Add" pressHandler={handleSubmit} />
+              <Button disable={true} ctaTxt="Add" pressHandler={handleSubmit} />
             </View>
           </View>
         </View>
