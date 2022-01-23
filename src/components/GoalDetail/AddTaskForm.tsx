@@ -1,6 +1,6 @@
 /* eslint-disable no-console */
-/* eslint-disable @typescript-eslint/no-unused-vars */
-import React from "react";
+import React, { useContext } from "react";
+import { GoalsContext } from "../../contexts/goals";
 import { TextInput, StyleSheet } from "react-native";
 import { View } from "../Themed";
 import { Button } from "../shared";
@@ -26,15 +26,21 @@ function isFormReadyToSubmit(values: IAddTaskInput): boolean {
 const AddTaskForm: React.FC<AddTaskFormProps> = ({
   goal_id,
 }: AddTaskFormProps) => {
+  const { addTaskToGoal } = useContext(GoalsContext);
   return (
     <Formik
       initialValues={{ title: "", description: "", goal_id } as IAddTaskInput}
       validationSchema={ValidationSchema}
-      onSubmit={() => {
-        console.log("Submit pressed!!");
+      onSubmit={async (values) => {
+        try {
+          await addTaskToGoal(values);
+        } catch (error) {
+          // TOOD: add error handling
+          console.error(error);
+        }
       }}
     >
-      {({ handleChange, handleSubmit, values, errors, touched }) => {
+      {({ handleChange, handleSubmit, values }) => {
         return (
           <View>
             <View style={styles.titleInputWrapper}>
