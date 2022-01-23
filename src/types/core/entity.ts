@@ -11,7 +11,7 @@ export class Goal {
     public title: string,
     public motivation: string,
     public reminder: Reminder,
-    public tasks: Task[] | [],
+    public tasks: Task[],
     public _id?: ID,
   ) {}
 }
