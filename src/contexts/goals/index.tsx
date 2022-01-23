@@ -1,1 +1,1 @@
-export { GoalsContext, GoalsContextProvider } from "./goals.context";
+export { GoalsContext, GoalsContextProvider } from "./goals-context";
