@@ -25,7 +25,7 @@ export interface IAddGoalInput {
 export interface IAddTaskInput {
   title: string;
   description: string;
-  //TODO: add goal_id
+  goal_id: string;
 }
 
 export type TaskStatus = "open" | "finished";

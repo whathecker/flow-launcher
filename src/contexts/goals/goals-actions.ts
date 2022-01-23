@@ -46,3 +46,9 @@ export const addGoal = (dispatch: React.Dispatch<GoalsAction>) => {
     }
   };
 };
+/*
+export const addTaskToGoal = (dispatch: React.Dispatch<GoalsAction>) => {
+  return async (input: IAddTaskInput): Promise<void> => {
+
+  }
+}; */

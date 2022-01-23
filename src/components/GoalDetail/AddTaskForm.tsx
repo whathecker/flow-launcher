@@ -10,6 +10,10 @@ import { IAddTaskInput } from "../../types/core/entity";
 import { Formik } from "formik";
 import * as Yup from "yup";
 
+type AddTaskFormProps = {
+  goal_id: string;
+};
+
 const ValidationSchema = Yup.object().shape({
   title: Yup.string().required("Required"),
   description: Yup.string(),
@@ -19,10 +23,12 @@ function isFormReadyToSubmit(values: IAddTaskInput): boolean {
   return values.title.length > 0;
 }
 
-const AddTaskForm: React.FC = () => {
+const AddTaskForm: React.FC<AddTaskFormProps> = ({
+  goal_id,
+}: AddTaskFormProps) => {
   return (
     <Formik
-      initialValues={{ title: "", description: "" } as IAddTaskInput}
+      initialValues={{ title: "", description: "", goal_id } as IAddTaskInput}
       validationSchema={ValidationSchema}
       onSubmit={() => {
         console.log("Submit pressed!!");

@@ -51,7 +51,7 @@ const GoalDetailScreen: React.FC<Props> = ({ route }: Props) => {
       </TouchableWithoutFeedback>
       {addTaskFormOpened === true ? (
         <View style={styles.addTaskFormWrapper}>
-          <AddTaskForm />
+          <AddTaskForm goal_id={goal._id as string} />
         </View>
       ) : null}
     </>

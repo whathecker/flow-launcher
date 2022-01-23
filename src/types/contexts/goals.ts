@@ -10,6 +10,7 @@ export type ContextProviderProps = {
   state: GoalsState;
   fetchGoals: () => Promise<void>;
   addGoal: (input: IAddGoalInput) => Promise<void>;
+  addTaskToGoal: () => Promise<void>;
 };
 
 export enum GoalsActionType {
