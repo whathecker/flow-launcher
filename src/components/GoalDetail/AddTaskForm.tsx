@@ -12,6 +12,7 @@ import * as Yup from "yup";
 
 type AddTaskFormProps = {
   goal_id: string;
+  addTaskFormOpenedHandler: React.Dispatch<React.SetStateAction<boolean>>;
 };
 
 const ValidationSchema = Yup.object().shape({
@@ -25,6 +26,7 @@ function isFormReadyToSubmit(values: IAddTaskInput): boolean {
 
 const AddTaskForm: React.FC<AddTaskFormProps> = ({
   goal_id,
+  addTaskFormOpenedHandler,
 }: AddTaskFormProps) => {
   const { addTaskToGoal } = useContext(GoalsContext);
   return (
@@ -34,6 +36,7 @@ const AddTaskForm: React.FC<AddTaskFormProps> = ({
       onSubmit={async (values) => {
         try {
           await addTaskToGoal(values);
+          addTaskFormOpenedHandler(false);
         } catch (error) {
           // TOOD: add error handling
           console.error(error);
