@@ -1,7 +1,18 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Test GoalDetailHeader component Should renders GoalDetailHeader correctly 1`] = `
-Array [
+<View
+  style={
+    Array [
+      Object {
+        "backgroundColor": "#fff",
+      },
+      Object {
+        "paddingBottom": 20,
+      },
+    ]
+  }
+>
   <View
     style={
       Array [
@@ -61,7 +72,7 @@ Array [
         />
       </View>
     </View>
-  </View>,
+  </View>
   <View
     style={
       Array [
@@ -85,7 +96,7 @@ Array [
             "flexDirection": "row",
             "justifyContent": "flex-start",
             "paddingBottom": 5,
-            "paddingTop": 5,
+            "paddingTop": 0,
             "width": "100%",
           },
         ]
@@ -147,6 +158,6 @@ Array [
         Want to get this right
       </Text>
     </View>
-  </View>,
-]
+  </View>
+</View>
 `;

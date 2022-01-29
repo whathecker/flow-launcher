@@ -15,7 +15,7 @@ const GoalDetailHeader: React.FC<GoalDetailHeaderProps> = ({
   movitation,
 }: GoalDetailHeaderProps) => {
   return (
-    <>
+    <View style={{ paddingBottom: 20 }}>
       <View
         style={{
           ...Container.flexStart,
@@ -42,7 +42,7 @@ const GoalDetailHeader: React.FC<GoalDetailHeaderProps> = ({
           <Text style={styles.motivationText}>{movitation}</Text>
         </View>
       </View>
-    </>
+    </View>
   );
 };
 
@@ -54,7 +54,7 @@ const styles = StyleSheet.create({
   headerWrapper: {
     ...Container.flexStart,
     width: "100%",
-    paddingTop: 5,
+    paddingTop: 0,
     paddingBottom: 5,
   },
   rocketImage: {

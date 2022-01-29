@@ -19,7 +19,7 @@ exports[`Test PrioritizedTasks component Should renders PrioritizedTasks correct
         },
         "shadowOpacity": 0.2,
         "shadowRadius": 3,
-        "width": "85%",
+        "width": "90%",
       },
     ]
   }

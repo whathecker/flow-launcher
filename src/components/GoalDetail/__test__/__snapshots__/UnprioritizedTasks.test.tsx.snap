@@ -19,7 +19,7 @@ exports[`Test UnprioritizedTasks component Should renders UnprioritizedTasks cor
         },
         "shadowOpacity": 0.2,
         "shadowRadius": 3,
-        "width": "85%",
+        "width": "90%",
       },
     ]
   }

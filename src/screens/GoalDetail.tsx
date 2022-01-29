@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { StyleSheet, Keyboard } from "react-native";
+import { StyleSheet, Keyboard, ScrollView } from "react-native";
 import { View, TouchableWithoutFeedback } from "../components/Themed";
 import { Container, Color, Shadow } from "../styles";
 import { GoalStackScreenProps } from "../types/navigation";
@@ -14,41 +14,35 @@ import { Button } from "../components/shared";
 
 type Props = GoalStackScreenProps<"GoalDetail">;
 
+const Scrollable: React.FC = () => {
+  return (
+    <ScrollView style={styles.scrollAreaWrapper}>
+      <View style={styles.recentTasksWrapper}>
+        <UnprioritizedTasks />
+      </View>
+      <View style={styles.prioritizedTasksWrapper}>
+        <PrioritizedTasks />
+      </View>
+    </ScrollView>
+  );
+};
+
 const GoalDetailScreen: React.FC<Props> = ({ route }: Props) => {
   const { goal } = route.params;
   const [addTaskFormOpened, setAddTaskFormOpened] = useState(false);
 
   return (
     <>
-      <TouchableWithoutFeedback
-        onPress={() => {
-          setAddTaskFormOpened(false);
-          Keyboard.dismiss();
-        }}
-      >
-        <View>
-          {addTaskFormOpened ? <View style={styles.grayOverlay}></View> : null}
-          <View style={styles.headerWrapper}>
-            <GoalDetailHeader title={goal.title} movitation={goal.motivation} />
-          </View>
-          <View style={styles.recentTasksWrapper}>
-            <UnprioritizedTasks />
-          </View>
-          <View style={styles.prioritizedTasksWrapper}>
-            <PrioritizedTasks />
-          </View>
-          <View style={styles.buttonAreaWrapper}>
-            <View style={styles.buttonWrapper}>
-              <Button
-                ctaTxt="Add Task"
-                pressHandler={() => {
-                  setAddTaskFormOpened(true);
-                }}
-              />
-            </View>
-          </View>
-        </View>
-      </TouchableWithoutFeedback>
+      {addTaskFormOpened === true ? (
+        <TouchableWithoutFeedback
+          onPress={() => {
+            setAddTaskFormOpened(false);
+            Keyboard.dismiss();
+          }}
+        >
+          <View style={styles.grayOverlay}></View>
+        </TouchableWithoutFeedback>
+      ) : null}
       {addTaskFormOpened === true ? (
         <View style={styles.addTaskFormWrapper}>
           <AddTaskForm
@@ -57,49 +51,60 @@ const GoalDetailScreen: React.FC<Props> = ({ route }: Props) => {
           />
         </View>
       ) : null}
+      <View style={styles.headerWrapper}>
+        <GoalDetailHeader title={goal.title} movitation={goal.motivation} />
+      </View>
+      <Scrollable />
+      <View style={styles.buttonWrapper}>
+        <Button
+          ctaTxt="Add Task"
+          pressHandler={() => {
+            setAddTaskFormOpened(true);
+          }}
+        />
+      </View>
     </>
   );
 };
 
 const styles = StyleSheet.create({
   headerWrapper: {
-    height: "20%",
+    height: "25%",
     marginTop: 10,
+  },
+  scrollAreaWrapper: {
+    backgroundColor: Color.light.background,
+    borderColor: Color.light.defaultBorder,
+    borderWidth: 1,
+    height: 700,
   },
   recentTasksWrapper: {
     ...Container.centerAligned,
-    height: "28%",
-    borderWidth: 0.5,
-    borderColor: "black",
-    borderRadius: 5,
+    alignItems: "flex-start",
+    marginTop: 50,
+    height: 300,
   },
   prioritizedTasksWrapper: {
     ...Container.centerAligned,
     alignItems: "flex-start",
-    height: "38%",
-    marginTop: 20,
-    borderWidth: 0.5,
-    borderColor: "black",
-    borderRadius: 5,
-  },
-  buttonAreaWrapper: {
-    ...Container.flexStart,
-    justifyContent: "flex-end",
-    height: "10%",
-    marginRight: 30,
+    height: 700,
   },
   buttonWrapper: {
-    width: "50%",
-    paddingBottom: 25,
+    position: "absolute",
+    ...Container.flexStart,
+    width: "45%",
+    bottom: "3.3%",
+    right: "3.2%",
+    zIndex: 2,
   },
   addTaskFormWrapper: {
     position: "absolute",
-    zIndex: 200,
-    marginTop: "63%",
+    zIndex: 1300,
+    marginTop: "56.5%",
     marginLeft: "0.5%",
     marginRight: "0.5%",
     width: "99%",
-    height: "37.5%",
+    height: "40.5%",
     borderWidth: 2,
     borderColor: Color.light.defaultBorder,
     borderRadius: 5,
@@ -107,9 +112,9 @@ const styles = StyleSheet.create({
   },
   grayOverlay: {
     position: "absolute",
-    zIndex: 1,
+    zIndex: 1200,
     width: "100%",
-    height: "100%",
+    height: "30%",
     backgroundColor: Color.light.overlay,
     opacity: 0.35,
   },

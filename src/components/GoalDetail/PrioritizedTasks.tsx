@@ -31,7 +31,7 @@ const PrioritizedTasks: React.FC = () => {
 
 const styles = StyleSheet.create({
   wrapper: {
-    width: "85%",
+    width: "90%",
     borderWidth: 0.5,
     borderColor: Color.light.defaultBorder,
     borderRadius: 5,
