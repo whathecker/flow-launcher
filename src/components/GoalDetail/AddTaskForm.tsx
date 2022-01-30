@@ -1,6 +1,7 @@
 /* eslint-disable no-console */
 import React, { useContext } from "react";
 import { GoalsContext } from "../../contexts/goals";
+import { TasksContext } from "../../contexts/tasks";
 import { TextInput, StyleSheet } from "react-native";
 import { View } from "../Themed";
 import { Button } from "../shared";
@@ -29,6 +30,7 @@ const AddTaskForm: React.FC<AddTaskFormProps> = ({
   addTaskFormOpenedHandler,
 }: AddTaskFormProps) => {
   const { addTaskToGoal } = useContext(GoalsContext);
+  const { fetchTasks } = useContext(TasksContext);
   return (
     <Formik
       initialValues={{ title: "", description: "", goal_id } as IAddTaskInput}
@@ -36,6 +38,7 @@ const AddTaskForm: React.FC<AddTaskFormProps> = ({
       onSubmit={async (values) => {
         try {
           await addTaskToGoal(values);
+          await fetchTasks({ goal_id: goal_id });
           addTaskFormOpenedHandler(false);
         } catch (error) {
           // TOOD: add error handling

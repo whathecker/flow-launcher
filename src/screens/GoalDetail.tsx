@@ -1,8 +1,9 @@
-import React, { useState } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import { StyleSheet, Keyboard, ScrollView } from "react-native";
 import { View, TouchableWithoutFeedback } from "../components/Themed";
 import { Container, Color, Shadow } from "../styles";
 import { GoalStackScreenProps } from "../types/navigation";
+import { TasksContext } from "../contexts/tasks";
 
 import {
   GoalDetailHeader,
@@ -14,22 +15,14 @@ import { Button } from "../components/shared";
 
 type Props = GoalStackScreenProps<"GoalDetail">;
 
-const Scrollable: React.FC = () => {
-  return (
-    <ScrollView style={styles.scrollAreaWrapper}>
-      <View style={styles.recentTasksWrapper}>
-        <UnprioritizedTasks />
-      </View>
-      <View style={styles.prioritizedTasksWrapper}>
-        <PrioritizedTasks />
-      </View>
-    </ScrollView>
-  );
-};
-
 const GoalDetailScreen: React.FC<Props> = ({ route }: Props) => {
   const { goal } = route.params;
   const [addTaskFormOpened, setAddTaskFormOpened] = useState(false);
+  const { fetchTasks } = useContext(TasksContext);
+
+  useEffect(() => {
+    fetchTasks({ goal_id: goal._id as string });
+  }, [goal._id]);
 
   return (
     <>
@@ -54,7 +47,14 @@ const GoalDetailScreen: React.FC<Props> = ({ route }: Props) => {
       <View style={styles.headerWrapper}>
         <GoalDetailHeader title={goal.title} movitation={goal.motivation} />
       </View>
-      <Scrollable />
+      <ScrollView style={styles.scrollAreaWrapper}>
+        <View style={styles.recentTasksWrapper}>
+          <UnprioritizedTasks />
+        </View>
+        <View style={styles.prioritizedTasksWrapper}>
+          <PrioritizedTasks />
+        </View>
+      </ScrollView>
       <View style={styles.buttonWrapper}>
         <Button
           ctaTxt="Add Task"

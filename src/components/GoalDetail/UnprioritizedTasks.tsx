@@ -11,6 +11,10 @@ const EmptyTasks: React.FC = () => {
   );
 };
 
+//TODO: receive data as props
+//Render empty tasks if there is no data
+//Render list if there is data
+
 const UnprioritizedTasks: React.FC = () => {
   return (
     <View style={styles.wrapper}>
