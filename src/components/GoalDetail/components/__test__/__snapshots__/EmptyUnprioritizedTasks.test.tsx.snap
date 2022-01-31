@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Test UnprioritizedTask component Should renders UnprioritizedTask correctly 1`] = `
+exports[`Test EmptyUnprioritizedTasks component Should renders EmptyUnprioritizedTasks correctly 1`] = `
 <View
   style={
     Array [
@@ -9,16 +9,10 @@ exports[`Test UnprioritizedTask component Should renders UnprioritizedTask corre
       },
       Object {
         "alignItems": "center",
-        "borderColor": "#636262",
-        "borderRadius": 5,
-        "borderWidth": 1,
         "flexDirection": "row",
+        "height": "55%",
         "justifyContent": "center",
-        "marginBottom": 5,
-        "marginTop": 5,
-        "paddingBottom": 5,
-        "paddingTop": 5,
-        "width": "100%",
+        "padding": 20,
       },
     ]
   }
@@ -30,13 +24,14 @@ exports[`Test UnprioritizedTask component Should renders UnprioritizedTask corre
           "color": "#000000",
         },
         Object {
+          "color": "#848484",
           "fontFamily": "Forum-Regular",
-          "fontSize": 20,
+          "fontSize": 16,
         },
       ]
     }
   >
-    title
+    Nothing there yet
   </Text>
 </View>
 `;

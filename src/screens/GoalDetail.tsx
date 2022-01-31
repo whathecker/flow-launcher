@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-non-null-assertion */
 import React, { useState, useEffect, useContext } from "react";
 import { StyleSheet, Keyboard, ScrollView } from "react-native";
 import { View, TouchableWithoutFeedback } from "../components/Themed";
@@ -18,11 +19,16 @@ type Props = GoalStackScreenProps<"GoalDetail">;
 const GoalDetailScreen: React.FC<Props> = ({ route }: Props) => {
   const { goal } = route.params;
   const [addTaskFormOpened, setAddTaskFormOpened] = useState(false);
-  const { fetchTasks } = useContext(TasksContext);
+  const { state, fetchTasks } = useContext(TasksContext);
 
   useEffect(() => {
     fetchTasks({ goal_id: goal._id as string });
   }, [goal._id]);
+
+  //TODO: turn this into util function
+  const unpriortizedTasks = state.tasks.filter((task) => {
+    return task.status === "open" && task.priority!.tier === "n/a";
+  });
 
   return (
     <>
@@ -49,7 +55,7 @@ const GoalDetailScreen: React.FC<Props> = ({ route }: Props) => {
       </View>
       <ScrollView style={styles.scrollAreaWrapper}>
         <View style={styles.recentTasksWrapper}>
-          <UnprioritizedTasks />
+          <UnprioritizedTasks tasks={unpriortizedTasks} />
         </View>
         <View style={styles.prioritizedTasksWrapper}>
           <PrioritizedTasks />

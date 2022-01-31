@@ -60,30 +60,244 @@ exports[`Test UnprioritizedTasks component Should renders UnprioritizedTasks cor
         },
         Object {
           "alignItems": "center",
-          "flexDirection": "row",
-          "height": "55%",
+          "flexDirection": "column",
           "justifyContent": "center",
-          "padding": 20,
+          "marginBottom": 8,
+          "marginLeft": "5%",
+          "marginRight": "5%",
+          "marginTop": 15,
+          "width": "90%",
         },
       ]
     }
   >
-    <Text
+    <View
       style={
         Array [
           Object {
-            "color": "#000000",
+            "backgroundColor": "#fff",
           },
           Object {
-            "color": "#848484",
-            "fontFamily": "Forum-Regular",
-            "fontSize": 16,
+            "alignItems": "center",
+            "borderColor": "#636262",
+            "borderRadius": 5,
+            "borderWidth": 1,
+            "flexDirection": "row",
+            "justifyContent": "center",
+            "marginBottom": 5,
+            "marginTop": 5,
+            "paddingBottom": 5,
+            "paddingTop": 5,
+            "width": "100%",
           },
         ]
       }
     >
-      Nothing there yet
-    </Text>
+      <Text
+        style={
+          Array [
+            Object {
+              "color": "#000000",
+            },
+            Object {
+              "fontFamily": "Forum-Regular",
+              "fontSize": 20,
+            },
+          ]
+        }
+      >
+        test tasks
+      </Text>
+    </View>
+    <View
+      style={
+        Array [
+          Object {
+            "backgroundColor": "#fff",
+          },
+          Object {
+            "alignItems": "center",
+            "borderColor": "#636262",
+            "borderRadius": 5,
+            "borderWidth": 1,
+            "flexDirection": "row",
+            "justifyContent": "center",
+            "marginBottom": 5,
+            "marginTop": 5,
+            "paddingBottom": 5,
+            "paddingTop": 5,
+            "width": "100%",
+          },
+        ]
+      }
+    >
+      <Text
+        style={
+          Array [
+            Object {
+              "color": "#000000",
+            },
+            Object {
+              "fontFamily": "Forum-Regular",
+              "fontSize": 20,
+            },
+          ]
+        }
+      >
+        test tasks -1
+      </Text>
+    </View>
+    <View
+      style={
+        Array [
+          Object {
+            "backgroundColor": "#fff",
+          },
+          Object {
+            "alignItems": "center",
+            "borderColor": "#636262",
+            "borderRadius": 5,
+            "borderWidth": 1,
+            "flexDirection": "row",
+            "justifyContent": "center",
+            "marginBottom": 5,
+            "marginTop": 5,
+            "paddingBottom": 5,
+            "paddingTop": 5,
+            "width": "100%",
+          },
+        ]
+      }
+    >
+      <Text
+        style={
+          Array [
+            Object {
+              "color": "#000000",
+            },
+            Object {
+              "fontFamily": "Forum-Regular",
+              "fontSize": 20,
+            },
+          ]
+        }
+      >
+        test tasks -2
+      </Text>
+    </View>
+    <View
+      style={
+        Array [
+          Object {
+            "backgroundColor": "#fff",
+          },
+          Object {
+            "marginBottom": 5,
+            "marginTop": 5,
+          },
+        ]
+      }
+    >
+      <Text
+        style={
+          Array [
+            Object {
+              "color": "#000000",
+            },
+            undefined,
+          ]
+        }
+      >
+        ...
+      </Text>
+    </View>
+    <View
+      style={
+        Array [
+          Object {
+            "backgroundColor": "#fff",
+          },
+          Object {
+            "alignItems": "center",
+            "flexDirection": "row",
+            "justifyContent": "space-between",
+            "paddingTop": 5,
+            "width": "100%",
+          },
+        ]
+      }
+    >
+      <View
+        accessible={true}
+        focusable={false}
+        onClick={[Function]}
+        onResponderGrant={[Function]}
+        onResponderMove={[Function]}
+        onResponderRelease={[Function]}
+        onResponderTerminate={[Function]}
+        onResponderTerminationRequest={[Function]}
+        onStartShouldSetResponder={[Function]}
+        style={
+          Object {
+            "backgroundColor": "#fff",
+            "opacity": 1,
+          }
+        }
+      >
+        <Text
+          style={
+            Array [
+              Object {
+                "color": "#000000",
+              },
+              Object {
+                "color": "#000000",
+                "fontFamily": "Forum-Regular",
+                "fontSize": 18,
+                "textDecorationLine": "underline",
+              },
+            ]
+          }
+        >
+          See All (90)
+        </Text>
+      </View>
+      <View
+        accessible={true}
+        focusable={false}
+        onClick={[Function]}
+        onResponderGrant={[Function]}
+        onResponderMove={[Function]}
+        onResponderRelease={[Function]}
+        onResponderTerminate={[Function]}
+        onResponderTerminationRequest={[Function]}
+        onStartShouldSetResponder={[Function]}
+        style={
+          Object {
+            "backgroundColor": "#fff",
+            "opacity": 1,
+          }
+        }
+      >
+        <Text
+          style={
+            Array [
+              Object {
+                "color": "#000000",
+              },
+              Object {
+                "color": "#0FA858",
+                "fontFamily": "Forum-Regular",
+                "fontSize": 18,
+                "textDecorationLine": "underline",
+              },
+            ]
+          }
+        >
+          Start Prioritizing
+        </Text>
+      </View>
+    </View>
   </View>
 </View>
 `;

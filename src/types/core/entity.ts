@@ -39,8 +39,8 @@ export class Task {
     public _id: ID,
     public goal_id: ID,
     public title: string,
-    public description: string,
     public status: TaskStatus,
+    public description?: string,
     public priority?: Priority,
   ) {}
 }

@@ -1,9 +1,9 @@
 import * as React from "react";
 import renderer from "react-test-renderer";
-import UnprioritizedTasks from "../UnprioritizedTasks";
-import { Task } from "../../../types/core/entity";
+import UnprioritizedTasksList from "../UnprioritizedTasksList";
+import { Task } from "../../../../types/core/entity";
 
-describe("Test UnprioritizedTasks component", () => {
+describe("Test UnprioritizedTasksList component", () => {
   const dummayTasks: Task[] = [
     {
       _id: "sjdiodfi103jsldicsd",
@@ -31,9 +31,9 @@ describe("Test UnprioritizedTasks component", () => {
     },
   ];
 
-  it("Should renders UnprioritizedTasks correctly", () => {
+  it("Should renders UnprioritizedTasksList correctly", () => {
     const tree = renderer
-      .create(<UnprioritizedTasks tasks={dummayTasks} />)
+      .create(<UnprioritizedTasksList tasks={dummayTasks} />)
       .toJSON();
 
     expect(tree).toMatchSnapshot();
