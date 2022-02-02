@@ -5,6 +5,7 @@ import Navigation from "./src/navigation";
 import { useFonts } from "expo-font";
 import AppLoading from "expo-app-loading";
 import { GoalsContextProvider } from "./src/contexts/goals";
+import { TasksContextProvider } from "./src/contexts/tasks";
 
 export default function App() {
   const [fontLoaded] = useFonts({
@@ -17,9 +18,11 @@ export default function App() {
   } else {
     return (
       <GoalsContextProvider>
-        <SafeAreaProvider>
-          <Navigation />
-        </SafeAreaProvider>
+        <TasksContextProvider>
+          <SafeAreaProvider>
+            <Navigation />
+          </SafeAreaProvider>
+        </TasksContextProvider>
       </GoalsContextProvider>
     );
   }

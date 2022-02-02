@@ -11,7 +11,7 @@ export class Goal {
     public title: string,
     public motivation: string,
     public reminder: Reminder,
-    public tasks: Task[] | [],
+    public tasks: Task[],
     public _id?: ID,
   ) {}
 }
@@ -22,6 +22,16 @@ export interface IAddGoalInput {
   reminder: string;
 }
 
+export interface IAddTaskInput {
+  title: string;
+  description: string;
+  goal_id: string;
+}
+
+export interface IFetchTasksInput {
+  goal_id: string;
+}
+
 export type TaskStatus = "open" | "finished";
 
 export class Task {
@@ -29,8 +39,8 @@ export class Task {
     public _id: ID,
     public goal_id: ID,
     public title: string,
-    public description: string,
     public status: TaskStatus,
+    public description?: string,
     public priority?: Priority,
   ) {}
 }

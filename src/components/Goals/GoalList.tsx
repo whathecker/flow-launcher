@@ -45,13 +45,7 @@ function _findColorToRender(index: number): number {
 const GoalList: React.FC<GoalListProps> = ({ goals }: GoalListProps) => {
   const renderGoal: ListRenderItem<GoalEntity> = ({ item, index }) => {
     const backgroundColor = assignColor(index);
-    return (
-      <Goal
-        backgroundColor={backgroundColor}
-        title={item.title}
-        motivation={item.motivation}
-      />
-    );
+    return <Goal goal={item} backgroundColor={backgroundColor} />;
   };
 
   return (

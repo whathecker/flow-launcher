@@ -1,0 +1,154 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Test AddTaskForm component Should renders AddTaskForm correctly 1`] = `
+<View
+  style={
+    Array [
+      Object {
+        "backgroundColor": "#fff",
+      },
+      undefined,
+    ]
+  }
+>
+  <View
+    style={
+      Array [
+        Object {
+          "backgroundColor": "#fff",
+        },
+        Object {
+          "height": "20%",
+          "paddingLeft": 20,
+          "paddingTop": 30,
+        },
+      ]
+    }
+  >
+    <TextInput
+      allowFontScaling={true}
+      autoFocus={true}
+      multiline={true}
+      onChangeText={[Function]}
+      placeholder="Write your task in a sentence"
+      placeholderTextColor="#848484"
+      rejectResponderTermination={true}
+      style={
+        Object {
+          "fontFamily": "Forum-Regular",
+          "fontSize": 26,
+        }
+      }
+      underlineColorAndroid="transparent"
+      value=""
+    />
+  </View>
+  <View
+    style={
+      Array [
+        Object {
+          "backgroundColor": "#fff",
+        },
+        Object {
+          "height": "60.5%",
+          "paddingLeft": 20,
+          "paddingTop": 20,
+        },
+      ]
+    }
+  >
+    <TextInput
+      allowFontScaling={true}
+      multiline={true}
+      onChangeText={[Function]}
+      placeholder="Write the description of your task"
+      placeholderTextColor="#848484"
+      rejectResponderTermination={true}
+      style={
+        Object {
+          "fontFamily": "Forum-Regular",
+          "fontSize": 20,
+          "height": "125%",
+        }
+      }
+      underlineColorAndroid="transparent"
+      value=""
+    />
+  </View>
+  <View
+    style={
+      Array [
+        Object {
+          "backgroundColor": "#fff",
+        },
+        Object {
+          "alignItems": "center",
+          "flexDirection": "row",
+          "justifyContent": "flex-end",
+        },
+      ]
+    }
+  >
+    <View
+      style={
+        Array [
+          Object {
+            "backgroundColor": "#fff",
+          },
+          Object {
+            "width": "50%",
+          },
+        ]
+      }
+    >
+      <View
+        accessible={true}
+        focusable={true}
+        onClick={[Function]}
+        onResponderGrant={[Function]}
+        onResponderMove={[Function]}
+        onResponderRelease={[Function]}
+        onResponderTerminate={[Function]}
+        onResponderTerminationRequest={[Function]}
+        onStartShouldSetResponder={[Function]}
+        style={
+          Object {
+            "alignItems": "center",
+            "backgroundColor": "#848785",
+            "borderRadius": 10,
+            "flexDirection": "row",
+            "justifyContent": "center",
+            "opacity": 1,
+            "paddingBottom": 20,
+            "paddingTop": 20,
+            "shadowColor": "#171717",
+            "shadowOffset": Object {
+              "height": 5,
+              "width": 3,
+            },
+            "shadowOpacity": 0.2,
+            "shadowRadius": 3,
+            "width": "100%",
+          }
+        }
+      >
+        <Text
+          style={
+            Array [
+              Object {
+                "color": "#fff",
+              },
+              Object {
+                "fontFamily": "Forum-Regular",
+                "fontSize": 20,
+              },
+            ]
+          }
+        >
+          Add
+        </Text>
+      </View>
+    </View>
+  </View>
+</View>
+`;

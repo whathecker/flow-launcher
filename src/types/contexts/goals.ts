@@ -1,8 +1,9 @@
-import { Goal, IAddGoalInput } from "../core/entity";
+import { Goal, Task, IAddGoalInput, IAddTaskInput } from "../core/entity";
 
 export type GoalsState = {
   goals?: Goal[];
   newGoal?: Goal;
+  newTask?: Task;
   errorMsg?: string;
 };
 
@@ -10,11 +11,13 @@ export type ContextProviderProps = {
   state: GoalsState;
   fetchGoals: () => Promise<void>;
   addGoal: (input: IAddGoalInput) => Promise<void>;
+  addTaskToGoal: (input: IAddTaskInput) => Promise<void>;
 };
 
 export enum GoalsActionType {
-  fetch = "FETCH_GOALS",
-  add = "ADD_GOAL",
+  fetchGoals = "FETCH_GOALS",
+  addGoal = "ADD_GOAL",
+  addTask = "ADD_TASK",
   error = "ERROR",
 }
 

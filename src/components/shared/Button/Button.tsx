@@ -6,18 +6,22 @@ import { Container, Typography, Shadow } from "../../../styles";
 type ButtonProps = {
   ctaTxt: string;
   pressHandler: () => void;
+  disable?: boolean;
 };
 
 const Button: React.FC<ButtonProps> = ({
   ctaTxt,
   pressHandler,
+  disable,
 }: ButtonProps) => {
+  const backgroundColor = disable ? "#848785" : "#0FA858";
   return (
     <Touchable
       onPress={pressHandler}
       style={styles.button}
-      lightColor="#0FA858"
-      darkColor="#0FA858"
+      lightColor={backgroundColor}
+      darkColor={backgroundColor}
+      disabled={disable}
     >
       <Text style={styles.buttonText} lightColor="#fff" darkColor="#fff">
         {ctaTxt}

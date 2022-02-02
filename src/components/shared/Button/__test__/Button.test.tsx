@@ -17,4 +17,19 @@ describe("Test Button component", () => {
 
     expect(tree).toMatchSnapshot();
   });
+  it("Should renders disabled Button correctly", () => {
+    const tree = renderer
+      .create(
+        <Button
+          disable={true}
+          ctaTxt="Click it!"
+          pressHandler={() => {
+            return;
+          }}
+        />,
+      )
+      .toJSON();
+
+    expect(tree).toMatchSnapshot();
+  });
 });
