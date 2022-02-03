@@ -4,6 +4,7 @@ import { View, Text, Touchable } from "../../Themed";
 import UnprioritizedTask from "./UnprioritizedTask";
 import { Container, Typography, Color } from "../../../styles";
 import { Task } from "../../../types/core/entity";
+import { navigationRef } from "../../../utils";
 
 type UnprioritizedTasksProp = {
   tasks: Task[];
@@ -27,7 +28,11 @@ const UnprioritizedTasksList: React.FC<UnprioritizedTasksProp> = ({
           <Touchable>
             <Text style={styles.sellAllBtn}>{`See All (90)`}</Text>
           </Touchable>
-          <Touchable>
+          <Touchable
+            onPress={() => {
+              navigationRef.navigate("Prior");
+            }}
+          >
             <Text style={styles.prioritizeBtn}>{`Start Prioritizing`}</Text>
           </Touchable>
         </View>
