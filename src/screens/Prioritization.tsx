@@ -1,5 +1,7 @@
 import React from "react";
-import { View, Text, Button, StyleSheet } from "react-native";
+import { Button, StyleSheet } from "react-native";
+import { View, Text } from "../components/Themed";
+import { PriorHeader } from "../components/Prioritization";
 import { Container, Typography } from "../styles";
 import { PriorStackScreenProps } from "../types/navigation";
 
@@ -9,7 +11,7 @@ const PrioritizationScreen: React.FC<Props> = ({ navigation }: Props) => {
   return (
     <>
       <View style={styles.headerWrapper}>
-        <Text style={styles.headerText}>Prioritization Screen</Text>
+        <PriorHeader />
       </View>
       <View style={styles.headerWrapper}>
         <Text>Title of the goal</Text>
@@ -34,8 +36,7 @@ const PrioritizationScreen: React.FC<Props> = ({ navigation }: Props) => {
 
 const styles = StyleSheet.create({
   headerWrapper: {
-    ...Container.centerAligned,
-    height: "10%",
+    height: "26%",
   },
   headerText: {
     ...Typography.h1,
