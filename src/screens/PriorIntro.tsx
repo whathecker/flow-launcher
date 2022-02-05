@@ -1,28 +1,85 @@
 import React from "react";
-import { View, Text, Button, StyleSheet } from "react-native";
+import { Image, StyleSheet } from "react-native";
+import { View, Text } from "../components/Themed";
 import { Container, Typography } from "../styles";
 import { PriorStackScreenProps } from "../types/navigation";
 
+import { PriorIntroHeader } from "../components/PriorIntro";
+import { Button } from "../components/shared";
+
 type Props = PriorStackScreenProps<"PriorIntro">;
+
+const PriorExplanation: React.FC = () => {
+  return (
+    <>
+      <View
+        style={{
+          ...Container.flexStart,
+          width: "70%",
+          height: "50%",
+          marginTop: 5,
+          marginBottom: 5,
+        }}
+      >
+        <View style={{ width: "35%" }}>
+          <Image
+            style={{ width: 60, height: 60 }}
+            source={require(`../../assets/images/alarm-clock_23f0.png`)}
+          />
+        </View>
+        <View style={{ width: "65%" }}>
+          <Text
+            style={{ ...Typography.h4, marginBottom: 6 }}
+          >{`Is this task urgent?`}</Text>
+          <Text style={{ ...Typography.p, fontSize: 16 }}>
+            {`Answer ‘yes’ if there is any time pressure to finish the task.`}
+          </Text>
+        </View>
+      </View>
+      <View
+        style={{
+          ...Container.flexStart,
+          width: "70%",
+          height: "50%",
+          marginTop: 20,
+          marginBottom: 20,
+        }}
+      >
+        <View style={{ width: "35%" }}>
+          <Image
+            style={{ width: 60, height: 60 }}
+            source={require(`../../assets/images/exclamation-mark_2757.png`)}
+          />
+        </View>
+        <View style={{ width: "65%" }}>
+          <Text
+            style={{ ...Typography.h4, marginBottom: 6 }}
+          >{`Is this task important?`}</Text>
+          <Text style={{ ...Typography.p, fontSize: 16 }}>
+            {`Think twice, and mark ‘yes’ if the task is crucial to achieving your goal.`}
+          </Text>
+        </View>
+      </View>
+    </>
+  );
+};
 
 const PriorIntroScreen: React.FC<Props> = ({ navigation }: Props) => {
   return (
     <>
       <View style={styles.headerWrapper}>
-        <Text style={styles.headerText}>
-          Hello, This is your PriorIntro screen
-        </Text>
+        <PriorIntroHeader />
       </View>
       <View style={styles.explanationAreaWrapper}>
-        <Text>Explain what we are going to do here</Text>
+        <PriorExplanation />
       </View>
       <View style={styles.buttonWrapper}>
-        <Button
-          title="Let's start prioritization"
-          onPress={() => {
-            navigation.navigate("Prioritization");
-          }}
-        />
+        <View style={{ width: "80%" }}>
+          <Button
+            ctaTxt="Start prioritizing!"
+            pressHandler={() => navigation.navigate("Prioritization")}
+          />
+        </View>
       </View>
     </>
   );
@@ -30,19 +87,17 @@ const PriorIntroScreen: React.FC<Props> = ({ navigation }: Props) => {
 
 const styles = StyleSheet.create({
   headerWrapper: {
-    ...Container.centerAligned,
-    height: "10%",
-  },
-  headerText: {
-    ...Typography.h1,
+    ...Container.centerAlignedVertical,
+    height: "26%",
   },
   explanationAreaWrapper: {
-    ...Container.centerAligned,
-    height: "30%",
+    ...Container.centerAlignedVertical,
+    height: "46%",
+    paddingTop: 100,
   },
   buttonWrapper: {
     ...Container.centerAligned,
-    height: "20%",
+    height: "30%",
   },
 });
 
