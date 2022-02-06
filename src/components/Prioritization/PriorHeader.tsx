@@ -5,7 +5,15 @@ import { CloseIcon } from "../shared";
 import { Container, Typography } from "../../styles";
 import { navigationRef } from "../../utils";
 
-const PriorHeader: React.FC = () => {
+type PriorHeaderProps = {
+  title: string;
+  motivation: string;
+};
+
+const PriorHeader: React.FC<PriorHeaderProps> = ({
+  title,
+  motivation,
+}: PriorHeaderProps) => {
   return (
     <View style={styles.wrapper}>
       <View style={styles.closeIconAreaWrapper}>
@@ -22,6 +30,10 @@ const PriorHeader: React.FC = () => {
           />
         </View>
       </View>
+      <View style={styles.goalAreaWrapper}>
+        <Text style={styles.goalText}>{title}</Text>
+        <Text style={styles.motivationText}>{motivation}</Text>
+      </View>
     </View>
   );
 };
@@ -32,7 +44,7 @@ const styles = StyleSheet.create({
   },
   closeIconAreaWrapper: {
     ...Container.flexStart,
-    height: "60%",
+    height: "40%",
   },
   closeIconWrapper: {
     paddingLeft: 25,
@@ -53,6 +65,19 @@ const styles = StyleSheet.create({
   image: {
     width: 32,
     height: 32,
+  },
+  goalAreaWrapper: {
+    paddingLeft: "10%",
+    marginTop: "13%",
+  },
+  goalText: {
+    ...Typography.h4,
+    fontSize: 24,
+    paddingBottom: 10,
+  },
+  motivationText: {
+    ...Typography.p,
+    fontSize: 18,
   },
 });
 

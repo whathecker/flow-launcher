@@ -1,7 +1,7 @@
-import { ID, Task, IFetchTasksInput } from "../core/entity";
+import { Goal, Task, IFetchTasksInput } from "../core/entity";
 
 export type TasksState = {
-  goal_id: ID;
+  goal: Goal | null;
   tasks: Task[];
   errorMsg?: string;
 };

@@ -22,7 +22,7 @@ const GoalDetailScreen: React.FC<Props> = ({ route }: Props) => {
   const { state, fetchTasks } = useContext(TasksContext);
 
   useEffect(() => {
-    fetchTasks({ goal_id: goal._id as string });
+    fetchTasks({ goal: goal });
   }, [goal._id]);
 
   //TODO: turn this into util function

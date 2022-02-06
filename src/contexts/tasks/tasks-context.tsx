@@ -4,7 +4,7 @@ import { fetchTasks } from "./tasks-actions";
 import { TasksState, ContextProvierProps } from "../../types/contexts/tasks";
 
 const defaultState: TasksState = {
-  goal_id: "",
+  goal: null,
   tasks: [],
 };
 

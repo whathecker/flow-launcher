@@ -22,7 +22,7 @@ exports[`Test PriorHeader component Should renders PriorHeader correctly 1`] = `
         Object {
           "alignItems": "center",
           "flexDirection": "row",
-          "height": "60%",
+          "height": "40%",
           "justifyContent": "flex-start",
         },
       ]
@@ -126,6 +126,51 @@ exports[`Test PriorHeader component Should renders PriorHeader correctly 1`] = `
         }
       />
     </View>
+  </View>
+  <View
+    style={
+      Array [
+        Object {
+          "backgroundColor": "#fff",
+        },
+        Object {
+          "marginTop": "13%",
+          "paddingLeft": "10%",
+        },
+      ]
+    }
+  >
+    <Text
+      style={
+        Array [
+          Object {
+            "color": "#000000",
+          },
+          Object {
+            "fontFamily": "EB-Garamond",
+            "fontSize": 24,
+            "paddingBottom": 10,
+          },
+        ]
+      }
+    >
+      Mock goal
+    </Text>
+    <Text
+      style={
+        Array [
+          Object {
+            "color": "#000000",
+          },
+          Object {
+            "fontFamily": "Forum-Regular",
+            "fontSize": 18,
+          },
+        ]
+      }
+    >
+      Mock motivation
+    </Text>
   </View>
 </View>
 `;

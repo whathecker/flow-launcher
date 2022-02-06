@@ -29,7 +29,7 @@ export interface IAddTaskInput {
 }
 
 export interface IFetchTasksInput {
-  goal_id: string;
+  goal: Goal;
 }
 
 export type TaskStatus = "open" | "finished";

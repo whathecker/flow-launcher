@@ -1,17 +1,24 @@
-import React from "react";
+/* eslint-disable @typescript-eslint/no-non-null-assertion */
+import React, { useContext } from "react";
 import { Button, StyleSheet } from "react-native";
 import { View, Text } from "../components/Themed";
 import { PriorHeader } from "../components/Prioritization";
 import { Container, Typography } from "../styles";
 import { PriorStackScreenProps } from "../types/navigation";
+import { TasksContext } from "../contexts/tasks";
 
 type Props = PriorStackScreenProps<"Prioritization">;
 
 const PrioritizationScreen: React.FC<Props> = ({ navigation }: Props) => {
+  const { state } = useContext(TasksContext);
+
   return (
     <>
       <View style={styles.headerWrapper}>
-        <PriorHeader />
+        <PriorHeader
+          title={state.goal!.title}
+          motivation={state.goal!.motivation}
+        />
       </View>
       <View style={styles.headerWrapper}>
         <Text>Title of the goal</Text>
@@ -36,7 +43,7 @@ const PrioritizationScreen: React.FC<Props> = ({ navigation }: Props) => {
 
 const styles = StyleSheet.create({
   headerWrapper: {
-    height: "26%",
+    height: "35%",
   },
   headerText: {
     ...Typography.h1,
