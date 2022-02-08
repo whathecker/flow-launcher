@@ -40,7 +40,7 @@ const PriorHeader: React.FC<PriorHeaderProps> = ({
 
 const styles = StyleSheet.create({
   wrapper: {
-    paddingBottom: 25,
+    paddingBottom: 15,
   },
   closeIconAreaWrapper: {
     ...Container.flexStart,
@@ -68,12 +68,12 @@ const styles = StyleSheet.create({
   },
   goalAreaWrapper: {
     paddingLeft: "10%",
-    marginTop: "13%",
+    marginTop: "8%",
   },
   goalText: {
     ...Typography.h4,
     fontSize: 24,
-    paddingBottom: 10,
+    paddingBottom: 5,
   },
   motivationText: {
     ...Typography.p,

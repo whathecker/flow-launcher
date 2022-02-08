@@ -8,7 +8,7 @@ exports[`Test PriorHeader component Should renders PriorHeader correctly 1`] = `
         "backgroundColor": "#fff",
       },
       Object {
-        "paddingBottom": 25,
+        "paddingBottom": 15,
       },
     ]
   }
@@ -134,7 +134,7 @@ exports[`Test PriorHeader component Should renders PriorHeader correctly 1`] = `
           "backgroundColor": "#fff",
         },
         Object {
-          "marginTop": "13%",
+          "marginTop": "8%",
           "paddingLeft": "10%",
         },
       ]
@@ -149,7 +149,7 @@ exports[`Test PriorHeader component Should renders PriorHeader correctly 1`] = `
           Object {
             "fontFamily": "EB-Garamond",
             "fontSize": 24,
-            "paddingBottom": 10,
+            "paddingBottom": 5,
           },
         ]
       }
