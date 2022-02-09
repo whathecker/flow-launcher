@@ -3,7 +3,7 @@
 import React from "react";
 import { StyleSheet, Image } from "react-native";
 import { View, Text } from "../Themed";
-import { Button } from "../shared";
+import { Button, RadioButton } from "../shared";
 import { Container, Typography, Color } from "../../styles";
 
 import { Task } from "../../types/core/entity";
@@ -36,14 +36,39 @@ const TaskTitle: React.FC = () => {
   );
 };
 
+const RadioBtnControl: React.FC = () => {
+  return (
+    <View
+      style={{
+        ...Container.flexStart,
+        justifyContent: "space-between",
+        width: "42%",
+      }}
+    >
+      <RadioButton
+        displayText="Yes"
+        value="yes"
+        activeValue="yes"
+        pressHandler={() => console.log("Call the setState here!")}
+      />
+      <RadioButton
+        displayText="No"
+        value="no"
+        activeValue="yes"
+        pressHandler={() => console.log("Pressed!")}
+      />
+    </View>
+  );
+};
+
 const PriorForm: React.FC<PriorFormProps> = ({ tasks }: PriorFormProps) => {
   return (
     <View style={styles.wrapper}>
       <View style={styles.headerWrapper}>
-        <View style={{ marginBottom: 20 }}>
+        <View style={{ marginBottom: 10 }}>
           <TaskCounter />
         </View>
-        <View style={{ marginBottom: 20 }}>
+        <View style={{ marginBottom: 10 }}>
           <TaskTitle />
         </View>
       </View>
@@ -57,7 +82,7 @@ const PriorForm: React.FC<PriorFormProps> = ({ tasks }: PriorFormProps) => {
           </View>
           <View>
             <Text style={styles.inputLabel}>{`Is this task urgent?`}</Text>
-            <Text>{`Put the radio buttons here`}</Text>
+            <RadioBtnControl />
           </View>
         </View>
         <View style={styles.inputWrapper}>
@@ -69,7 +94,7 @@ const PriorForm: React.FC<PriorFormProps> = ({ tasks }: PriorFormProps) => {
           </View>
           <View>
             <Text style={styles.inputLabel}>{`Is this task urgent?`}</Text>
-            <Text>{`Put the radio buttons here`}</Text>
+            <RadioBtnControl />
           </View>
         </View>
       </View>
@@ -85,7 +110,7 @@ const PriorForm: React.FC<PriorFormProps> = ({ tasks }: PriorFormProps) => {
 const styles = StyleSheet.create({
   wrapper: {
     width: "80%",
-    height: "75%",
+    height: "85%",
     borderColor: Color.light.defaultBorder,
     borderRadius: 8,
     borderWidth: 0.5,
@@ -93,12 +118,12 @@ const styles = StyleSheet.create({
   headerWrapper: {
     paddingTop: "10%",
     paddingLeft: "8%",
-    height: "28%",
+    height: "18%",
   },
   inputAreaWrapper: {
     paddingTop: "10%",
     paddingLeft: "8%",
-    height: "55%",
+    height: "65%",
   },
   inputWrapper: {
     ...Container.flexStart,
