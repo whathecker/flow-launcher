@@ -3,27 +3,13 @@
 import React, { useState } from "react";
 import { StyleSheet, Image } from "react-native";
 import { View, Text } from "../Themed";
-import { TaskCounter } from "./components";
+import { TaskCounter, TaskTitle } from "./components";
 import { Button, RadioButton } from "../shared";
 import { Container, Typography, Color } from "../../styles";
 import { Task } from "../../types/core/entity";
 
 type PriorFormProps = {
   tasks: Task[];
-};
-
-type TaskTitleProps = {
-  title: string;
-};
-
-const TaskTitle: React.FC<TaskTitleProps> = ({ title }: TaskTitleProps) => {
-  return (
-    <>
-      <Text style={{ ...Typography.p, fontSize: 20, color: Color.light.text }}>
-        {title}
-      </Text>
-    </>
-  );
 };
 
 const RadioBtnControl: React.FC = () => {
