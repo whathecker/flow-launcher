@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 /* eslint-disable no-console */
-import React from "react";
+import React, { useState } from "react";
 import { StyleSheet, Image } from "react-native";
 import { View, Text } from "../Themed";
 import { Button, RadioButton } from "../shared";
@@ -12,7 +12,16 @@ type PriorFormProps = {
   tasks: Task[];
 };
 
-const TaskCounter: React.FC = () => {
+type TaskCounterProps = {
+  currentTaskIndex: number;
+  totalTasksLength: number;
+};
+
+const TaskCounter: React.FC<TaskCounterProps> = ({
+  currentTaskIndex,
+  totalTasksLength,
+}: TaskCounterProps) => {
+  const currentTaskCounter = currentTaskIndex + 1;
   return (
     <>
       <Text
@@ -21,16 +30,20 @@ const TaskCounter: React.FC = () => {
           fontSize: 18,
           color: Color.light.subtleLabel,
         }}
-      >{`Task (1 of 2)`}</Text>
+      >{`Task (${currentTaskCounter} of ${totalTasksLength})`}</Text>
     </>
   );
 };
 
-const TaskTitle: React.FC = () => {
+type TaskTitleProps = {
+  title: string;
+};
+
+const TaskTitle: React.FC<TaskTitleProps> = ({ title }: TaskTitleProps) => {
   return (
     <>
       <Text style={{ ...Typography.p, fontSize: 20, color: Color.light.text }}>
-        {"Reserch the driving school"}
+        {title}
       </Text>
     </>
   );
@@ -62,14 +75,18 @@ const RadioBtnControl: React.FC = () => {
 };
 
 const PriorForm: React.FC<PriorFormProps> = ({ tasks }: PriorFormProps) => {
+  const [activeTaskCounter, setActiveTaskCounter] = useState(0);
   return (
     <View style={styles.wrapper}>
       <View style={styles.headerWrapper}>
         <View style={{ marginBottom: 10 }}>
-          <TaskCounter />
+          <TaskCounter
+            currentTaskIndex={activeTaskCounter}
+            totalTasksLength={tasks.length}
+          />
         </View>
         <View style={{ marginBottom: 10 }}>
-          <TaskTitle />
+          <TaskTitle title={tasks[activeTaskCounter].title} />
         </View>
       </View>
       <View style={styles.inputAreaWrapper}>
