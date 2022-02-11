@@ -3,36 +3,13 @@
 import React, { useState } from "react";
 import { StyleSheet, Image } from "react-native";
 import { View, Text } from "../Themed";
+import { TaskCounter } from "./components";
 import { Button, RadioButton } from "../shared";
 import { Container, Typography, Color } from "../../styles";
-
 import { Task } from "../../types/core/entity";
 
 type PriorFormProps = {
   tasks: Task[];
-};
-
-type TaskCounterProps = {
-  currentTaskIndex: number;
-  totalTasksLength: number;
-};
-
-const TaskCounter: React.FC<TaskCounterProps> = ({
-  currentTaskIndex,
-  totalTasksLength,
-}: TaskCounterProps) => {
-  const currentTaskCounter = currentTaskIndex + 1;
-  return (
-    <>
-      <Text
-        style={{
-          ...Typography.p,
-          fontSize: 18,
-          color: Color.light.subtleLabel,
-        }}
-      >{`Task (${currentTaskCounter} of ${totalTasksLength})`}</Text>
-    </>
-  );
 };
 
 type TaskTitleProps = {
