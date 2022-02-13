@@ -2,7 +2,7 @@
 /* eslint-disable no-console */
 import React, { useState } from "react";
 import { StyleSheet, Image } from "react-native";
-import { View, Text } from "../Themed";
+import { Touchable, View, Text } from "../Themed";
 import { TaskCounter, TaskTitle } from "./components";
 import { Button, RadioButton } from "../shared";
 import { Container, Typography, Color } from "../../styles";
@@ -52,6 +52,14 @@ const PriorForm: React.FC<PriorFormProps> = ({ tasks }: PriorFormProps) => {
       setUrgencyValue(tasks[nextCounter].priority!.urgency);
       setImportanceValue(tasks[nextCounter].priority!.importance);
     }
+  };
+
+  const renderPrevTask = (): void => {
+    const prevCounter = activeTaskCounter - 1;
+    setActiveTaskCounter(prevCounter);
+    setActiveTask(tasks[prevCounter]);
+    setUrgencyValue(tasks[prevCounter].priority!.urgency);
+    setImportanceValue(tasks[prevCounter].priority!.importance);
   };
 
   return (
@@ -132,7 +140,21 @@ const PriorForm: React.FC<PriorFormProps> = ({ tasks }: PriorFormProps) => {
         </View>
       </View>
       <View style={styles.buttonAreaWrapper}>
-        <View style={styles.buttonWrapper}>
+        {activeTaskCounter > 0 ? (
+          <Touchable
+            style={styles.prevButtonWrapper}
+            onPress={() => renderPrevTask()}
+          >
+            <Image
+              style={styles.prevArrowIcon}
+              source={require(`../../../assets/images/prev-arrow-blk.png`)}
+            />
+            <Text style={styles.prevButtonText}>{`Previously`}</Text>
+          </Touchable>
+        ) : (
+          <View></View>
+        )}
+        <View style={styles.nextButtonWrapper}>
           {activeTaskCounter === tasks.length - 1 ? (
             <Button
               ctaTxt="Review Result"
@@ -192,9 +214,24 @@ const styles = StyleSheet.create({
   },
   buttonAreaWrapper: {
     ...Container.flexStart,
-    justifyContent: "flex-end",
+    justifyContent: "space-between",
   },
-  buttonWrapper: {
+  prevButtonWrapper: {
+    ...Container.flexStart,
+    justifyContent: "flex-start",
+    paddingLeft: 33,
+  },
+  prevArrowIcon: {
+    width: 20,
+    height: 20,
+  },
+  prevButtonText: {
+    ...Typography.p,
+    fontSize: 16,
+    textDecorationLine: "underline",
+    paddingLeft: 5,
+  },
+  nextButtonWrapper: {
     width: "45%",
     paddingRight: 15,
   },
