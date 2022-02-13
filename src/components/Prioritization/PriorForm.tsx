@@ -1,4 +1,4 @@
-/* eslint-disable @typescript-eslint/no-unused-vars */
+/* eslint-disable @typescript-eslint/no-non-null-assertion */
 /* eslint-disable no-console */
 import React, { useState } from "react";
 import { StyleSheet, Image } from "react-native";
@@ -6,39 +6,54 @@ import { View, Text } from "../Themed";
 import { TaskCounter, TaskTitle } from "./components";
 import { Button, RadioButton } from "../shared";
 import { Container, Typography, Color } from "../../styles";
+
 import { Task } from "../../types/core/entity";
+import { PriorityMeasure } from "../../types/core/value-object";
 
 type PriorFormProps = {
   tasks: Task[];
 };
 
-const RadioBtnControl: React.FC = () => {
-  return (
-    <View
-      style={{
-        ...Container.flexStart,
-        justifyContent: "space-between",
-        width: "42%",
-      }}
-    >
-      <RadioButton
-        displayText="Yes"
-        value="yes"
-        activeValue="yes"
-        pressHandler={() => console.log("Call the setState here!")}
-      />
-      <RadioButton
-        displayText="No"
-        value="no"
-        activeValue="yes"
-        pressHandler={() => console.log("Pressed!")}
-      />
-    </View>
-  );
-};
-
 const PriorForm: React.FC<PriorFormProps> = ({ tasks }: PriorFormProps) => {
   const [activeTaskCounter, setActiveTaskCounter] = useState(0);
+  const [activeTask, setActiveTask] = useState(tasks[activeTaskCounter]);
+  const [importanceValue, setImportanceValue] = useState(
+    activeTask.priority!.importance,
+  );
+  const [urgencyValue, setUrgencyValue] = useState(
+    activeTask.priority!.urgency,
+  );
+
+  const shouldNextBtnInactive = (
+    importanceVal: PriorityMeasure,
+    urgencyVal: PriorityMeasure,
+  ): boolean => {
+    if (importanceVal === "n/a" || urgencyVal === "n/a") return true;
+    else return false;
+  };
+
+  const updateUrgencyVal = (input: PriorityMeasure): void => {
+    activeTask.priority!.urgency = input;
+    setActiveTask(activeTask);
+    setUrgencyValue(activeTask.priority!.urgency);
+  };
+
+  const updateImportanceVal = (input: PriorityMeasure): void => {
+    activeTask.priority!.importance = input;
+    setActiveTask(activeTask);
+    setImportanceValue(activeTask.priority!.importance);
+  };
+
+  const renderNextTask = (): void => {
+    if (activeTaskCounter < tasks.length - 1) {
+      const nextCounter = activeTaskCounter + 1;
+      setActiveTaskCounter(nextCounter);
+      setActiveTask(tasks[nextCounter]);
+      setUrgencyValue(tasks[nextCounter].priority!.urgency);
+      setImportanceValue(tasks[nextCounter].priority!.importance);
+    }
+  };
+
   return (
     <View style={styles.wrapper}>
       <View style={styles.headerWrapper}>
@@ -49,7 +64,7 @@ const PriorForm: React.FC<PriorFormProps> = ({ tasks }: PriorFormProps) => {
           />
         </View>
         <View style={{ marginBottom: 10 }}>
-          <TaskTitle title={tasks[activeTaskCounter].title} />
+          <TaskTitle title={activeTask.title} />
         </View>
       </View>
       <View style={styles.inputAreaWrapper}>
@@ -62,7 +77,26 @@ const PriorForm: React.FC<PriorFormProps> = ({ tasks }: PriorFormProps) => {
           </View>
           <View>
             <Text style={styles.inputLabel}>{`Is this task urgent?`}</Text>
-            <RadioBtnControl />
+            <View
+              style={{
+                ...Container.flexStart,
+                justifyContent: "space-between",
+                width: "42%",
+              }}
+            >
+              <RadioButton
+                displayText="Yes"
+                value="yes"
+                activeValue={urgencyValue}
+                pressHandler={() => updateUrgencyVal("yes")}
+              />
+              <RadioButton
+                displayText="No"
+                value="no"
+                activeValue={urgencyValue}
+                pressHandler={() => updateUrgencyVal("no")}
+              />
+            </View>
           </View>
         </View>
         <View style={styles.inputWrapper}>
@@ -73,14 +107,48 @@ const PriorForm: React.FC<PriorFormProps> = ({ tasks }: PriorFormProps) => {
             />
           </View>
           <View>
-            <Text style={styles.inputLabel}>{`Is this task urgent?`}</Text>
-            <RadioBtnControl />
+            <Text style={styles.inputLabel}>{`Is this task important?`}</Text>
+            <View
+              style={{
+                ...Container.flexStart,
+                justifyContent: "space-between",
+                width: "42%",
+              }}
+            >
+              <RadioButton
+                displayText="Yes"
+                value="yes"
+                activeValue={importanceValue}
+                pressHandler={() => updateImportanceVal("yes")}
+              />
+              <RadioButton
+                displayText="No"
+                value="no"
+                activeValue={importanceValue}
+                pressHandler={() => updateImportanceVal("no")}
+              />
+            </View>
           </View>
         </View>
       </View>
       <View style={styles.buttonAreaWrapper}>
         <View style={styles.buttonWrapper}>
-          <Button ctaTxt="Next" pressHandler={() => console.log("pressed")} />
+          {activeTaskCounter === tasks.length - 1 ? (
+            <Button
+              ctaTxt="Review Result"
+              disable={shouldNextBtnInactive(importanceValue, urgencyValue)}
+              pressHandler={() => {
+                console.log("Finalize the process!");
+                console.log(tasks);
+              }}
+            />
+          ) : (
+            <Button
+              ctaTxt="Next"
+              disable={shouldNextBtnInactive(importanceValue, urgencyValue)}
+              pressHandler={() => renderNextTask()}
+            />
+          )}
         </View>
       </View>
     </View>
