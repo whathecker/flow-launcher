@@ -5,6 +5,7 @@ import { View, TouchableWithoutFeedback } from "../components/Themed";
 import { Container, Color, Shadow } from "../styles";
 import { GoalStackScreenProps } from "../types/navigation";
 import { TasksContext } from "../contexts/tasks";
+import { taskFilters } from "../utils";
 
 import {
   GoalDetailHeader,
@@ -25,10 +26,7 @@ const GoalDetailScreen: React.FC<Props> = ({ route }: Props) => {
     fetchTasks({ goal: goal });
   }, [goal._id]);
 
-  //TODO: turn this into util function
-  const unpriortizedTasks = state.tasks.filter((task) => {
-    return task.status === "open" && task.priority!.tier === "n/a";
-  });
+  const unpriortizedTasks = taskFilters.filterUnprioritized(state.tasks);
 
   return (
     <>
