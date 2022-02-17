@@ -9,6 +9,7 @@ import { Container, Typography, Color } from "../../styles";
 
 import { Task } from "../../types/core/entity";
 import { PriorityMeasure } from "../../types/core/value-object";
+import { taskFilters } from "../../utils";
 
 type PriorFormProps = {
   tasks: Task[];
@@ -161,7 +162,11 @@ const PriorForm: React.FC<PriorFormProps> = ({ tasks }: PriorFormProps) => {
               disable={shouldNextBtnInactive(importanceValue, urgencyValue)}
               pressHandler={() => {
                 console.log("Finalize the process!");
+                console.log("This many tasks was prioritised: " + tasks.length);
                 console.log(tasks);
+                const tasksByPriorBucket =
+                  taskFilters.filterByPriorityScheme(tasks);
+                console.log(tasksByPriorBucket);
               }}
             />
           ) : (
