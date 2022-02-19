@@ -1,5 +1,4 @@
 /* eslint-disable @typescript-eslint/no-non-null-assertion */
-/* eslint-disable no-console */
 import React, { useState } from "react";
 import { StyleSheet, Image } from "react-native";
 import { Touchable, View, Text } from "../Themed";
@@ -9,7 +8,7 @@ import { Container, Typography, Color } from "../../styles";
 
 import { Task } from "../../types/core/entity";
 import { PriorityMeasure } from "../../types/core/value-object";
-import { taskFilters } from "../../utils";
+import { taskFilters, navigationRef } from "../../utils";
 
 type PriorFormProps = {
   unprioritisedTasks: Task[];
@@ -169,8 +168,11 @@ const PriorForm: React.FC<PriorFormProps> = ({
                   taskFilters.checkTasksReadinessForPriorReview(
                     unprioritisedTasks,
                   );
-                console.log(result);
-                // send user to next page with tasks as a prop
+                if (result) {
+                  navigationRef.navigate("PriorReview", {
+                    tasks: unprioritisedTasks,
+                  });
+                }
               }}
             />
           ) : (
