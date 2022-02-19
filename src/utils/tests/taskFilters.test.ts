@@ -116,4 +116,55 @@ describe("Test task filters", () => {
 
     expect(unprioritised).toHaveLength(3);
   });
+
+  it("Should not be allowed to submit for Prior Review", () => {
+    const result = taskFilters.checkTasksReadinessForPriorReview(tasks);
+
+    expect(result).toBe(false);
+  });
+
+  it("Should be allowed to submit for Prior Review", () => {
+    const tasks: Task[] = [
+      {
+        _id: "61ed56d3f38a35aa47ca0e70",
+        description: "Mid prior task",
+        goal_id: "61ed56a8f38a35aa47ca0e6f",
+        priority: {
+          importance: "no",
+          tier: "n/a",
+          urgency: "yes",
+        },
+        status: "open",
+        title: "Mid prior task",
+      },
+      {
+        _id: "61ed56d3f38a35aa47ca0e71",
+        description: "Highest prior task",
+        goal_id: "61ed56a8f38a35aa47ca0e6f",
+        priority: {
+          importance: "yes",
+          tier: "n/a",
+          urgency: "yes",
+        },
+        status: "open",
+        title: "Highest prior task",
+      },
+      {
+        _id: "61ed56d3f38a35aa47ca0e73",
+        description: "High prior task",
+        goal_id: "61ed56a8f38a35aa47ca0e6f",
+        priority: {
+          importance: "yes",
+          tier: "n/a",
+          urgency: "no",
+        },
+        status: "open",
+        title: "High prior task",
+      },
+    ];
+
+    const result = taskFilters.checkTasksReadinessForPriorReview(tasks);
+
+    expect(result).toBe(true);
+  });
 });

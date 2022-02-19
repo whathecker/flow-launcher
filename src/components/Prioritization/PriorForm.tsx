@@ -12,12 +12,16 @@ import { PriorityMeasure } from "../../types/core/value-object";
 import { taskFilters } from "../../utils";
 
 type PriorFormProps = {
-  tasks: Task[];
+  unprioritisedTasks: Task[];
 };
 
-const PriorForm: React.FC<PriorFormProps> = ({ tasks }: PriorFormProps) => {
+const PriorForm: React.FC<PriorFormProps> = ({
+  unprioritisedTasks,
+}: PriorFormProps) => {
   const [activeTaskCounter, setActiveTaskCounter] = useState(0);
-  const [activeTask, setActiveTask] = useState(tasks[activeTaskCounter]);
+  const [activeTask, setActiveTask] = useState(
+    unprioritisedTasks[activeTaskCounter],
+  );
   const [importanceValue, setImportanceValue] = useState(
     activeTask.priority!.importance,
   );
@@ -46,21 +50,21 @@ const PriorForm: React.FC<PriorFormProps> = ({ tasks }: PriorFormProps) => {
   };
 
   const renderNextTask = (): void => {
-    if (activeTaskCounter < tasks.length - 1) {
+    if (activeTaskCounter < unprioritisedTasks.length - 1) {
       const nextCounter = activeTaskCounter + 1;
       setActiveTaskCounter(nextCounter);
-      setActiveTask(tasks[nextCounter]);
-      setUrgencyValue(tasks[nextCounter].priority!.urgency);
-      setImportanceValue(tasks[nextCounter].priority!.importance);
+      setActiveTask(unprioritisedTasks[nextCounter]);
+      setUrgencyValue(unprioritisedTasks[nextCounter].priority!.urgency);
+      setImportanceValue(unprioritisedTasks[nextCounter].priority!.importance);
     }
   };
 
   const renderPrevTask = (): void => {
     const prevCounter = activeTaskCounter - 1;
     setActiveTaskCounter(prevCounter);
-    setActiveTask(tasks[prevCounter]);
-    setUrgencyValue(tasks[prevCounter].priority!.urgency);
-    setImportanceValue(tasks[prevCounter].priority!.importance);
+    setActiveTask(unprioritisedTasks[prevCounter]);
+    setUrgencyValue(unprioritisedTasks[prevCounter].priority!.urgency);
+    setImportanceValue(unprioritisedTasks[prevCounter].priority!.importance);
   };
 
   return (
@@ -69,7 +73,7 @@ const PriorForm: React.FC<PriorFormProps> = ({ tasks }: PriorFormProps) => {
         <View style={{ marginBottom: 10 }}>
           <TaskCounter
             currentTaskIndex={activeTaskCounter}
-            totalTasksLength={tasks.length}
+            totalTasksLength={unprioritisedTasks.length}
           />
         </View>
         <View style={{ marginBottom: 10 }}>
@@ -156,17 +160,17 @@ const PriorForm: React.FC<PriorFormProps> = ({ tasks }: PriorFormProps) => {
           <View></View>
         )}
         <View style={styles.nextButtonWrapper}>
-          {activeTaskCounter === tasks.length - 1 ? (
+          {activeTaskCounter === unprioritisedTasks.length - 1 ? (
             <Button
               ctaTxt="Review Result"
               disable={shouldNextBtnInactive(importanceValue, urgencyValue)}
               pressHandler={() => {
-                console.log("Finalize the process!");
-                console.log("This many tasks was prioritised: " + tasks.length);
-                console.log(tasks);
-                const tasksByPriorBucket =
-                  taskFilters.filterByPriorityScheme(tasks);
-                console.log(tasksByPriorBucket);
+                const result =
+                  taskFilters.checkTasksReadinessForPriorReview(
+                    unprioritisedTasks,
+                  );
+                console.log(result);
+                // send user to next page with tasks as a prop
               }}
             />
           ) : (

@@ -53,7 +53,7 @@ const GoalDetailScreen: React.FC<Props> = ({ route }: Props) => {
       </View>
       <ScrollView style={styles.scrollAreaWrapper}>
         <View style={styles.recentTasksWrapper}>
-          <UnprioritizedTasks tasks={unpriortizedTasks} />
+          <UnprioritizedTasks unprioritisedTasks={unpriortizedTasks} />
         </View>
         <View style={styles.prioritizedTasksWrapper}>
           <PrioritizedTasks />

@@ -6,12 +6,13 @@ import { PriorHeader, PriorForm } from "../components/Prioritization";
 import { Container, Typography } from "../styles";
 import { PriorStackScreenProps } from "../types/navigation";
 import { TasksContext } from "../contexts/tasks";
+import { taskFilters } from "../utils";
 
 type Props = PriorStackScreenProps<"Prioritization">;
 
 const PrioritizationScreen: React.FC<Props> = () => {
   const { state } = useContext(TasksContext);
-
+  const unprioritisedTasks = taskFilters.filterUnprioritized(state.tasks);
   return (
     <>
       <View style={styles.headerWrapper}>
@@ -21,7 +22,7 @@ const PrioritizationScreen: React.FC<Props> = () => {
         />
       </View>
       <View style={styles.formAreaWrapper}>
-        <PriorForm tasks={state.tasks} />
+        <PriorForm unprioritisedTasks={unprioritisedTasks} />
       </View>
     </>
   );

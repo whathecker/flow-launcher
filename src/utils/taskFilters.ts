@@ -1,12 +1,27 @@
 /* eslint-disable @typescript-eslint/no-non-null-assertion */
 import { Task } from "../types/core/entity";
 
-//TODO: write test for this module
-
 const filterUnprioritized = (tasks: Task[]): Task[] => {
   return tasks.filter((task) => {
     return task.status === "open" && task.priority!.tier === "n/a";
   });
+};
+
+const checkTasksReadinessForPriorReview = (tasksInput: Task[]): boolean => {
+  let result = true;
+
+  for (let i = 0; i < tasksInput.length; i++) {
+    if (
+      tasksInput[i].status !== "open" ||
+      tasksInput[i].priority!.urgency === "n/a" ||
+      tasksInput[i].priority!.importance === "n/a"
+    ) {
+      result = false;
+      break;
+    }
+  }
+
+  return result;
 };
 
 type TasksInPriorityBucket = {
@@ -58,4 +73,8 @@ const filterByPriorityScheme = (tasks: Task[]): TasksInPriorityBucket => {
   };
 };
 
-export default { filterUnprioritized, filterByPriorityScheme };
+export default {
+  filterUnprioritized,
+  checkTasksReadinessForPriorReview,
+  filterByPriorityScheme,
+};

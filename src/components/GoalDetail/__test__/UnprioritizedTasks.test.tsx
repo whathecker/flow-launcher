@@ -33,7 +33,7 @@ describe("Test UnprioritizedTasks component", () => {
 
   it("Should renders UnprioritizedTasks correctly", () => {
     const tree = renderer
-      .create(<UnprioritizedTasks tasks={dummayTasks} />)
+      .create(<UnprioritizedTasks unprioritisedTasks={dummayTasks} />)
       .toJSON();
 
     expect(tree).toMatchSnapshot();
