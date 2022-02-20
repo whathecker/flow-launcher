@@ -18,12 +18,12 @@ import { Button } from "../components/shared";
 type Props = GoalStackScreenProps<"GoalDetail">;
 
 const GoalDetailScreen: React.FC<Props> = ({ route }: Props) => {
-  const { goal } = route.params;
+  const { goal, goalColor } = route.params;
   const [addTaskFormOpened, setAddTaskFormOpened] = useState(false);
   const { state, fetchTasks } = useContext(TasksContext);
 
   useEffect(() => {
-    fetchTasks({ goal: goal });
+    fetchTasks({ goal, goalColor });
   }, [goal._id]);
 
   const unpriortizedTasks = taskFilters.filterUnprioritized(state.tasks);

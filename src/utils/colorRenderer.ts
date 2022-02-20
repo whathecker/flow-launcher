@@ -1,6 +1,6 @@
-type GoalItemColor = "#E9695B" | "#84C5E8" | "#1C88BA" | "#F0B541";
+import { GoalColor } from "../types/core/entity";
 
-const assignColorForGoal = (index: number): GoalItemColor => {
+const assignColorForGoal = (index: number): GoalColor => {
   if (_isFirstColor(index)) return "#E9695B";
 
   let color;
@@ -19,7 +19,7 @@ const assignColorForGoal = (index: number): GoalItemColor => {
       break;
   }
 
-  return color as GoalItemColor;
+  return color as GoalColor;
 };
 
 function _isFirstColor(index: number): boolean {

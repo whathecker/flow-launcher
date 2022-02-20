@@ -17,7 +17,10 @@ const Goal: React.FC<GoalProps> = ({ goal, backgroundColor }: GoalProps) => {
       darkColor={backgroundColor}
       style={styles.goalWrapper}
       onPress={() => {
-        navigationRef.navigate("GoalDetail", { goal });
+        navigationRef.navigate("GoalDetail", {
+          goal,
+          goalColor: backgroundColor,
+        });
       }}
     >
       <Text lightColor="white" darkColor="white" style={styles.goalTitleText}>

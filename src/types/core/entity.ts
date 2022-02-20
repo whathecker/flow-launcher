@@ -4,6 +4,7 @@ export type ID = number | string;
 
 export type GoalStatus = "open" | "finished";
 export type Reminder = "daily" | "three_days" | "seven_days";
+export type GoalColor = "#E9695B" | "#84C5E8" | "#1C88BA" | "#F0B541";
 
 export class Goal {
   constructor(
@@ -30,6 +31,7 @@ export interface IAddTaskInput {
 
 export interface IFetchTasksInput {
   goal: Goal;
+  goalColor: GoalColor;
 }
 
 export type TaskStatus = "open" | "finished";

@@ -1,7 +1,8 @@
-import { Goal, Task, IFetchTasksInput } from "../core/entity";
+import { Goal, GoalColor, Task, IFetchTasksInput } from "../core/entity";
 
 export type TasksState = {
   goal: Goal | null;
+  goalColor: GoalColor | null;
   tasks: Task[];
   errorMsg?: string;
 };

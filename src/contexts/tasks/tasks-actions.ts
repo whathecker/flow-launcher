@@ -16,7 +16,7 @@ export const fetchTasks = (dispatch: React.Dispatch<TasksAction>) => {
       closeDatabase(realm);
       dispatch({
         type: TasksActionType.fetchTasks,
-        payload: { tasks: data, goal: input.goal },
+        payload: { tasks: data, goal: input.goal, goalColor: input.goalColor },
       });
     } catch (error) {
       dispatch({

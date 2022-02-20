@@ -6,6 +6,7 @@ import { TasksState, ContextProvierProps } from "../../types/contexts/tasks";
 const defaultState: TasksState = {
   goal: null,
   tasks: [],
+  goalColor: null,
 };
 
 const defaultCtxProviderProps: ContextProvierProps = {
