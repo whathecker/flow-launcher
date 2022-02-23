@@ -3,7 +3,7 @@ import React, { useContext } from "react";
 import { TasksContext } from "../contexts/tasks";
 import { StyleSheet } from "react-native";
 import { View, Text } from "../components/Themed";
-import { Container } from "../styles";
+//import { Container } from "../styles";
 import { PriorStackScreenProps } from "../types/navigation";
 import { taskFilters } from "../utils";
 
@@ -18,15 +18,17 @@ const PriorReview: React.FC<Props> = ({ route }: Props) => {
   console.log("Main color of this goal is following");
   console.log(state.goalColor);
   return (
-    <View style={styles.wrapper}>
-      <Text>{`Prior Review screen`}</Text>
-    </View>
+    <>
+      <View style={styles.headerWraper}>
+        <Text>{`Prior Review screen`}</Text>
+      </View>
+    </>
   );
 };
 
 const styles = StyleSheet.create({
-  wrapper: {
-    ...Container.centerAligned,
+  headerWraper: {
+    height: "25%",
   },
 });
 
