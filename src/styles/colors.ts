@@ -1,5 +1,6 @@
 type Colors = {
   text: string;
+  whiteText: string;
   subtleLabel: string;
   background: string;
   defaultBorder: string;
@@ -12,6 +13,7 @@ const mainCTAColor = "#0FA858";
 
 export const light: Colors = {
   text: "#000000",
+  whiteText: "#fff",
   subtleLabel: "#848484",
   background: "#fff",
   defaultBorder: "#636262",
@@ -22,6 +24,7 @@ export const light: Colors = {
 
 export const dark: Colors = {
   text: "#000000",
+  whiteText: "#fff",
   subtleLabel: "#848484",
   background: "#fff",
   defaultBorder: "#636262",

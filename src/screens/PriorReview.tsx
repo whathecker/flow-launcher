@@ -2,13 +2,14 @@
 /* eslint-disable no-console */
 import React, { useContext } from "react";
 import { TasksContext } from "../contexts/tasks";
-import { StyleSheet } from "react-native";
-import { View, Text } from "../components/Themed";
-import { PriorReviewHeader } from "../components/PriorReview";
+import { StyleSheet, ScrollView } from "react-native";
+import { View } from "../components/Themed";
+import { PriorReviewHeader, PrioReviewBucket } from "../components/PriorReview";
 import { Button } from "../components/shared";
 import { PriorStackScreenProps } from "../types/navigation";
 import { taskFilters } from "../utils";
-import { Container } from "../styles";
+import { Color } from "../styles";
+import { GoalColor } from "../types/core/entity";
 
 type Props = PriorStackScreenProps<"PriorReview">;
 
@@ -28,17 +29,36 @@ const PriorReview: React.FC<Props> = ({ route }: Props) => {
           motivation={state.goal!.motivation}
         />
       </View>
-      <View style={styles.priorityAreaWrapper}>
-        <Text>{`Prior Buckets to display here`}</Text>
-      </View>
-      <View style={styles.buttonAreaWrapper}>
-        <View style={{ width: "80%" }}>
-          <Button
-            ctaTxt="Review"
-            pressHandler={() => console.log("pressed!")}
-          />
+      <ScrollView style={styles.priorityAreaWrapper}>
+        <PrioReviewBucket
+          tasks={tasksFilteredByPrio.highest}
+          prio="highest"
+          goalColor={state.goalColor as GoalColor}
+        />
+        <PrioReviewBucket
+          tasks={tasksFilteredByPrio.high}
+          prio="high"
+          goalColor={state.goalColor as GoalColor}
+        />
+        <PrioReviewBucket
+          tasks={tasksFilteredByPrio.mid}
+          prio="mid"
+          goalColor={state.goalColor as GoalColor}
+        />
+        <PrioReviewBucket
+          tasks={tasksFilteredByPrio.low}
+          prio="low"
+          goalColor={state.goalColor as GoalColor}
+        />
+        <View style={styles.buttonAreaWrapper}>
+          <View style={{ width: "90%" }}>
+            <Button
+              ctaTxt="Review"
+              pressHandler={() => console.log("pressed!")}
+            />
+          </View>
         </View>
-      </View>
+      </ScrollView>
     </>
   );
 };
@@ -48,15 +68,13 @@ const styles = StyleSheet.create({
     height: "25%",
   },
   priorityAreaWrapper: {
-    height: "61.5%",
-    paddingTop: "12%",
+    backgroundColor: Color.light.background,
+    height: "75%",
+    paddingTop: "4%",
     paddingLeft: "10%",
-    borderColor: "black",
-    borderWidth: 2,
   },
   buttonAreaWrapper: {
-    ...Container.centerAligned,
-    height: "13.5%",
+    marginTop: 20,
   },
 });
 
