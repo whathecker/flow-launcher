@@ -169,7 +169,7 @@ exports[`Test PriorReviewHeader component Should renders PriorReviewHeader corre
         ]
       }
     >
-      Mock motivation
+      6 tasks have been prioritised
     </Text>
   </View>
 </View>

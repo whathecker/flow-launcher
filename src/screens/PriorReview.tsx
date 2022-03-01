@@ -26,7 +26,7 @@ const PriorReview: React.FC<Props> = ({ route }: Props) => {
       <View style={styles.headerWraper}>
         <PriorReviewHeader
           title={state.goal!.title}
-          motivation={state.goal!.motivation}
+          tasksCount={tasks.length}
         />
       </View>
       <ScrollView style={styles.priorityAreaWrapper}>

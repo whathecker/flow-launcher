@@ -7,12 +7,12 @@ import { navigationRef } from "../../utils";
 
 type PriorReviewHeaderProps = {
   title: string;
-  motivation: string;
+  tasksCount: number;
 };
 
 const PriorReviewHeader: React.FC<PriorReviewHeaderProps> = ({
   title,
-  motivation,
+  tasksCount,
 }: PriorReviewHeaderProps) => {
   return (
     <View style={styles.wrapper}>
@@ -32,7 +32,9 @@ const PriorReviewHeader: React.FC<PriorReviewHeaderProps> = ({
       </View>
       <View style={styles.goalAreaWrapper}>
         <Text style={styles.goalText}>{title}</Text>
-        <Text style={styles.motivationText}>{motivation}</Text>
+        <Text
+          style={styles.taskCountText}
+        >{`${tasksCount} tasks have been prioritised`}</Text>
       </View>
     </View>
   );
@@ -75,7 +77,7 @@ const styles = StyleSheet.create({
     fontSize: 24,
     paddingBottom: 5,
   },
-  motivationText: {
+  taskCountText: {
     ...Typography.p,
     fontSize: 18,
   },

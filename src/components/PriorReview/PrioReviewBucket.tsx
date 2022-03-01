@@ -60,7 +60,7 @@ const PrioReviewBucket: React.FC<PrioReviewBucketProps> = ({
         width: "90%",
         backgroundColor: isTasksEmpty ? "#FEFEF8" : backgroundColor,
         marginTop: 5,
-        marginBottom: 5,
+        marginBottom: "3%",
         paddingTop: "4%",
         paddingBottom: "8%",
         borderWidth: 1,
