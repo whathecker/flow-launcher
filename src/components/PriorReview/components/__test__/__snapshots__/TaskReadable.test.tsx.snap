@@ -38,7 +38,7 @@ exports[`Test TaskReadable component Should renders TaskReadable correctly 1`] =
       ]
     }
   >
-    title
+    This should be title of empty prio bucket
   </Text>
 </View>
 `;
