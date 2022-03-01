@@ -18,9 +18,7 @@ const PriorReview: React.FC<Props> = ({ route }: Props) => {
   const { tasks } = route.params;
 
   const tasksFilteredByPrio = taskFilters.filterByPriorityScheme(tasks);
-  console.log(tasksFilteredByPrio);
-  console.log("Main color of this goal is following");
-  console.log(state.goalColor);
+
   return (
     <>
       <View style={styles.headerWraper}>
@@ -69,9 +67,9 @@ const styles = StyleSheet.create({
   },
   priorityAreaWrapper: {
     backgroundColor: Color.light.background,
-    height: "70%",
-    paddingTop: "7%",
-    paddingBottom: "7%",
+    height: "65%",
+    paddingTop: "1%",
+    paddingBottom: "1%",
     paddingLeft: "10%",
   },
   buttonAreaWrapper: {
