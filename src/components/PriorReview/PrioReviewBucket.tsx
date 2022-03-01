@@ -1,5 +1,7 @@
 import React from "react";
+import { SectionList, ListRenderItem } from "react-native";
 import { View, Text } from "../Themed";
+import { TaskReadable } from "../shared";
 import { Container, Typography, Color } from "../../styles";
 import { Task, GoalColor } from "../../types/core/entity";
 import { PriorityTier } from "../../types/core/value-object";
@@ -33,6 +35,45 @@ const renderLabel = (prio: PriorityTier): string => {
   return label;
 };
 
+type EmptyBucketProps = {
+  title: string;
+};
+
+const EmptyBucket: React.FC<EmptyBucketProps> = ({
+  title,
+}: EmptyBucketProps) => {
+  return (
+    <>
+      <Text
+        style={{
+          ...Typography.h4,
+          fontSize: 19,
+          paddingLeft: "5%",
+          color: Color.light.text,
+        }}
+      >
+        {title}
+      </Text>
+      <View
+        style={{
+          ...Container.centerAligned,
+          paddingTop: "12%",
+          paddingBottom: "6%",
+          backgroundColor: "#FEFEF8",
+        }}
+      >
+        <Text
+          style={{
+            ...Typography.p,
+            fontSize: 16,
+            color: Color.light.subtleLabel,
+          }}
+        >{`No awaiting tasks`}</Text>
+      </View>
+    </>
+  );
+};
+
 const PrioReviewBucket: React.FC<PrioReviewBucketProps> = ({
   prio,
   tasks,
@@ -40,6 +81,18 @@ const PrioReviewBucket: React.FC<PrioReviewBucketProps> = ({
 }: PrioReviewBucketProps) => {
   const backgroundColor = colorRenderer.getColorForPrioBucket(goalColor, prio);
   const isTasksEmpty = tasks.length === 0;
+
+  const sectionData = [
+    {
+      title: renderLabel(prio),
+      data: tasks,
+    },
+  ];
+
+  const renderTaskReadable: ListRenderItem<Task> = ({ item }) => {
+    return <TaskReadable title={item.title} />;
+  };
+
   return (
     <View
       style={{
@@ -47,57 +100,32 @@ const PrioReviewBucket: React.FC<PrioReviewBucketProps> = ({
         backgroundColor: isTasksEmpty ? "#FEFEF8" : backgroundColor,
         marginTop: 5,
         marginBottom: 5,
-        paddingTop: "3%",
-        paddingBottom: "3%",
+        paddingTop: "4%",
+        paddingBottom: "8%",
         borderWidth: 1,
         borderColor: Color.light.defaultBorder,
         borderRadius: 5,
       }}
     >
-      <Text
-        style={{
-          ...Typography.h4,
-          fontSize: 17,
-          paddingLeft: "5%",
-          color: isTasksEmpty ? Color.light.text : Color.light.whiteText,
-        }}
-      >
-        {renderLabel(prio)}
-      </Text>
       {isTasksEmpty ? (
-        <View
-          style={{
-            ...Container.centerAligned,
-            paddingTop: "10%",
-            paddingBottom: "6%",
-            backgroundColor: "#FEFEF8",
-          }}
-        >
-          <Text
-            style={{
-              ...Typography.p,
-              fontSize: 14,
-              color: Color.light.subtleLabel,
-            }}
-          >{`No awaiting tasks`}</Text>
-        </View>
+        <EmptyBucket title={renderLabel(prio)} />
       ) : (
-        <View
-          style={{
-            ...Container.centerAligned,
-            paddingTop: "10%",
-            paddingBottom: "6%",
-            backgroundColor: backgroundColor,
-          }}
-        >
-          <Text
-            style={{
-              ...Typography.p,
-              fontSize: 14,
-              color: Color.light.whiteText,
-            }}
-          >{`render tasks here`}</Text>
-        </View>
+        <SectionList
+          sections={sectionData}
+          renderItem={renderTaskReadable}
+          renderSectionHeader={({ section: { title } }) => (
+            <Text
+              style={{
+                ...Typography.h4,
+                fontSize: 19,
+                paddingLeft: "5%",
+                color: isTasksEmpty ? Color.light.text : Color.light.whiteText,
+              }}
+            >
+              {title}
+            </Text>
+          )}
+        />
       )}
     </View>
   );

@@ -8,7 +8,7 @@ import { PriorReviewHeader, PrioReviewBucket } from "../components/PriorReview";
 import { Button } from "../components/shared";
 import { PriorStackScreenProps } from "../types/navigation";
 import { taskFilters } from "../utils";
-import { Color } from "../styles";
+import { Container, Color } from "../styles";
 import { GoalColor } from "../types/core/entity";
 
 type Props = PriorStackScreenProps<"PriorReview">;
@@ -50,15 +50,15 @@ const PriorReview: React.FC<Props> = ({ route }: Props) => {
           prio="low"
           goalColor={state.goalColor as GoalColor}
         />
-        <View style={styles.buttonAreaWrapper}>
-          <View style={{ width: "90%" }}>
-            <Button
-              ctaTxt="Review"
-              pressHandler={() => console.log("pressed!")}
-            />
-          </View>
-        </View>
       </ScrollView>
+      <View style={styles.buttonAreaWrapper}>
+        <View style={{ width: "80%" }}>
+          <Button
+            ctaTxt="Confirm Result"
+            pressHandler={() => console.log("pressed!")}
+          />
+        </View>
+      </View>
     </>
   );
 };
@@ -69,12 +69,14 @@ const styles = StyleSheet.create({
   },
   priorityAreaWrapper: {
     backgroundColor: Color.light.background,
-    height: "75%",
-    paddingTop: "4%",
+    height: "70%",
+    paddingTop: "7%",
+    paddingBottom: "7%",
     paddingLeft: "10%",
   },
   buttonAreaWrapper: {
-    marginTop: 20,
+    ...Container.centerAligned,
+    height: "10%",
   },
 });
 
