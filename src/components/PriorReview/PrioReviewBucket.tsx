@@ -110,22 +110,32 @@ const PrioReviewBucket: React.FC<PrioReviewBucketProps> = ({
       {isTasksEmpty ? (
         <EmptyBucket title={renderLabel(prio)} />
       ) : (
-        <SectionList
-          sections={sectionData}
-          renderItem={renderTaskReadable}
-          renderSectionHeader={({ section: { title } }) => (
-            <Text
-              style={{
-                ...Typography.h4,
-                fontSize: 19,
-                paddingLeft: "5%",
-                color: isTasksEmpty ? Color.light.text : Color.light.whiteText,
-              }}
-            >
-              {title}
-            </Text>
-          )}
-        />
+        <View
+          style={{
+            backgroundColor: backgroundColor,
+          }}
+        >
+          <SectionList
+            sections={sectionData}
+            renderItem={renderTaskReadable}
+            renderSectionHeader={({ section: { title } }) => (
+              <Text
+                style={{
+                  textAlign: "left",
+                  ...Typography.h4,
+                  fontSize: 19,
+                  paddingLeft: "5%",
+                  paddingBottom: "5%",
+                  color: isTasksEmpty
+                    ? Color.light.text
+                    : Color.light.whiteText,
+                }}
+              >
+                {title}
+              </Text>
+            )}
+          />
+        </View>
       )}
     </View>
   );
