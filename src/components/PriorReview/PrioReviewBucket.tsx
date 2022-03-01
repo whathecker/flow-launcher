@@ -1,8 +1,9 @@
 import React from "react";
 import { SectionList, ListRenderItem } from "react-native";
 import { View, Text } from "../Themed";
+import { EmptyBucket } from "./components";
 import { TaskReadable } from "../shared";
-import { Container, Typography, Color } from "../../styles";
+import { Typography, Color } from "../../styles";
 import { Task, GoalColor } from "../../types/core/entity";
 import { PriorityTier } from "../../types/core/value-object";
 import { colorRenderer } from "../../utils";
@@ -33,45 +34,6 @@ const renderLabel = (prio: PriorityTier): string => {
       break;
   }
   return label;
-};
-
-type EmptyBucketProps = {
-  title: string;
-};
-
-const EmptyBucket: React.FC<EmptyBucketProps> = ({
-  title,
-}: EmptyBucketProps) => {
-  return (
-    <>
-      <Text
-        style={{
-          ...Typography.h4,
-          fontSize: 19,
-          paddingLeft: "5%",
-          color: Color.light.text,
-        }}
-      >
-        {title}
-      </Text>
-      <View
-        style={{
-          ...Container.centerAligned,
-          paddingTop: "12%",
-          paddingBottom: "6%",
-          backgroundColor: "#FEFEF8",
-        }}
-      >
-        <Text
-          style={{
-            ...Typography.p,
-            fontSize: 16,
-            color: Color.light.subtleLabel,
-          }}
-        >{`No awaiting tasks`}</Text>
-      </View>
-    </>
-  );
 };
 
 const PrioReviewBucket: React.FC<PrioReviewBucketProps> = ({
