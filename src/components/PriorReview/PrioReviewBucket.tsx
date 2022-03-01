@@ -1,8 +1,7 @@
 import React from "react";
 import { SectionList, ListRenderItem } from "react-native";
 import { View, Text } from "../Themed";
-import { EmptyBucket } from "./components";
-import { TaskReadable } from "../shared";
+import { EmptyBucket, TaskReadable } from "./components";
 import { Typography, Color } from "../../styles";
 import { Task, GoalColor } from "../../types/core/entity";
 import { PriorityTier } from "../../types/core/value-object";
