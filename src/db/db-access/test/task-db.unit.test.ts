@@ -5,13 +5,13 @@ import { openDatabase, closeDatabase } from "../../connection";
 import GoalDBAccessor from "../goal-db";
 import TaskDBAccessor from "../task-db";
 import {
-  addTaskInput,
-  updateTaskStatusInput,
-  updateTaskDetailInput,
-  updateTaskPriorityInput,
+  IAddTaskInput,
+  IUpdateTaskStatusInput,
+  IUpdateTaskDetailInput,
+  IUpdateTaskPriorityInput,
+  IBulkUpdateTasksPrioInput,
 } from "../types/task-db";
 import { addGoalInput } from "../types/goal-db";
-import { BulkUpdateTasksPrioInput } from "../types/task-db";
 
 describe("Test db access module of Task object", () => {
   let realm: Realm;
@@ -43,7 +43,7 @@ describe("Test db access module of Task object", () => {
     const newGoalResult = await goalDB.addGoal(payloadForGoal);
     goal_id = newGoalResult.data!._id;
 
-    const payloadForTask: addTaskInput[] = [
+    const payloadForTask: IAddTaskInput[] = [
       {
         goal_id: goal_id,
         title: "this is a mock task",
@@ -104,7 +104,7 @@ describe("Test db access module of Task object", () => {
   });
 
   test("Add a task success", async () => {
-    const payload: addTaskInput = {
+    const payload: IAddTaskInput = {
       goal_id: goal_id,
       title: "let's add a new task",
       description: "I want to get this data through",
@@ -128,7 +128,7 @@ describe("Test db access module of Task object", () => {
   });
 
   test("Add a task fail: non-existing goal_id", async () => {
-    const payload: addTaskInput = {
+    const payload: IAddTaskInput = {
       goal_id: new Realm.BSON.ObjectID(),
       title: "let's add a new task",
       description: "I want to get this data through",
@@ -141,7 +141,7 @@ describe("Test db access module of Task object", () => {
   });
 
   test("Update task detail success", async () => {
-    const payload: updateTaskDetailInput = {
+    const payload: IUpdateTaskDetailInput = {
       title: "new title",
       description: "new desciption",
     };
@@ -157,7 +157,7 @@ describe("Test db access module of Task object", () => {
 
   test("Update task detail fail - task not found", async () => {
     const fakeId = new Realm.BSON.ObjectID();
-    const payload: updateTaskDetailInput = {
+    const payload: IUpdateTaskDetailInput = {
       title: "new title",
       description: "new desciption",
     };
@@ -169,7 +169,7 @@ describe("Test db access module of Task object", () => {
   });
 
   test("Update task status success", async () => {
-    const payload: updateTaskStatusInput = {
+    const payload: IUpdateTaskStatusInput = {
       status: "finished",
     };
 
@@ -182,7 +182,7 @@ describe("Test db access module of Task object", () => {
 
   test("Update task status fail - task not found", async () => {
     const fakeId = new Realm.BSON.ObjectID();
-    const payload: updateTaskStatusInput = {
+    const payload: IUpdateTaskStatusInput = {
       status: "closed",
     };
 
@@ -193,7 +193,7 @@ describe("Test db access module of Task object", () => {
   });
 
   test("Update task status fail - invalid status in payload", async () => {
-    const payload: updateTaskStatusInput = {
+    const payload: IUpdateTaskStatusInput = {
       status: "closed",
     };
     await expect(taskDB.updateTaskStatus(task_id, payload)).rejects.toEqual({
@@ -203,7 +203,7 @@ describe("Test db access module of Task object", () => {
   });
 
   test("Update task status fail - request to update to the same status", async () => {
-    const payload: updateTaskStatusInput = {
+    const payload: IUpdateTaskStatusInput = {
       status: "open",
     };
     await expect(taskDB.updateTaskStatus(task_id, payload)).rejects.toEqual({
@@ -213,7 +213,7 @@ describe("Test db access module of Task object", () => {
   });
 
   test("Update task priority success - to highest tier", async () => {
-    const payload: updateTaskPriorityInput = {
+    const payload: IUpdateTaskPriorityInput = {
       importance: "yes",
       urgency: "yes",
     };
@@ -229,7 +229,7 @@ describe("Test db access module of Task object", () => {
   });
 
   test("Update task priority success - to high tier", async () => {
-    const payload: updateTaskPriorityInput = {
+    const payload: IUpdateTaskPriorityInput = {
       importance: "yes",
       urgency: "no",
     };
@@ -245,7 +245,7 @@ describe("Test db access module of Task object", () => {
   });
 
   test("Update task priority success - to mid tier", async () => {
-    const payload: updateTaskPriorityInput = {
+    const payload: IUpdateTaskPriorityInput = {
       importance: "no",
       urgency: "yes",
     };
@@ -261,7 +261,7 @@ describe("Test db access module of Task object", () => {
   });
 
   test("Update task priority success - to low tier", async () => {
-    const payload: updateTaskPriorityInput = {
+    const payload: IUpdateTaskPriorityInput = {
       importance: "no",
       urgency: "no",
     };
@@ -278,7 +278,7 @@ describe("Test db access module of Task object", () => {
 
   test("Update task priority fail - task not found", async () => {
     const fakeId = new Realm.BSON.ObjectID();
-    const payload: updateTaskPriorityInput = {
+    const payload: IUpdateTaskPriorityInput = {
       importance: "no",
       urgency: "no",
     };
@@ -290,7 +290,7 @@ describe("Test db access module of Task object", () => {
   });
 
   test("Update task priority fail - invalid input in the payload", async () => {
-    const payload: updateTaskPriorityInput = {
+    const payload: IUpdateTaskPriorityInput = {
       importance: "no",
       urgency: "nop",
     };
@@ -302,7 +302,7 @@ describe("Test db access module of Task object", () => {
   });
 
   test("bulkUpdateTasksPrio success", async () => {
-    const payload: BulkUpdateTasksPrioInput = {
+    const payload: IBulkUpdateTasksPrioInput = {
       batch: [
         {
           _id: task_id,

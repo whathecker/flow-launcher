@@ -2,20 +2,20 @@ import * as Realm from "realm";
 import DBAccessorBase from "../base";
 import { TaskModel, PriorityModel } from "../../model";
 import {
-  addTaskInput,
-  updateTaskDetailInput,
-  updateTaskStatusInput,
-  updateTaskPriorityInput,
-  BulkUpdateTasksPrioInput,
-  singleEntityStatus,
-  taskDBAccessStatus,
+  IAddTaskInput,
+  IUpdateTaskStatusInput,
+  IUpdateTaskDetailInput,
+  IUpdateTaskPriorityInput,
+  IBulkUpdateTasksPrioInput,
+  ISingleEntityStatus,
+  IMultiEntityStatus,
+  ITaskDBAccessStatus,
 } from "../types/task-db";
-import { multiEntityStatus } from "../types/goal-db";
 
 class TaskDBAccessor extends DBAccessorBase {
   public async findTaskById(
     _id: Realm.BSON.ObjectId,
-  ): Promise<singleEntityStatus> {
+  ): Promise<ISingleEntityStatus> {
     try {
       const task = this.realm.objectForPrimaryKey(
         "Task",
@@ -44,7 +44,7 @@ class TaskDBAccessor extends DBAccessorBase {
 
   public async listTasksByGoalId(
     goal_id: Realm.BSON.ObjectId,
-  ): Promise<multiEntityStatus> {
+  ): Promise<IMultiEntityStatus> {
     try {
       const tasks = this.realm.objects("Task");
 
@@ -67,7 +67,7 @@ class TaskDBAccessor extends DBAccessorBase {
     }
   }
 
-  public async addTask(payload: addTaskInput): Promise<singleEntityStatus> {
+  public async addTask(payload: IAddTaskInput): Promise<ISingleEntityStatus> {
     try {
       let task;
       const goal = this._findGoalByIdSync(payload.goal_id);
@@ -99,8 +99,8 @@ class TaskDBAccessor extends DBAccessorBase {
 
   public async updateTaskDetail(
     _id: Realm.BSON.ObjectId,
-    payload: updateTaskDetailInput,
-  ): Promise<singleEntityStatus> {
+    payload: IUpdateTaskDetailInput,
+  ): Promise<ISingleEntityStatus> {
     try {
       const task = this.realm.objectForPrimaryKey(
         "Task",
@@ -143,8 +143,8 @@ class TaskDBAccessor extends DBAccessorBase {
 
   public async updateTaskStatus(
     _id: Realm.BSON.ObjectId,
-    payload: updateTaskStatusInput,
-  ): Promise<singleEntityStatus> {
+    payload: IUpdateTaskStatusInput,
+  ): Promise<ISingleEntityStatus> {
     try {
       const task = this.realm.objectForPrimaryKey(
         "Task",
@@ -203,8 +203,8 @@ class TaskDBAccessor extends DBAccessorBase {
 
   public updateTaskPriority(
     _id: Realm.BSON.ObjectId,
-    payload: updateTaskPriorityInput,
-  ): Promise<singleEntityStatus> {
+    payload: IUpdateTaskPriorityInput,
+  ): Promise<ISingleEntityStatus> {
     try {
       const task = this.realm.objectForPrimaryKey(
         "Task",
@@ -255,7 +255,7 @@ class TaskDBAccessor extends DBAccessorBase {
   }
   public bulkUpdateTasksPrio({
     batch,
-  }: BulkUpdateTasksPrioInput): Promise<taskDBAccessStatus> {
+  }: IBulkUpdateTasksPrioInput): Promise<ITaskDBAccessStatus> {
     try {
       this.realm.write(() => {
         batch.forEach((taskInput) => {
@@ -310,7 +310,7 @@ class TaskDBAccessor extends DBAccessorBase {
   public async removeTask(
     task_id: Realm.BSON.ObjectId,
     goal_id: Realm.BSON.ObjectId,
-  ): Promise<taskDBAccessStatus> {
+  ): Promise<ITaskDBAccessStatus> {
     try {
       const task = this.realm.objectForPrimaryKey(
         "Task",
@@ -365,7 +365,7 @@ class TaskDBAccessor extends DBAccessorBase {
   // public: updateTask (priority)
   // public: batchUpdateTask (priority)
 
-  private _writeNewTask(input: addTaskInput): TaskModel {
+  private _writeNewTask(input: IAddTaskInput): TaskModel {
     const newTask: RealmInsertionModel<TaskModel> = {
       _id: new Realm.BSON.ObjectID(),
       ...input,
@@ -405,7 +405,7 @@ class TaskDBAccessor extends DBAccessorBase {
   private _validateUpdateTaskPriorityInput({
     importance,
     urgency,
-  }: updateTaskPriorityInput): boolean {
+  }: IUpdateTaskPriorityInput): boolean {
     let result = true;
     const validValues = ["yes", "no"];
 
@@ -420,7 +420,7 @@ class TaskDBAccessor extends DBAccessorBase {
   private _createNewPriorityObj({
     importance,
     urgency,
-  }: updateTaskPriorityInput): PriorityModel {
+  }: IUpdateTaskPriorityInput): PriorityModel {
     let tier = "n/a";
 
     if (importance === "yes" && urgency === "yes") {

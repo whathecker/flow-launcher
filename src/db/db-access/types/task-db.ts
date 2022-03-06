@@ -1,22 +1,22 @@
 import * as Realm from "realm";
 import { TaskModel } from "../../model";
 
-export interface addTaskInput {
+export interface IAddTaskInput {
   goal_id: Realm.BSON.ObjectId;
   title: string;
   description: string; //TODO: should be optional
 }
 
-export interface updateTaskStatusInput {
+export interface IUpdateTaskStatusInput {
   status: string;
 }
 
-export interface updateTaskDetailInput {
+export interface IUpdateTaskDetailInput {
   title?: string;
   description?: string;
 }
 
-export interface updateTaskPriorityInput {
+export interface IUpdateTaskPriorityInput {
   importance: string;
   urgency: string;
 }
@@ -27,20 +27,20 @@ type BulkUpdateTaskInput = {
   urgency: string;
 };
 
-export interface BulkUpdateTasksPrioInput {
+export interface IBulkUpdateTasksPrioInput {
   batch: BulkUpdateTaskInput[];
 }
 
-export interface taskDBAccessStatus {
+export interface ITaskDBAccessStatus {
   status: "success" | "failed";
   reason?: string;
   error?: Error;
 }
 
-export interface singleEntityStatus extends taskDBAccessStatus {
+export interface ISingleEntityStatus extends ITaskDBAccessStatus {
   data?: TaskModel;
 }
 
-export interface multiEntityStatus extends taskDBAccessStatus {
+export interface IMultiEntityStatus extends ITaskDBAccessStatus {
   data?: TaskModel[];
 }
