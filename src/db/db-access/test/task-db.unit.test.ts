@@ -360,14 +360,78 @@ describe("Test db access module of Task object", () => {
     expect(task4._id).toBe(payload.batch[3]._id);
   });
 
-  test("bulkUpdateTasksPrio fail - unknown task id", () => {
-    // TODO: update with proper test
-    expect(1).toBe(1);
+  test("bulkUpdateTasksPrio fail - unknown task id", async () => {
+    const payload: IBulkUpdateTasksPrioInput = {
+      batch: [
+        {
+          _id: new Realm.BSON.ObjectID(),
+          importance: "yes",
+          urgency: "yes",
+        },
+        {
+          _id: task_id_2,
+          importance: "yes",
+          urgency: "no",
+        },
+        {
+          _id: task_id_3,
+          importance: "no",
+          urgency: "yes",
+        },
+        {
+          _id: task_id_4,
+          importance: "no",
+          urgency: "no",
+        },
+      ],
+    };
+    await expect(taskDB.bulkUpdateTasksPrio(payload)).rejects.toEqual({
+      status: "failed",
+      reason: "task not found",
+    });
+
+    const result = await taskDB.findTaskById(payload.batch[1]._id);
+    expect(result.data?.priority.importance).not.toBe(
+      payload.batch[1].importance,
+    );
+    expect(result.data?.priority.urgency).not.toBe(payload.batch[1].urgency);
   });
 
-  test("bulkUpdateTasksPrio fail - invalid input in the payload", () => {
-    // TODO: update with proper test
-    expect(1).toBe(1);
+  test("bulkUpdateTasksPrio fail - invalid input in the payload", async () => {
+    const payload: IBulkUpdateTasksPrioInput = {
+      batch: [
+        {
+          _id: task_id,
+          importance: "n/a",
+          urgency: "yes",
+        },
+        {
+          _id: task_id_2,
+          importance: "yes",
+          urgency: "no",
+        },
+        {
+          _id: task_id_3,
+          importance: "no",
+          urgency: "yes",
+        },
+        {
+          _id: task_id_4,
+          importance: "no",
+          urgency: "no",
+        },
+      ],
+    };
+    await expect(taskDB.bulkUpdateTasksPrio(payload)).rejects.toEqual({
+      status: "failed",
+      reason: "invalid value in the payload",
+    });
+
+    const result = await taskDB.findTaskById(payload.batch[1]._id);
+    expect(result.data?.priority.importance).not.toBe(
+      payload.batch[1].importance,
+    );
+    expect(result.data?.priority.urgency).not.toBe(payload.batch[1].urgency);
   });
 
   test("Remove a task success", async () => {
