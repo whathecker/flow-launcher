@@ -1,6 +1,6 @@
 import React, { useReducer } from "react";
 import tasksReducer from "./tasks-reducer";
-import { fetchTasks } from "./tasks-actions";
+import { fetchTasks, updateTasksPrio } from "./tasks-actions";
 import { TasksState, ContextProvierProps } from "../../types/contexts/tasks";
 
 const defaultState: TasksState = {
@@ -12,6 +12,7 @@ const defaultState: TasksState = {
 const defaultCtxProviderProps: ContextProvierProps = {
   state: defaultState,
   fetchTasks: () => Promise.resolve(),
+  updateTasksPrio: () => Promise.resolve(),
 };
 
 export const TasksContext = React.createContext(defaultCtxProviderProps);
@@ -21,6 +22,7 @@ export const TasksContextProvider: React.FC = ({ children }) => {
 
   const boundActions = {
     fetchTasks: fetchTasks(dispatch),
+    updateTasksPrio: updateTasksPrio(dispatch),
   };
 
   return (

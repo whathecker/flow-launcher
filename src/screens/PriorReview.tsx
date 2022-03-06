@@ -7,14 +7,14 @@ import { View } from "../components/Themed";
 import { PriorReviewHeader, PrioReviewBucket } from "../components/PriorReview";
 import { Button } from "../components/shared";
 import { PriorStackScreenProps } from "../types/navigation";
-import { taskFilters } from "../utils";
+import { taskFilters, navigationRef } from "../utils";
 import { Container, Color } from "../styles";
 import { GoalColor } from "../types/core/entity";
 
 type Props = PriorStackScreenProps<"PriorReview">;
 
 const PriorReview: React.FC<Props> = ({ route }: Props) => {
-  const { state } = useContext(TasksContext);
+  const { state, updateTasksPrio } = useContext(TasksContext);
   const { tasks } = route.params;
 
   const tasksFilteredByPrio = taskFilters.filterByPriorityScheme(tasks);
@@ -55,10 +55,17 @@ const PriorReview: React.FC<Props> = ({ route }: Props) => {
             ctaTxt="Confirm Result"
             pressHandler={async () => {
               try {
-                console.log("pressed");
-                console.log(tasks);
+                await updateTasksPrio({
+                  tasks: tasks,
+                  goal_id: state.goal!._id as string,
+                });
+                navigationRef.navigate("GoalDetail", {
+                  goal: state.goal,
+                  goalColor: state.goalColor,
+                });
               } catch (error) {
-                console.log(error);
+                // TODO: handle error gracefully here
+                console.error(error);
               }
             }}
           />

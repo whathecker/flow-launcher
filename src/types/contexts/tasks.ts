@@ -1,4 +1,10 @@
-import { Goal, GoalColor, Task, IFetchTasksInput } from "../core/entity";
+import {
+  Goal,
+  GoalColor,
+  Task,
+  IFetchTasksInput,
+  IUpdateTasksPrioInput,
+} from "../core/entity";
 
 export type TasksState = {
   goal: Goal | null;
@@ -10,10 +16,12 @@ export type TasksState = {
 export type ContextProvierProps = {
   state: TasksState;
   fetchTasks: (input: IFetchTasksInput) => Promise<void>;
+  updateTasksPrio: (input: IUpdateTasksPrioInput) => Promise<void>;
 };
 
 export enum TasksActionType {
   fetchTasks = "FETCH_TASKS",
+  updateTasksPrio = "UPDATE_TASKS_PRIO",
   error = "ERROR",
 }
 

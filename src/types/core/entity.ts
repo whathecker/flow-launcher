@@ -34,6 +34,11 @@ export interface IFetchTasksInput {
   goalColor: GoalColor;
 }
 
+export interface IUpdateTasksPrioInput {
+  tasks: Task[];
+  goal_id: string;
+}
+
 export type TaskStatus = "open" | "finished";
 
 export class Task {

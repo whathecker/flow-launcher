@@ -21,7 +21,7 @@ export interface IUpdateTaskPriorityInput {
   urgency: string;
 }
 
-type BulkUpdateTaskInput = {
+export type BulkUpdateTaskInput = {
   _id: Realm.BSON.ObjectId;
   importance: string;
   urgency: string;
