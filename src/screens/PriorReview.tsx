@@ -53,7 +53,14 @@ const PriorReview: React.FC<Props> = ({ route }: Props) => {
         <View style={{ width: "80%" }}>
           <Button
             ctaTxt="Confirm Result"
-            pressHandler={() => console.log("pressed!")}
+            pressHandler={async () => {
+              try {
+                console.log("pressed");
+                console.log(tasks);
+              } catch (error) {
+                console.log(error);
+              }
+            }}
           />
         </View>
       </View>

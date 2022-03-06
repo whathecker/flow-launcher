@@ -6,6 +6,7 @@ import {
   updateTaskDetailInput,
   updateTaskStatusInput,
   updateTaskPriorityInput,
+  BulkUpdateTasksPrioInput,
   singleEntityStatus,
   taskDBAccessStatus,
 } from "../types/task-db";
@@ -243,6 +244,59 @@ class TaskDBAccessor extends DBAccessorBase {
       return Promise.resolve({
         status: "success",
         data: updatedTask,
+      });
+    } catch (error) {
+      return Promise.reject({
+        status: "failed",
+        reason: "error",
+        error: error,
+      });
+    }
+  }
+  public bulkUpdateTasksPrio({
+    batch,
+  }: BulkUpdateTasksPrioInput): Promise<taskDBAccessStatus> {
+    try {
+      this.realm.write(() => {
+        batch.forEach((taskInput) => {
+          const payload = {
+            importance: taskInput.importance,
+            urgency: taskInput.urgency,
+          };
+
+          const taskObj = this.realm.objectForPrimaryKey(
+            "Task",
+            new Realm.BSON.ObjectID(taskInput._id),
+          );
+
+          if (!taskObj) {
+            return Promise.reject({
+              status: "failed",
+              reason: "task not found",
+            });
+          }
+
+          if (!this._validateUpdateTaskPriorityInput(payload)) {
+            return Promise.reject({
+              status: "failed",
+              reason: "invalid value in the payload",
+            });
+          }
+
+          const updatedPriority = this._createNewPriorityObj(payload);
+          this.realm.create(
+            "Task",
+            {
+              ...taskObj,
+              _id: new Realm.BSON.ObjectID(taskInput._id),
+              priority: updatedPriority,
+            },
+            "modified",
+          );
+        });
+      });
+      return Promise.resolve({
+        status: "success",
       });
     } catch (error) {
       return Promise.reject({

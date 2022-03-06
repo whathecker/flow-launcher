@@ -21,6 +21,16 @@ export interface updateTaskPriorityInput {
   urgency: string;
 }
 
+type BulkUpdateTaskInput = {
+  _id: Realm.BSON.ObjectId;
+  importance: string;
+  urgency: string;
+};
+
+export interface BulkUpdateTasksPrioInput {
+  batch: BulkUpdateTaskInput[];
+}
+
 export interface taskDBAccessStatus {
   status: "success" | "failed";
   reason?: string;

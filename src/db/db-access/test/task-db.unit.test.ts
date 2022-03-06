@@ -11,12 +11,16 @@ import {
   updateTaskPriorityInput,
 } from "../types/task-db";
 import { addGoalInput } from "../types/goal-db";
+import { BulkUpdateTasksPrioInput } from "../types/task-db";
 
 describe("Test db access module of Task object", () => {
   let realm: Realm;
   let taskDB: TaskDBAccessor;
   let goalDB: GoalDBAccessor;
   let task_id: Realm.BSON.ObjectId;
+  let task_id_2: Realm.BSON.ObjectId;
+  let task_id_3: Realm.BSON.ObjectId;
+  let task_id_4: Realm.BSON.ObjectId;
   let goal_id: Realm.BSON.ObjectId;
 
   beforeAll(async () => {
@@ -39,14 +43,37 @@ describe("Test db access module of Task object", () => {
     const newGoalResult = await goalDB.addGoal(payloadForGoal);
     goal_id = newGoalResult.data!._id;
 
-    const payloadForTask: addTaskInput = {
-      goal_id: goal_id,
-      title: "this is a mock task",
-      description: "this is the description of a mock task",
-    };
+    const payloadForTask: addTaskInput[] = [
+      {
+        goal_id: goal_id,
+        title: "this is a mock task",
+        description: "this is the description of a mock task",
+      },
+      {
+        goal_id: goal_id,
+        title: "this is a mock task - 2",
+        description: "this is the description of a mock task -2",
+      },
+      {
+        goal_id: goal_id,
+        title: "this is a mock task - 3",
+        description: "this is the description of a mock task -3",
+      },
+      {
+        goal_id: goal_id,
+        title: "this is a mock task - 4",
+        description: "this is the description of a mock task -4",
+      },
+    ];
 
-    const result = await taskDB.addTask(payloadForTask);
+    const result = await taskDB.addTask(payloadForTask[0]);
+    const result2 = await taskDB.addTask(payloadForTask[1]);
+    const result3 = await taskDB.addTask(payloadForTask[2]);
+    const result4 = await taskDB.addTask(payloadForTask[3]);
     task_id = result.data!._id;
+    task_id_2 = result2.data!._id;
+    task_id_3 = result3.data!._id;
+    task_id_4 = result4.data!._id;
   });
 
   afterAll(async () => {
@@ -72,7 +99,7 @@ describe("Test db access module of Task object", () => {
   test("List tasks by goal_id success", async () => {
     const result = await taskDB.listTasksByGoalId(goal_id);
 
-    expect(result.data!).toHaveLength(1);
+    expect(result.data!).toHaveLength(4);
     expect(result.data![0]._id).toBe(task_id);
   });
 
@@ -96,7 +123,7 @@ describe("Test db access module of Task object", () => {
     const goalResult = await goalDB.findGoalById(goal_id);
     const goal = goalResult.data!;
 
-    expect(goal.tasks).toHaveLength(2);
+    expect(goal.tasks).toHaveLength(5);
     expect(goal.tasks[goal.tasks.length - 1]).toBe(task._id);
   });
 
@@ -274,6 +301,75 @@ describe("Test db access module of Task object", () => {
     });
   });
 
+  test("bulkUpdateTasksPrio success", async () => {
+    const payload: BulkUpdateTasksPrioInput = {
+      batch: [
+        {
+          _id: task_id,
+          importance: "yes",
+          urgency: "yes",
+        },
+        {
+          _id: task_id_2,
+          importance: "yes",
+          urgency: "no",
+        },
+        {
+          _id: task_id_3,
+          importance: "no",
+          urgency: "yes",
+        },
+        {
+          _id: task_id_4,
+          importance: "no",
+          urgency: "no",
+        },
+      ],
+    };
+
+    await taskDB.bulkUpdateTasksPrio(payload);
+
+    const result = await taskDB.findTaskById(payload.batch[0]._id);
+    const result2 = await taskDB.findTaskById(payload.batch[1]._id);
+    const result3 = await taskDB.findTaskById(payload.batch[2]._id);
+    const result4 = await taskDB.findTaskById(payload.batch[3]._id);
+
+    const task = result.data!;
+    const task2 = result2.data!;
+    const task3 = result3.data!;
+    const task4 = result4.data!;
+
+    expect(task.priority.tier).toBe("highest");
+    expect(task.priority.importance).toBe(payload.batch[0].importance);
+    expect(task.priority.urgency).toBe(payload.batch[0].urgency);
+    expect(task._id).toBe(payload.batch[0]._id);
+
+    expect(task2.priority.tier).toBe("high");
+    expect(task2.priority.importance).toBe(payload.batch[1].importance);
+    expect(task2.priority.urgency).toBe(payload.batch[1].urgency);
+    expect(task2._id).toBe(payload.batch[1]._id);
+
+    expect(task3.priority.tier).toBe("mid");
+    expect(task3.priority.importance).toBe(payload.batch[2].importance);
+    expect(task3.priority.urgency).toBe(payload.batch[2].urgency);
+    expect(task3._id).toBe(payload.batch[2]._id);
+
+    expect(task4.priority.tier).toBe("low");
+    expect(task4.priority.importance).toBe(payload.batch[3].importance);
+    expect(task4.priority.urgency).toBe(payload.batch[3].urgency);
+    expect(task4._id).toBe(payload.batch[3]._id);
+  });
+
+  test("bulkUpdateTasksPrio fail - unknown task id", () => {
+    // TODO: update with proper test
+    expect(1).toBe(1);
+  });
+
+  test("bulkUpdateTasksPrio fail - invalid input in the payload", () => {
+    // TODO: update with proper test
+    expect(1).toBe(1);
+  });
+
   test("Remove a task success", async () => {
     const result = await taskDB.removeTask(task_id, goal_id);
     const result_goal = await goalDB.findGoalById(goal_id);
@@ -283,6 +379,6 @@ describe("Test db access module of Task object", () => {
       status: "failed",
       reason: "task not found",
     });
-    expect(result_goal.data!.tasks).toHaveLength(0);
+    expect(result_goal.data!.tasks).toHaveLength(3);
   });
 });
