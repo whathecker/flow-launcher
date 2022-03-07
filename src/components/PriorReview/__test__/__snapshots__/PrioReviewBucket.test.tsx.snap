@@ -1,0 +1,667 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Test PrioReviewBucket component Should renders PrioReviewBuckets correctly 1`] = `
+<View
+  style={
+    Array [
+      Object {
+        "backgroundColor": "#fff",
+      },
+      Object {
+        "backgroundColor": "#C2571A",
+        "borderColor": "#636262",
+        "borderRadius": 5,
+        "borderWidth": 1,
+        "marginBottom": "3%",
+        "marginTop": 5,
+        "paddingBottom": "8%",
+        "paddingTop": "4%",
+        "width": "90%",
+      },
+    ]
+  }
+>
+  <View
+    style={
+      Array [
+        Object {
+          "backgroundColor": "#fff",
+        },
+        Object {
+          "backgroundColor": "#C2571A",
+        },
+      ]
+    }
+  >
+    <RCTScrollView
+      data={
+        Array [
+          Object {
+            "data": Array [
+              Object {
+                "_id": "622605f8766c2b210fcc5890",
+                "description": "",
+                "goal_id": "61d024a2b4cda2847a224bdf",
+                "priority": Object {
+                  "importance": "yes",
+                  "tier": "highest",
+                  "urgency": "yes",
+                },
+                "status": "open",
+                "title": "Test1",
+              },
+              Object {
+                "_id": "622605fd766c2b210fcc5891",
+                "description": "",
+                "goal_id": "61d024a2b4cda2847a224bdf",
+                "priority": Object {
+                  "importance": "yes",
+                  "tier": "highest",
+                  "urgency": "yes",
+                },
+                "status": "open",
+                "title": "Test2",
+              },
+            ],
+            "title": "1. Do these before anything else",
+          },
+        ]
+      }
+      disableVirtualization={false}
+      getItem={[Function]}
+      getItemCount={[Function]}
+      horizontal={false}
+      initialNumToRender={10}
+      keyExtractor={[Function]}
+      maxToRenderPerBatch={10}
+      onContentSizeChange={[Function]}
+      onEndReachedThreshold={2}
+      onLayout={[Function]}
+      onMomentumScrollEnd={[Function]}
+      onScroll={[Function]}
+      onScrollBeginDrag={[Function]}
+      onScrollEndDrag={[Function]}
+      renderItem={[Function]}
+      scrollEventThrottle={50}
+      stickyHeaderIndices={
+        Array [
+          0,
+        ]
+      }
+      updateCellsBatchingPeriod={50}
+      windowSize={21}
+    >
+      <View>
+        <View
+          onLayout={[Function]}
+          style={null}
+        >
+          <Text
+            style={
+              Array [
+                Object {
+                  "color": "#000000",
+                },
+                Object {
+                  "color": "#fff",
+                  "fontFamily": "EB-Garamond",
+                  "fontSize": 19,
+                  "paddingBottom": "5%",
+                  "paddingLeft": "5%",
+                  "textAlign": "left",
+                },
+              ]
+            }
+          >
+            1. Do these before anything else
+          </Text>
+        </View>
+        <View
+          onLayout={[Function]}
+          style={null}
+        >
+          <View
+            style={
+              Array [
+                Object {
+                  "backgroundColor": "#fff",
+                },
+                Object {
+                  "alignItems": "center",
+                  "borderColor": "#636262",
+                  "borderRadius": 5,
+                  "borderWidth": 1,
+                  "flexDirection": "row",
+                  "justifyContent": "center",
+                  "marginBottom": 5,
+                  "marginLeft": "7.5%",
+                  "marginRight": "7.5%",
+                  "marginTop": 5,
+                  "paddingBottom": 8,
+                  "paddingTop": 8,
+                  "width": "85%",
+                },
+              ]
+            }
+          >
+            <Text
+              style={
+                Array [
+                  Object {
+                    "color": "#000000",
+                  },
+                  Object {
+                    "fontFamily": "Forum-Regular",
+                    "fontSize": 16,
+                  },
+                ]
+              }
+            >
+              Test1
+            </Text>
+          </View>
+        </View>
+        <View
+          onLayout={[Function]}
+          style={null}
+        >
+          <View
+            style={
+              Array [
+                Object {
+                  "backgroundColor": "#fff",
+                },
+                Object {
+                  "alignItems": "center",
+                  "borderColor": "#636262",
+                  "borderRadius": 5,
+                  "borderWidth": 1,
+                  "flexDirection": "row",
+                  "justifyContent": "center",
+                  "marginBottom": 5,
+                  "marginLeft": "7.5%",
+                  "marginRight": "7.5%",
+                  "marginTop": 5,
+                  "paddingBottom": 8,
+                  "paddingTop": 8,
+                  "width": "85%",
+                },
+              ]
+            }
+          >
+            <Text
+              style={
+                Array [
+                  Object {
+                    "color": "#000000",
+                  },
+                  Object {
+                    "fontFamily": "Forum-Regular",
+                    "fontSize": 16,
+                  },
+                ]
+              }
+            >
+              Test2
+            </Text>
+          </View>
+        </View>
+        <View
+          onLayout={[Function]}
+          style={null}
+        />
+      </View>
+    </RCTScrollView>
+  </View>
+</View>
+`;
+
+exports[`Test PrioReviewBucket component Should renders PrioReviewBuckets correctly 2`] = `
+<View
+  style={
+    Array [
+      Object {
+        "backgroundColor": "#fff",
+      },
+      Object {
+        "backgroundColor": "#0D9BC3",
+        "borderColor": "#636262",
+        "borderRadius": 5,
+        "borderWidth": 1,
+        "marginBottom": "3%",
+        "marginTop": 5,
+        "paddingBottom": "8%",
+        "paddingTop": "4%",
+        "width": "90%",
+      },
+    ]
+  }
+>
+  <View
+    style={
+      Array [
+        Object {
+          "backgroundColor": "#fff",
+        },
+        Object {
+          "backgroundColor": "#0D9BC3",
+        },
+      ]
+    }
+  >
+    <RCTScrollView
+      data={
+        Array [
+          Object {
+            "data": Array [
+              Object {
+                "_id": "62260602766c2b210fcc5892",
+                "description": "",
+                "goal_id": "61d024a2b4cda2847a224bdf",
+                "priority": Object {
+                  "importance": "yes",
+                  "tier": "high",
+                  "urgency": "no",
+                },
+                "status": "open",
+                "title": "test3",
+              },
+              Object {
+                "_id": "62260606766c2b210fcc5893",
+                "description": "",
+                "goal_id": "61d024a2b4cda2847a224bdf",
+                "priority": Object {
+                  "importance": "yes",
+                  "tier": "high",
+                  "urgency": "no",
+                },
+                "status": "open",
+                "title": "Test4",
+              },
+            ],
+            "title": "2. Sort these important things out",
+          },
+        ]
+      }
+      disableVirtualization={false}
+      getItem={[Function]}
+      getItemCount={[Function]}
+      horizontal={false}
+      initialNumToRender={10}
+      keyExtractor={[Function]}
+      maxToRenderPerBatch={10}
+      onContentSizeChange={[Function]}
+      onEndReachedThreshold={2}
+      onLayout={[Function]}
+      onMomentumScrollEnd={[Function]}
+      onScroll={[Function]}
+      onScrollBeginDrag={[Function]}
+      onScrollEndDrag={[Function]}
+      renderItem={[Function]}
+      scrollEventThrottle={50}
+      stickyHeaderIndices={
+        Array [
+          0,
+        ]
+      }
+      updateCellsBatchingPeriod={50}
+      windowSize={21}
+    >
+      <View>
+        <View
+          onLayout={[Function]}
+          style={null}
+        >
+          <Text
+            style={
+              Array [
+                Object {
+                  "color": "#000000",
+                },
+                Object {
+                  "color": "#fff",
+                  "fontFamily": "EB-Garamond",
+                  "fontSize": 19,
+                  "paddingBottom": "5%",
+                  "paddingLeft": "5%",
+                  "textAlign": "left",
+                },
+              ]
+            }
+          >
+            2. Sort these important things out
+          </Text>
+        </View>
+        <View
+          onLayout={[Function]}
+          style={null}
+        >
+          <View
+            style={
+              Array [
+                Object {
+                  "backgroundColor": "#fff",
+                },
+                Object {
+                  "alignItems": "center",
+                  "borderColor": "#636262",
+                  "borderRadius": 5,
+                  "borderWidth": 1,
+                  "flexDirection": "row",
+                  "justifyContent": "center",
+                  "marginBottom": 5,
+                  "marginLeft": "7.5%",
+                  "marginRight": "7.5%",
+                  "marginTop": 5,
+                  "paddingBottom": 8,
+                  "paddingTop": 8,
+                  "width": "85%",
+                },
+              ]
+            }
+          >
+            <Text
+              style={
+                Array [
+                  Object {
+                    "color": "#000000",
+                  },
+                  Object {
+                    "fontFamily": "Forum-Regular",
+                    "fontSize": 16,
+                  },
+                ]
+              }
+            >
+              test3
+            </Text>
+          </View>
+        </View>
+        <View
+          onLayout={[Function]}
+          style={null}
+        >
+          <View
+            style={
+              Array [
+                Object {
+                  "backgroundColor": "#fff",
+                },
+                Object {
+                  "alignItems": "center",
+                  "borderColor": "#636262",
+                  "borderRadius": 5,
+                  "borderWidth": 1,
+                  "flexDirection": "row",
+                  "justifyContent": "center",
+                  "marginBottom": 5,
+                  "marginLeft": "7.5%",
+                  "marginRight": "7.5%",
+                  "marginTop": 5,
+                  "paddingBottom": 8,
+                  "paddingTop": 8,
+                  "width": "85%",
+                },
+              ]
+            }
+          >
+            <Text
+              style={
+                Array [
+                  Object {
+                    "color": "#000000",
+                  },
+                  Object {
+                    "fontFamily": "Forum-Regular",
+                    "fontSize": 16,
+                  },
+                ]
+              }
+            >
+              Test4
+            </Text>
+          </View>
+        </View>
+        <View
+          onLayout={[Function]}
+          style={null}
+        />
+      </View>
+    </RCTScrollView>
+  </View>
+</View>
+`;
+
+exports[`Test PrioReviewBucket component Should renders PrioReviewBuckets correctly 3`] = `
+<View
+  style={
+    Array [
+      Object {
+        "backgroundColor": "#fff",
+      },
+      Object {
+        "backgroundColor": "#FEFEF8",
+        "borderColor": "#636262",
+        "borderRadius": 5,
+        "borderWidth": 1,
+        "marginBottom": "3%",
+        "marginTop": 5,
+        "paddingBottom": "8%",
+        "paddingTop": "4%",
+        "width": "90%",
+      },
+    ]
+  }
+>
+  <Text
+    style={
+      Array [
+        Object {
+          "color": "#000000",
+        },
+        Object {
+          "color": "#000000",
+          "fontFamily": "EB-Garamond",
+          "fontSize": 19,
+          "paddingLeft": "5%",
+        },
+      ]
+    }
+  >
+    3. These can wait a bit
+  </Text>
+  <View
+    style={
+      Array [
+        Object {
+          "backgroundColor": "#fff",
+        },
+        Object {
+          "alignItems": "center",
+          "backgroundColor": "#FEFEF8",
+          "flexDirection": "row",
+          "justifyContent": "center",
+          "paddingBottom": "6%",
+          "paddingTop": "12%",
+        },
+      ]
+    }
+  >
+    <Text
+      style={
+        Array [
+          Object {
+            "color": "#000000",
+          },
+          Object {
+            "color": "#848484",
+            "fontFamily": "Forum-Regular",
+            "fontSize": 16,
+          },
+        ]
+      }
+    >
+      No awaiting tasks
+    </Text>
+  </View>
+</View>
+`;
+
+exports[`Test PrioReviewBucket component Should renders PrioReviewBuckets correctly 4`] = `
+<View
+  style={
+    Array [
+      Object {
+        "backgroundColor": "#fff",
+      },
+      Object {
+        "backgroundColor": "#EBC944",
+        "borderColor": "#636262",
+        "borderRadius": 5,
+        "borderWidth": 1,
+        "marginBottom": "3%",
+        "marginTop": 5,
+        "paddingBottom": "8%",
+        "paddingTop": "4%",
+        "width": "90%",
+      },
+    ]
+  }
+>
+  <View
+    style={
+      Array [
+        Object {
+          "backgroundColor": "#fff",
+        },
+        Object {
+          "backgroundColor": "#EBC944",
+        },
+      ]
+    }
+  >
+    <RCTScrollView
+      data={
+        Array [
+          Object {
+            "data": Array [
+              Object {
+                "_id": "62260609766c2b210fcc5894",
+                "description": "",
+                "goal_id": "61d024a2b4cda2847a224bdf",
+                "priority": Object {
+                  "importance": "no",
+                  "tier": "low",
+                  "urgency": "no",
+                },
+                "status": "open",
+                "title": "test5",
+              },
+            ],
+            "title": "4. These are for spare time",
+          },
+        ]
+      }
+      disableVirtualization={false}
+      getItem={[Function]}
+      getItemCount={[Function]}
+      horizontal={false}
+      initialNumToRender={10}
+      keyExtractor={[Function]}
+      maxToRenderPerBatch={10}
+      onContentSizeChange={[Function]}
+      onEndReachedThreshold={2}
+      onLayout={[Function]}
+      onMomentumScrollEnd={[Function]}
+      onScroll={[Function]}
+      onScrollBeginDrag={[Function]}
+      onScrollEndDrag={[Function]}
+      renderItem={[Function]}
+      scrollEventThrottle={50}
+      stickyHeaderIndices={
+        Array [
+          0,
+        ]
+      }
+      updateCellsBatchingPeriod={50}
+      windowSize={21}
+    >
+      <View>
+        <View
+          onLayout={[Function]}
+          style={null}
+        >
+          <Text
+            style={
+              Array [
+                Object {
+                  "color": "#000000",
+                },
+                Object {
+                  "color": "#fff",
+                  "fontFamily": "EB-Garamond",
+                  "fontSize": 19,
+                  "paddingBottom": "5%",
+                  "paddingLeft": "5%",
+                  "textAlign": "left",
+                },
+              ]
+            }
+          >
+            4. These are for spare time
+          </Text>
+        </View>
+        <View
+          onLayout={[Function]}
+          style={null}
+        >
+          <View
+            style={
+              Array [
+                Object {
+                  "backgroundColor": "#fff",
+                },
+                Object {
+                  "alignItems": "center",
+                  "borderColor": "#636262",
+                  "borderRadius": 5,
+                  "borderWidth": 1,
+                  "flexDirection": "row",
+                  "justifyContent": "center",
+                  "marginBottom": 5,
+                  "marginLeft": "7.5%",
+                  "marginRight": "7.5%",
+                  "marginTop": 5,
+                  "paddingBottom": 8,
+                  "paddingTop": 8,
+                  "width": "85%",
+                },
+              ]
+            }
+          >
+            <Text
+              style={
+                Array [
+                  Object {
+                    "color": "#000000",
+                  },
+                  Object {
+                    "fontFamily": "Forum-Regular",
+                    "fontSize": 16,
+                  },
+                ]
+              }
+            >
+              test5
+            </Text>
+          </View>
+        </View>
+        <View
+          onLayout={[Function]}
+          style={null}
+        />
+      </View>
+    </RCTScrollView>
+  </View>
+</View>
+`;
