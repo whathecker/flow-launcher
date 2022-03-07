@@ -1,22 +1,9 @@
 import React from "react";
-import { Image, StyleSheet } from "react-native";
+import { StyleSheet } from "react-native";
+import { EmptyPrioritizedTasks } from "./components";
 import { View, Text } from "../Themed";
-import { Container, Color, Shadow, Typography } from "../../styles";
+import { Color, Shadow, Typography } from "../../styles";
 import { Task } from "../../types/core/entity";
-
-const EmptyPrioritizedTasks: React.FC = () => {
-  return (
-    <View style={styles.emptyTasksMsgWrapper}>
-      <Image
-        style={styles.emptyTasksImage}
-        source={require(`../../../assets/images/partying-face_1f973.png`)}
-      />
-      <Text style={styles.emptyTasksMsg}>
-        {"Small steps, great achievement"}
-      </Text>
-    </View>
-  );
-};
 
 type PrioritizedTasksProps = {
   highest: Task[];
@@ -67,21 +54,6 @@ const styles = StyleSheet.create({
   headerText: {
     ...Typography.h4,
     fontSize: 18,
-  },
-  emptyTasksMsgWrapper: {
-    ...Container.centerAlignedVertical,
-    height: "80%",
-    padding: 20,
-  },
-  emptyTasksImage: {
-    width: 40,
-    height: 40,
-  },
-  emptyTasksMsg: {
-    ...Typography.p,
-    fontSize: 16,
-    color: Color.light.subtleLabel,
-    paddingTop: 20,
   },
 });
 

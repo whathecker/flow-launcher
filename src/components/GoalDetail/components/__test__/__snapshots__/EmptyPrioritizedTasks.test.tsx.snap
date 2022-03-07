@@ -1,0 +1,47 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Test EmptyPrioritizedTasks component Should renders EmptyPrioritizedTasks correctly 1`] = `
+<View
+  style={
+    Array [
+      Object {
+        "backgroundColor": "#fff",
+      },
+      Object {
+        "alignItems": "center",
+        "flexDirection": "column",
+        "height": "80%",
+        "justifyContent": "center",
+        "padding": 20,
+      },
+    ]
+  }
+>
+  <Image
+    source={1}
+    style={
+      Object {
+        "height": 40,
+        "width": 40,
+      }
+    }
+  />
+  <Text
+    style={
+      Array [
+        Object {
+          "color": "#000000",
+        },
+        Object {
+          "color": "#848484",
+          "fontFamily": "Forum-Regular",
+          "fontSize": 16,
+          "paddingTop": 20,
+        },
+      ]
+    }
+  >
+    Small steps, great achievement
+  </Text>
+</View>
+`;
