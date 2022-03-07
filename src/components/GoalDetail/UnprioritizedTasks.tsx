@@ -6,19 +6,19 @@ import { Typography, Color, Shadow } from "../../styles";
 import { Task } from "../../types/core/entity";
 
 type UnprioritizedTasksProp = {
-  tasks: Task[];
+  unprioritisedTasks: Task[];
 };
 
 const UnprioritizedTasks: React.FC<UnprioritizedTasksProp> = ({
-  tasks,
+  unprioritisedTasks,
 }: UnprioritizedTasksProp) => {
   return (
     <View style={styles.wrapper}>
       <View style={styles.headerAreaWrapper}>
         <Text style={styles.headerText}>{"Recently Added Tasks"}</Text>
       </View>
-      {tasks.length > 0 ? (
-        <UnprioritizedTasksList tasks={tasks} />
+      {unprioritisedTasks.length > 0 ? (
+        <UnprioritizedTasksList tasks={unprioritisedTasks} />
       ) : (
         <EmptyUnprioritizedTasks />
       )}

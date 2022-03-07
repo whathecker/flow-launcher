@@ -1,0 +1,57 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Test EmptyBucket component Should renders EmptyBucket correctly 1`] = `
+Array [
+  <Text
+    style={
+      Array [
+        Object {
+          "color": "#000000",
+        },
+        Object {
+          "color": "#000000",
+          "fontFamily": "EB-Garamond",
+          "fontSize": 19,
+          "paddingLeft": "5%",
+        },
+      ]
+    }
+  >
+    This should be title of empty prio bucket
+  </Text>,
+  <View
+    style={
+      Array [
+        Object {
+          "backgroundColor": "#fff",
+        },
+        Object {
+          "alignItems": "center",
+          "backgroundColor": "#FEFEF8",
+          "flexDirection": "row",
+          "justifyContent": "center",
+          "paddingBottom": "6%",
+          "paddingTop": "12%",
+        },
+      ]
+    }
+  >
+    <Text
+      style={
+        Array [
+          Object {
+            "color": "#000000",
+          },
+          Object {
+            "color": "#848484",
+            "fontFamily": "Forum-Regular",
+            "fontSize": 16,
+          },
+        ]
+      }
+    >
+      No awaiting tasks
+    </Text>
+  </View>,
+]
+`;

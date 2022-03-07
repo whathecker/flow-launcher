@@ -1,32 +1,28 @@
-import React from "react";
-import { View, Text, Button, StyleSheet } from "react-native";
+/* eslint-disable @typescript-eslint/no-non-null-assertion */
+import React, { useContext } from "react";
+import { StyleSheet } from "react-native";
+import { View } from "../components/Themed";
+import { PriorHeader, PriorForm } from "../components/Prioritization";
 import { Container, Typography } from "../styles";
 import { PriorStackScreenProps } from "../types/navigation";
+import { TasksContext } from "../contexts/tasks";
+import { taskFilters } from "../utils";
 
 type Props = PriorStackScreenProps<"Prioritization">;
 
-const PrioritizationScreen: React.FC<Props> = ({ navigation }: Props) => {
+const PrioritizationScreen: React.FC<Props> = () => {
+  const { state } = useContext(TasksContext);
+  const unprioritisedTasks = taskFilters.filterUnprioritized(state.tasks);
   return (
     <>
       <View style={styles.headerWrapper}>
-        <Text style={styles.headerText}>Prioritization Screen</Text>
-      </View>
-      <View style={styles.headerWrapper}>
-        <Text>Title of the goal</Text>
-      </View>
-      <View style={styles.headerWrapper}>
-        <Text>motivation of the goal</Text>
-      </View>
-      <View style={styles.inputAreaWrapper}>
-        <Text>Input area</Text>
-      </View>
-      <View>
-        <Button
-          title="Go back"
-          onPress={() => {
-            navigation.goBack();
-          }}
+        <PriorHeader
+          title={state.goal!.title}
+          motivation={state.goal!.motivation}
         />
+      </View>
+      <View style={styles.formAreaWrapper}>
+        <PriorForm unprioritisedTasks={unprioritisedTasks} />
       </View>
     </>
   );
@@ -34,19 +30,14 @@ const PrioritizationScreen: React.FC<Props> = ({ navigation }: Props) => {
 
 const styles = StyleSheet.create({
   headerWrapper: {
-    ...Container.centerAligned,
-    height: "10%",
+    height: "25%",
   },
   headerText: {
     ...Typography.h1,
   },
-  inputAreaWrapper: {
+  formAreaWrapper: {
     ...Container.centerAligned,
-    height: "30%",
-  },
-  buttonWrapper: {
-    ...Container.centerAligned,
-    height: "20%",
+    height: "75%",
   },
 });
 

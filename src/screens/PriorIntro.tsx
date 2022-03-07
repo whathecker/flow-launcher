@@ -1,7 +1,11 @@
 import React from "react";
-import { View, Text, Button, StyleSheet } from "react-native";
-import { Container, Typography } from "../styles";
+import { StyleSheet } from "react-native";
+import { View } from "../components/Themed";
+import { Container } from "../styles";
 import { PriorStackScreenProps } from "../types/navigation";
+
+import { PriorIntroHeader, PriorExplanation } from "../components/PriorIntro";
+import { Button } from "../components/shared";
 
 type Props = PriorStackScreenProps<"PriorIntro">;
 
@@ -9,20 +13,18 @@ const PriorIntroScreen: React.FC<Props> = ({ navigation }: Props) => {
   return (
     <>
       <View style={styles.headerWrapper}>
-        <Text style={styles.headerText}>
-          Hello, This is your PriorIntro screen
-        </Text>
+        <PriorIntroHeader />
       </View>
       <View style={styles.explanationAreaWrapper}>
-        <Text>Explain what we are going to do here</Text>
+        <PriorExplanation />
       </View>
       <View style={styles.buttonWrapper}>
-        <Button
-          title="Let's start prioritization"
-          onPress={() => {
-            navigation.navigate("Prioritization");
-          }}
-        />
+        <View style={{ width: "80%" }}>
+          <Button
+            ctaTxt="Start prioritizing!"
+            pressHandler={() => navigation.navigate("Prioritization")}
+          />
+        </View>
       </View>
     </>
   );
@@ -30,19 +32,17 @@ const PriorIntroScreen: React.FC<Props> = ({ navigation }: Props) => {
 
 const styles = StyleSheet.create({
   headerWrapper: {
-    ...Container.centerAligned,
-    height: "10%",
-  },
-  headerText: {
-    ...Typography.h1,
+    ...Container.centerAlignedVertical,
+    height: "26%",
   },
   explanationAreaWrapper: {
-    ...Container.centerAligned,
-    height: "30%",
+    ...Container.centerAlignedVertical,
+    height: "46%",
+    paddingTop: 100,
   },
   buttonWrapper: {
     ...Container.centerAligned,
-    height: "20%",
+    height: "30%",
   },
 });
 

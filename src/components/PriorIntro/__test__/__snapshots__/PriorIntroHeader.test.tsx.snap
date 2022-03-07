@@ -1,0 +1,112 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Test PriorIntroHeader component Should renders PriorIntroHeader correctly 1`] = `
+Array [
+  <View
+    style={
+      Array [
+        Object {
+          "backgroundColor": "#fff",
+        },
+        Object {
+          "alignItems": "center",
+          "flexDirection": "row",
+          "height": "50%",
+          "justifyContent": "flex-start",
+          "marginLeft": "5%",
+          "marginRight": "5%",
+          "width": "90%",
+        },
+      ]
+    }
+  >
+    <View
+      accessible={true}
+      focusable={true}
+      onClick={[Function]}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+      style={
+        Object {
+          "alignItems": "center",
+          "backgroundColor": "#fff",
+          "flexDirection": "row",
+          "justifyContent": "center",
+          "opacity": 1,
+        }
+      }
+    >
+      <Image
+        source={1}
+        style={
+          Object {
+            "height": 20,
+            "width": 20,
+          }
+        }
+      />
+    </View>
+  </View>,
+  <View
+    style={
+      Array [
+        Object {
+          "backgroundColor": "#fff",
+        },
+        Object {
+          "alignItems": "center",
+          "flexDirection": "column",
+          "justifyContent": "center",
+        },
+      ]
+    }
+  >
+    <Image
+      source={1}
+      style={
+        Object {
+          "height": 50,
+          "width": 50,
+        }
+      }
+    />
+    <Text
+      style={
+        Array [
+          Object {
+            "color": "#000000",
+          },
+          Object {
+            "fontFamily": "EB-Garamond",
+            "fontSize": 25,
+            "fontWeight": "bold",
+            "paddingBottom": 5,
+            "paddingTop": 5,
+          },
+        ]
+      }
+    >
+      Let’s Prioritize Tasks
+    </Text>
+    <Text
+      style={
+        Array [
+          Object {
+            "color": "#000000",
+          },
+          Object {
+            "fontFamily": "Forum-Regular",
+            "fontSize": 16,
+          },
+        ]
+      }
+    >
+      We will ask two questions for each task
+    </Text>
+  </View>,
+]
+`;

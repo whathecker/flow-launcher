@@ -264,7 +264,7 @@ exports[`Test UnprioritizedTasks component Should renders UnprioritizedTasks cor
       </View>
       <View
         accessible={true}
-        focusable={false}
+        focusable={true}
         onClick={[Function]}
         onResponderGrant={[Function]}
         onResponderMove={[Function]}

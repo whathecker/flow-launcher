@@ -5,6 +5,7 @@ import { View, TouchableWithoutFeedback } from "../components/Themed";
 import { Container, Color, Shadow } from "../styles";
 import { GoalStackScreenProps } from "../types/navigation";
 import { TasksContext } from "../contexts/tasks";
+import { taskFilters } from "../utils";
 
 import {
   GoalDetailHeader,
@@ -17,18 +18,15 @@ import { Button } from "../components/shared";
 type Props = GoalStackScreenProps<"GoalDetail">;
 
 const GoalDetailScreen: React.FC<Props> = ({ route }: Props) => {
-  const { goal } = route.params;
+  const { goal, goalColor } = route.params;
   const [addTaskFormOpened, setAddTaskFormOpened] = useState(false);
   const { state, fetchTasks } = useContext(TasksContext);
 
   useEffect(() => {
-    fetchTasks({ goal_id: goal._id as string });
+    fetchTasks({ goal, goalColor });
   }, [goal._id]);
 
-  //TODO: turn this into util function
-  const unpriortizedTasks = state.tasks.filter((task) => {
-    return task.status === "open" && task.priority!.tier === "n/a";
-  });
+  const unpriortizedTasks = taskFilters.filterUnprioritized(state.tasks);
 
   return (
     <>
@@ -55,7 +53,7 @@ const GoalDetailScreen: React.FC<Props> = ({ route }: Props) => {
       </View>
       <ScrollView style={styles.scrollAreaWrapper}>
         <View style={styles.recentTasksWrapper}>
-          <UnprioritizedTasks tasks={unpriortizedTasks} />
+          <UnprioritizedTasks unprioritisedTasks={unpriortizedTasks} />
         </View>
         <View style={styles.prioritizedTasksWrapper}>
           <PrioritizedTasks />

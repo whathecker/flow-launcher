@@ -1,0 +1,20 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Test TaskCounter component Should renders TaskCounter correctly 1`] = `
+<Text
+  style={
+    Array [
+      Object {
+        "color": "#000000",
+      },
+      Object {
+        "color": "#848484",
+        "fontFamily": "Forum-Regular",
+        "fontSize": 18,
+      },
+    ]
+  }
+>
+  Task (3 of 5)
+</Text>
+`;

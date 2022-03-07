@@ -1,0 +1,44 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Test TaskReadable component Should renders TaskReadable correctly 1`] = `
+<View
+  style={
+    Array [
+      Object {
+        "backgroundColor": "#fff",
+      },
+      Object {
+        "alignItems": "center",
+        "borderColor": "#636262",
+        "borderRadius": 5,
+        "borderWidth": 1,
+        "flexDirection": "row",
+        "justifyContent": "center",
+        "marginBottom": 5,
+        "marginLeft": "7.5%",
+        "marginRight": "7.5%",
+        "marginTop": 5,
+        "paddingBottom": 8,
+        "paddingTop": 8,
+        "width": "85%",
+      },
+    ]
+  }
+>
+  <Text
+    style={
+      Array [
+        Object {
+          "color": "#000000",
+        },
+        Object {
+          "fontFamily": "Forum-Regular",
+          "fontSize": 16,
+        },
+      ]
+    }
+  >
+    This should be title of empty prio bucket
+  </Text>
+</View>
+`;

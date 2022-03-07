@@ -3,7 +3,7 @@ import {
   NavigatorScreenParams,
 } from "@react-navigation/native";
 import { NativeStackScreenProps } from "@react-navigation/native-stack";
-import { Goal } from "./core/entity";
+import { Goal, GoalColor, Task } from "./core/entity";
 
 export type RootStackParamList = {
   Goal: NavigatorScreenParams<GoalStackParamList> | undefined;
@@ -16,7 +16,7 @@ export type RootStackScreenProps<Screen extends keyof RootStackParamList> =
 export type GoalStackParamList = {
   Goals: undefined;
   AddGoal: undefined;
-  GoalDetail: { goal: Goal };
+  GoalDetail: { goal: Goal; goalColor: GoalColor };
 };
 
 export type GoalStackScreenProps<Screen extends keyof GoalStackParamList> =
@@ -28,6 +28,7 @@ export type GoalStackScreenProps<Screen extends keyof GoalStackParamList> =
 export type PriorStackParamList = {
   PriorIntro: undefined;
   Prioritization: undefined;
+  PriorReview: { tasks: Task[] };
 };
 
 export type PriorStackScreenProps<Screen extends keyof PriorStackParamList> =

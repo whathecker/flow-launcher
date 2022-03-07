@@ -10,6 +10,7 @@ import {
   GoalDetailScreen,
   PriorIntroScreen,
   PrioritizationScreen,
+  PriorReviewScreen,
 } from "../screens";
 import {
   RootStackParamList,
@@ -83,6 +84,11 @@ const PriorNav: React.FC = () => {
         name="Prioritization"
         options={{ headerShown: false }}
         component={PrioritizationScreen}
+      />
+      <PriorStack.Screen
+        name="PriorReview"
+        options={{ headerShown: false }}
+        component={PriorReviewScreen}
       />
     </PriorStack.Navigator>
   );

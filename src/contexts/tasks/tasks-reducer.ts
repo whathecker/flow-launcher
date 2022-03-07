@@ -5,6 +5,8 @@ export default (state: TasksState, action: TasksAction): TasksState => {
   switch (action.type) {
     case "FETCH_TASKS":
       return { ...state, ...action.payload! };
+    case "UPDATE_TASKS_PRIO":
+      return { ...state, ...action.payload! };
     case "ERROR":
       return { ...state, errorMsg: action.payload?.errorMsg };
     default:
