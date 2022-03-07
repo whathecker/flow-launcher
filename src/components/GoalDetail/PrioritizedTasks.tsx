@@ -1,10 +1,10 @@
 import React from "react";
 import { Image, StyleSheet } from "react-native";
 import { View, Text } from "../Themed";
-
 import { Container, Color, Shadow, Typography } from "../../styles";
+import { Task } from "../../types/core/entity";
 
-const EmptyTasks: React.FC = () => {
+const EmptyPrioritizedTasks: React.FC = () => {
   return (
     <View style={styles.emptyTasksMsgWrapper}>
       <Image
@@ -18,13 +18,36 @@ const EmptyTasks: React.FC = () => {
   );
 };
 
-const PrioritizedTasks: React.FC = () => {
+type PrioritizedTasksProps = {
+  highest: Task[];
+  high: Task[];
+  mid: Task[];
+  low: Task[];
+};
+
+function _isTasksEmpty(input: Task[]): boolean {
+  return input.length === 0;
+}
+
+const PrioritizedTasks: React.FC<PrioritizedTasksProps> = ({
+  highest,
+  high,
+  mid,
+  low,
+}: PrioritizedTasksProps) => {
+  const mergedTasks = highest.concat(high).concat(mid).concat(low);
+  const isTasksEmptty = _isTasksEmpty(mergedTasks);
+
   return (
     <View style={styles.wrapper}>
       <View style={styles.headerAreaWrapper}>
         <Text style={styles.headerText}>{"Prioritized Tasks"}</Text>
       </View>
-      <EmptyTasks />
+      {isTasksEmptty ? (
+        <EmptyPrioritizedTasks />
+      ) : (
+        <Text>{`Display buckets here`}</Text>
+      )}
     </View>
   );
 };

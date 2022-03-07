@@ -52,48 +52,17 @@ exports[`Test PrioritizedTasks component Should renders PrioritizedTasks correct
       Prioritized Tasks
     </Text>
   </View>
-  <View
+  <Text
     style={
       Array [
         Object {
-          "backgroundColor": "#fff",
+          "color": "#000000",
         },
-        Object {
-          "alignItems": "center",
-          "flexDirection": "column",
-          "height": "80%",
-          "justifyContent": "center",
-          "padding": 20,
-        },
+        undefined,
       ]
     }
   >
-    <Image
-      source={1}
-      style={
-        Object {
-          "height": 40,
-          "width": 40,
-        }
-      }
-    />
-    <Text
-      style={
-        Array [
-          Object {
-            "color": "#000000",
-          },
-          Object {
-            "color": "#848484",
-            "fontFamily": "Forum-Regular",
-            "fontSize": 16,
-            "paddingTop": 20,
-          },
-        ]
-      }
-    >
-      Small steps, great achievement
-    </Text>
-  </View>
+    Display buckets here
+  </Text>
 </View>
 `;
