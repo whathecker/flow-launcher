@@ -1,15 +1,16 @@
 import React from "react";
 import { StyleSheet } from "react-native";
-import { EmptyPrioritizedTasks } from "./components";
+import { EmptyPrioritizedTasks, TaskBucketByPrio } from "./components";
 import { View, Text } from "../Themed";
 import { Color, Shadow, Typography } from "../../styles";
-import { Task } from "../../types/core/entity";
+import { Task, GoalColor } from "../../types/core/entity";
 
 type PrioritizedTasksProps = {
   highest: Task[];
   high: Task[];
   mid: Task[];
   low: Task[];
+  goalColor: GoalColor;
 };
 
 function _isTasksEmpty(input: Task[]): boolean {
@@ -21,6 +22,7 @@ const PrioritizedTasks: React.FC<PrioritizedTasksProps> = ({
   high,
   mid,
   low,
+  goalColor,
 }: PrioritizedTasksProps) => {
   const mergedTasks = highest.concat(high).concat(mid).concat(low);
   const isTasksEmptty = _isTasksEmpty(mergedTasks);
@@ -33,7 +35,16 @@ const PrioritizedTasks: React.FC<PrioritizedTasksProps> = ({
       {isTasksEmptty ? (
         <EmptyPrioritizedTasks />
       ) : (
-        <Text>{`Display buckets here`}</Text>
+        <View>
+          <TaskBucketByPrio
+            prio={"highest"}
+            tasks={highest}
+            goalColor={goalColor}
+          />
+          <TaskBucketByPrio prio={"high"} tasks={high} goalColor={goalColor} />
+          <TaskBucketByPrio prio={"mid"} tasks={mid} goalColor={goalColor} />
+          <TaskBucketByPrio prio={"low"} tasks={low} goalColor={goalColor} />
+        </View>
       )}
     </View>
   );

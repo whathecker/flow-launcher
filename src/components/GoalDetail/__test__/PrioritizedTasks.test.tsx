@@ -76,6 +76,7 @@ describe("Test PrioritizedTasks component", () => {
           high={result.high}
           mid={result.mid}
           low={result.low}
+          goalColor={"#F0B541"}
         />,
       )
       .toJSON();

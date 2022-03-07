@@ -62,6 +62,7 @@ const GoalDetailScreen: React.FC<Props> = ({ route }: Props) => {
             high={tasksByPrioBucket.high}
             mid={tasksByPrioBucket.mid}
             low={tasksByPrioBucket.low}
+            goalColor={goalColor}
           />
         </View>
       </ScrollView>

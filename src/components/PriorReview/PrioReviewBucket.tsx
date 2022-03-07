@@ -5,34 +5,12 @@ import { EmptyBucket, TaskReadable } from "./components";
 import { Typography, Color } from "../../styles";
 import { Task, GoalColor } from "../../types/core/entity";
 import { PriorityTier } from "../../types/core/value-object";
-import { colorRenderer } from "../../utils";
+import { colorRenderer, labelRenderer } from "../../utils";
 
 type PrioReviewBucketProps = {
   prio: PriorityTier;
   tasks: Task[];
   goalColor: GoalColor;
-};
-
-const renderLabel = (prio: PriorityTier): string => {
-  let label = "";
-  switch (prio) {
-    case "highest":
-      label = "1. Do these before anything else";
-      break;
-    case "high":
-      label = "2. Sort these important things out";
-      break;
-    case "mid":
-      label = "3. These can wait a bit";
-      break;
-    case "low":
-      label = "4. These are for spare time";
-      break;
-    default:
-      // TODO: Add error handling here
-      break;
-  }
-  return label;
 };
 
 const PrioReviewBucket: React.FC<PrioReviewBucketProps> = ({
@@ -45,7 +23,7 @@ const PrioReviewBucket: React.FC<PrioReviewBucketProps> = ({
 
   const sectionData = [
     {
-      title: renderLabel(prio),
+      title: labelRenderer.renderPrioBucketLabel(prio),
       data: tasks,
     },
   ];
@@ -69,7 +47,7 @@ const PrioReviewBucket: React.FC<PrioReviewBucketProps> = ({
       }}
     >
       {isTasksEmpty ? (
-        <EmptyBucket title={renderLabel(prio)} />
+        <EmptyBucket title={labelRenderer.renderPrioBucketLabel(prio)} />
       ) : (
         <View
           style={{
