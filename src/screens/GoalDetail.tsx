@@ -27,6 +27,7 @@ const GoalDetailScreen: React.FC<Props> = ({ route }: Props) => {
   }, [goal._id]);
 
   const unpriortizedTasks = taskFilters.filterUnprioritized(state.tasks);
+  const tasksByPrioBucket = taskFilters.filterByPriorityScheme(state.tasks);
 
   return (
     <>
@@ -56,7 +57,13 @@ const GoalDetailScreen: React.FC<Props> = ({ route }: Props) => {
           <UnprioritizedTasks unprioritisedTasks={unpriortizedTasks} />
         </View>
         <View style={styles.prioritizedTasksWrapper}>
-          <PrioritizedTasks />
+          <PrioritizedTasks
+            highest={tasksByPrioBucket.highest}
+            high={tasksByPrioBucket.high}
+            mid={tasksByPrioBucket.mid}
+            low={tasksByPrioBucket.low}
+            goalColor={goalColor}
+          />
         </View>
       </ScrollView>
       <View style={styles.buttonWrapper}>

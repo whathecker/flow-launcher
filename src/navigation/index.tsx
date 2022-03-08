@@ -11,6 +11,7 @@ import {
   PriorIntroScreen,
   PrioritizationScreen,
   PriorReviewScreen,
+  TasksByPrioScreen,
 } from "../screens";
 import {
   RootStackParamList,
@@ -65,6 +66,11 @@ const GoalNav: React.FC = () => {
         name="GoalDetail"
         options={{ headerShown: false }}
         component={GoalDetailScreen}
+      />
+      <GoalStack.Screen
+        name="TasksByPrio"
+        options={{ headerShown: false }}
+        component={TasksByPrioScreen}
       />
     </GoalStack.Navigator>
   );

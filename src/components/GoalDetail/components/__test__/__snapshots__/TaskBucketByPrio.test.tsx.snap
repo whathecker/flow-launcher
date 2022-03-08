@@ -1,0 +1,480 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Test TaskBucketByPrio component Should renders TaskBucketByPrio correctly 1`] = `
+<View
+  accessible={true}
+  focusable={true}
+  onClick={[Function]}
+  onResponderGrant={[Function]}
+  onResponderMove={[Function]}
+  onResponderRelease={[Function]}
+  onResponderTerminate={[Function]}
+  onResponderTerminationRequest={[Function]}
+  onStartShouldSetResponder={[Function]}
+  style={
+    Object {
+      "backgroundColor": "#EBC944",
+      "borderColor": "#636262",
+      "borderRadius": 5,
+      "borderWidth": 1,
+      "height": 120,
+      "marginBottom": "3%",
+      "marginTop": 5,
+      "opacity": 1,
+      "paddingBottom": "8%",
+      "paddingTop": "4%",
+      "width": "100%",
+    }
+  }
+>
+  <View
+    style={
+      Array [
+        Object {
+          "backgroundColor": "#fff",
+        },
+        Object {
+          "backgroundColor": "#EBC944",
+          "paddingLeft": 15,
+        },
+      ]
+    }
+  >
+    <Text
+      style={
+        Array [
+          Object {
+            "color": "#000000",
+          },
+          Object {
+            "color": "#fff",
+            "fontFamily": "EB-Garamond",
+            "fontSize": 18,
+            "fontWeight": "bold",
+          },
+        ]
+      }
+    >
+      4. These are for spare time
+    </Text>
+  </View>
+  <View
+    style={
+      Array [
+        Object {
+          "backgroundColor": "#fff",
+        },
+        Object {
+          "backgroundColor": "#EBC944",
+          "paddingBottom": "2%",
+          "paddingLeft": "10%",
+          "paddingTop": "3%",
+        },
+      ]
+    }
+  >
+    <Text
+      style={
+        Array [
+          Object {
+            "color": "#000000",
+          },
+          Object {
+            "color": "#fff",
+            "fontFamily": "Forum-Regular",
+            "fontSize": 16,
+          },
+        ]
+      }
+    >
+      test5
+    </Text>
+    <View
+      style={
+        Array [
+          Object {
+            "backgroundColor": "#fff",
+          },
+          Object {
+            "backgroundColor": "#EBC944",
+            "position": "absolute",
+            "right": 15,
+            "top": -18,
+          },
+        ]
+      }
+    >
+      <Image
+        source={1}
+        style={
+          Object {
+            "height": 18,
+            "width": 18,
+          }
+        }
+      />
+    </View>
+  </View>
+</View>
+`;
+
+exports[`Test TaskBucketByPrio component Should renders TaskBucketByPrio correctly 2`] = `
+<View
+  style={
+    Array [
+      Object {
+        "backgroundColor": "#fff",
+      },
+      Object {
+        "backgroundColor": "#FEFEF8",
+        "borderColor": "#636262",
+        "borderRadius": 5,
+        "borderWidth": 1,
+        "height": 120,
+        "marginBottom": "3%",
+        "marginTop": 5,
+        "paddingBottom": "8%",
+        "paddingTop": "4%",
+        "width": "100%",
+      },
+    ]
+  }
+>
+  <View
+    style={
+      Array [
+        Object {
+          "backgroundColor": "#fff",
+        },
+        Object {
+          "backgroundColor": "#FEFEF8",
+          "paddingLeft": 15,
+        },
+      ]
+    }
+  >
+    <Text
+      style={
+        Array [
+          Object {
+            "color": "#000000",
+          },
+          Object {
+            "color": "#848484",
+            "fontFamily": "EB-Garamond",
+            "fontSize": 18,
+            "fontWeight": "bold",
+          },
+        ]
+      }
+    >
+      3. These can wait a bit
+    </Text>
+  </View>
+  <View
+    style={
+      Array [
+        Object {
+          "backgroundColor": "#fff",
+        },
+        Object {
+          "alignItems": "center",
+          "backgroundColor": "#FEFEF8",
+          "flexDirection": "row",
+          "justifyContent": "center",
+          "paddingTop": "8%",
+        },
+      ]
+    }
+  >
+    <Text
+      style={
+        Array [
+          Object {
+            "color": "#000000",
+          },
+          Object {
+            "color": "#848484",
+            "fontFamily": "Forum-Regular",
+            "fontSize": 16,
+          },
+        ]
+      }
+    >
+      No awaiting tasks
+    </Text>
+  </View>
+</View>
+`;
+
+exports[`Test TaskBucketByPrio component Should renders TaskBucketByPrio correctly 3`] = `
+<View
+  accessible={true}
+  focusable={true}
+  onClick={[Function]}
+  onResponderGrant={[Function]}
+  onResponderMove={[Function]}
+  onResponderRelease={[Function]}
+  onResponderTerminate={[Function]}
+  onResponderTerminationRequest={[Function]}
+  onStartShouldSetResponder={[Function]}
+  style={
+    Object {
+      "backgroundColor": "#D3B53D",
+      "borderColor": "#636262",
+      "borderRadius": 5,
+      "borderWidth": 1,
+      "height": 120,
+      "marginBottom": "3%",
+      "marginTop": 5,
+      "opacity": 1,
+      "paddingBottom": "8%",
+      "paddingTop": "4%",
+      "width": "100%",
+    }
+  }
+>
+  <View
+    style={
+      Array [
+        Object {
+          "backgroundColor": "#fff",
+        },
+        Object {
+          "backgroundColor": "#D3B53D",
+          "paddingLeft": 15,
+        },
+      ]
+    }
+  >
+    <Text
+      style={
+        Array [
+          Object {
+            "color": "#000000",
+          },
+          Object {
+            "color": "#fff",
+            "fontFamily": "EB-Garamond",
+            "fontSize": 18,
+            "fontWeight": "bold",
+          },
+        ]
+      }
+    >
+      2. Sort these important things out
+    </Text>
+  </View>
+  <View
+    style={
+      Array [
+        Object {
+          "backgroundColor": "#fff",
+        },
+        Object {
+          "backgroundColor": "#D3B53D",
+          "paddingBottom": "2%",
+          "paddingLeft": "10%",
+          "paddingTop": "3%",
+        },
+      ]
+    }
+  >
+    <Text
+      style={
+        Array [
+          Object {
+            "color": "#000000",
+          },
+          Object {
+            "color": "#fff",
+            "fontFamily": "Forum-Regular",
+            "fontSize": 16,
+          },
+        ]
+      }
+    >
+      test3
+    </Text>
+    <Text
+      style={
+        Array [
+          Object {
+            "color": "#000000",
+          },
+          Object {
+            "color": "#fff",
+            "fontFamily": "Forum-Regular",
+            "fontSize": 15,
+            "paddingTop": 5,
+            "textDecorationLine": "underline",
+          },
+        ]
+      }
+    >
+      + 1 more
+    </Text>
+    <View
+      style={
+        Array [
+          Object {
+            "backgroundColor": "#fff",
+          },
+          Object {
+            "backgroundColor": "#D3B53D",
+            "position": "absolute",
+            "right": 15,
+            "top": -18,
+          },
+        ]
+      }
+    >
+      <Image
+        source={1}
+        style={
+          Object {
+            "height": 18,
+            "width": 18,
+          }
+        }
+      />
+    </View>
+  </View>
+</View>
+`;
+
+exports[`Test TaskBucketByPrio component Should renders TaskBucketByPrio correctly 4`] = `
+<View
+  accessible={true}
+  focusable={true}
+  onClick={[Function]}
+  onResponderGrant={[Function]}
+  onResponderMove={[Function]}
+  onResponderRelease={[Function]}
+  onResponderTerminate={[Function]}
+  onResponderTerminationRequest={[Function]}
+  onStartShouldSetResponder={[Function]}
+  style={
+    Object {
+      "backgroundColor": "#BCA136",
+      "borderColor": "#636262",
+      "borderRadius": 5,
+      "borderWidth": 1,
+      "height": 120,
+      "marginBottom": "3%",
+      "marginTop": 5,
+      "opacity": 1,
+      "paddingBottom": "8%",
+      "paddingTop": "4%",
+      "width": "100%",
+    }
+  }
+>
+  <View
+    style={
+      Array [
+        Object {
+          "backgroundColor": "#fff",
+        },
+        Object {
+          "backgroundColor": "#BCA136",
+          "paddingLeft": 15,
+        },
+      ]
+    }
+  >
+    <Text
+      style={
+        Array [
+          Object {
+            "color": "#000000",
+          },
+          Object {
+            "color": "#fff",
+            "fontFamily": "EB-Garamond",
+            "fontSize": 18,
+            "fontWeight": "bold",
+          },
+        ]
+      }
+    >
+      1. Do these before anything else
+    </Text>
+  </View>
+  <View
+    style={
+      Array [
+        Object {
+          "backgroundColor": "#fff",
+        },
+        Object {
+          "backgroundColor": "#BCA136",
+          "paddingBottom": "2%",
+          "paddingLeft": "10%",
+          "paddingTop": "3%",
+        },
+      ]
+    }
+  >
+    <Text
+      style={
+        Array [
+          Object {
+            "color": "#000000",
+          },
+          Object {
+            "color": "#fff",
+            "fontFamily": "Forum-Regular",
+            "fontSize": 16,
+          },
+        ]
+      }
+    >
+      Test1
+    </Text>
+    <Text
+      style={
+        Array [
+          Object {
+            "color": "#000000",
+          },
+          Object {
+            "color": "#fff",
+            "fontFamily": "Forum-Regular",
+            "fontSize": 15,
+            "paddingTop": 5,
+            "textDecorationLine": "underline",
+          },
+        ]
+      }
+    >
+      + 1 more
+    </Text>
+    <View
+      style={
+        Array [
+          Object {
+            "backgroundColor": "#fff",
+          },
+          Object {
+            "backgroundColor": "#BCA136",
+            "position": "absolute",
+            "right": 15,
+            "top": -18,
+          },
+        ]
+      }
+    >
+      <Image
+        source={1}
+        style={
+          Object {
+            "height": 18,
+            "width": 18,
+          }
+        }
+      />
+    </View>
+  </View>
+</View>
+`;

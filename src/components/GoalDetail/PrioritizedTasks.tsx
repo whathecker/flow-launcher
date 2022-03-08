@@ -1,30 +1,51 @@
 import React from "react";
-import { Image, StyleSheet } from "react-native";
+import { StyleSheet } from "react-native";
+import { EmptyPrioritizedTasks, TaskBucketByPrio } from "./components";
 import { View, Text } from "../Themed";
+import { Color, Shadow, Typography } from "../../styles";
+import { Task, GoalColor } from "../../types/core/entity";
 
-import { Container, Color, Shadow, Typography } from "../../styles";
-
-const EmptyTasks: React.FC = () => {
-  return (
-    <View style={styles.emptyTasksMsgWrapper}>
-      <Image
-        style={styles.emptyTasksImage}
-        source={require(`../../../assets/images/partying-face_1f973.png`)}
-      />
-      <Text style={styles.emptyTasksMsg}>
-        {"Small steps, great achievement"}
-      </Text>
-    </View>
-  );
+type PrioritizedTasksProps = {
+  highest: Task[];
+  high: Task[];
+  mid: Task[];
+  low: Task[];
+  goalColor: GoalColor;
 };
 
-const PrioritizedTasks: React.FC = () => {
+function _isTasksEmpty(input: Task[]): boolean {
+  return input.length === 0;
+}
+
+const PrioritizedTasks: React.FC<PrioritizedTasksProps> = ({
+  highest,
+  high,
+  mid,
+  low,
+  goalColor,
+}: PrioritizedTasksProps) => {
+  const mergedTasks = highest.concat(high).concat(mid).concat(low);
+  const isTasksEmptty = _isTasksEmpty(mergedTasks);
+
   return (
     <View style={styles.wrapper}>
       <View style={styles.headerAreaWrapper}>
         <Text style={styles.headerText}>{"Prioritized Tasks"}</Text>
       </View>
-      <EmptyTasks />
+      {isTasksEmptty ? (
+        <EmptyPrioritizedTasks />
+      ) : (
+        <View>
+          <TaskBucketByPrio
+            prio={"highest"}
+            tasks={highest}
+            goalColor={goalColor}
+          />
+          <TaskBucketByPrio prio={"high"} tasks={high} goalColor={goalColor} />
+          <TaskBucketByPrio prio={"mid"} tasks={mid} goalColor={goalColor} />
+          <TaskBucketByPrio prio={"low"} tasks={low} goalColor={goalColor} />
+        </View>
+      )}
     </View>
   );
 };
@@ -44,21 +65,6 @@ const styles = StyleSheet.create({
   headerText: {
     ...Typography.h4,
     fontSize: 18,
-  },
-  emptyTasksMsgWrapper: {
-    ...Container.centerAlignedVertical,
-    height: "80%",
-    padding: 20,
-  },
-  emptyTasksImage: {
-    width: 40,
-    height: 40,
-  },
-  emptyTasksMsg: {
-    ...Typography.p,
-    fontSize: 16,
-    color: Color.light.subtleLabel,
-    paddingTop: 20,
   },
 });
 
