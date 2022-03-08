@@ -329,29 +329,24 @@ exports[`Test PrioritizedTasks component Should renders PrioritizedTasks correct
       </View>
     </View>
     <View
-      accessible={true}
-      focusable={false}
-      onClick={[Function]}
-      onResponderGrant={[Function]}
-      onResponderMove={[Function]}
-      onResponderRelease={[Function]}
-      onResponderTerminate={[Function]}
-      onResponderTerminationRequest={[Function]}
-      onStartShouldSetResponder={[Function]}
       style={
-        Object {
-          "backgroundColor": "#FEFEF8",
-          "borderColor": "#636262",
-          "borderRadius": 5,
-          "borderWidth": 1,
-          "height": 120,
-          "marginBottom": "3%",
-          "marginTop": 5,
-          "opacity": 1,
-          "paddingBottom": "8%",
-          "paddingTop": "4%",
-          "width": "100%",
-        }
+        Array [
+          Object {
+            "backgroundColor": "#fff",
+          },
+          Object {
+            "backgroundColor": "#FEFEF8",
+            "borderColor": "#636262",
+            "borderRadius": 5,
+            "borderWidth": 1,
+            "height": 120,
+            "marginBottom": "3%",
+            "marginTop": 5,
+            "paddingBottom": "8%",
+            "paddingTop": "4%",
+            "width": "100%",
+          },
+        ]
       }
     >
       <View
