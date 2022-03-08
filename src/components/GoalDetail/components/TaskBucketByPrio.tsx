@@ -4,7 +4,7 @@ import { Touchable, View, Text } from "../../Themed";
 import { Color, Container, Typography } from "../../../styles";
 import { Task, GoalColor } from "../../../types/core/entity";
 import { PriorityTier } from "../../../types/core/value-object";
-import { colorRenderer, labelRenderer } from "../../../utils";
+import { colorRenderer, labelRenderer, navigationRef } from "../../../utils";
 
 type ActiveBucketProps = {
   prio: PriorityTier;
@@ -21,6 +21,13 @@ const ActiveBucket: React.FC<ActiveBucketProps> = ({
 }: ActiveBucketProps) => {
   return (
     <Touchable
+      onPress={() => {
+        navigationRef.navigate("TasksByPrio", {
+          backgroundColor: backgroundColor,
+          tasks: tasks,
+          prio: prio,
+        });
+      }}
       style={{
         width: "100%",
         height: 120,

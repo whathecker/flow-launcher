@@ -64,7 +64,7 @@ exports[`Test PrioritizedTasks component Should renders PrioritizedTasks correct
   >
     <View
       accessible={true}
-      focusable={false}
+      focusable={true}
       onClick={[Function]}
       onResponderGrant={[Function]}
       onResponderMove={[Function]}
@@ -197,7 +197,7 @@ exports[`Test PrioritizedTasks component Should renders PrioritizedTasks correct
     </View>
     <View
       accessible={true}
-      focusable={false}
+      focusable={true}
       onClick={[Function]}
       onResponderGrant={[Function]}
       onResponderMove={[Function]}
@@ -416,7 +416,7 @@ exports[`Test PrioritizedTasks component Should renders PrioritizedTasks correct
     </View>
     <View
       accessible={true}
-      focusable={false}
+      focusable={true}
       onClick={[Function]}
       onResponderGrant={[Function]}
       onResponderMove={[Function]}
