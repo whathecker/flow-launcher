@@ -107,6 +107,7 @@ const styles = StyleSheet.create({
     bottom: "3.3%",
     right: "3.2%",
     zIndex: 2,
+    borderRadius: 10,
   },
   addTaskFormWrapper: {
     position: "absolute",
