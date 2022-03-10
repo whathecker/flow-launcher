@@ -1,5 +1,6 @@
-/* eslint-disable no-console */
-import React from "react";
+/* eslint-disable @typescript-eslint/no-non-null-assertion */
+import React, { useContext } from "react";
+import { TasksContext } from "../contexts/tasks";
 //import { StyleSheet } from "react-native";
 import { View, Text } from "../components/Themed";
 import { TasksByPrioHeader } from "../components/TasksByPrio";
@@ -13,6 +14,7 @@ const TasksByPrioScreen: React.FC<Props> = ({ route }: Props) => {
   const backgroundColor = route.params.backgroundColor;
   const tasks = route.params.tasks;
 
+  const { state } = useContext(TasksContext);
   const headerLabel = labelRenderer.renderPrioBucketLabel(prio);
 
   return (
@@ -24,7 +26,7 @@ const TasksByPrioScreen: React.FC<Props> = ({ route }: Props) => {
         }}
       >
         <TasksByPrioHeader
-          goalTitle="Dummy"
+          goalTitle={state.goal!.title}
           label={headerLabel}
           backgroundColor={backgroundColor}
         />
