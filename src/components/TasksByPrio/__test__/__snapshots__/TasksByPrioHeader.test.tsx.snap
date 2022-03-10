@@ -1,0 +1,128 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Test TasksByPrioHeader component Should renders TasksByPrioHeader correctly 1`] = `
+<View
+  style={
+    Array [
+      Object {
+        "backgroundColor": "#fff",
+      },
+      Object {
+        "backgroundColor": "#BCA136",
+      },
+    ]
+  }
+>
+  <View
+    style={
+      Array [
+        Object {
+          "backgroundColor": "#fff",
+        },
+        Object {
+          "alignItems": "center",
+          "backgroundColor": "#BCA136",
+          "flexDirection": "row",
+          "height": "40%",
+          "justifyContent": "flex-start",
+          "marginTop": "13%",
+        },
+      ]
+    }
+  >
+    <View
+      style={
+        Array [
+          Object {
+            "backgroundColor": "#fff",
+          },
+          Object {
+            "backgroundColor": "#BCA136",
+            "paddingLeft": "8%",
+            "paddingTop": 0,
+          },
+        ]
+      }
+    >
+      <View
+        accessible={true}
+        focusable={true}
+        onClick={[Function]}
+        onResponderGrant={[Function]}
+        onResponderMove={[Function]}
+        onResponderRelease={[Function]}
+        onResponderTerminate={[Function]}
+        onResponderTerminationRequest={[Function]}
+        onStartShouldSetResponder={[Function]}
+        style={
+          Object {
+            "alignItems": "center",
+            "backgroundColor": "#BCA136",
+            "flexDirection": "row",
+            "justifyContent": "center",
+            "opacity": 1,
+          }
+        }
+      >
+        <Image
+          source={1}
+          style={
+            Object {
+              "height": 20,
+              "width": 20,
+            }
+          }
+        />
+      </View>
+    </View>
+  </View>
+  <View
+    style={
+      Array [
+        Object {
+          "backgroundColor": "#fff",
+        },
+        Object {
+          "backgroundColor": "#BCA136",
+          "paddingLeft": "12%",
+          "paddingTop": "0.5%",
+        },
+      ]
+    }
+  >
+    <Text
+      style={
+        Array [
+          Object {
+            "color": "#000000",
+          },
+          Object {
+            "color": "#fff",
+            "fontFamily": "EB-Garamond",
+            "fontSize": 24,
+            "paddingBottom": "6%",
+          },
+        ]
+      }
+    >
+      Mock goal
+    </Text>
+    <Text
+      style={
+        Array [
+          Object {
+            "color": "#000000",
+          },
+          Object {
+            "color": "#fff",
+            "fontFamily": "Forum-Regular",
+            "fontSize": 18,
+          },
+        ]
+      }
+    >
+      dummy label
+    </Text>
+  </View>
+</View>
+`;
