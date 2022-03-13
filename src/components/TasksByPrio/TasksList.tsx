@@ -1,11 +1,12 @@
 /* eslint-disable no-console */
-import React from "react";
-import { StyleSheet } from "react-native";
+import React, { useState } from "react";
+import { StyleSheet, Image } from "react-native";
 import { Touchable, Text } from "../Themed";
 import DraggableFlatList, {
   RenderItemParams,
   ScaleDecorator,
 } from "react-native-draggable-flatlist";
+import CheckBox from "react-native-check-box";
 import { Container, Typography, Color } from "../../styles";
 import { Task } from "../../types/core/entity";
 import { PriorityTier } from "../../types/core/value-object";
@@ -23,15 +24,41 @@ const TasksList: React.FC<TasksListProps> = ({
   console.log(tasks);
 
   const renderItem = ({ item, drag, isActive }: RenderItemParams<Task>) => {
+    const [status, setStatus] = useState(false);
     return (
       <ScaleDecorator>
         <Touchable
           style={styles.taskWrapper}
-          onLongPress={drag}
+          onPressIn={drag}
           disabled={isActive}
         >
-          <Text>{`icon here`}</Text>
-          <Text style={styles.taskTitle}>{item.title}</Text>
+          <CheckBox
+            style={{ borderRadius: 10, paddingRight: 15 }}
+            isChecked={status}
+            onClick={() => setStatus(!status)}
+            checkedImage={
+              <Image
+                style={styles.checkboxImage}
+                source={require(`../../../assets/images/checkbox_checked.png`)}
+              />
+            }
+            unCheckedImage={
+              <Image
+                style={styles.checkboxImage}
+                source={require(`../../../assets/images/checkbox_unchecked.png`)}
+              />
+            }
+          />
+          <Text
+            style={{
+              ...Typography.p,
+              fontSize: 18,
+              paddingLeft: "2.5%",
+              textDecorationLine: status ? "line-through" : "none",
+            }}
+          >
+            {item.title}
+          </Text>
         </Touchable>
       </ScaleDecorator>
     );
@@ -64,14 +91,18 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     marginTop: 2.5,
     marginBottom: 2.5,
-    paddingTop: "4.5%",
-    paddingBottom: "4.5%",
-    paddingLeft: "5%",
+    paddingTop: "5%",
+    paddingBottom: "5%",
+    paddingLeft: "6%",
   },
   taskTitle: {
     ...Typography.p,
     fontSize: 18,
     paddingLeft: "2.5%",
+  },
+  checkboxImage: {
+    width: 24,
+    height: 24,
   },
 });
 
