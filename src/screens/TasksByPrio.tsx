@@ -2,8 +2,8 @@
 import React, { useContext } from "react";
 import { TasksContext } from "../contexts/tasks";
 //import { StyleSheet } from "react-native";
-import { View, Text } from "../components/Themed";
-import { TasksByPrioHeader } from "../components/TasksByPrio";
+import { View } from "../components/Themed";
+import { TasksByPrioHeader, TasksList } from "../components/TasksByPrio";
 import { GoalStackScreenProps } from "../types/navigation";
 import { labelRenderer } from "../utils";
 
@@ -37,7 +37,7 @@ const TasksByPrioScreen: React.FC<Props> = ({ route }: Props) => {
           backgroundColor: backgroundColor,
         }}
       >
-        <Text>{`Tasks area: ${tasks.length} tasks to display here`}</Text>
+        <TasksList prio={prio} tasks={tasks} />
       </View>
     </>
   );

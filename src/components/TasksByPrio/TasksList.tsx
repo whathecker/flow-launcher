@@ -1,0 +1,78 @@
+/* eslint-disable no-console */
+import React from "react";
+import { StyleSheet } from "react-native";
+import { Touchable, Text } from "../Themed";
+import DraggableFlatList, {
+  RenderItemParams,
+  ScaleDecorator,
+} from "react-native-draggable-flatlist";
+import { Container, Typography, Color } from "../../styles";
+import { Task } from "../../types/core/entity";
+import { PriorityTier } from "../../types/core/value-object";
+
+type TasksListProps = {
+  prio: PriorityTier;
+  tasks: Task[];
+};
+
+const TasksList: React.FC<TasksListProps> = ({
+  prio,
+  tasks,
+}: TasksListProps) => {
+  console.log(prio);
+  console.log(tasks);
+
+  const renderItem = ({ item, drag, isActive }: RenderItemParams<Task>) => {
+    return (
+      <ScaleDecorator>
+        <Touchable
+          style={styles.taskWrapper}
+          onLongPress={drag}
+          disabled={isActive}
+        >
+          <Text>{`icon here`}</Text>
+          <Text style={styles.taskTitle}>{item.title}</Text>
+        </Touchable>
+      </ScaleDecorator>
+    );
+  };
+
+  return (
+    <DraggableFlatList
+      data={tasks}
+      onDragEnd={({ data }) => console.log(data)}
+      keyExtractor={(item) => item._id as string}
+      renderItem={renderItem}
+      containerStyle={styles.wrapper}
+    />
+  );
+};
+
+const styles = StyleSheet.create({
+  wrapper: {
+    width: "80%",
+    height: "80%",
+    marginLeft: "10%",
+    marginRight: "10%",
+    marginTop: "10%",
+  },
+  taskWrapper: {
+    ...Container.flexStart,
+    width: "100%",
+    borderColor: Color.light.defaultBorder,
+    borderRadius: 5,
+    borderWidth: 1,
+    marginTop: 2.5,
+    marginBottom: 2.5,
+    paddingTop: "4.5%",
+    paddingBottom: "4.5%",
+    paddingLeft: "5%",
+  },
+  taskTitle: {
+    ...Typography.p,
+    fontSize: 18,
+    paddingLeft: "2.5%",
+  },
+});
+
+export default TasksList;
