@@ -4,6 +4,7 @@ import {
   Task,
   IFetchTasksInput,
   IUpdateTasksPrioInput,
+  IUpdatePrioTasksIndexInput,
 } from "../core/entity";
 
 export type TasksState = {
@@ -17,11 +18,13 @@ export type ContextProvierProps = {
   state: TasksState;
   fetchTasks: (input: IFetchTasksInput) => Promise<void>;
   updateTasksPrio: (input: IUpdateTasksPrioInput) => Promise<void>;
+  updatePrioTasksIndex: (input: IUpdatePrioTasksIndexInput) => Promise<void>;
 };
 
 export enum TasksActionType {
   fetchTasks = "FETCH_TASKS",
   updateTasksPrio = "UPDATE_TASKS_PRIO",
+  updatePrioTasksIndex = "UPDATE_PRIO_TASKS_INDEX",
   error = "ERROR",
 }
 

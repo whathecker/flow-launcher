@@ -39,6 +39,11 @@ export interface IUpdateTasksPrioInput {
   goal_id: string;
 }
 
+export interface IUpdatePrioTasksIndexInput {
+  tasks: Task[];
+  goal_id: string;
+}
+
 export type TaskStatus = "open" | "finished";
 
 export class Task {

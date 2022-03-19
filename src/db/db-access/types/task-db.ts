@@ -31,13 +31,13 @@ export interface IBulkUpdateTasksPrioInput {
   batch: BulkUpdateTaskInput[];
 }
 
-export type BulkUpdatePrioTaskInput = {
+export type BulkUpdatePrioTaskIndexInput = {
   _id: Realm.BSON.ObjectId;
   index: number;
 };
 
 export interface IBulkUpdatePrioTasksIndexInput {
-  batch: BulkUpdatePrioTaskInput[];
+  batch: BulkUpdatePrioTaskIndexInput[];
 }
 
 export interface ITaskDBAccessStatus {
