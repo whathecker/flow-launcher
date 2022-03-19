@@ -210,7 +210,7 @@ class TaskDBAccessor extends DBAccessorBase {
       const task = this.realm.objectForPrimaryKey(
         "Task",
         new Realm.BSON.ObjectID(_id),
-      );
+      ) as TaskModel;
 
       if (!task) {
         return Promise.reject({
@@ -226,7 +226,11 @@ class TaskDBAccessor extends DBAccessorBase {
         });
       }
 
-      const priority = this._createNewPriorityObj(payload);
+      const priority = this._createNewPriorityObj(
+        payload.importance,
+        payload.urgency,
+        task.priority.index,
+      );
 
       let updatedTask;
 
@@ -236,7 +240,10 @@ class TaskDBAccessor extends DBAccessorBase {
           {
             ...task,
             _id: new Realm.BSON.ObjectID(_id),
-            priority: priority,
+            priority: {
+              ...priority,
+              index: task.priority.index,
+            },
           },
           "modified",
         );
@@ -301,15 +308,22 @@ class TaskDBAccessor extends DBAccessorBase {
           const taskObj = this.realm.objectForPrimaryKey(
             "Task",
             new Realm.BSON.ObjectID(taskInput._id),
-          );
+          ) as TaskModel;
 
-          const updatedPriority = this._createNewPriorityObj(payload);
+          const updatedPriority = this._createNewPriorityObj(
+            payload.importance,
+            payload.urgency,
+            taskObj.priority.index,
+          );
           this.realm.create(
             "Task",
             {
               ...taskObj,
               _id: new Realm.BSON.ObjectID(taskInput._id),
-              priority: updatedPriority,
+              priority: {
+                ...updatedPriority,
+                index: taskObj.priority.index,
+              },
             },
             "modified",
           );
@@ -494,10 +508,11 @@ class TaskDBAccessor extends DBAccessorBase {
     return result;
   }
 
-  private _createNewPriorityObj({
-    importance,
-    urgency,
-  }: IUpdateTaskPriorityInput): PriorityModel {
+  private _createNewPriorityObj(
+    importance: string,
+    urgency: string,
+    index: number,
+  ): PriorityModel {
     let tier = "n/a";
 
     if (importance === "yes" && urgency === "yes") {
@@ -511,6 +526,7 @@ class TaskDBAccessor extends DBAccessorBase {
     }
 
     return {
+      index,
       tier,
       importance,
       urgency,
