@@ -10,6 +10,7 @@ import {
   IUpdateTaskDetailInput,
   IUpdateTaskPriorityInput,
   IBulkUpdateTasksPrioInput,
+  IBulkUpdatePrioTasksIndexInput,
 } from "../types/task-db";
 import { addGoalInput } from "../types/goal-db";
 
@@ -432,6 +433,82 @@ describe("Test db access module of Task object", () => {
       payload.batch[1].importance,
     );
     expect(result.data?.priority.urgency).not.toBe(payload.batch[1].urgency);
+  });
+
+  test("bulkUpdatePrioTasksIndex success", async () => {
+    const payload: IBulkUpdatePrioTasksIndexInput = {
+      batch: [
+        {
+          _id: task_id,
+          index: 1,
+        },
+        {
+          _id: task_id_2,
+          index: 0,
+        },
+        {
+          _id: task_id_3,
+          index: 2,
+        },
+        {
+          _id: task_id_4,
+          index: 3,
+        },
+      ],
+    };
+    await taskDB.bulkUpdatePrioTasksIndex(payload);
+
+    const result = await taskDB.findTaskById(payload.batch[0]._id);
+    const result2 = await taskDB.findTaskById(payload.batch[1]._id);
+    const result3 = await taskDB.findTaskById(payload.batch[2]._id);
+    const result4 = await taskDB.findTaskById(payload.batch[3]._id);
+
+    const task = result.data!;
+    const task2 = result2.data!;
+    const task3 = result3.data!;
+    const task4 = result4.data!;
+
+    expect(task.priority.index).toBe(payload.batch[0].index);
+    expect(task._id).toBe(payload.batch[0]._id);
+
+    expect(task2.priority.index).toBe(payload.batch[1].index);
+    expect(task2._id).toBe(payload.batch[1]._id);
+
+    expect(task3.priority.index).toBe(payload.batch[2].index);
+    expect(task3._id).toBe(payload.batch[2]._id);
+
+    expect(task4.priority.index).toBe(payload.batch[3].index);
+    expect(task4._id).toBe(payload.batch[3]._id);
+  });
+
+  test("bulkUpdatePrioTasksIndex fail - unknown task id", async () => {
+    const payload: IBulkUpdatePrioTasksIndexInput = {
+      batch: [
+        {
+          _id: new Realm.BSON.ObjectID(),
+          index: 0,
+        },
+        {
+          _id: task_id_2,
+          index: 2,
+        },
+        {
+          _id: task_id_3,
+          index: 1,
+        },
+        {
+          _id: task_id_4,
+          index: 3,
+        },
+      ],
+    };
+    await expect(taskDB.bulkUpdatePrioTasksIndex(payload)).rejects.toEqual({
+      status: "failed",
+      reason: "task not found",
+    });
+
+    const result = await taskDB.findTaskById(payload.batch[1]._id);
+    expect(result.data?.priority.index).not.toBe(payload.batch[1].index);
   });
 
   test("Remove a task success", async () => {

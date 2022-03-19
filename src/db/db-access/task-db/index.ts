@@ -7,7 +7,7 @@ import {
   IUpdateTaskDetailInput,
   IUpdateTaskPriorityInput,
   IBulkUpdateTasksPrioInput,
-  IBulkUpdatePrioTasksIndex,
+  IBulkUpdatePrioTasksIndexInput,
   ISingleEntityStatus,
   IMultiEntityStatus,
   ITaskDBAccessStatus,
@@ -343,7 +343,7 @@ class TaskDBAccessor extends DBAccessorBase {
 
   public async bulkUpdatePrioTasksIndex({
     batch,
-  }: IBulkUpdatePrioTasksIndex): Promise<ITaskDBAccessStatus> {
+  }: IBulkUpdatePrioTasksIndexInput): Promise<ITaskDBAccessStatus> {
     try {
       let status = "";
       let reason = "";
@@ -363,8 +363,6 @@ class TaskDBAccessor extends DBAccessorBase {
           reason = "task not found";
           break;
         }
-
-        taskObj.priority.index = batch[i].index;
         toUpdate.push(taskObj);
       }
 
@@ -376,12 +374,18 @@ class TaskDBAccessor extends DBAccessorBase {
       }
 
       this.realm.write(() => {
-        toUpdate.forEach((taskObj) => {
+        toUpdate.forEach((taskObj, i) => {
           this.realm.create(
             "Task",
             {
               ...taskObj,
               _id: new Realm.BSON.ObjectID(taskObj._id),
+              priority: {
+                index: batch[i].index,
+                importance: taskObj.priority.importance,
+                tier: taskObj.priority.tier,
+                urgency: taskObj.priority.urgency,
+              },
             },
             "modified",
           );

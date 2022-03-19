@@ -36,7 +36,7 @@ export type BulkUpdatePrioTaskInput = {
   index: number;
 };
 
-export interface IBulkUpdatePrioTasksIndex {
+export interface IBulkUpdatePrioTasksIndexInput {
   batch: BulkUpdatePrioTaskInput[];
 }
 
