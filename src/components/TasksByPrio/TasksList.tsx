@@ -1,4 +1,5 @@
 /* eslint-disable no-console */
+/* eslint-disable @typescript-eslint/no-non-null-assertion */
 import React, { useState } from "react";
 import { StyleSheet, Image } from "react-native";
 import { Touchable, Text } from "../Themed";
@@ -70,7 +71,15 @@ const TasksList: React.FC<TasksListProps> = ({
   return (
     <DraggableFlatList
       data={tasks}
-      onDragEnd={({ data }) => console.log(data)}
+      onDragEnd={({ data }) => {
+        for (let i = 0; i < data.length; i++) {
+          console.log(data[i]);
+          console.log("Previous index");
+          console.log(data[i].priority!.index);
+          console.log("new index");
+          console.log(i);
+        }
+      }}
       //TODO: update the order of task in bulk at onDragEnd
       keyExtractor={(item) => item._id as string}
       renderItem={renderItem}
