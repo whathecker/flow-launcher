@@ -1,5 +1,6 @@
 class PriorityModel {
   constructor(
+    public index: number,
     public tier: string,
     public importance: string,
     public urgency: string,

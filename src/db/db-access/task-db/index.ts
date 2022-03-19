@@ -7,6 +7,7 @@ import {
   IUpdateTaskDetailInput,
   IUpdateTaskPriorityInput,
   IBulkUpdateTasksPrioInput,
+  IBulkUpdatePrioTasksIndex,
   ISingleEntityStatus,
   IMultiEntityStatus,
   ITaskDBAccessStatus,
@@ -326,6 +327,64 @@ class TaskDBAccessor extends DBAccessorBase {
     }
   }
 
+  public async bulkUpdatePrioTasksIndex({
+    batch,
+  }: IBulkUpdatePrioTasksIndex): Promise<ITaskDBAccessStatus> {
+    try {
+      let status = "";
+      let reason = "";
+
+      const toUpdate = [] as TaskModel[];
+
+      for (let i = 0; i < batch.length; i++) {
+        const _id = batch[i]._id;
+
+        const taskObj = this.realm.objectForPrimaryKey(
+          "Task",
+          new Realm.BSON.ObjectID(_id),
+        ) as TaskModel;
+
+        if (!taskObj) {
+          status = "failed";
+          reason = "task not found";
+          break;
+        }
+
+        taskObj.priority.index = batch[i].index;
+        toUpdate.push(taskObj);
+      }
+
+      if (status === "failed") {
+        return Promise.reject({
+          status: status,
+          reason: reason,
+        });
+      }
+
+      this.realm.write(() => {
+        toUpdate.forEach((taskObj) => {
+          this.realm.create(
+            "Task",
+            {
+              ...taskObj,
+              _id: new Realm.BSON.ObjectID(taskObj._id),
+            },
+            "modified",
+          );
+        });
+      });
+      return Promise.resolve({
+        status: "success",
+      });
+    } catch (error) {
+      return Promise.reject({
+        status: "failed",
+        reason: "error",
+        error: error,
+      });
+    }
+  }
+
   public async removeTask(
     task_id: Realm.BSON.ObjectId,
     goal_id: Realm.BSON.ObjectId,
@@ -389,6 +448,7 @@ class TaskDBAccessor extends DBAccessorBase {
       goal_id: new Realm.BSON.ObjectID(input.goal_id),
       status: "open",
       priority: {
+        index: 0,
         tier: "n/a",
         importance: "n/a",
         urgency: "n/a",
