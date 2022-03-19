@@ -13,7 +13,7 @@ const openDatabase = async (): Promise<OpenDatabaseStatus> => {
     const realm = await Realm.open({
       path: "localdata.realm",
       schema: [GoalModel.schema, TaskModel.schema, PriorityModel.schema],
-      schemaVersion: 27,
+      schemaVersion: 28,
     });
     return Promise.resolve({
       status: "SUCCESS",

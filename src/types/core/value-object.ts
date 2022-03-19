@@ -34,5 +34,6 @@ export class Priority {
     public tier: PriorityTier,
     public importance: PriorityMeasure,
     public urgency: PriorityMeasure,
+    public index: number,
   ) {}
 }

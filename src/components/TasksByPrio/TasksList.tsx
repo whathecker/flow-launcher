@@ -25,6 +25,9 @@ const TasksList: React.FC<TasksListProps> = ({
 
   const renderItem = ({ item, drag, isActive }: RenderItemParams<Task>) => {
     const [status, setStatus] = useState(false);
+    //TODO: use actual status from task object
+    //update the task status at the onClick handler
+    // translate "open" to false "finished" to true
     return (
       <ScaleDecorator>
         <Touchable
@@ -68,6 +71,7 @@ const TasksList: React.FC<TasksListProps> = ({
     <DraggableFlatList
       data={tasks}
       onDragEnd={({ data }) => console.log(data)}
+      //TODO: update the order of task in bulk at onDragEnd
       keyExtractor={(item) => item._id as string}
       renderItem={renderItem}
       containerStyle={styles.wrapper}
