@@ -1,31 +1,29 @@
-import React from "react";
+import React, { useContext } from "react";
+import { TasksContext } from "../../contexts/tasks";
 import { StyleSheet } from "react-native";
 import { EmptyPrioritizedTasks, TaskBucketByPrio } from "./components";
 import { View, Text } from "../Themed";
 import { Color, Shadow, Typography } from "../../styles";
-import { Task, GoalColor } from "../../types/core/entity";
+import { GoalColor } from "../../types/core/entity";
 
-type PrioritizedTasksProps = {
-  highest: Task[];
-  high: Task[];
-  mid: Task[];
-  low: Task[];
-  goalColor: GoalColor;
-};
+type PrioritizedTasksProps = { goalColor: GoalColor };
 
-function _isTasksEmpty(input: Task[]): boolean {
-  return input.length === 0;
+function _isTasksEmpty(totalTasksLength: number): boolean {
+  return totalTasksLength === 0;
 }
 
 const PrioritizedTasks: React.FC<PrioritizedTasksProps> = ({
-  highest,
-  high,
-  mid,
-  low,
   goalColor,
 }: PrioritizedTasksProps) => {
-  const mergedTasks = highest.concat(high).concat(mid).concat(low);
-  const isTasksEmptty = _isTasksEmpty(mergedTasks);
+  const { state } = useContext(TasksContext);
+
+  const totalTasksLength =
+    state.highestPrioTasks.length +
+    state.highPrioTasks.length +
+    state.midPrioTasks.length +
+    state.midPrioTasks.length;
+
+  const isTasksEmptty = _isTasksEmpty(totalTasksLength);
 
   return (
     <View style={styles.wrapper}>
@@ -38,12 +36,24 @@ const PrioritizedTasks: React.FC<PrioritizedTasksProps> = ({
         <View>
           <TaskBucketByPrio
             prio={"highest"}
-            tasks={highest}
+            tasks={state.highestPrioTasks}
             goalColor={goalColor}
           />
-          <TaskBucketByPrio prio={"high"} tasks={high} goalColor={goalColor} />
-          <TaskBucketByPrio prio={"mid"} tasks={mid} goalColor={goalColor} />
-          <TaskBucketByPrio prio={"low"} tasks={low} goalColor={goalColor} />
+          <TaskBucketByPrio
+            prio={"high"}
+            tasks={state.highPrioTasks}
+            goalColor={goalColor}
+          />
+          <TaskBucketByPrio
+            prio={"mid"}
+            tasks={state.midPrioTasks}
+            goalColor={goalColor}
+          />
+          <TaskBucketByPrio
+            prio={"low"}
+            tasks={state.lowPrioTasks}
+            goalColor={goalColor}
+          />
         </View>
       )}
     </View>

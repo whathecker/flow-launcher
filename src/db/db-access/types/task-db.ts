@@ -31,6 +31,15 @@ export interface IBulkUpdateTasksPrioInput {
   batch: BulkUpdateTaskInput[];
 }
 
+export type BulkUpdatePrioTaskIndexInput = {
+  _id: Realm.BSON.ObjectId;
+  index: number;
+};
+
+export interface IBulkUpdatePrioTasksIndexInput {
+  batch: BulkUpdatePrioTaskIndexInput[];
+}
+
 export interface ITaskDBAccessStatus {
   status: "success" | "failed";
   reason?: string;

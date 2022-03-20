@@ -7,6 +7,7 @@ import {
   IUpdateTaskDetailInput,
   IUpdateTaskPriorityInput,
   IBulkUpdateTasksPrioInput,
+  IBulkUpdatePrioTasksIndexInput,
   ISingleEntityStatus,
   IMultiEntityStatus,
   ITaskDBAccessStatus,
@@ -209,7 +210,7 @@ class TaskDBAccessor extends DBAccessorBase {
       const task = this.realm.objectForPrimaryKey(
         "Task",
         new Realm.BSON.ObjectID(_id),
-      );
+      ) as TaskModel;
 
       if (!task) {
         return Promise.reject({
@@ -225,7 +226,11 @@ class TaskDBAccessor extends DBAccessorBase {
         });
       }
 
-      const priority = this._createNewPriorityObj(payload);
+      const priority = this._createNewPriorityObj(
+        payload.importance,
+        payload.urgency,
+        task.priority.index,
+      );
 
       let updatedTask;
 
@@ -235,7 +240,10 @@ class TaskDBAccessor extends DBAccessorBase {
           {
             ...task,
             _id: new Realm.BSON.ObjectID(_id),
-            priority: priority,
+            priority: {
+              ...priority,
+              index: task.priority.index,
+            },
           },
           "modified",
         );
@@ -260,16 +268,21 @@ class TaskDBAccessor extends DBAccessorBase {
       let status = "";
       let reason = "";
 
+      const toUpdate = [] as TaskModel[];
+
       for (let i = 0; i < batch.length; i++) {
         const _id = batch[i]._id;
+
         const payload = {
           importance: batch[i].importance,
           urgency: batch[i].urgency,
         };
+
         const taskObj = this.realm.objectForPrimaryKey(
           "Task",
           new Realm.BSON.ObjectID(_id),
-        );
+        ) as TaskModel;
+
         if (!taskObj) {
           status = "failed";
           reason = "task not found";
@@ -281,6 +294,7 @@ class TaskDBAccessor extends DBAccessorBase {
           reason = "invalid value in the payload";
           break;
         }
+        toUpdate.push(taskObj);
       }
 
       if (status === "failed") {
@@ -291,24 +305,83 @@ class TaskDBAccessor extends DBAccessorBase {
       }
 
       this.realm.write(() => {
-        batch.forEach((taskInput) => {
-          const payload = {
-            importance: taskInput.importance,
-            urgency: taskInput.urgency,
-          };
-
-          const taskObj = this.realm.objectForPrimaryKey(
-            "Task",
-            new Realm.BSON.ObjectID(taskInput._id),
+        toUpdate.forEach((taskObj, i) => {
+          const updatedPriority = this._createNewPriorityObj(
+            batch[i].importance,
+            batch[i].urgency,
+            taskObj.priority.index,
           );
 
-          const updatedPriority = this._createNewPriorityObj(payload);
           this.realm.create(
             "Task",
             {
               ...taskObj,
-              _id: new Realm.BSON.ObjectID(taskInput._id),
-              priority: updatedPriority,
+              _id: new Realm.BSON.ObjectID(taskObj._id),
+              priority: {
+                ...updatedPriority,
+              },
+            },
+            "modified",
+          );
+        });
+      });
+      return Promise.resolve({
+        status: "success",
+      });
+    } catch (error) {
+      return Promise.reject({
+        status: "failed",
+        reason: "error",
+        error: error,
+      });
+    }
+  }
+
+  public async bulkUpdatePrioTasksIndex({
+    batch,
+  }: IBulkUpdatePrioTasksIndexInput): Promise<ITaskDBAccessStatus> {
+    try {
+      let status = "";
+      let reason = "";
+
+      const toUpdate = [] as TaskModel[];
+
+      for (let i = 0; i < batch.length; i++) {
+        const _id = batch[i]._id;
+
+        const taskObj = this.realm.objectForPrimaryKey(
+          "Task",
+          new Realm.BSON.ObjectID(_id),
+        ) as TaskModel;
+
+        if (!taskObj) {
+          status = "failed";
+          reason = "task not found";
+          break;
+        }
+        toUpdate.push(taskObj);
+      }
+
+      if (status === "failed") {
+        return Promise.reject({
+          status: status,
+          reason: reason,
+        });
+      }
+
+      this.realm.write(() => {
+        toUpdate.forEach((taskObj, i) => {
+          this.realm.create(
+            "Task",
+            {
+              ...taskObj,
+              _id: new Realm.BSON.ObjectID(taskObj._id),
+              priority: {
+                index: batch[i].index,
+                importance: taskObj.priority.importance,
+                tier: taskObj.priority.tier,
+                urgency: taskObj.priority.urgency,
+              },
             },
             "modified",
           );
@@ -389,6 +462,7 @@ class TaskDBAccessor extends DBAccessorBase {
       goal_id: new Realm.BSON.ObjectID(input.goal_id),
       status: "open",
       priority: {
+        index: 0,
         tier: "n/a",
         importance: "n/a",
         urgency: "n/a",
@@ -434,10 +508,11 @@ class TaskDBAccessor extends DBAccessorBase {
     return result;
   }
 
-  private _createNewPriorityObj({
-    importance,
-    urgency,
-  }: IUpdateTaskPriorityInput): PriorityModel {
+  private _createNewPriorityObj(
+    importance: string,
+    urgency: string,
+    index: number,
+  ): PriorityModel {
     let tier = "n/a";
 
     if (importance === "yes" && urgency === "yes") {
@@ -451,6 +526,7 @@ class TaskDBAccessor extends DBAccessorBase {
     }
 
     return {
+      index,
       tier,
       importance,
       urgency,

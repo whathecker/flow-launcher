@@ -5,7 +5,6 @@ import { View, TouchableWithoutFeedback } from "../components/Themed";
 import { Container, Color, Shadow } from "../styles";
 import { GoalStackScreenProps } from "../types/navigation";
 import { TasksContext } from "../contexts/tasks";
-import { taskFilters } from "../utils";
 
 import {
   GoalDetailHeader,
@@ -20,14 +19,15 @@ type Props = GoalStackScreenProps<"GoalDetail">;
 const GoalDetailScreen: React.FC<Props> = ({ route }: Props) => {
   const { goal, goalColor } = route.params;
   const [addTaskFormOpened, setAddTaskFormOpened] = useState(false);
-  const { state, fetchTasks } = useContext(TasksContext);
+  const { fetchTasks } = useContext(TasksContext);
 
   useEffect(() => {
     fetchTasks({ goal, goalColor });
   }, [goal._id]);
 
-  const unpriortizedTasks = taskFilters.filterUnprioritized(state.tasks);
-  const tasksByPrioBucket = taskFilters.filterByPriorityScheme(state.tasks);
+  useEffect(() => {
+    fetchTasks({ goal, goalColor });
+  }, [addTaskFormOpened]);
 
   return (
     <>
@@ -54,16 +54,10 @@ const GoalDetailScreen: React.FC<Props> = ({ route }: Props) => {
       </View>
       <ScrollView style={styles.scrollAreaWrapper}>
         <View style={styles.recentTasksWrapper}>
-          <UnprioritizedTasks unprioritisedTasks={unpriortizedTasks} />
+          <UnprioritizedTasks />
         </View>
         <View style={styles.prioritizedTasksWrapper}>
-          <PrioritizedTasks
-            highest={tasksByPrioBucket.highest}
-            high={tasksByPrioBucket.high}
-            mid={tasksByPrioBucket.mid}
-            low={tasksByPrioBucket.low}
-            goalColor={goalColor}
-          />
+          <PrioritizedTasks goalColor={goalColor} />
         </View>
       </ScrollView>
       <View style={styles.buttonWrapper}>
