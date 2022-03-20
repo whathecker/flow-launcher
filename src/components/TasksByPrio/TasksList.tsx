@@ -15,16 +15,17 @@ import { PriorityTier } from "../../types/core/value-object";
 
 type TasksListProps = {
   prio: PriorityTier;
-  tasks: Task[];
 };
 
-const TasksList: React.FC<TasksListProps> = ({
-  prio,
-  tasks,
-}: TasksListProps) => {
+const TasksList: React.FC<TasksListProps> = ({ prio }: TasksListProps) => {
   const { state, updatePrioTasksIndex } = useContext(TasksContext);
-  console.log(prio);
-  console.log(tasks);
+
+  let tasks: Task[] = [];
+
+  prio === "highest" ? (tasks = state.highestPrioTasks) : null;
+  prio === "high" ? (tasks = state.highPrioTasks) : null;
+  prio === "mid" ? (tasks = state.midPrioTasks) : null;
+  prio === "low" ? (tasks = state.lowPrioTasks) : null;
 
   tasks.sort((a, b) => {
     return a.priority!.index - b.priority!.index;
@@ -95,7 +96,6 @@ const TasksList: React.FC<TasksListProps> = ({
         };
         await updatePrioTasksIndex(payload);
       }}
-      //TODO: update the order of task in bulk at onDragEnd
       keyExtractor={(item) => item._id as string}
       renderItem={renderItem}
       containerStyle={styles.wrapper}

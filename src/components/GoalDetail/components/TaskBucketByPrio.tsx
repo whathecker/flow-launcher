@@ -24,7 +24,6 @@ const ActiveBucket: React.FC<ActiveBucketProps> = ({
       onPress={() => {
         navigationRef.navigate("TasksByPrio", {
           backgroundColor: backgroundColor,
-          tasks: tasks,
           prio: prio,
         });
       }}

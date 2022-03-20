@@ -1,7 +1,6 @@
 /* eslint-disable @typescript-eslint/no-non-null-assertion */
 import React, { useContext } from "react";
 import { TasksContext } from "../contexts/tasks";
-//import { StyleSheet } from "react-native";
 import { View } from "../components/Themed";
 import { TasksByPrioHeader, TasksList } from "../components/TasksByPrio";
 import { GoalStackScreenProps } from "../types/navigation";
@@ -12,7 +11,6 @@ type Props = GoalStackScreenProps<"TasksByPrio">;
 const TasksByPrioScreen: React.FC<Props> = ({ route }: Props) => {
   const prio = route.params.prio;
   const backgroundColor = route.params.backgroundColor;
-  const tasks = route.params.tasks;
 
   const { state } = useContext(TasksContext);
   const headerLabel = labelRenderer.renderPrioBucketLabel(prio);
@@ -37,7 +35,7 @@ const TasksByPrioScreen: React.FC<Props> = ({ route }: Props) => {
           backgroundColor: backgroundColor,
         }}
       >
-        <TasksList prio={prio} tasks={tasks} />
+        <TasksList prio={prio} />
       </View>
     </>
   );
