@@ -9,8 +9,13 @@ import { TasksState, ContextProvierProps } from "../../types/contexts/tasks";
 
 const defaultState: TasksState = {
   goal: null,
-  tasks: [],
   goalColor: null,
+  tasks: [],
+  unprioTasks: [],
+  highestPrioTasks: [],
+  highPrioTasks: [],
+  midPrioTasks: [],
+  lowPrioTasks: [],
 };
 
 const defaultCtxProviderProps: ContextProvierProps = {

@@ -26,7 +26,10 @@ const GoalDetailScreen: React.FC<Props> = ({ route }: Props) => {
     fetchTasks({ goal, goalColor });
   }, [goal._id]);
 
-  const unpriortizedTasks = taskFilters.filterUnprioritized(state.tasks);
+  useEffect(() => {
+    fetchTasks({ goal, goalColor });
+  }, [addTaskFormOpened]);
+
   const tasksByPrioBucket = taskFilters.filterByPriorityScheme(state.tasks);
 
   return (
@@ -54,7 +57,7 @@ const GoalDetailScreen: React.FC<Props> = ({ route }: Props) => {
       </View>
       <ScrollView style={styles.scrollAreaWrapper}>
         <View style={styles.recentTasksWrapper}>
-          <UnprioritizedTasks unprioritisedTasks={unpriortizedTasks} />
+          <UnprioritizedTasks />
         </View>
         <View style={styles.prioritizedTasksWrapper}>
           <PrioritizedTasks

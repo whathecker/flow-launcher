@@ -8,7 +8,7 @@ import {
   BulkUpdatePrioTaskIndexInput,
   IBulkUpdatePrioTasksIndexInput,
 } from "../../db/db-access/types/task-db";
-import { TasksAction, TasksActionType } from "../../types/contexts/tasks";
+import { TasksAction, TasksReducerType } from "../../types/contexts/tasks";
 import {
   IFetchTasksInput,
   IUpdateTasksPrioInput,
@@ -25,12 +25,12 @@ export const fetchTasks = (dispatch: React.Dispatch<TasksAction>) => {
       const { data } = await taskDB.listTasksByGoalId(payload);
       closeDatabase(realm);
       dispatch({
-        type: TasksActionType.fetchTasks,
+        type: TasksReducerType.fetchTasks,
         payload: { tasks: data, goal: input.goal, goalColor: input.goalColor },
       });
     } catch (error) {
       dispatch({
-        type: TasksActionType.error,
+        type: TasksReducerType.error,
         payload: { errorMsg: error.message },
       });
     }
@@ -52,12 +52,12 @@ export const updateTasksPrio = (dispatch: React.Dispatch<TasksAction>) => {
 
       closeDatabase(realm);
       dispatch({
-        type: TasksActionType.updateTasksPrio,
+        type: TasksReducerType.fetchTasks,
         payload: { tasks: data },
       });
     } catch (error) {
       dispatch({
-        type: TasksActionType.error,
+        type: TasksReducerType.error,
         payload: { errorMsg: error.message },
       });
     }
@@ -79,12 +79,12 @@ export const updatePrioTasksIndex = (dispatch: React.Dispatch<TasksAction>) => {
 
       closeDatabase(realm);
       dispatch({
-        type: TasksActionType.updatePrioTasksIndex,
+        type: TasksReducerType.fetchTasks,
         payload: { tasks: data },
       });
     } catch (error) {
       dispatch({
-        type: TasksActionType.error,
+        type: TasksReducerType.error,
         payload: { errorMsg: error.message },
       });
     }

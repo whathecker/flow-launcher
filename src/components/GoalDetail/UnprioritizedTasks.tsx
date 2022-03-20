@@ -1,24 +1,20 @@
-import React from "react";
+import React, { useContext } from "react";
+import { TasksContext } from "../../contexts/tasks";
 import { StyleSheet } from "react-native";
 import { View, Text } from "../Themed";
 import { UnprioritizedTasksList, EmptyUnprioritizedTasks } from "./components";
 import { Typography, Color, Shadow } from "../../styles";
-import { Task } from "../../types/core/entity";
 
-type UnprioritizedTasksProp = {
-  unprioritisedTasks: Task[];
-};
+const UnprioritizedTasks: React.FC = () => {
+  const { state } = useContext(TasksContext);
 
-const UnprioritizedTasks: React.FC<UnprioritizedTasksProp> = ({
-  unprioritisedTasks,
-}: UnprioritizedTasksProp) => {
   return (
     <View style={styles.wrapper}>
       <View style={styles.headerAreaWrapper}>
         <Text style={styles.headerText}>{"Recently Added Tasks"}</Text>
       </View>
-      {unprioritisedTasks.length > 0 ? (
-        <UnprioritizedTasksList tasks={unprioritisedTasks} />
+      {state.unprioTasks.length > 0 ? (
+        <UnprioritizedTasksList tasks={state.unprioTasks} />
       ) : (
         <EmptyUnprioritizedTasks />
       )}
