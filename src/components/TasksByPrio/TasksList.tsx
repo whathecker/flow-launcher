@@ -1,6 +1,7 @@
 /* eslint-disable no-console */
 /* eslint-disable @typescript-eslint/no-non-null-assertion */
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
+import { TasksContext } from "../../contexts/tasks";
 import { StyleSheet, Image } from "react-native";
 import { Touchable, Text } from "../Themed";
 import DraggableFlatList, {
@@ -21,8 +22,13 @@ const TasksList: React.FC<TasksListProps> = ({
   prio,
   tasks,
 }: TasksListProps) => {
+  const { state, updatePrioTasksIndex } = useContext(TasksContext);
   console.log(prio);
   console.log(tasks);
+
+  tasks.sort((a, b) => {
+    return a.priority!.index - b.priority!.index;
+  });
 
   const renderItem = ({ item, drag, isActive }: RenderItemParams<Task>) => {
     const [status, setStatus] = useState(false);
@@ -71,14 +77,23 @@ const TasksList: React.FC<TasksListProps> = ({
   return (
     <DraggableFlatList
       data={tasks}
-      onDragEnd={({ data }) => {
-        for (let i = 0; i < data.length; i++) {
-          console.log(data[i]);
-          console.log("Previous index");
-          console.log(data[i].priority!.index);
-          console.log("new index");
-          console.log(i);
-        }
+      onDragEnd={async ({ data }) => {
+        const updatedTasksArr = data.map((task, index) => {
+          return {
+            ...task,
+            priority: {
+              index: index,
+              tier: task.priority!.tier,
+              importance: task.priority!.importance,
+              urgency: task.priority!.urgency,
+            },
+          };
+        });
+        const payload = {
+          goal_id: state.goal!._id as string,
+          tasks: updatedTasksArr,
+        };
+        await updatePrioTasksIndex(payload);
       }}
       //TODO: update the order of task in bulk at onDragEnd
       keyExtractor={(item) => item._id as string}
