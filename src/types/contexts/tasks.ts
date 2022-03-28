@@ -5,6 +5,7 @@ import {
   IFetchTasksInput,
   IUpdateTasksPrioInput,
   IUpdatePrioTasksIndexInput,
+  IUpdateTaskStatusInput,
 } from "../core/entity";
 
 export type TasksState = {
@@ -24,6 +25,7 @@ export type ContextProvierProps = {
   fetchTasks: (input: IFetchTasksInput) => Promise<void>;
   updateTasksPrio: (input: IUpdateTasksPrioInput) => Promise<void>;
   updatePrioTasksIndex: (input: IUpdatePrioTasksIndexInput) => Promise<void>;
+  updateTaskStatus: (input: IUpdateTaskStatusInput) => Promise<void>;
 };
 
 export enum TasksReducerType {

@@ -20,15 +20,21 @@ type TasksListProps = {
 function _convertTaskStatusToBool(input: TaskStatus): boolean {
   let result = false;
 
-  if (input === "finished") {
-    result = true;
-  }
-
+  input === "finished" ? (result = true) : null;
   return result;
 }
 
+function _getNextStatus(input: TaskStatus): TaskStatus {
+  if (input === "open") {
+    return "finished";
+  } else {
+    return "open";
+  }
+}
+
 const TasksList: React.FC<TasksListProps> = ({ prio }: TasksListProps) => {
-  const { state, updatePrioTasksIndex } = useContext(TasksContext);
+  const { state, updatePrioTasksIndex, updateTaskStatus } =
+    useContext(TasksContext);
 
   let tasks: Task[] = [];
 
@@ -37,16 +43,16 @@ const TasksList: React.FC<TasksListProps> = ({ prio }: TasksListProps) => {
   prio === "mid" ? (tasks = state.midPrioTasks) : null;
   prio === "low" ? (tasks = state.lowPrioTasks) : null;
 
-  tasks.sort((a, b) => {
-    return a.priority!.index - b.priority!.index;
-  });
+  tasks
+    .filter((item) => item.status === "open")
+    .sort((a, b) => {
+      return a.priority!.index - b.priority!.index;
+    });
 
   const renderItem = ({ item, drag, isActive }: RenderItemParams<Task>) => {
     const taskStatusInBool = _convertTaskStatusToBool(item.status);
-    const [status, setStatus] = useState(taskStatusInBool);
+    const [status] = useState(taskStatusInBool);
 
-    //update the task status at the onClick handler
-    // translate "open" to false "finished" to true
     return (
       <ScaleDecorator>
         <Touchable
@@ -57,7 +63,13 @@ const TasksList: React.FC<TasksListProps> = ({ prio }: TasksListProps) => {
           <CheckBox
             style={{ borderRadius: 10, paddingRight: 15 }}
             isChecked={status}
-            onClick={() => setStatus(!status)}
+            onClick={async () => {
+              await updateTaskStatus({
+                goal_id: state.goal!._id as string,
+                task_id: item._id as string,
+                status: _getNextStatus(item.status),
+              });
+            }}
             checkedImage={
               <Image
                 style={styles.checkboxImage}

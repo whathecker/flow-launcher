@@ -39,6 +39,12 @@ export interface IUpdateTasksPrioInput {
   goal_id: string;
 }
 
+export interface IUpdateTaskStatusInput {
+  goal_id: string;
+  task_id: string;
+  status: string;
+}
+
 export interface IUpdatePrioTasksIndexInput {
   tasks: Task[];
   goal_id: string;

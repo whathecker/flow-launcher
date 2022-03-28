@@ -13,6 +13,7 @@ import {
   IFetchTasksInput,
   IUpdateTasksPrioInput,
   IUpdatePrioTasksIndexInput,
+  IUpdateTaskStatusInput,
 } from "../../types/core/entity";
 
 export const fetchTasks = (dispatch: React.Dispatch<TasksAction>) => {
@@ -78,6 +79,36 @@ export const updatePrioTasksIndex = (dispatch: React.Dispatch<TasksAction>) => {
       const { data } = await taskDB.listTasksByGoalId(fetchPayload);
 
       closeDatabase(realm);
+      dispatch({
+        type: TasksReducerType.fetchTasks,
+        payload: { tasks: data },
+      });
+    } catch (error) {
+      dispatch({
+        type: TasksReducerType.error,
+        payload: { errorMsg: error.message },
+      });
+    }
+  };
+};
+
+export const updateTaskStatus = (dispatch: React.Dispatch<TasksAction>) => {
+  return async (input: IUpdateTaskStatusInput): Promise<void> => {
+    try {
+      const connection = await openDatabase();
+      const realm = connection.databaseInstance!;
+      const taskDB = new TaskDBAccessor(realm);
+
+      const task_id = new Realm.BSON.ObjectID(input.task_id);
+
+      // TODO: the payload is odd => restructure it
+      await taskDB.updateTaskStatus(task_id, { status: input.status });
+
+      const fetchPayload = new Realm.BSON.ObjectID(input.goal_id);
+      const { data } = await taskDB.listTasksByGoalId(fetchPayload);
+
+      closeDatabase(realm);
+
       dispatch({
         type: TasksReducerType.fetchTasks,
         payload: { tasks: data },
