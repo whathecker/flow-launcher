@@ -10,12 +10,27 @@ import DraggableFlatList, {
 } from "react-native-draggable-flatlist";
 import CheckBox from "react-native-check-box";
 import { Container, Typography, Color } from "../../styles";
-import { Task } from "../../types/core/entity";
+import { Task, TaskStatus } from "../../types/core/entity";
 import { PriorityTier } from "../../types/core/value-object";
 
 type TasksListProps = {
   prio: PriorityTier;
 };
+
+function _convertTaskStatusToBool(input: TaskStatus): boolean {
+  let result = false;
+  switch (input) {
+    case "open":
+      result = false;
+      break;
+    case "finished":
+      result = true;
+      break;
+    default:
+      break;
+  }
+  return result;
+}
 
 const TasksList: React.FC<TasksListProps> = ({ prio }: TasksListProps) => {
   const { state, updatePrioTasksIndex } = useContext(TasksContext);
@@ -32,8 +47,9 @@ const TasksList: React.FC<TasksListProps> = ({ prio }: TasksListProps) => {
   });
 
   const renderItem = ({ item, drag, isActive }: RenderItemParams<Task>) => {
-    const [status, setStatus] = useState(false);
-    //TODO: use actual status from task object
+    const taskStatusInBool = _convertTaskStatusToBool(item.status);
+    const [status, setStatus] = useState(taskStatusInBool);
+
     //update the task status at the onClick handler
     // translate "open" to false "finished" to true
     return (
