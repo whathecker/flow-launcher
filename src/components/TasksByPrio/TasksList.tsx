@@ -19,16 +19,11 @@ type TasksListProps = {
 
 function _convertTaskStatusToBool(input: TaskStatus): boolean {
   let result = false;
-  switch (input) {
-    case "open":
-      result = false;
-      break;
-    case "finished":
-      result = true;
-      break;
-    default:
-      break;
+
+  if (input === "finished") {
+    result = true;
   }
+
   return result;
 }
 
