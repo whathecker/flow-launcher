@@ -4,12 +4,15 @@ import React, { useState, useContext } from "react";
 import { TasksContext } from "../../contexts/tasks";
 import { StyleSheet, Image } from "react-native";
 import { Touchable, Text } from "../Themed";
+
 import DraggableFlatList, {
   RenderItemParams,
   ScaleDecorator,
 } from "react-native-draggable-flatlist";
 import CheckBox from "react-native-check-box";
+
 import { Container, Typography, Color } from "../../styles";
+
 import { Task, TaskStatus } from "../../types/core/entity";
 import { PriorityTier } from "../../types/core/value-object";
 
