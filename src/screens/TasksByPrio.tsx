@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/no-non-null-assertion */
 import React, { useContext } from "react";
 import { TasksContext } from "../contexts/tasks";
-import { View, Text } from "../components/Themed";
+import { View } from "../components/Themed";
 import { TasksByPrioHeader, TasksList } from "../components/TasksByPrio";
 import { GoalStackScreenProps } from "../types/navigation";
 import { labelRenderer } from "../utils";
@@ -31,19 +31,12 @@ const TasksByPrioScreen: React.FC<Props> = ({ route }: Props) => {
       </View>
       <View
         style={{
-          height: "64%",
+          height: "75%",
           backgroundColor: backgroundColor,
+          paddingBottom: "5%",
         }}
       >
         <TasksList prio={prio} />
-      </View>
-      <View
-        style={{
-          height: "11%",
-          backgroundColor: backgroundColor,
-        }}
-      >
-        <Text>{`Completed task area`}</Text>
       </View>
     </>
   );

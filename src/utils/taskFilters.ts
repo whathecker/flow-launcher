@@ -39,29 +39,27 @@ const filterByPriorityScheme = (tasks: Task[]): TasksInPriorityBucket => {
 
   // TODO: consider to make checking if the status is opened as a flag
   tasks.forEach((task) => {
-    if (task.status === "open") {
-      const importance = task.priority!.importance;
-      const urgency = task.priority!.urgency;
+    const importance = task.priority!.importance;
+    const urgency = task.priority!.urgency;
 
-      if (importance === "yes" && urgency === "yes") {
-        task.priority!.tier = "highest";
-        highest.push(task);
-      }
+    if (importance === "yes" && urgency === "yes") {
+      task.priority!.tier = "highest";
+      highest.push(task);
+    }
 
-      if (importance === "yes" && urgency === "no") {
-        task.priority!.tier = "high";
-        high.push(task);
-      }
+    if (importance === "yes" && urgency === "no") {
+      task.priority!.tier = "high";
+      high.push(task);
+    }
 
-      if (importance === "no" && urgency === "yes") {
-        task.priority!.tier = "mid";
-        mid.push(task);
-      }
+    if (importance === "no" && urgency === "yes") {
+      task.priority!.tier = "mid";
+      mid.push(task);
+    }
 
-      if (importance === "no" && urgency === "no") {
-        task.priority!.tier = "low";
-        low.push(task);
-      }
+    if (importance === "no" && urgency === "no") {
+      task.priority!.tier = "low";
+      low.push(task);
     }
   });
 

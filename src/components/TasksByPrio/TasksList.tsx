@@ -35,6 +35,14 @@ function _getNextStatus(input: TaskStatus): TaskStatus {
   }
 }
 
+function _assignSortScore(input: TaskStatus): number {
+  let result = 0;
+  if (input === "finished") {
+    result = 1;
+  }
+  return result;
+}
+
 const TasksList: React.FC<TasksListProps> = ({ prio }: TasksListProps) => {
   const { state, updatePrioTasksIndex, updateTaskStatus } =
     useContext(TasksContext);
@@ -46,27 +54,45 @@ const TasksList: React.FC<TasksListProps> = ({ prio }: TasksListProps) => {
   prio === "mid" ? (tasks = state.midPrioTasks) : null;
   prio === "low" ? (tasks = state.lowPrioTasks) : null;
 
-  tasks
-    .filter((item) => item.status === "open")
+  tasks = tasks
     .sort((a, b) => {
       return a.priority!.index - b.priority!.index;
+    })
+    .sort((a, b) => {
+      const sortScoreA = _assignSortScore(a.status);
+      const sortScoreB = _assignSortScore(b.status);
+      return sortScoreA - sortScoreB;
     });
 
   const renderItem = ({ item, drag, isActive }: RenderItemParams<Task>) => {
     const taskStatusInBool = _convertTaskStatusToBool(item.status);
-    const [status] = useState(taskStatusInBool);
+    const [status, setStatus] = useState(taskStatusInBool);
 
     return (
       <ScaleDecorator>
         <Touchable
-          style={styles.taskWrapper}
-          onPressIn={drag}
+          style={{
+            ...Container.flexStart,
+            width: "96%",
+            backgroundColor: status ? "#D8CECE" : "white",
+            borderColor: Color.light.defaultBorder,
+            borderRadius: 8,
+            borderWidth: 0.5,
+            marginTop: 2.5,
+            marginBottom: 2.5,
+            paddingTop: "3.5%",
+            paddingBottom: "3.5%",
+            paddingLeft: "6%",
+          }}
+          onLongPress={drag}
           disabled={isActive}
         >
           <CheckBox
             style={{ borderRadius: 10, paddingRight: 15 }}
             isChecked={status}
             onClick={async () => {
+              setStatus(!status);
+
               await updateTaskStatus({
                 goal_id: state.goal!._id as string,
                 task_id: item._id as string,
@@ -76,7 +102,7 @@ const TasksList: React.FC<TasksListProps> = ({ prio }: TasksListProps) => {
             checkedImage={
               <Image
                 style={styles.checkboxImage}
-                source={require(`../../../assets/images/checkbox_checked.png`)}
+                source={require(`../../../assets/images/checkbox_checked_gray.png`)}
               />
             }
             unCheckedImage={
@@ -89,6 +115,7 @@ const TasksList: React.FC<TasksListProps> = ({ prio }: TasksListProps) => {
           <Text
             style={{
               ...Typography.p,
+              color: status ? Color.light.subtleLabel : Color.light.text,
               fontSize: 18,
               paddingLeft: "2.5%",
               textDecorationLine: status ? "line-through" : "none",
@@ -133,20 +160,20 @@ const styles = StyleSheet.create({
   wrapper: {
     width: "80%",
     height: "80%",
-    marginLeft: "10%",
-    marginRight: "10%",
+    marginLeft: "13%",
+    marginRight: "12%",
     marginTop: "10%",
   },
   taskWrapper: {
     ...Container.flexStart,
-    width: "100%",
+    width: "96%",
     borderColor: Color.light.defaultBorder,
-    borderRadius: 5,
-    borderWidth: 1,
+    borderRadius: 8,
+    borderWidth: 0.5,
     marginTop: 2.5,
     marginBottom: 2.5,
-    paddingTop: "5%",
-    paddingBottom: "5%",
+    paddingTop: "3.5%",
+    paddingBottom: "3.5%",
     paddingLeft: "6%",
   },
   taskTitle: {

@@ -11,6 +11,7 @@ type Colors = {
 
 const mainCTAColor = "#0FA858";
 
+//TODO: restructure the object to color names rather than the placement
 export const light: Colors = {
   text: "#000000",
   whiteText: "#fff",
