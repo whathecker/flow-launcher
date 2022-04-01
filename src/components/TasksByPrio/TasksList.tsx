@@ -1,4 +1,3 @@
-/* eslint-disable no-console */
 /* eslint-disable @typescript-eslint/no-non-null-assertion */
 import React, { useState, useContext } from "react";
 import { TasksContext } from "../../contexts/tasks";
