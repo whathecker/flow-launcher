@@ -1,5 +1,4 @@
 import Realm from "realm";
-import TaskModel from "./task";
 
 class GoalModel {
   constructor(
@@ -8,7 +7,7 @@ class GoalModel {
     public title: string,
     public motivation: string,
     public reminder: string,
-    public tasks: Realm.List<TaskModel>,
+    public tasks: Realm.List<string>,
   ) {}
 
   public static schema: Realm.ObjectSchema = {
