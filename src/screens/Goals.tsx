@@ -65,6 +65,7 @@ const styles = StyleSheet.create({
   },
   goalsAreaWrapper: {
     ...Container.centerAlignedVertical,
+    justifyContent: "flex-start",
     width: "100%",
     height: "70%",
   },
