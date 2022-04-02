@@ -11,6 +11,7 @@ exports[`Test AddGoalFormLabel component Should renders AddGoalFormLabel correct
         "alignItems": "center",
         "flexDirection": "row",
         "justifyContent": "flex-start",
+        "paddingBottom": 10,
       },
     ]
   }
@@ -35,8 +36,8 @@ exports[`Test AddGoalFormLabel component Should renders AddGoalFormLabel correct
     source={1}
     style={
       Object {
-        "height": 32,
-        "width": 32,
+        "height": 24,
+        "width": 24,
       }
     }
   />

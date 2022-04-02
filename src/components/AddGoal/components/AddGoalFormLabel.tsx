@@ -5,7 +5,7 @@ import { Container, Typography } from "../../../styles";
 
 type AddGoalFormLabelProps = {
   text: string;
-  type: "motivation" | "reminder";
+  type: "motivation" | "goal";
 };
 
 const AddGoalFormLabel: React.FC<AddGoalFormLabelProps> = ({
@@ -23,7 +23,7 @@ const AddGoalFormLabel: React.FC<AddGoalFormLabelProps> = ({
           source={require(`../../../../assets/images/rocket_1f680.png`)}
         />
       ) : null}
-      {type === "reminder" ? (
+      {type === "goal" ? (
         <Image
           style={styles.icon}
           source={require(`../../../../assets/images/sauropod_1f995.png`)}
@@ -36,14 +36,15 @@ const AddGoalFormLabel: React.FC<AddGoalFormLabelProps> = ({
 const styles = StyleSheet.create({
   labelWrapper: {
     ...Container.flexStart,
+    paddingBottom: 10,
   },
   labelText: {
     ...Typography.h4,
     paddingRight: 12,
   },
   icon: {
-    width: 32,
-    height: 32,
+    width: 24,
+    height: 24,
   },
 });
 

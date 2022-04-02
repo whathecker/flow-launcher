@@ -4,11 +4,7 @@ import { GoalsContext } from "../../contexts/goals";
 import { Keyboard, TextInput, StyleSheet } from "react-native";
 
 import { View, TouchableWithoutFeedback } from "../Themed";
-import {
-  AddGoalFormLabel,
-  AddGoalRadioOption,
-  AddGoalErrMsg,
-} from "./components";
+import { AddGoalFormLabel, AddGoalErrMsg } from "./components";
 import { Button } from "../shared";
 
 import { Container, Typography } from "../../styles";
@@ -28,7 +24,7 @@ const AddGoalForm: React.FC = () => {
   return (
     <Formik
       initialValues={
-        { title: "", motivation: "", reminder: "" } as IAddGoalInput
+        { title: "", motivation: "", reminder: "daily" } as IAddGoalInput
       }
       validationSchema={ValidationSchema}
       onSubmit={async (values) => {
@@ -41,22 +37,16 @@ const AddGoalForm: React.FC = () => {
         }
       }}
     >
-      {({
-        handleChange,
-        setFieldValue,
-        handleSubmit,
-        values,
-        errors,
-        touched,
-      }) => (
+      {({ handleChange, handleSubmit, values, errors, touched }) => (
         <TouchableWithoutFeedback onPress={() => Keyboard.dismiss()}>
           <View>
             <View style={styles.goalTitleInputWrapper}>
+              <AddGoalFormLabel text="Goal" type="goal" />
               <TextInput
                 style={styles.goalTitleInput}
                 multiline
                 onChangeText={handleChange("title")}
-                placeholder={`Write your goal in a sentence`}
+                placeholder={`What do you want to achieve?`}
                 placeholderTextColor={"#848484"}
                 value={values.title}
               />
@@ -79,38 +69,6 @@ const AddGoalForm: React.FC = () => {
                 <AddGoalErrMsg msg={errors.motivation} />
               )}
             </View>
-            <View style={styles.reminderInputWrapper}>
-              <AddGoalFormLabel text="Reminder" type="reminder" />
-              <View style={styles.reminderRadioOptionsWrapper}>
-                <AddGoalRadioOption
-                  displayText="Every Day"
-                  name="daily"
-                  activeValue={values.reminder}
-                  pressHandler={() => {
-                    setFieldValue("reminder", "daily");
-                  }}
-                />
-                <AddGoalRadioOption
-                  displayText="Every 3 Days"
-                  name="three_days"
-                  activeValue={values.reminder}
-                  pressHandler={() => {
-                    setFieldValue("reminder", "three_days");
-                  }}
-                />
-                <AddGoalRadioOption
-                  displayText="Every Week"
-                  name="seven_days"
-                  activeValue={values.reminder}
-                  pressHandler={() => {
-                    setFieldValue("reminder", "seven_days");
-                  }}
-                />
-                {touched.reminder && errors.reminder && (
-                  <AddGoalErrMsg msg={errors.reminder} />
-                )}
-              </View>
-            </View>
             <View style={styles.buttonWrapper}>
               <Button ctaTxt={"Add goal"} pressHandler={handleSubmit} />
             </View>
@@ -123,6 +81,8 @@ const AddGoalForm: React.FC = () => {
 
 const styles = StyleSheet.create({
   goalTitleInputWrapper: {
+    width: "90%",
+    height: "40%",
     paddingTop: 70,
     paddingLeft: 60,
     paddingBottom: 70,
@@ -131,6 +91,8 @@ const styles = StyleSheet.create({
     ...Typography.h1,
   },
   movitationInputWrapper: {
+    width: "90%",
+    height: "40%",
     paddingLeft: 60,
     paddingBottom: 50,
   },
@@ -139,22 +101,12 @@ const styles = StyleSheet.create({
     paddingTop: 2,
     paddingBottom: 10,
   },
-  reminderInputWrapper: {
-    paddingLeft: 55,
-    paddingBottom: 30,
-  },
-  reminderRadioOptionsWrapper: {
-    paddingTop: 18,
-    width: "80%",
-    marginLeft: "5%",
-    marginRight: "5%",
-  },
   buttonWrapper: {
     ...Container.centerAligned,
     flex: 1,
-    width: "85%",
-    marginLeft: "7.5%",
-    marginRight: "7.5%",
+    width: "80%",
+    marginLeft: "10%",
+    marginRight: "10%",
   },
 });
 

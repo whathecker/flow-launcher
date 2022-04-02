@@ -1,5 +1,5 @@
 import React from "react";
-import { StyleSheet, ScrollView } from "react-native";
+import { StyleSheet } from "react-native";
 
 import { View } from "../components/Themed";
 import { AddGoalHeader, AddGoalForm } from "../components/AddGoal";
@@ -12,19 +12,17 @@ type Props = GoalStackScreenProps<"AddGoal">;
 
 const AddGoalScreen: React.FC<Props> = ({ navigation }: Props) => {
   return (
-    <View style={{ flex: 1 }}>
-      <ScrollView>
-        <View style={styles.headerAreaWrapper}>
-          <AddGoalHeader
-            backBtnHandler={() => {
-              navigation.goBack();
-            }}
-          />
-        </View>
-        <View style={styles.formAreaWrapper}>
-          <AddGoalForm />
-        </View>
-      </ScrollView>
+    <View>
+      <View style={styles.headerAreaWrapper}>
+        <AddGoalHeader
+          backBtnHandler={() => {
+            navigation.goBack();
+          }}
+        />
+      </View>
+      <View style={styles.formAreaWrapper}>
+        <AddGoalForm />
+      </View>
     </View>
   );
 };
@@ -32,9 +30,11 @@ const AddGoalScreen: React.FC<Props> = ({ navigation }: Props) => {
 const styles = StyleSheet.create({
   headerAreaWrapper: {
     ...Container.flexStart,
+    height: "15%",
   },
   formAreaWrapper: {
     ...Container.flexStart,
+    height: "85%",
   },
 });
 

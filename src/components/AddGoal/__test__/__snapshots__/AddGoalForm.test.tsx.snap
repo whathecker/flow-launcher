@@ -27,18 +27,61 @@ exports[`Test AddGoalForm component Should renders AddGoalForm correctly 1`] = `
           "backgroundColor": "#fff",
         },
         Object {
+          "height": "40%",
           "paddingBottom": 70,
           "paddingLeft": 60,
           "paddingTop": 70,
+          "width": "90%",
         },
       ]
     }
   >
+    <View
+      style={
+        Array [
+          Object {
+            "backgroundColor": "#fff",
+          },
+          Object {
+            "alignItems": "center",
+            "flexDirection": "row",
+            "justifyContent": "flex-start",
+            "paddingBottom": 10,
+          },
+        ]
+      }
+    >
+      <Text
+        style={
+          Array [
+            Object {
+              "color": "#655C5C",
+            },
+            Object {
+              "fontFamily": "EB-Garamond",
+              "fontSize": 20,
+              "paddingRight": 12,
+            },
+          ]
+        }
+      >
+        Goal
+      </Text>
+      <Image
+        source={1}
+        style={
+          Object {
+            "height": 24,
+            "width": 24,
+          }
+        }
+      />
+    </View>
     <TextInput
       allowFontScaling={true}
       multiline={true}
       onChangeText={[Function]}
-      placeholder="Write your goal in a sentence"
+      placeholder="What do you want to achieve?"
       placeholderTextColor="#848484"
       rejectResponderTermination={true}
       style={
@@ -59,8 +102,10 @@ exports[`Test AddGoalForm component Should renders AddGoalForm correctly 1`] = `
           "backgroundColor": "#fff",
         },
         Object {
+          "height": "40%",
           "paddingBottom": 50,
           "paddingLeft": 60,
+          "width": "90%",
         },
       ]
     }
@@ -75,6 +120,7 @@ exports[`Test AddGoalForm component Should renders AddGoalForm correctly 1`] = `
             "alignItems": "center",
             "flexDirection": "row",
             "justifyContent": "flex-start",
+            "paddingBottom": 10,
           },
         ]
       }
@@ -99,8 +145,8 @@ exports[`Test AddGoalForm component Should renders AddGoalForm correctly 1`] = `
         source={1}
         style={
           Object {
-            "height": 32,
-            "width": 32,
+            "height": 24,
+            "width": 24,
           }
         }
       />
@@ -131,224 +177,13 @@ exports[`Test AddGoalForm component Should renders AddGoalForm correctly 1`] = `
           "backgroundColor": "#fff",
         },
         Object {
-          "paddingBottom": 30,
-          "paddingLeft": 55,
-        },
-      ]
-    }
-  >
-    <View
-      style={
-        Array [
-          Object {
-            "backgroundColor": "#fff",
-          },
-          Object {
-            "alignItems": "center",
-            "flexDirection": "row",
-            "justifyContent": "flex-start",
-          },
-        ]
-      }
-    >
-      <Text
-        style={
-          Array [
-            Object {
-              "color": "#655C5C",
-            },
-            Object {
-              "fontFamily": "EB-Garamond",
-              "fontSize": 20,
-              "paddingRight": 12,
-            },
-          ]
-        }
-      >
-        Reminder
-      </Text>
-      <Image
-        source={1}
-        style={
-          Object {
-            "height": 32,
-            "width": 32,
-          }
-        }
-      />
-    </View>
-    <View
-      style={
-        Array [
-          Object {
-            "backgroundColor": "#fff",
-          },
-          Object {
-            "marginLeft": "5%",
-            "marginRight": "5%",
-            "paddingTop": 18,
-            "width": "80%",
-          },
-        ]
-      }
-    >
-      <View
-        accessible={true}
-        focusable={true}
-        onClick={[Function]}
-        onResponderGrant={[Function]}
-        onResponderMove={[Function]}
-        onResponderRelease={[Function]}
-        onResponderTerminate={[Function]}
-        onResponderTerminationRequest={[Function]}
-        onStartShouldSetResponder={[Function]}
-        style={
-          Object {
-            "alignItems": "center",
-            "backgroundColor": "#ffffff",
-            "borderColor": "#636262",
-            "borderRadius": 10,
-            "borderStyle": "solid",
-            "borderWidth": 1,
-            "flexDirection": "row",
-            "height": 50,
-            "justifyContent": "center",
-            "marginBottom": 10,
-            "marginTop": 10,
-            "opacity": 1,
-            "overflow": "hidden",
-            "paddingBottom": 10,
-            "paddingTop": 10,
-            "width": "100%",
-          }
-        }
-      >
-        <Text
-          style={
-            Array [
-              Object {
-                "color": "#636262",
-              },
-              Object {
-                "fontFamily": "Forum-Regular",
-                "fontSize": 20,
-              },
-            ]
-          }
-        >
-          Every Day
-        </Text>
-      </View>
-      <View
-        accessible={true}
-        focusable={true}
-        onClick={[Function]}
-        onResponderGrant={[Function]}
-        onResponderMove={[Function]}
-        onResponderRelease={[Function]}
-        onResponderTerminate={[Function]}
-        onResponderTerminationRequest={[Function]}
-        onStartShouldSetResponder={[Function]}
-        style={
-          Object {
-            "alignItems": "center",
-            "backgroundColor": "#ffffff",
-            "borderColor": "#636262",
-            "borderRadius": 10,
-            "borderStyle": "solid",
-            "borderWidth": 1,
-            "flexDirection": "row",
-            "height": 50,
-            "justifyContent": "center",
-            "marginBottom": 10,
-            "marginTop": 10,
-            "opacity": 1,
-            "overflow": "hidden",
-            "paddingBottom": 10,
-            "paddingTop": 10,
-            "width": "100%",
-          }
-        }
-      >
-        <Text
-          style={
-            Array [
-              Object {
-                "color": "#636262",
-              },
-              Object {
-                "fontFamily": "Forum-Regular",
-                "fontSize": 20,
-              },
-            ]
-          }
-        >
-          Every 3 Days
-        </Text>
-      </View>
-      <View
-        accessible={true}
-        focusable={true}
-        onClick={[Function]}
-        onResponderGrant={[Function]}
-        onResponderMove={[Function]}
-        onResponderRelease={[Function]}
-        onResponderTerminate={[Function]}
-        onResponderTerminationRequest={[Function]}
-        onStartShouldSetResponder={[Function]}
-        style={
-          Object {
-            "alignItems": "center",
-            "backgroundColor": "#ffffff",
-            "borderColor": "#636262",
-            "borderRadius": 10,
-            "borderStyle": "solid",
-            "borderWidth": 1,
-            "flexDirection": "row",
-            "height": 50,
-            "justifyContent": "center",
-            "marginBottom": 10,
-            "marginTop": 10,
-            "opacity": 1,
-            "overflow": "hidden",
-            "paddingBottom": 10,
-            "paddingTop": 10,
-            "width": "100%",
-          }
-        }
-      >
-        <Text
-          style={
-            Array [
-              Object {
-                "color": "#636262",
-              },
-              Object {
-                "fontFamily": "Forum-Regular",
-                "fontSize": 20,
-              },
-            ]
-          }
-        >
-          Every Week
-        </Text>
-      </View>
-    </View>
-  </View>
-  <View
-    style={
-      Array [
-        Object {
-          "backgroundColor": "#fff",
-        },
-        Object {
           "alignItems": "center",
           "flex": 1,
           "flexDirection": "row",
           "justifyContent": "center",
-          "marginLeft": "7.5%",
-          "marginRight": "7.5%",
-          "width": "85%",
+          "marginLeft": "10%",
+          "marginRight": "10%",
+          "width": "80%",
         },
       ]
     }
