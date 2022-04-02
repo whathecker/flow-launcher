@@ -201,7 +201,7 @@ exports[`Test AddGoalForm component Should renders AddGoalForm correctly 1`] = `
       style={
         Object {
           "alignItems": "center",
-          "backgroundColor": "#0FA858",
+          "backgroundColor": "#848785",
           "borderRadius": 10,
           "flexDirection": "row",
           "justifyContent": "center",

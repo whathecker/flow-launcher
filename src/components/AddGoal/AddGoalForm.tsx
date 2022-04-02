@@ -19,6 +19,13 @@ const ValidationSchema = Yup.object().shape({
   reminder: Yup.string().required("Please select one of the options"),
 });
 
+function _isFormReadyToSubmit(input: IAddGoalInput): boolean {
+  if (input.title !== "" && input.motivation !== "") {
+    return false;
+  }
+  return true;
+}
+
 const AddGoalForm: React.FC = () => {
   const { addGoal } = useContext(GoalsContext);
   return (
@@ -37,44 +44,50 @@ const AddGoalForm: React.FC = () => {
         }
       }}
     >
-      {({ handleChange, handleSubmit, values, errors, touched }) => (
-        <TouchableWithoutFeedback onPress={() => Keyboard.dismiss()}>
-          <View>
-            <View style={styles.goalTitleInputWrapper}>
-              <AddGoalFormLabel text="Goal" type="goal" />
-              <TextInput
-                style={styles.goalTitleInput}
-                multiline
-                onChangeText={handleChange("title")}
-                placeholder={`What do you want to achieve?`}
-                placeholderTextColor={"#848484"}
-                value={values.title}
-              />
-              {touched.title && errors.title && (
-                <AddGoalErrMsg msg={errors.title} />
-              )}
-            </View>
+      {({ handleChange, handleSubmit, values, errors, touched }) => {
+        return (
+          <TouchableWithoutFeedback onPress={() => Keyboard.dismiss()}>
+            <View>
+              <View style={styles.goalTitleInputWrapper}>
+                <AddGoalFormLabel text="Goal" type="goal" />
+                <TextInput
+                  style={styles.goalTitleInput}
+                  multiline
+                  onChangeText={handleChange("title")}
+                  placeholder={`What do you want to achieve?`}
+                  placeholderTextColor={"#848484"}
+                  value={values.title}
+                />
+                {touched.title && errors.title && (
+                  <AddGoalErrMsg msg={errors.title} />
+                )}
+              </View>
 
-            <View style={styles.movitationInputWrapper}>
-              <AddGoalFormLabel text="Movivation" type="motivation" />
-              <TextInput
-                style={styles.motivationInput}
-                multiline
-                onChangeText={handleChange("motivation")}
-                placeholder={`Write down why you want to achieve this goal`}
-                placeholderTextColor={"#848484"}
-                value={values.motivation}
-              />
-              {touched.motivation && errors.motivation && (
-                <AddGoalErrMsg msg={errors.motivation} />
-              )}
+              <View style={styles.movitationInputWrapper}>
+                <AddGoalFormLabel text="Movivation" type="motivation" />
+                <TextInput
+                  style={styles.motivationInput}
+                  multiline
+                  onChangeText={handleChange("motivation")}
+                  placeholder={`Write down why you want to achieve this goal`}
+                  placeholderTextColor={"#848484"}
+                  value={values.motivation}
+                />
+                {touched.motivation && errors.motivation && (
+                  <AddGoalErrMsg msg={errors.motivation} />
+                )}
+              </View>
+              <View style={styles.buttonWrapper}>
+                <Button
+                  ctaTxt={"Add goal"}
+                  pressHandler={handleSubmit}
+                  disable={_isFormReadyToSubmit(values)}
+                />
+              </View>
             </View>
-            <View style={styles.buttonWrapper}>
-              <Button ctaTxt={"Add goal"} pressHandler={handleSubmit} />
-            </View>
-          </View>
-        </TouchableWithoutFeedback>
-      )}
+          </TouchableWithoutFeedback>
+        );
+      }}
     </Formik>
   );
 };
