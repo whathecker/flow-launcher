@@ -18,14 +18,16 @@ Launch your flow at your will and stay productive all the time 🚀🚀💫💫
 - Upon successful build, install Expo Custom Development Client in the device (EAS build will give a download URL)
 - Development client from the download comes with customized runtime (more on [custom development client](https://docs.expo.dev/clients/introduction/))
 
-#### 2. Launch the app locally 
+#### 2. Launch the app locally
 
 After you have the custom development client installed in the device (or a simulator), run following command.
 
 ```
   expo start --dev-client
 ```
-or 
+
+or
+
 ```
   yarn start
 ```
