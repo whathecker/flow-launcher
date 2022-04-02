@@ -4,6 +4,7 @@ import {
   fetchTasks,
   updateTasksPrio,
   updatePrioTasksIndex,
+  updateTaskStatus,
 } from "./tasks-actions";
 import { TasksState, ContextProvierProps } from "../../types/contexts/tasks";
 
@@ -23,6 +24,7 @@ const defaultCtxProviderProps: ContextProvierProps = {
   fetchTasks: () => Promise.resolve(),
   updateTasksPrio: () => Promise.resolve(),
   updatePrioTasksIndex: () => Promise.resolve(),
+  updateTaskStatus: () => Promise.resolve(),
 };
 
 export const TasksContext = React.createContext(defaultCtxProviderProps);
@@ -34,6 +36,7 @@ export const TasksContextProvider: React.FC = ({ children }) => {
     fetchTasks: fetchTasks(dispatch),
     updateTasksPrio: updateTasksPrio(dispatch),
     updatePrioTasksIndex: updatePrioTasksIndex(dispatch),
+    updateTaskStatus: updateTaskStatus(dispatch),
   };
 
   return (

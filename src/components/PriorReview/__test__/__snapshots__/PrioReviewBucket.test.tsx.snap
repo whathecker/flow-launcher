@@ -44,6 +44,7 @@ exports[`Test PrioReviewBucket component Should renders PrioReviewBuckets correc
                 "goal_id": "61d024a2b4cda2847a224bdf",
                 "priority": Object {
                   "importance": "yes",
+                  "index": 0,
                   "tier": "highest",
                   "urgency": "yes",
                 },
@@ -56,6 +57,7 @@ exports[`Test PrioReviewBucket component Should renders PrioReviewBuckets correc
                 "goal_id": "61d024a2b4cda2847a224bdf",
                 "priority": Object {
                   "importance": "yes",
+                  "index": 0,
                   "tier": "highest",
                   "urgency": "yes",
                 },
@@ -260,6 +262,7 @@ exports[`Test PrioReviewBucket component Should renders PrioReviewBuckets correc
                 "goal_id": "61d024a2b4cda2847a224bdf",
                 "priority": Object {
                   "importance": "yes",
+                  "index": 0,
                   "tier": "high",
                   "urgency": "no",
                 },
@@ -272,6 +275,7 @@ exports[`Test PrioReviewBucket component Should renders PrioReviewBuckets correc
                 "goal_id": "61d024a2b4cda2847a224bdf",
                 "priority": Object {
                   "importance": "yes",
+                  "index": 0,
                   "tier": "high",
                   "urgency": "no",
                 },
@@ -551,6 +555,7 @@ exports[`Test PrioReviewBucket component Should renders PrioReviewBuckets correc
                 "goal_id": "61d024a2b4cda2847a224bdf",
                 "priority": Object {
                   "importance": "no",
+                  "index": 0,
                   "tier": "low",
                   "urgency": "no",
                 },

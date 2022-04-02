@@ -1,7 +1,7 @@
 import * as React from "react";
 import renderer from "react-test-renderer";
 import PrioReviewBucket from "../PrioReviewBucket";
-import { taskFilters } from "../../../utils";
+import { taskManager } from "../../../utils";
 import { Task } from "../../../types/core/entity";
 
 describe("Test PrioReviewBucket component", () => {
@@ -11,6 +11,7 @@ describe("Test PrioReviewBucket component", () => {
       description: "",
       goal_id: "61d024a2b4cda2847a224bdf",
       priority: {
+        index: 0,
         importance: "yes",
         tier: "highest",
         urgency: "yes",
@@ -23,6 +24,7 @@ describe("Test PrioReviewBucket component", () => {
       description: "",
       goal_id: "61d024a2b4cda2847a224bdf",
       priority: {
+        index: 0,
         importance: "yes",
         tier: "highest",
         urgency: "yes",
@@ -35,6 +37,7 @@ describe("Test PrioReviewBucket component", () => {
       description: "",
       goal_id: "61d024a2b4cda2847a224bdf",
       priority: {
+        index: 0,
         importance: "yes",
         tier: "high",
         urgency: "no",
@@ -47,6 +50,7 @@ describe("Test PrioReviewBucket component", () => {
       description: "",
       goal_id: "61d024a2b4cda2847a224bdf",
       priority: {
+        index: 0,
         importance: "yes",
         tier: "high",
         urgency: "no",
@@ -59,6 +63,7 @@ describe("Test PrioReviewBucket component", () => {
       description: "",
       goal_id: "61d024a2b4cda2847a224bdf",
       priority: {
+        index: 0,
         importance: "no",
         tier: "low",
         urgency: "no",
@@ -68,7 +73,7 @@ describe("Test PrioReviewBucket component", () => {
     },
   ];
 
-  const result = taskFilters.filterByPriorityScheme(tasks);
+  const result = taskManager.filterByPriorityScheme(tasks);
 
   it("Should renders PrioReviewBuckets correctly", () => {
     const treeHighest = renderer

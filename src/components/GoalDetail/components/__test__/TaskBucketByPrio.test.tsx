@@ -2,7 +2,7 @@ import * as React from "react";
 import renderer from "react-test-renderer";
 import TaskBucketByPrio from "../TaskBucketByPrio";
 import { Task } from "../../../../types/core/entity";
-import { taskFilters } from "../../../../utils";
+import { taskManager } from "../../../../utils";
 
 const tasks: Task[] = [
   {
@@ -10,6 +10,7 @@ const tasks: Task[] = [
     description: "",
     goal_id: "61d024a2b4cda2847a224bdf",
     priority: {
+      index: 0,
       importance: "yes",
       tier: "highest",
       urgency: "yes",
@@ -22,6 +23,7 @@ const tasks: Task[] = [
     description: "",
     goal_id: "61d024a2b4cda2847a224bdf",
     priority: {
+      index: 0,
       importance: "yes",
       tier: "highest",
       urgency: "yes",
@@ -34,6 +36,7 @@ const tasks: Task[] = [
     description: "",
     goal_id: "61d024a2b4cda2847a224bdf",
     priority: {
+      index: 0,
       importance: "yes",
       tier: "high",
       urgency: "no",
@@ -46,6 +49,7 @@ const tasks: Task[] = [
     description: "",
     goal_id: "61d024a2b4cda2847a224bdf",
     priority: {
+      index: 0,
       importance: "yes",
       tier: "high",
       urgency: "no",
@@ -58,6 +62,7 @@ const tasks: Task[] = [
     description: "",
     goal_id: "61d024a2b4cda2847a224bdf",
     priority: {
+      index: 0,
       importance: "no",
       tier: "low",
       urgency: "no",
@@ -66,7 +71,7 @@ const tasks: Task[] = [
     title: "test5",
   },
 ];
-const result = taskFilters.filterByPriorityScheme(tasks);
+const result = taskManager.filterByPriorityScheme(tasks);
 
 describe("Test TaskBucketByPrio component", () => {
   it("Should renders TaskBucketByPrio correctly", () => {

@@ -13,7 +13,7 @@ export default (state: GoalsState, action: GoalsAction): GoalsState => {
       const indexOfGoal = state.goals!.findIndex(
         (e) => e._id === newTask.goal_id,
       );
-      state.goals![indexOfGoal].tasks.push(newTask!);
+      state.goals![indexOfGoal].tasks.push(newTask._id as string);
       return { ...state };
     }
     case "ERROR":

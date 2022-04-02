@@ -7,7 +7,7 @@ import { View } from "../components/Themed";
 import { PriorReviewHeader, PrioReviewBucket } from "../components/PriorReview";
 import { Button } from "../components/shared";
 import { PriorStackScreenProps } from "../types/navigation";
-import { taskFilters, navigationRef } from "../utils";
+import { taskManager, navigationRef } from "../utils";
 import { Container, Color } from "../styles";
 import { GoalColor } from "../types/core/entity";
 
@@ -17,7 +17,7 @@ const PriorReview: React.FC<Props> = ({ route }: Props) => {
   const { state, updateTasksPrio } = useContext(TasksContext);
   const { tasks } = route.params;
 
-  const tasksFilteredByPrio = taskFilters.filterByPriorityScheme(tasks);
+  const tasksFilteredByPrio = taskManager.filterByPriorityScheme(tasks);
 
   return (
     <>

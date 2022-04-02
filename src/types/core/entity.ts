@@ -12,7 +12,7 @@ export class Goal {
     public title: string,
     public motivation: string,
     public reminder: Reminder,
-    public tasks: Task[],
+    public tasks: string[],
     public _id?: ID,
   ) {}
 }
@@ -37,6 +37,12 @@ export interface IFetchTasksInput {
 export interface IUpdateTasksPrioInput {
   tasks: Task[];
   goal_id: string;
+}
+
+export interface IUpdateTaskStatusInput {
+  goal_id: string;
+  task_id: string;
+  status: string;
 }
 
 export interface IUpdatePrioTasksIndexInput {
