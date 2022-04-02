@@ -12,11 +12,11 @@ import CheckBox from "react-native-check-box";
 
 import { Container, Typography, Color } from "../../styles";
 
-import { Task, TaskStatus } from "../../types/core/entity";
-import { PriorityTier } from "../../types/core/value-object";
+import { Task, Goal, TaskStatus } from "../../types/core/entity";
 
 type TasksListProps = {
-  prio: PriorityTier;
+  goal: Goal;
+  tasks: Task[];
 };
 
 function _convertTaskStatusToBool(input: TaskStatus): boolean {
@@ -42,18 +42,13 @@ function _assignSortScore(input: TaskStatus): number {
   return result;
 }
 
-const TasksList: React.FC<TasksListProps> = ({ prio }: TasksListProps) => {
-  const { state, updatePrioTasksIndex, updateTaskStatus } =
-    useContext(TasksContext);
+const TasksList: React.FC<TasksListProps> = ({
+  goal,
+  tasks,
+}: TasksListProps) => {
+  const { updatePrioTasksIndex, updateTaskStatus } = useContext(TasksContext);
 
-  let tasks: Task[] = [];
-
-  prio === "highest" ? (tasks = state.highestPrioTasks) : null;
-  prio === "high" ? (tasks = state.highPrioTasks) : null;
-  prio === "mid" ? (tasks = state.midPrioTasks) : null;
-  prio === "low" ? (tasks = state.lowPrioTasks) : null;
-
-  tasks = tasks
+  const sortedTasks = tasks
     .sort((a, b) => {
       return a.priority!.index - b.priority!.index;
     })
@@ -93,7 +88,7 @@ const TasksList: React.FC<TasksListProps> = ({ prio }: TasksListProps) => {
               setStatus(!status);
 
               await updateTaskStatus({
-                goal_id: state.goal!._id as string,
+                goal_id: goal._id as string,
                 task_id: item._id as string,
                 status: _getNextStatus(item.status),
               });
@@ -129,7 +124,7 @@ const TasksList: React.FC<TasksListProps> = ({ prio }: TasksListProps) => {
 
   return (
     <DraggableFlatList
-      data={tasks}
+      data={sortedTasks}
       onDragEnd={async ({ data }) => {
         const updatedTasksArr = data.map((task, index) => {
           return {
@@ -143,7 +138,7 @@ const TasksList: React.FC<TasksListProps> = ({ prio }: TasksListProps) => {
           };
         });
         const payload = {
-          goal_id: state.goal!._id as string,
+          goal_id: goal._id as string,
           tasks: updatedTasksArr,
         };
         await updatePrioTasksIndex(payload);
