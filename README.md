@@ -9,19 +9,23 @@ Launch your flow at your will and stay productive all the time 🚀🚀💫💫
 - Customized Expo runtime is built using [EAS build](https://docs.expo.dev/build/introduction/)
 - [Expo development client](https://docs.expo.dev/clients/introduction/) is used for developing locally & testing
 
-## Setup
+## Setup the local build
 
-#### Build customized runtime & install custom dev client
+#### 1. Pre-requisite: Build customized runtime & install custom dev client
 
-- EAS build should be created in expo account [here](https://docs.expo.dev/build/setup/)
+- EAS build should be created in the Expo account [documentaion](https://docs.expo.dev/build/setup/)
 - Remember to configure [internal distribution](https://docs.expo.dev/build/internal-distribution/) in `eas.json`
 - Upon successful build, install Expo Custom Development Client in the device (EAS build will give a download URL)
-- Downloaded development client comes with customized runtime (more on [custom development client](https://docs.expo.dev/clients/introduction/))
+- Development client from the download comes with customized runtime (more on [custom development client](https://docs.expo.dev/clients/introduction/))
 
-#### Launch the app locally
+#### 2. Launch the app locally 
 
-After you have the custom development client installed in the device (or a simulator), run following command to run the app.
+After you have the custom development client installed in the device (or a simulator), run following command.
 
 ```
   expo start --dev-client
+```
+or 
+```
+  yarn start
 ```
