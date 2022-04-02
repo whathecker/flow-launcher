@@ -178,4 +178,54 @@ describe("Test task filters", () => {
 
     expect(result).toBe(true);
   });
+
+  it("Should be sort the opened task to the front, rest by index", () => {
+    const tasks: Task[] = [
+      {
+        _id: "61ed56d3f38a35aa47ca0e70",
+        description: "Mid prior task",
+        goal_id: "61ed56a8f38a35aa47ca0e6f",
+        priority: {
+          index: 0,
+          importance: "no",
+          tier: "n/a",
+          urgency: "yes",
+        },
+        status: "open",
+        title: "Mid prior task",
+      },
+      {
+        _id: "61ed56d3f38a35aa47ca0e71",
+        description: "Highest prior task",
+        goal_id: "61ed56a8f38a35aa47ca0e6f",
+        priority: {
+          index: 1,
+          importance: "yes",
+          tier: "n/a",
+          urgency: "yes",
+        },
+        status: "open",
+        title: "Highest prior task",
+      },
+      {
+        _id: "61ed56d3f38a35aa47ca0e73",
+        description: "High prior task",
+        goal_id: "61ed56a8f38a35aa47ca0e6f",
+        priority: {
+          index: 0,
+          importance: "yes",
+          tier: "n/a",
+          urgency: "no",
+        },
+        status: "finished",
+        title: "High prior task",
+      },
+    ];
+
+    const result = taskManager.sortByIndexAndStatus(tasks);
+
+    expect(result[0]).toBe(tasks[0]);
+    expect(result[1]).toBe(tasks[1]);
+    expect(result[2]).toBe(tasks[2]);
+  });
 });

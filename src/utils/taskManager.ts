@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-non-null-assertion */
-import { Task } from "../types/core/entity";
+import { Task, TaskStatus } from "../types/core/entity";
 
 const filterUnprioritized = (tasks: Task[]): Task[] => {
   return tasks.filter((task) => {
@@ -71,8 +71,30 @@ const filterByPriorityScheme = (tasks: Task[]): TasksInPriorityBucket => {
   };
 };
 
+//TODO: write the test for this
+const sortByIndexAndStatus = (tasks: Task[]): Task[] => {
+  return tasks
+    .sort((a, b) => {
+      return a.priority!.index - b.priority!.index;
+    })
+    .sort((a, b) => {
+      const sortScoreA = _assignSortScoreByStatus(a.status);
+      const sortScoreB = _assignSortScoreByStatus(b.status);
+      return sortScoreA - sortScoreB;
+    });
+};
+
+function _assignSortScoreByStatus(input: TaskStatus): number {
+  let result = 0;
+  if (input === "finished") {
+    result = 1;
+  }
+  return result;
+}
+
 export default {
   filterUnprioritized,
   checkTasksReadinessForPriorReview,
   filterByPriorityScheme,
+  sortByIndexAndStatus,
 };

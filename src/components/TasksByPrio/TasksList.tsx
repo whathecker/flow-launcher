@@ -10,8 +10,8 @@ import DraggableFlatList, {
 } from "react-native-draggable-flatlist";
 import CheckBox from "react-native-check-box";
 
+import { taskManager } from "../../utils";
 import { Container, Typography, Color } from "../../styles";
-
 import { Task, Goal, TaskStatus } from "../../types/core/entity";
 
 type TasksListProps = {
@@ -34,29 +34,13 @@ function _getNextStatus(input: TaskStatus): TaskStatus {
   }
 }
 
-function _assignSortScore(input: TaskStatus): number {
-  let result = 0;
-  if (input === "finished") {
-    result = 1;
-  }
-  return result;
-}
-
 const TasksList: React.FC<TasksListProps> = ({
   goal,
   tasks,
 }: TasksListProps) => {
   const { updatePrioTasksIndex, updateTaskStatus } = useContext(TasksContext);
 
-  const sortedTasks = tasks
-    .sort((a, b) => {
-      return a.priority!.index - b.priority!.index;
-    })
-    .sort((a, b) => {
-      const sortScoreA = _assignSortScore(a.status);
-      const sortScoreB = _assignSortScore(b.status);
-      return sortScoreA - sortScoreB;
-    });
+  const sortedTasks = taskManager.sortByIndexAndStatus(tasks);
 
   const renderItem = ({ item, drag, isActive }: RenderItemParams<Task>) => {
     const taskStatusInBool = _convertTaskStatusToBool(item.status);

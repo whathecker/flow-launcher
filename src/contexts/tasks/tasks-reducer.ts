@@ -1,13 +1,13 @@
 /* eslint-disable @typescript-eslint/no-non-null-assertion  */
 import { TasksState, TasksAction } from "../../types/contexts/tasks";
-import { taskFilters } from "../../utils";
+import { taskManager } from "../../utils";
 
 export default (state: TasksState, action: TasksAction): TasksState => {
   switch (action.type) {
     case "FETCH_TASKS": {
       const allTasks = action.payload!.tasks;
-      const unprioTasks = taskFilters.filterUnprioritized(allTasks);
-      const prioTasks = taskFilters.filterByPriorityScheme(allTasks);
+      const unprioTasks = taskManager.filterUnprioritized(allTasks);
+      const prioTasks = taskManager.filterByPriorityScheme(allTasks);
 
       return {
         ...state,
