@@ -8,7 +8,7 @@ import { Container, Typography, Color } from "../../styles";
 
 import { Task } from "../../types/core/entity";
 import { PriorityMeasure } from "../../types/core/value-object";
-import { taskFilters, navigationRef } from "../../utils";
+import { taskManager, navigationRef } from "../../utils";
 
 type PriorFormProps = {
   unprioritisedTasks: Task[];
@@ -165,7 +165,7 @@ const PriorForm: React.FC<PriorFormProps> = ({
               disable={shouldNextBtnInactive(importanceValue, urgencyValue)}
               pressHandler={() => {
                 const result =
-                  taskFilters.checkTasksReadinessForPriorReview(
+                  taskManager.checkTasksReadinessForPriorReview(
                     unprioritisedTasks,
                   );
                 if (result) {
