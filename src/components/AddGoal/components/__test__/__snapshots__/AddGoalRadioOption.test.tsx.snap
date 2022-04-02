@@ -39,8 +39,8 @@ exports[`Test AddGoalRadioOption component Should renders active AddGoalRadioOpt
           "color": "#0FA858",
         },
         Object {
-          "fontFamily": "Forum-Regular",
-          "fontSize": 20,
+          "fontFamily": "Lexend-Regular",
+          "fontSize": 18,
         },
       ]
     }
@@ -89,8 +89,8 @@ exports[`Test AddGoalRadioOption component Should renders inactive AddGoalRadioO
           "color": "#636262",
         },
         Object {
-          "fontFamily": "Forum-Regular",
-          "fontSize": 20,
+          "fontFamily": "Lexend-Regular",
+          "fontSize": 18,
         },
       ]
     }

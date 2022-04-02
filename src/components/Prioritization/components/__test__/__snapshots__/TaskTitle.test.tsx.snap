@@ -8,9 +8,9 @@ exports[`Test TaskTitle component Should renders TaskTitle correctly 1`] = `
         "color": "#000000",
       },
       Object {
-        "color": "#000000",
-        "fontFamily": "Forum-Regular",
-        "fontSize": 20,
+        "color": "#848484",
+        "fontFamily": "Lexend-SemiBold",
+        "fontSize": 18,
       },
     ]
   }

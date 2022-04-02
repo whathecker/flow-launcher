@@ -81,11 +81,10 @@ Array [
             "color": "#000000",
           },
           Object {
-            "fontFamily": "EB-Garamond",
-            "fontSize": 25,
-            "fontWeight": "bold",
+            "fontFamily": "Lexend-SemiBold",
+            "fontSize": 24,
             "paddingBottom": 5,
-            "paddingTop": 5,
+            "paddingTop": 10,
           },
         ]
       }
@@ -99,8 +98,8 @@ Array [
             "color": "#000000",
           },
           Object {
-            "fontFamily": "Forum-Regular",
-            "fontSize": 16,
+            "fontFamily": "Lexend-Regular",
+            "fontSize": 14,
           },
         ]
       }

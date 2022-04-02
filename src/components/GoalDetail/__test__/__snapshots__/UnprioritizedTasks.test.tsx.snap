@@ -43,8 +43,8 @@ exports[`Test UnprioritizedTasks component Should renders UnprioritizedTasks cor
             "color": "#000000",
           },
           Object {
-            "fontFamily": "EB-Garamond",
-            "fontSize": 18,
+            "fontFamily": "Lexend-Regular",
+            "fontSize": 16,
           },
         ]
       }
@@ -76,8 +76,8 @@ exports[`Test UnprioritizedTasks component Should renders UnprioritizedTasks cor
           },
           Object {
             "color": "#848484",
-            "fontFamily": "Forum-Regular",
-            "fontSize": 16,
+            "fontFamily": "Lexend-Regular",
+            "fontSize": 14,
           },
         ]
       }

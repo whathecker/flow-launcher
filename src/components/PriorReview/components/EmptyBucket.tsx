@@ -23,8 +23,9 @@ const EmptyBucket: React.FC<EmptyBucketProps> = ({
 const styles = StyleSheet.create({
   header: {
     ...Typography.h4,
-    fontSize: 19,
+    fontSize: 16,
     paddingLeft: "5%",
+    paddingTop: 5,
     color: Color.light.text,
   },
   innerWrapper: {
@@ -35,7 +36,7 @@ const styles = StyleSheet.create({
   },
   placeholderText: {
     ...Typography.p,
-    fontSize: 16,
+    fontSize: 14,
     color: Color.light.subtleLabel,
   },
 });

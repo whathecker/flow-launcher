@@ -30,8 +30,8 @@ exports[`Test UnprioritizedTask component Should renders UnprioritizedTask corre
           "color": "#000000",
         },
         Object {
-          "fontFamily": "Forum-Regular",
-          "fontSize": 20,
+          "fontFamily": "Lexend-Regular",
+          "fontSize": 14,
         },
       ]
     }

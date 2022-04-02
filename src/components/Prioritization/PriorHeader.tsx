@@ -23,7 +23,7 @@ const PriorHeader: React.FC<PriorHeaderProps> = ({
       </View>
       <View style={styles.headerAreaWrapper}>
         <View style={styles.headerWrapper}>
-          <Text style={styles.headerText}>{`PRIORITIZING`}</Text>
+          <Text style={styles.headerText}>{`Prioritizing`}</Text>
           <Image
             style={styles.image}
             source={require(`../../../assets/images/bar-chart_1f4ca.png`)}
@@ -59,7 +59,7 @@ const styles = StyleSheet.create({
   },
   headerText: {
     ...Typography.h4,
-    fontSize: 25,
+    fontSize: 22,
     paddingRight: 10,
   },
   image: {
@@ -72,12 +72,12 @@ const styles = StyleSheet.create({
   },
   goalText: {
     ...Typography.h4,
-    fontSize: 24,
+    fontSize: 20,
     paddingBottom: 5,
   },
   motivationText: {
     ...Typography.p,
-    fontSize: 18,
+    fontSize: 14,
   },
 });
 

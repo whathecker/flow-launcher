@@ -61,8 +61,8 @@ Array [
               "color": "#000000",
             },
             Object {
-              "fontFamily": "EB-Garamond",
-              "fontSize": 20,
+              "fontFamily": "Lexend-SemiBold",
+              "fontSize": 16,
               "marginBottom": 6,
             },
           ]
@@ -77,8 +77,8 @@ Array [
               "color": "#000000",
             },
             Object {
-              "fontFamily": "Forum-Regular",
-              "fontSize": 16,
+              "fontFamily": "Lexend-Regular",
+              "fontSize": 14,
             },
           ]
         }
@@ -146,8 +146,8 @@ Array [
               "color": "#000000",
             },
             Object {
-              "fontFamily": "EB-Garamond",
-              "fontSize": 20,
+              "fontFamily": "Lexend-SemiBold",
+              "fontSize": 16,
               "marginBottom": 6,
             },
           ]
@@ -162,8 +162,8 @@ Array [
               "color": "#000000",
             },
             Object {
-              "fontFamily": "Forum-Regular",
-              "fontSize": 16,
+              "fontFamily": "Lexend-Regular",
+              "fontSize": 14,
             },
           ]
         }

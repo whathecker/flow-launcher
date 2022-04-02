@@ -32,8 +32,8 @@ exports[`Test TaskReadable component Should renders TaskReadable correctly 1`] =
           "color": "#000000",
         },
         Object {
-          "fontFamily": "Forum-Regular",
-          "fontSize": 16,
+          "fontFamily": "Lexend-Regular",
+          "fontSize": 14,
         },
       ]
     }

@@ -48,8 +48,8 @@ exports[`Test TaskBucketByPrio component Should renders TaskBucketByPrio correct
           },
           Object {
             "color": "#fff",
-            "fontFamily": "EB-Garamond",
-            "fontSize": 18,
+            "fontFamily": "Lexend-SemiBold",
+            "fontSize": 15,
             "fontWeight": "bold",
           },
         ]
@@ -68,7 +68,7 @@ exports[`Test TaskBucketByPrio component Should renders TaskBucketByPrio correct
           "backgroundColor": "#EBC944",
           "paddingBottom": "2%",
           "paddingLeft": "10%",
-          "paddingTop": "3%",
+          "paddingTop": "6%",
         },
       ]
     }
@@ -81,8 +81,8 @@ exports[`Test TaskBucketByPrio component Should renders TaskBucketByPrio correct
           },
           Object {
             "color": "#fff",
-            "fontFamily": "Forum-Regular",
-            "fontSize": 16,
+            "fontFamily": "Lexend-Regular",
+            "fontSize": 13,
           },
         ]
       }
@@ -161,8 +161,8 @@ exports[`Test TaskBucketByPrio component Should renders TaskBucketByPrio correct
           },
           Object {
             "color": "#848484",
-            "fontFamily": "EB-Garamond",
-            "fontSize": 18,
+            "fontFamily": "Lexend-SemiBold",
+            "fontSize": 15,
             "fontWeight": "bold",
           },
         ]
@@ -195,8 +195,8 @@ exports[`Test TaskBucketByPrio component Should renders TaskBucketByPrio correct
           },
           Object {
             "color": "#848484",
-            "fontFamily": "Forum-Regular",
-            "fontSize": 16,
+            "fontFamily": "Lexend-Regular",
+            "fontSize": 12,
           },
         ]
       }
@@ -255,8 +255,8 @@ exports[`Test TaskBucketByPrio component Should renders TaskBucketByPrio correct
           },
           Object {
             "color": "#fff",
-            "fontFamily": "EB-Garamond",
-            "fontSize": 18,
+            "fontFamily": "Lexend-SemiBold",
+            "fontSize": 15,
             "fontWeight": "bold",
           },
         ]
@@ -275,7 +275,7 @@ exports[`Test TaskBucketByPrio component Should renders TaskBucketByPrio correct
           "backgroundColor": "#D3B53D",
           "paddingBottom": "2%",
           "paddingLeft": "10%",
-          "paddingTop": "3%",
+          "paddingTop": "6%",
         },
       ]
     }
@@ -288,8 +288,8 @@ exports[`Test TaskBucketByPrio component Should renders TaskBucketByPrio correct
           },
           Object {
             "color": "#fff",
-            "fontFamily": "Forum-Regular",
-            "fontSize": 16,
+            "fontFamily": "Lexend-Regular",
+            "fontSize": 13,
           },
         ]
       }
@@ -304,8 +304,8 @@ exports[`Test TaskBucketByPrio component Should renders TaskBucketByPrio correct
           },
           Object {
             "color": "#fff",
-            "fontFamily": "Forum-Regular",
-            "fontSize": 15,
+            "fontFamily": "Lexend-Regular",
+            "fontSize": 13,
             "paddingTop": 5,
             "textDecorationLine": "underline",
           },
@@ -391,8 +391,8 @@ exports[`Test TaskBucketByPrio component Should renders TaskBucketByPrio correct
           },
           Object {
             "color": "#fff",
-            "fontFamily": "EB-Garamond",
-            "fontSize": 18,
+            "fontFamily": "Lexend-SemiBold",
+            "fontSize": 15,
             "fontWeight": "bold",
           },
         ]
@@ -411,7 +411,7 @@ exports[`Test TaskBucketByPrio component Should renders TaskBucketByPrio correct
           "backgroundColor": "#BCA136",
           "paddingBottom": "2%",
           "paddingLeft": "10%",
-          "paddingTop": "3%",
+          "paddingTop": "6%",
         },
       ]
     }
@@ -424,8 +424,8 @@ exports[`Test TaskBucketByPrio component Should renders TaskBucketByPrio correct
           },
           Object {
             "color": "#fff",
-            "fontFamily": "Forum-Regular",
-            "fontSize": 16,
+            "fontFamily": "Lexend-Regular",
+            "fontSize": 13,
           },
         ]
       }
@@ -440,8 +440,8 @@ exports[`Test TaskBucketByPrio component Should renders TaskBucketByPrio correct
           },
           Object {
             "color": "#fff",
-            "fontFamily": "Forum-Regular",
-            "fontSize": 15,
+            "fontFamily": "Lexend-Regular",
+            "fontSize": 13,
             "paddingTop": 5,
             "textDecorationLine": "underline",
           },

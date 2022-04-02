@@ -53,7 +53,7 @@ const TasksByPrioHeader: React.FC<TasksByPrioHeaderProps> = ({
         <Text
           style={{
             ...Typography.h4,
-            fontSize: 24,
+            fontSize: 22,
             color: Color.light.whiteText,
             paddingBottom: "6%",
           }}

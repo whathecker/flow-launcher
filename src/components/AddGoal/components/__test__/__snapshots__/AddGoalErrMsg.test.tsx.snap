@@ -22,7 +22,7 @@ exports[`Test AddGoalErrMsg component Should renders AddGoalFormLabel correctly 
           "color": "#c84827",
         },
         Object {
-          "fontFamily": "Forum-Regular",
+          "fontFamily": "Lexend-Regular",
           "fontSize": 16,
         },
       ]

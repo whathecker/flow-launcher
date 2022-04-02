@@ -9,7 +9,13 @@ type TaskTitleProps = {
 const TaskTitle: React.FC<TaskTitleProps> = ({ title }: TaskTitleProps) => {
   return (
     <>
-      <Text style={{ ...Typography.p, fontSize: 20, color: Color.light.text }}>
+      <Text
+        style={{
+          ...Typography.h4,
+          fontSize: 18,
+          color: Color.light.subtleLabel,
+        }}
+      >
         {title}
       </Text>
     </>

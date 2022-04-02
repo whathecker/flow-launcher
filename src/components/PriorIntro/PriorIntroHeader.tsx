@@ -42,13 +42,14 @@ const styles = StyleSheet.create({
     height: 50,
   },
   headerText: {
-    ...Typography.h1,
-    paddingTop: 5,
+    ...Typography.h4,
+    fontSize: 24,
+    paddingTop: 10,
     paddingBottom: 5,
   },
   subHeaderText: {
     ...Typography.p,
-    fontSize: 16,
+    fontSize: 14,
   },
 });
 

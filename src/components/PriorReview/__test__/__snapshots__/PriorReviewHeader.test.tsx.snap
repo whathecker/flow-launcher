@@ -107,14 +107,14 @@ exports[`Test PriorReviewHeader component Should renders PriorReviewHeader corre
               "color": "#000000",
             },
             Object {
-              "fontFamily": "EB-Garamond",
-              "fontSize": 25,
+              "fontFamily": "Lexend-SemiBold",
+              "fontSize": 22,
               "paddingRight": 10,
             },
           ]
         }
       >
-        REVIEW PRIORITY
+        Review Priority
       </Text>
       <Image
         source={1}
@@ -147,8 +147,8 @@ exports[`Test PriorReviewHeader component Should renders PriorReviewHeader corre
             "color": "#000000",
           },
           Object {
-            "fontFamily": "EB-Garamond",
-            "fontSize": 24,
+            "fontFamily": "Lexend-SemiBold",
+            "fontSize": 20,
             "paddingBottom": 5,
           },
         ]
@@ -163,8 +163,8 @@ exports[`Test PriorReviewHeader component Should renders PriorReviewHeader corre
             "color": "#000000",
           },
           Object {
-            "fontFamily": "Forum-Regular",
-            "fontSize": 18,
+            "fontFamily": "Lexend-Regular",
+            "fontSize": 16,
           },
         ]
       }

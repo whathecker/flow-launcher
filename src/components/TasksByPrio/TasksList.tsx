@@ -58,8 +58,8 @@ const TasksList: React.FC<TasksListProps> = ({
             borderWidth: 0.5,
             marginTop: 2.5,
             marginBottom: 2.5,
-            paddingTop: "3.5%",
-            paddingBottom: "3.5%",
+            paddingTop: "4.5%",
+            paddingBottom: "4.5%",
             paddingLeft: "6%",
           }}
           onLongPress={drag}
@@ -94,7 +94,7 @@ const TasksList: React.FC<TasksListProps> = ({
             style={{
               ...Typography.p,
               color: status ? Color.light.subtleLabel : Color.light.text,
-              fontSize: 18,
+              fontSize: 15,
               paddingLeft: "2.5%",
               textDecorationLine: status ? "line-through" : "none",
             }}

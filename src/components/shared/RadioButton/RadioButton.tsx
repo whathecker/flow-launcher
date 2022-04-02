@@ -33,15 +33,15 @@ const RadioButton: React.FC<RadioButtonProps> = ({
         marginRight: 3,
         borderRadius: 10,
         borderWidth: isBtnActive ? 2 : 1,
-        borderColor: isBtnActive ? "#0FA858" : "#636262",
+        borderColor: isBtnActive ? "#0FA858" : "#848484",
         borderStyle: "solid",
         overflow: "hidden",
       }}
     >
       <Text
-        lightColor={isBtnActive ? "#0FA858" : "#636262"}
-        darkColor={isBtnActive ? "#0FA858" : "#636262"}
-        style={{ ...Typography.p }}
+        lightColor={isBtnActive ? "#0FA858" : "#848484"}
+        darkColor={isBtnActive ? "#0FA858" : "#848484"}
+        style={{ ...Typography.p, fontSize: 15 }}
       >
         {displayText}
       </Text>

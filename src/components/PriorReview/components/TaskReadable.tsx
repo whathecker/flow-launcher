@@ -33,7 +33,7 @@ const styles = StyleSheet.create({
   },
   text: {
     ...Typography.p,
-    fontSize: 16,
+    fontSize: 14,
   },
 });
 

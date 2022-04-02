@@ -41,8 +41,8 @@ exports[`Test RadioButton component Should renders active RadioButton correctly 
           "color": "#0FA858",
         },
         Object {
-          "fontFamily": "Forum-Regular",
-          "fontSize": 20,
+          "fontFamily": "Lexend-Regular",
+          "fontSize": 15,
         },
       ]
     }
@@ -67,7 +67,7 @@ exports[`Test RadioButton component Should renders inactive RadioButton correctl
     Object {
       "alignItems": "center",
       "backgroundColor": "#ffffff",
-      "borderColor": "#636262",
+      "borderColor": "#848484",
       "borderRadius": 10,
       "borderStyle": "solid",
       "borderWidth": 1,
@@ -90,11 +90,11 @@ exports[`Test RadioButton component Should renders inactive RadioButton correctl
     style={
       Array [
         Object {
-          "color": "#636262",
+          "color": "#848484",
         },
         Object {
-          "fontFamily": "Forum-Regular",
-          "fontSize": 20,
+          "fontFamily": "Lexend-Regular",
+          "fontSize": 15,
         },
       ]
     }

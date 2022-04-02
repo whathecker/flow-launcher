@@ -69,8 +69,8 @@ Array [
             "color": "#554F4F",
           },
           Object {
-            "fontFamily": "EB-Garamond",
-            "fontSize": 25,
+            "fontFamily": "Lexend-Bold",
+            "fontSize": 24,
             "fontWeight": "bold",
             "paddingRight": 12,
           },

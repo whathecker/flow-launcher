@@ -58,19 +58,19 @@ const styles = StyleSheet.create({
     ...Container.flexStart,
     justifyContent: "space-between",
     width: "100%",
-    paddingTop: 5,
+    paddingTop: 30,
   },
   prioritizeBtn: {
     ...Typography.p,
     textDecorationLine: "underline",
     color: Color.light.primaryBtn,
-    fontSize: 18,
+    fontSize: 14,
   },
   sellAllBtn: {
     ...Typography.p,
     textDecorationLine: "underline",
     color: Color.light.text,
-    fontSize: 18,
+    fontSize: 14,
   },
 });
 

@@ -9,8 +9,9 @@ import { TasksContextProvider } from "./src/contexts/tasks";
 
 export default function App() {
   const [fontLoaded] = useFonts({
-    "EB-Garamond": require("./assets/fonts/EBGaramond-VariableFont_wght.ttf"),
-    "Forum-Regular": require("./assets/fonts/Forum-Regular.ttf"),
+    "Lexend-Bold": require("./assets/fonts/Lexend-Bold.ttf"),
+    "Lexend-SemiBold": require("./assets/fonts/Lexend-SemiBold.ttf"),
+    "Lexend-Regular": require("./assets/fonts/Lexend-Regular.ttf"),
   });
 
   if (!fontLoaded) {

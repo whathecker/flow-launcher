@@ -101,7 +101,7 @@ const styles = StyleSheet.create({
     paddingBottom: 70,
   },
   goalTitleInput: {
-    ...Typography.h1,
+    ...Typography.p,
   },
   movitationInputWrapper: {
     width: "90%",

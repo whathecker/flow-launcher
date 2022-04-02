@@ -49,7 +49,7 @@ const ActiveBucket: React.FC<ActiveBucketProps> = ({
         <Text
           style={{
             ...Typography.h4,
-            fontSize: 18,
+            fontSize: 15,
             fontWeight: "bold",
             color: textColor,
           }}
@@ -61,7 +61,7 @@ const ActiveBucket: React.FC<ActiveBucketProps> = ({
       <View
         style={{
           backgroundColor: backgroundColor,
-          paddingTop: "3%",
+          paddingTop: "6%",
           paddingBottom: "2%",
           paddingLeft: "10%",
         }}
@@ -70,7 +70,7 @@ const ActiveBucket: React.FC<ActiveBucketProps> = ({
           style={{
             ...Typography.p,
             color: textColor,
-            fontSize: 16,
+            fontSize: 13,
           }}
         >{`${tasks[0].title}`}</Text>
         {tasks.length > 1 ? (
@@ -78,7 +78,7 @@ const ActiveBucket: React.FC<ActiveBucketProps> = ({
             style={{
               ...Typography.p,
               color: textColor,
-              fontSize: 15,
+              fontSize: 13,
               textDecorationLine: "underline",
               paddingTop: 5,
             }}
@@ -138,7 +138,7 @@ const EmptyBucket: React.FC<EmptyBucketProps> = ({
         <Text
           style={{
             ...Typography.h4,
-            fontSize: 18,
+            fontSize: 15,
             fontWeight: "bold",
             color: textColor,
           }}
@@ -156,7 +156,7 @@ const EmptyBucket: React.FC<EmptyBucketProps> = ({
         <Text
           style={{
             ...Typography.p,
-            fontSize: 16,
+            fontSize: 12,
             color: textColor,
           }}
         >{`No awaiting tasks`}</Text>

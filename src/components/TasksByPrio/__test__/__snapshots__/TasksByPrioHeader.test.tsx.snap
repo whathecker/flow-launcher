@@ -98,8 +98,8 @@ exports[`Test TasksByPrioHeader component Should renders TasksByPrioHeader corre
           },
           Object {
             "color": "#fff",
-            "fontFamily": "EB-Garamond",
-            "fontSize": 24,
+            "fontFamily": "Lexend-SemiBold",
+            "fontSize": 22,
             "paddingBottom": "6%",
           },
         ]
@@ -115,7 +115,7 @@ exports[`Test TasksByPrioHeader component Should renders TasksByPrioHeader corre
           },
           Object {
             "color": "#fff",
-            "fontFamily": "Forum-Regular",
+            "fontFamily": "Lexend-Regular",
             "fontSize": 18,
           },
         ]

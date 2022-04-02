@@ -2,16 +2,16 @@ import { TextStyle } from "react-native";
 
 export const h1: TextStyle = {
   fontWeight: "bold",
-  fontFamily: "EB-Garamond",
-  fontSize: 25,
+  fontFamily: "Lexend-Bold",
+  fontSize: 24,
 };
 
 export const h4: TextStyle = {
-  fontFamily: "EB-Garamond",
+  fontFamily: "Lexend-SemiBold",
   fontSize: 20,
 };
 
 export const p: TextStyle = {
-  fontSize: 20,
-  fontFamily: "Forum-Regular",
+  fontSize: 18,
+  fontFamily: "Lexend-Regular",
 };

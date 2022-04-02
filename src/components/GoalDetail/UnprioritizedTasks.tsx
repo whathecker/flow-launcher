@@ -35,8 +35,8 @@ const styles = StyleSheet.create({
     marginBottom: 10,
   },
   headerText: {
-    ...Typography.h4,
-    fontSize: 18,
+    ...Typography.p,
+    fontSize: 16,
   },
 });
 

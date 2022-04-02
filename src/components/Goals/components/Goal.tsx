@@ -42,7 +42,7 @@ const styles = StyleSheet.create({
     ...Container.centerAlignedVertical,
     alignItems: "flex-start",
     width: "90%",
-    height: 160,
+    minHeight: 200,
     paddingLeft: 40,
     paddingRight: 60,
     paddingTop: 30,
@@ -56,13 +56,13 @@ const styles = StyleSheet.create({
   },
   goalTitleText: {
     ...Typography.h4,
-    fontSize: 22,
+    fontSize: 18,
     textAlign: "left",
     paddingBottom: 20,
   },
   goalMotiviationText: {
     ...Typography.p,
-    fontSize: 18,
+    fontSize: 16,
   },
 });
 

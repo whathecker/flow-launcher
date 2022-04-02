@@ -109,9 +109,8 @@ exports[`Test GoalDetailHeader component Should renders GoalDetailHeader correct
               "color": "#000000",
             },
             Object {
-              "fontFamily": "EB-Garamond",
-              "fontSize": 25,
-              "fontWeight": "bold",
+              "fontFamily": "Lexend-SemiBold",
+              "fontSize": 20,
               "marginRight": 15,
             },
           ]
@@ -149,8 +148,8 @@ exports[`Test GoalDetailHeader component Should renders GoalDetailHeader correct
               "color": "#000000",
             },
             Object {
-              "fontFamily": "Forum-Regular",
-              "fontSize": 20,
+              "fontFamily": "Lexend-Regular",
+              "fontSize": 16,
             },
           ]
         }

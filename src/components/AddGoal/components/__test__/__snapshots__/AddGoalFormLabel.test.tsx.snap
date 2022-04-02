@@ -23,7 +23,7 @@ exports[`Test AddGoalFormLabel component Should renders AddGoalFormLabel correct
           "color": "#655C5C",
         },
         Object {
-          "fontFamily": "EB-Garamond",
+          "fontFamily": "Lexend-SemiBold",
           "fontSize": 20,
           "paddingRight": 12,
         },

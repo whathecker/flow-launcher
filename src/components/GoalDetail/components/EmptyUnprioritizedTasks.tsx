@@ -19,7 +19,7 @@ const styles = StyleSheet.create({
   },
   emptyTasksMsg: {
     ...Typography.p,
-    fontSize: 16,
+    fontSize: 14,
     color: Color.light.subtleLabel,
   },
 });

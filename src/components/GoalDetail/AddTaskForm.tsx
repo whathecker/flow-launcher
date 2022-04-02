@@ -91,7 +91,7 @@ const styles = StyleSheet.create({
   },
   titleInput: {
     ...Typography.p,
-    fontSize: 26,
+    fontSize: 22,
   },
   descInputWrapper: {
     paddingLeft: 20,
@@ -100,11 +100,13 @@ const styles = StyleSheet.create({
   },
   descInput: {
     ...Typography.p,
+    fontSize: 16,
     height: "125%",
   },
   buttonAreaWrapper: {
     ...Container.flexStart,
     justifyContent: "flex-end",
+    marginRight: 5,
   },
   buttonWrapper: {
     width: "50%",

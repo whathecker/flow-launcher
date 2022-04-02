@@ -62,7 +62,7 @@ const styles = StyleSheet.create({
     height: 32,
   },
   goalTitle: {
-    ...Typography.h1,
+    ...Typography.h4,
     marginRight: 15,
   },
   motivationWrapper: {
@@ -71,6 +71,7 @@ const styles = StyleSheet.create({
   },
   motivationText: {
     ...Typography.p,
+    fontSize: 16,
   },
 });
 

@@ -43,8 +43,8 @@ exports[`Test PrioritizedTasks component Should renders PrioritizedTasks correct
             "color": "#000000",
           },
           Object {
-            "fontFamily": "EB-Garamond",
-            "fontSize": 18,
+            "fontFamily": "Lexend-Regular",
+            "fontSize": 16,
           },
         ]
       }
@@ -85,8 +85,8 @@ exports[`Test PrioritizedTasks component Should renders PrioritizedTasks correct
           },
           Object {
             "color": "#848484",
-            "fontFamily": "Forum-Regular",
-            "fontSize": 16,
+            "fontFamily": "Lexend-Regular",
+            "fontSize": 14,
             "paddingTop": 20,
           },
         ]

@@ -58,7 +58,7 @@ exports[`Test AddGoalForm component Should renders AddGoalForm correctly 1`] = `
               "color": "#655C5C",
             },
             Object {
-              "fontFamily": "EB-Garamond",
+              "fontFamily": "Lexend-SemiBold",
               "fontSize": 20,
               "paddingRight": 12,
             },
@@ -86,9 +86,8 @@ exports[`Test AddGoalForm component Should renders AddGoalForm correctly 1`] = `
       rejectResponderTermination={true}
       style={
         Object {
-          "fontFamily": "EB-Garamond",
-          "fontSize": 25,
-          "fontWeight": "bold",
+          "fontFamily": "Lexend-Regular",
+          "fontSize": 18,
         }
       }
       underlineColorAndroid="transparent"
@@ -132,7 +131,7 @@ exports[`Test AddGoalForm component Should renders AddGoalForm correctly 1`] = `
               "color": "#655C5C",
             },
             Object {
-              "fontFamily": "EB-Garamond",
+              "fontFamily": "Lexend-SemiBold",
               "fontSize": 20,
               "paddingRight": 12,
             },
@@ -160,8 +159,8 @@ exports[`Test AddGoalForm component Should renders AddGoalForm correctly 1`] = `
       rejectResponderTermination={true}
       style={
         Object {
-          "fontFamily": "Forum-Regular",
-          "fontSize": 20,
+          "fontFamily": "Lexend-Regular",
+          "fontSize": 18,
           "paddingBottom": 10,
           "paddingTop": 2,
         }
@@ -226,8 +225,8 @@ exports[`Test AddGoalForm component Should renders AddGoalForm correctly 1`] = `
               "color": "#fff",
             },
             Object {
-              "fontFamily": "Forum-Regular",
-              "fontSize": 20,
+              "fontFamily": "Lexend-Regular",
+              "fontSize": 18,
             },
           ]
         }

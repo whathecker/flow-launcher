@@ -60,11 +60,12 @@ const styles = StyleSheet.create({
   },
   instructionHeader: {
     ...Typography.h4,
+    fontSize: 16,
     marginBottom: 6,
   },
   instructionSubHeader: {
     ...Typography.p,
-    fontSize: 16,
+    fontSize: 14,
   },
 });
 

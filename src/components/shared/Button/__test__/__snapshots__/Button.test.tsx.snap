@@ -39,8 +39,8 @@ exports[`Test Button component Should renders Button correctly 1`] = `
           "color": "#fff",
         },
         Object {
-          "fontFamily": "Forum-Regular",
-          "fontSize": 20,
+          "fontFamily": "Lexend-Regular",
+          "fontSize": 18,
         },
       ]
     }
@@ -89,8 +89,8 @@ exports[`Test Button component Should renders disabled Button correctly 1`] = `
           "color": "#fff",
         },
         Object {
-          "fontFamily": "Forum-Regular",
-          "fontSize": 20,
+          "fontFamily": "Lexend-Regular",
+          "fontSize": 18,
         },
       ]
     }

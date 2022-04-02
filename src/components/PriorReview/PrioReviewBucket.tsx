@@ -62,9 +62,10 @@ const PrioReviewBucket: React.FC<PrioReviewBucketProps> = ({
                 style={{
                   textAlign: "left",
                   ...Typography.h4,
-                  fontSize: 19,
+                  fontSize: 16,
                   paddingLeft: "5%",
                   paddingBottom: "5%",
+                  paddingTop: 5,
                   color: isTasksEmpty
                     ? Color.light.text
                     : Color.light.whiteText,

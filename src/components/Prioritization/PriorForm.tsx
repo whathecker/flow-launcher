@@ -217,6 +217,7 @@ const styles = StyleSheet.create({
   },
   inputLabel: {
     ...Typography.h4,
+    fontSize: 16,
     marginBottom: 15,
   },
   image: {
@@ -238,7 +239,7 @@ const styles = StyleSheet.create({
   },
   prevButtonText: {
     ...Typography.p,
-    fontSize: 16,
+    fontSize: 13,
     textDecorationLine: "underline",
     paddingLeft: 5,
   },

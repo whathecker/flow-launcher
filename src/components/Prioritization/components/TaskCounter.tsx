@@ -17,7 +17,7 @@ const TaskCounter: React.FC<TaskCounterProps> = ({
       <Text
         style={{
           ...Typography.p,
-          fontSize: 18,
+          fontSize: 14,
           color: Color.light.subtleLabel,
         }}
       >{`Task (${currentTaskCounter} of ${totalTasksLength})`}</Text>
