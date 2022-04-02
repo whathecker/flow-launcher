@@ -2,6 +2,7 @@
 import React, { useContext } from "react";
 import { GoalsContext } from "../../contexts/goals";
 import { Keyboard, TextInput, StyleSheet } from "react-native";
+
 import { View, TouchableWithoutFeedback } from "../Themed";
 import {
   AddGoalFormLabel,
@@ -9,9 +10,10 @@ import {
   AddGoalErrMsg,
 } from "./components";
 import { Button } from "../shared";
-import { Container, Typography } from "../../styles";
 
+import { Container, Typography } from "../../styles";
 import { IAddGoalInput } from "../../types/core/entity";
+import { navigationRef } from "../../utils";
 import { Formik } from "formik";
 import * as Yup from "yup";
 
@@ -32,6 +34,7 @@ const AddGoalForm: React.FC = () => {
       onSubmit={async (values) => {
         try {
           await addGoal(values);
+          navigationRef.resetRoot("Goal");
         } catch (error) {
           // TODO: handle error here
           console.error(error);
