@@ -4,9 +4,7 @@ import PriorHeader from "../PriorHeader";
 
 describe("Test PriorHeader component", () => {
   it("Should renders PriorHeader correctly", () => {
-    const tree = renderer
-      .create(<PriorHeader title="Mock goal" motivation="Mock motivation" />)
-      .toJSON();
+    const tree = renderer.create(<PriorHeader title="Mock goal" />).toJSON();
 
     expect(tree).toMatchSnapshot();
   });

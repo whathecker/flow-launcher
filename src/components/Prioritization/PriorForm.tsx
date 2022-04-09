@@ -190,21 +190,21 @@ const PriorForm: React.FC<PriorFormProps> = ({
 
 const styles = StyleSheet.create({
   wrapper: {
-    width: "80%",
-    height: "85%",
+    width: "85%",
     borderColor: Color.light.defaultBorder,
     borderRadius: 8,
     borderWidth: 0.5,
   },
   headerWrapper: {
-    paddingTop: "10%",
+    width: "95%",
+    marginTop: "8%",
     paddingLeft: "8%",
-    height: "18%",
   },
   inputAreaWrapper: {
-    paddingTop: "10%",
+    marginTop: "10%",
+    marginBottom: "6%",
     paddingLeft: "8%",
-    height: "65%",
+    maxHeight: "70%",
   },
   inputWrapper: {
     ...Container.flexStart,
@@ -227,6 +227,8 @@ const styles = StyleSheet.create({
   buttonAreaWrapper: {
     ...Container.flexStart,
     justifyContent: "space-between",
+    marginTop: "5%",
+    marginBottom: "8%",
   },
   prevButtonWrapper: {
     ...Container.flexStart,

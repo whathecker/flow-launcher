@@ -8,7 +8,8 @@ exports[`Test PriorHeader component Should renders PriorHeader correctly 1`] = `
         "backgroundColor": "#fff",
       },
       Object {
-        "paddingBottom": 15,
+        "marginBottom": 25,
+        "marginTop": 25,
       },
     ]
   }
@@ -22,7 +23,6 @@ exports[`Test PriorHeader component Should renders PriorHeader correctly 1`] = `
         Object {
           "alignItems": "center",
           "flexDirection": "row",
-          "height": "40%",
           "justifyContent": "flex-start",
         },
       ]
@@ -36,7 +36,7 @@ exports[`Test PriorHeader component Should renders PriorHeader correctly 1`] = `
           },
           Object {
             "paddingLeft": 25,
-            "paddingTop": 0,
+            "paddingTop": 10,
           },
         ]
       }
@@ -80,6 +80,7 @@ exports[`Test PriorHeader component Should renders PriorHeader correctly 1`] = `
           "backgroundColor": "#fff",
         },
         Object {
+          "marginTop": "5%",
           "paddingLeft": "10%",
         },
       ]
@@ -134,8 +135,10 @@ exports[`Test PriorHeader component Should renders PriorHeader correctly 1`] = `
           "backgroundColor": "#fff",
         },
         Object {
+          "marginBottom": "4%",
           "marginTop": "8%",
           "paddingLeft": "10%",
+          "width": "95%",
         },
       ]
     }
@@ -155,21 +158,6 @@ exports[`Test PriorHeader component Should renders PriorHeader correctly 1`] = `
       }
     >
       Mock goal
-    </Text>
-    <Text
-      style={
-        Array [
-          Object {
-            "color": "#000000",
-          },
-          Object {
-            "fontFamily": "Lexend-Regular",
-            "fontSize": 14,
-          },
-        ]
-      }
-    >
-      Mock motivation
     </Text>
   </View>
 </View>

@@ -16,10 +16,7 @@ const PrioritizationScreen: React.FC<Props> = () => {
   return (
     <>
       <View style={styles.headerWrapper}>
-        <PriorHeader
-          title={state.goal!.title}
-          motivation={state.goal!.motivation}
-        />
+        <PriorHeader title={state.goal!.title} />
       </View>
       <View style={styles.formAreaWrapper}>
         <PriorForm unprioritisedTasks={unprioritisedTasks} />
@@ -30,14 +27,15 @@ const PrioritizationScreen: React.FC<Props> = () => {
 
 const styles = StyleSheet.create({
   headerWrapper: {
-    height: "25%",
+    height: "15%",
   },
   headerText: {
     ...Typography.h1,
   },
   formAreaWrapper: {
     ...Container.centerAligned,
-    height: "75%",
+    height: "90%",
+    paddingBottom: "20%",
   },
 });
 

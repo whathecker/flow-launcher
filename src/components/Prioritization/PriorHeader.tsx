@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 import React from "react";
 import { StyleSheet, Image } from "react-native";
 import { View, Text } from "../Themed";
@@ -7,12 +8,10 @@ import { navigationRef } from "../../utils";
 
 type PriorHeaderProps = {
   title: string;
-  motivation: string;
 };
 
 const PriorHeader: React.FC<PriorHeaderProps> = ({
   title,
-  motivation,
 }: PriorHeaderProps) => {
   return (
     <View style={styles.wrapper}>
@@ -30,27 +29,31 @@ const PriorHeader: React.FC<PriorHeaderProps> = ({
           />
         </View>
       </View>
-      <View style={styles.goalAreaWrapper}>
+      {/**
+       * <View style={styles.goalAreaWrapper}>
         <Text style={styles.goalText}>{title}</Text>
-        <Text style={styles.motivationText}>{motivation}</Text>
       </View>
+       */}
     </View>
   );
 };
 
 const styles = StyleSheet.create({
   wrapper: {
-    paddingBottom: 15,
+    marginTop: 35,
+    marginBottom: 35,
   },
   closeIconAreaWrapper: {
     ...Container.flexStart,
-    height: "40%",
+    height: "8%",
   },
   closeIconWrapper: {
     paddingLeft: 25,
-    paddingTop: 0,
+    paddingTop: 30,
+    paddingBottom: 20,
   },
   headerAreaWrapper: {
+    marginTop: "10%",
     paddingLeft: "10%",
   },
   headerWrapper: {
@@ -59,7 +62,7 @@ const styles = StyleSheet.create({
   },
   headerText: {
     ...Typography.h4,
-    fontSize: 22,
+    fontSize: 20,
     paddingRight: 10,
   },
   image: {
@@ -72,8 +75,8 @@ const styles = StyleSheet.create({
   },
   goalText: {
     ...Typography.h4,
-    fontSize: 20,
-    paddingBottom: 5,
+    fontSize: 16,
+    paddingBottom: 10,
   },
   motivationText: {
     ...Typography.p,
