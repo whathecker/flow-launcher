@@ -8,8 +8,8 @@ exports[`Test PriorHeader component Should renders PriorHeader correctly 1`] = `
         "backgroundColor": "#fff",
       },
       Object {
-        "marginBottom": 25,
-        "marginTop": 25,
+        "marginBottom": 35,
+        "marginTop": 35,
       },
     ]
   }
@@ -23,6 +23,7 @@ exports[`Test PriorHeader component Should renders PriorHeader correctly 1`] = `
         Object {
           "alignItems": "center",
           "flexDirection": "row",
+          "height": "8%",
           "justifyContent": "flex-start",
         },
       ]
@@ -35,8 +36,9 @@ exports[`Test PriorHeader component Should renders PriorHeader correctly 1`] = `
             "backgroundColor": "#fff",
           },
           Object {
+            "paddingBottom": 20,
             "paddingLeft": 25,
-            "paddingTop": 10,
+            "paddingTop": 30,
           },
         ]
       }
@@ -80,7 +82,7 @@ exports[`Test PriorHeader component Should renders PriorHeader correctly 1`] = `
           "backgroundColor": "#fff",
         },
         Object {
-          "marginTop": "5%",
+          "marginTop": "10%",
           "paddingLeft": "10%",
         },
       ]
@@ -109,7 +111,7 @@ exports[`Test PriorHeader component Should renders PriorHeader correctly 1`] = `
             },
             Object {
               "fontFamily": "Lexend-SemiBold",
-              "fontSize": 22,
+              "fontSize": 20,
               "paddingRight": 10,
             },
           ]
@@ -127,38 +129,6 @@ exports[`Test PriorHeader component Should renders PriorHeader correctly 1`] = `
         }
       />
     </View>
-  </View>
-  <View
-    style={
-      Array [
-        Object {
-          "backgroundColor": "#fff",
-        },
-        Object {
-          "marginBottom": "4%",
-          "marginTop": "8%",
-          "paddingLeft": "10%",
-          "width": "95%",
-        },
-      ]
-    }
-  >
-    <Text
-      style={
-        Array [
-          Object {
-            "color": "#000000",
-          },
-          Object {
-            "fontFamily": "Lexend-SemiBold",
-            "fontSize": 20,
-            "paddingBottom": 5,
-          },
-        ]
-      }
-    >
-      Mock goal
-    </Text>
   </View>
 </View>
 `;
