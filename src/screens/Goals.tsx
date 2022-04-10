@@ -31,13 +31,15 @@ const GoalsScreen: React.FC<Props> = ({ navigation }: Props) => {
           {`Your Goals`}
         </Text>
       </View>
-      <View style={styles.goalsAreaWrapper}>
-        {isGoalListEmpty ? (
+      {isGoalListEmpty ? (
+        <View style={styles.emptyGoalsWrapper}>
           <EmptyGoalList />
-        ) : (
+        </View>
+      ) : (
+        <View style={styles.goalsAreaWrapper}>
           <GoalList goals={state.goals!} />
-        )}
-      </View>
+        </View>
+      )}
       <View style={styles.buttonAreaWrapper}>
         <View style={styles.buttonWrapper}>
           <Button
@@ -63,15 +65,17 @@ const styles = StyleSheet.create({
   headerText: {
     ...Typography.h1,
   },
+  emptyGoalsWrapper: {
+    ...Container.centerAlignedVertical,
+    justifyContent: "center",
+    width: "100%",
+    height: "70%",
+  },
   goalsAreaWrapper: {
     ...Container.centerAlignedVertical,
     justifyContent: "flex-start",
     width: "100%",
     height: "70%",
-  },
-  goalAreaBodyWrapper: {
-    paddingTop: 5,
-    paddingBottom: 18,
   },
   bodyImage: {
     width: 95,
