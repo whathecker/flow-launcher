@@ -28,7 +28,7 @@ exports[`Test AddTaskForm component Should renders AddTaskForm correctly 1`] = `
     <TextInput
       allowFontScaling={true}
       autoFocus={true}
-      maxLength={120}
+      maxLength={80}
       multiline={true}
       onChangeText={[Function]}
       placeholder="Write your task in a sentence"
@@ -51,8 +51,8 @@ exports[`Test AddTaskForm component Should renders AddTaskForm correctly 1`] = `
           "backgroundColor": "#fff",
         },
         Object {
-          "marginBottom": 20,
           "maxHeight": "60.5%",
+          "paddingBottom": 20,
           "paddingLeft": 20,
           "paddingTop": 20,
           "width": "95%",

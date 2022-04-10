@@ -1,6 +1,7 @@
 /* eslint-disable @typescript-eslint/no-non-null-assertion */
 import React, { useState, useEffect, useContext } from "react";
-import { StyleSheet, Keyboard, ScrollView } from "react-native";
+import { useKeyboard } from "../hooks";
+import { StyleSheet, Keyboard, ScrollView, Dimensions } from "react-native";
 import { View, TouchableWithoutFeedback } from "../components/Themed";
 import { Container, Color, Shadow } from "../styles";
 import { GoalStackScreenProps } from "../types/navigation";
@@ -16,10 +17,23 @@ import { Button } from "../components/shared";
 
 type Props = GoalStackScreenProps<"GoalDetail">;
 
+function _getDynamicMarginForKeyboardHeight(
+  keyboardHeight: number,
+  elementHeightPercent: number,
+): number {
+  const windowsHeight = Dimensions.get("window").height;
+  const remainderHeight = windowsHeight - keyboardHeight;
+  const elementHeight = windowsHeight * elementHeightPercent;
+
+  return remainderHeight - elementHeight;
+}
+
 const GoalDetailScreen: React.FC<Props> = ({ route }: Props) => {
   const { goal, goalColor } = route.params;
   const [addTaskFormOpened, setAddTaskFormOpened] = useState(false);
   const { fetchTasks } = useContext(TasksContext);
+
+  const keyboardHeight = useKeyboard();
 
   useEffect(() => {
     fetchTasks({ goal, goalColor });
@@ -42,7 +56,24 @@ const GoalDetailScreen: React.FC<Props> = ({ route }: Props) => {
         </TouchableWithoutFeedback>
       ) : null}
       {addTaskFormOpened === true ? (
-        <View style={styles.addTaskFormWrapper}>
+        <View
+          style={{
+            position: "absolute",
+            zIndex: 1300,
+            marginTop: _getDynamicMarginForKeyboardHeight(
+              keyboardHeight,
+              0.405,
+            ),
+            marginLeft: "0.5%",
+            marginRight: "0.5%",
+            width: "99%",
+            height: "40.5%",
+            borderWidth: 2,
+            borderColor: Color.light.defaultBorder,
+            borderRadius: 5,
+            ...Shadow.regularbackDrop,
+          }}
+        >
           <AddTaskForm
             goal_id={goal._id as string}
             addTaskFormOpenedHandler={setAddTaskFormOpened}

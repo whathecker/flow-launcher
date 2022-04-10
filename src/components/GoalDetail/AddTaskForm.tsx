@@ -4,6 +4,7 @@ import { GoalsContext } from "../../contexts/goals";
 import { TextInput, StyleSheet } from "react-native";
 import { View } from "../Themed";
 import { Button } from "../shared";
+
 import { Container, Typography, Color } from "../../styles";
 
 import { IAddTaskInput } from "../../types/core/entity";
@@ -50,7 +51,7 @@ const AddTaskForm: React.FC<AddTaskFormProps> = ({
               <TextInput
                 style={styles.titleInput}
                 multiline
-                maxLength={120}
+                maxLength={80}
                 autoFocus={true}
                 onChangeText={handleChange("title")}
                 placeholder={"Write your task in a sentence"}
@@ -99,7 +100,7 @@ const styles = StyleSheet.create({
     width: "95%",
     paddingLeft: 20,
     paddingTop: 20,
-    marginBottom: 20,
+    paddingBottom: 20,
     maxHeight: "60.5%",
   },
   descInput: {
