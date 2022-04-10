@@ -50,6 +50,7 @@ const AddTaskForm: React.FC<AddTaskFormProps> = ({
               <TextInput
                 style={styles.titleInput}
                 multiline
+                maxLength={120}
                 autoFocus={true}
                 onChangeText={handleChange("title")}
                 placeholder={"Write your task in a sentence"}
@@ -61,6 +62,7 @@ const AddTaskForm: React.FC<AddTaskFormProps> = ({
               <TextInput
                 style={styles.descInput}
                 multiline
+                maxLength={450}
                 onChangeText={handleChange("description")}
                 placeholder={"Write the description of your task"}
                 placeholderTextColor={Color.light.subtleLabel}
@@ -85,23 +87,25 @@ const AddTaskForm: React.FC<AddTaskFormProps> = ({
 
 const styles = StyleSheet.create({
   titleInputWrapper: {
+    width: "95%",
     paddingLeft: 20,
     paddingTop: 30,
-    height: "20%",
   },
   titleInput: {
     ...Typography.p,
     fontSize: 22,
   },
   descInputWrapper: {
+    width: "95%",
     paddingLeft: 20,
     paddingTop: 20,
-    height: "60.5%",
+    marginBottom: 20,
+    maxHeight: "60.5%",
   },
   descInput: {
     ...Typography.p,
     fontSize: 16,
-    height: "125%",
+    minHeight: "100%",
   },
   buttonAreaWrapper: {
     ...Container.flexStart,
