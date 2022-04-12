@@ -108,7 +108,6 @@ const styles = StyleSheet.create({
   descInput: {
     ...Typography.p,
     fontSize: 16,
-    //minHeight: "100%",
   },
   buttonAreaWrapper: {
     ...Container.flexStart,
