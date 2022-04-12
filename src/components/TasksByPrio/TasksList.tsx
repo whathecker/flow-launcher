@@ -92,6 +92,7 @@ const TasksList: React.FC<TasksListProps> = ({
           />
           <Text
             style={{
+              width: "80%",
               ...Typography.p,
               color: status ? Color.light.subtleLabel : Color.light.text,
               fontSize: 15,
