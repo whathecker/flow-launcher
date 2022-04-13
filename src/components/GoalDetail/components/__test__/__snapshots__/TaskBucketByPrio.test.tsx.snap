@@ -182,7 +182,7 @@ exports[`Test TaskBucketByPrio component Should renders TaskBucketByPrio correct
           "backgroundColor": "#FEFEF8",
           "flexDirection": "row",
           "justifyContent": "center",
-          "paddingTop": "8%",
+          "paddingTop": "9.5%",
         },
       ]
     }
@@ -201,7 +201,7 @@ exports[`Test TaskBucketByPrio component Should renders TaskBucketByPrio correct
         ]
       }
     >
-      No awaiting tasks
+      No tasks in this list
     </Text>
   </View>
 </View>

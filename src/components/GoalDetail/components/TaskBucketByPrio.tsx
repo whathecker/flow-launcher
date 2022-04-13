@@ -13,6 +13,14 @@ type ActiveBucketProps = {
   tasks: Task[];
 };
 
+function _trimTaskTitle(input: string): string {
+  if (input.length > 10) {
+    return input.slice(0, 20).concat(" ...");
+  } else {
+    return input;
+  }
+}
+
 const ActiveBucket: React.FC<ActiveBucketProps> = ({
   prio,
   tasks,
@@ -72,7 +80,7 @@ const ActiveBucket: React.FC<ActiveBucketProps> = ({
             color: textColor,
             fontSize: 13,
           }}
-        >{`${tasks[0].title}`}</Text>
+        >{`${_trimTaskTitle(tasks[0].title)}`}</Text>
         {tasks.length > 1 ? (
           <Text
             style={{
@@ -150,7 +158,7 @@ const EmptyBucket: React.FC<EmptyBucketProps> = ({
         style={{
           ...Container.centerAligned,
           backgroundColor: backgroundColor,
-          paddingTop: "8%",
+          paddingTop: "9.5%",
         }}
       >
         <Text
@@ -159,7 +167,7 @@ const EmptyBucket: React.FC<EmptyBucketProps> = ({
             fontSize: 12,
             color: textColor,
           }}
-        >{`No awaiting tasks`}</Text>
+        >{`No tasks in this list`}</Text>
       </View>
     </View>
   );
