@@ -31,7 +31,7 @@ exports[`Test TaskBucketByPrio component Should renders TaskBucketByPrio correct
     style={
       Array [
         Object {
-          "backgroundColor": "#fff",
+          "backgroundColor": "#EBC944",
         },
         Object {
           "backgroundColor": "#EBC944",
@@ -44,10 +44,9 @@ exports[`Test TaskBucketByPrio component Should renders TaskBucketByPrio correct
       style={
         Array [
           Object {
-            "color": "#554F4F",
+            "color": "#fff",
           },
           Object {
-            "color": "#fff",
             "fontFamily": "Lexend-SemiBold",
             "fontSize": 15,
             "fontWeight": "bold",
@@ -62,10 +61,9 @@ exports[`Test TaskBucketByPrio component Should renders TaskBucketByPrio correct
     style={
       Array [
         Object {
-          "backgroundColor": "#fff",
+          "backgroundColor": "#EBC944",
         },
         Object {
-          "backgroundColor": "#EBC944",
           "paddingBottom": "2%",
           "paddingLeft": "10%",
           "paddingTop": "6%",
@@ -77,10 +75,9 @@ exports[`Test TaskBucketByPrio component Should renders TaskBucketByPrio correct
       style={
         Array [
           Object {
-            "color": "#554F4F",
+            "color": "#fff",
           },
           Object {
-            "color": "#fff",
             "fontFamily": "Lexend-Regular",
             "fontSize": 13,
           },
@@ -93,10 +90,9 @@ exports[`Test TaskBucketByPrio component Should renders TaskBucketByPrio correct
       style={
         Array [
           Object {
-            "backgroundColor": "#fff",
+            "backgroundColor": "#EBC944",
           },
           Object {
-            "backgroundColor": "#EBC944",
             "position": "absolute",
             "right": 15,
             "top": -18,
@@ -123,10 +119,9 @@ exports[`Test TaskBucketByPrio component Should renders TaskBucketByPrio correct
   style={
     Array [
       Object {
-        "backgroundColor": "#fff",
+        "backgroundColor": "#FEFEF8",
       },
       Object {
-        "backgroundColor": "#FEFEF8",
         "borderColor": "#848484",
         "borderRadius": 5,
         "borderWidth": 1,
@@ -144,10 +139,9 @@ exports[`Test TaskBucketByPrio component Should renders TaskBucketByPrio correct
     style={
       Array [
         Object {
-          "backgroundColor": "#fff",
+          "backgroundColor": "#FEFEF8",
         },
         Object {
-          "backgroundColor": "#FEFEF8",
           "paddingLeft": 15,
         },
       ]
@@ -157,10 +151,9 @@ exports[`Test TaskBucketByPrio component Should renders TaskBucketByPrio correct
       style={
         Array [
           Object {
-            "color": "#554F4F",
+            "color": "#848484",
           },
           Object {
-            "color": "#848484",
             "fontFamily": "Lexend-SemiBold",
             "fontSize": 15,
             "fontWeight": "bold",
@@ -175,11 +168,10 @@ exports[`Test TaskBucketByPrio component Should renders TaskBucketByPrio correct
     style={
       Array [
         Object {
-          "backgroundColor": "#fff",
+          "backgroundColor": "#FEFEF8",
         },
         Object {
           "alignItems": "center",
-          "backgroundColor": "#FEFEF8",
           "flexDirection": "row",
           "justifyContent": "center",
           "paddingTop": "9.5%",
@@ -191,10 +183,9 @@ exports[`Test TaskBucketByPrio component Should renders TaskBucketByPrio correct
       style={
         Array [
           Object {
-            "color": "#554F4F",
+            "color": "#848484",
           },
           Object {
-            "color": "#848484",
             "fontFamily": "Lexend-Regular",
             "fontSize": 12,
           },
@@ -238,7 +229,7 @@ exports[`Test TaskBucketByPrio component Should renders TaskBucketByPrio correct
     style={
       Array [
         Object {
-          "backgroundColor": "#fff",
+          "backgroundColor": "#D3B53D",
         },
         Object {
           "backgroundColor": "#D3B53D",
@@ -251,10 +242,9 @@ exports[`Test TaskBucketByPrio component Should renders TaskBucketByPrio correct
       style={
         Array [
           Object {
-            "color": "#554F4F",
+            "color": "#fff",
           },
           Object {
-            "color": "#fff",
             "fontFamily": "Lexend-SemiBold",
             "fontSize": 15,
             "fontWeight": "bold",
@@ -269,10 +259,9 @@ exports[`Test TaskBucketByPrio component Should renders TaskBucketByPrio correct
     style={
       Array [
         Object {
-          "backgroundColor": "#fff",
+          "backgroundColor": "#D3B53D",
         },
         Object {
-          "backgroundColor": "#D3B53D",
           "paddingBottom": "2%",
           "paddingLeft": "10%",
           "paddingTop": "6%",
@@ -284,10 +273,9 @@ exports[`Test TaskBucketByPrio component Should renders TaskBucketByPrio correct
       style={
         Array [
           Object {
-            "color": "#554F4F",
+            "color": "#fff",
           },
           Object {
-            "color": "#fff",
             "fontFamily": "Lexend-Regular",
             "fontSize": 13,
           },
@@ -300,10 +288,9 @@ exports[`Test TaskBucketByPrio component Should renders TaskBucketByPrio correct
       style={
         Array [
           Object {
-            "color": "#554F4F",
+            "color": "#fff",
           },
           Object {
-            "color": "#fff",
             "fontFamily": "Lexend-Regular",
             "fontSize": 13,
             "paddingTop": 5,
@@ -318,10 +305,9 @@ exports[`Test TaskBucketByPrio component Should renders TaskBucketByPrio correct
       style={
         Array [
           Object {
-            "backgroundColor": "#fff",
+            "backgroundColor": "#D3B53D",
           },
           Object {
-            "backgroundColor": "#D3B53D",
             "position": "absolute",
             "right": 15,
             "top": -18,
@@ -374,7 +360,7 @@ exports[`Test TaskBucketByPrio component Should renders TaskBucketByPrio correct
     style={
       Array [
         Object {
-          "backgroundColor": "#fff",
+          "backgroundColor": "#BCA136",
         },
         Object {
           "backgroundColor": "#BCA136",
@@ -387,10 +373,9 @@ exports[`Test TaskBucketByPrio component Should renders TaskBucketByPrio correct
       style={
         Array [
           Object {
-            "color": "#554F4F",
+            "color": "#fff",
           },
           Object {
-            "color": "#fff",
             "fontFamily": "Lexend-SemiBold",
             "fontSize": 15,
             "fontWeight": "bold",
@@ -405,10 +390,9 @@ exports[`Test TaskBucketByPrio component Should renders TaskBucketByPrio correct
     style={
       Array [
         Object {
-          "backgroundColor": "#fff",
+          "backgroundColor": "#BCA136",
         },
         Object {
-          "backgroundColor": "#BCA136",
           "paddingBottom": "2%",
           "paddingLeft": "10%",
           "paddingTop": "6%",
@@ -420,10 +404,9 @@ exports[`Test TaskBucketByPrio component Should renders TaskBucketByPrio correct
       style={
         Array [
           Object {
-            "color": "#554F4F",
+            "color": "#fff",
           },
           Object {
-            "color": "#fff",
             "fontFamily": "Lexend-Regular",
             "fontSize": 13,
           },
@@ -436,10 +419,9 @@ exports[`Test TaskBucketByPrio component Should renders TaskBucketByPrio correct
       style={
         Array [
           Object {
-            "color": "#554F4F",
+            "color": "#fff",
           },
           Object {
-            "color": "#fff",
             "fontFamily": "Lexend-Regular",
             "fontSize": 13,
             "paddingTop": 5,
@@ -454,10 +436,9 @@ exports[`Test TaskBucketByPrio component Should renders TaskBucketByPrio correct
       style={
         Array [
           Object {
-            "backgroundColor": "#fff",
+            "backgroundColor": "#BCA136",
           },
           Object {
-            "backgroundColor": "#BCA136",
             "position": "absolute",
             "right": 15,
             "top": -18,
