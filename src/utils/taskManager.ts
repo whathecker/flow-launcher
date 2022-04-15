@@ -43,22 +43,18 @@ const filterByPriorityScheme = (tasks: Task[]): TasksInPriorityBucket => {
     const urgency = task.priority!.urgency;
 
     if (importance === "yes" && urgency === "yes") {
-      task.priority!.tier = "highest";
       highest.push(task);
     }
 
     if (importance === "yes" && urgency === "no") {
-      task.priority!.tier = "high";
       high.push(task);
     }
 
     if (importance === "no" && urgency === "yes") {
-      task.priority!.tier = "mid";
       mid.push(task);
     }
 
     if (importance === "no" && urgency === "no") {
-      task.priority!.tier = "low";
       low.push(task);
     }
   });

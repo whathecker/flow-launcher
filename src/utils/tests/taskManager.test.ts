@@ -122,7 +122,7 @@ describe("Test task filters", () => {
   it("Should filter unprioritised tasks correctly", () => {
     const unprioritised = taskManager.filterUnprioritized(tasks);
 
-    expect(unprioritised).toHaveLength(3);
+    expect(unprioritised).toHaveLength(8);
   });
 
   it("Should not be allowed to submit for Prior Review", () => {
