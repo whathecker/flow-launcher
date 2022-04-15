@@ -10,7 +10,7 @@ exports[`Test EmptyUnprioritizedTasks component Should renders EmptyUnprioritize
       Object {
         "alignItems": "center",
         "flexDirection": "row",
-        "height": "55%",
+        "height": 100,
         "justifyContent": "center",
         "padding": 20,
       },

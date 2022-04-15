@@ -61,7 +61,7 @@ exports[`Test PrioritizedTasks component Should renders PrioritizedTasks correct
         Object {
           "alignItems": "center",
           "flexDirection": "column",
-          "height": "80%",
+          "height": 280,
           "justifyContent": "center",
           "padding": 20,
         },

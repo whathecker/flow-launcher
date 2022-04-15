@@ -61,7 +61,7 @@ exports[`Test UnprioritizedTasks component Should renders UnprioritizedTasks cor
         Object {
           "alignItems": "center",
           "flexDirection": "row",
-          "height": "55%",
+          "height": 100,
           "justifyContent": "center",
           "padding": 20,
         },

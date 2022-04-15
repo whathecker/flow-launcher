@@ -113,19 +113,18 @@ const styles = StyleSheet.create({
     backgroundColor: Color.light.background,
     borderColor: Color.light.subtleLabel,
     borderWidth: 1,
-    height: "75%",
+    minHeight: "75%",
   },
   recentTasksWrapper: {
     ...Container.centerAligned,
     alignItems: "flex-start",
-    marginTop: "5%",
-    marginBottom: "5%",
-    minHeight: 300,
+    marginTop: "7%",
+    marginBottom: "7%",
   },
   prioritizedTasksWrapper: {
     ...Container.centerAligned,
     alignItems: "flex-start",
-    height: 700,
+    marginBottom: "30%",
   },
   buttonWrapper: {
     position: "absolute",
