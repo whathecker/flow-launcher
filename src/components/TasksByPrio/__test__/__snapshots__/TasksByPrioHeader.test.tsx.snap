@@ -94,10 +94,9 @@ exports[`Test TasksByPrioHeader component Should renders TasksByPrioHeader corre
       style={
         Array [
           Object {
-            "color": "#000000",
+            "color": "#fff",
           },
           Object {
-            "color": "#fff",
             "fontFamily": "Lexend-SemiBold",
             "fontSize": 22,
             "paddingBottom": "6%",
@@ -111,10 +110,9 @@ exports[`Test TasksByPrioHeader component Should renders TasksByPrioHeader corre
       style={
         Array [
           Object {
-            "color": "#000000",
+            "color": "#fff",
           },
           Object {
-            "color": "#fff",
             "fontFamily": "Lexend-Regular",
             "fontSize": 18,
           },

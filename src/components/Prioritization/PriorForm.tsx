@@ -88,7 +88,11 @@ const PriorForm: React.FC<PriorFormProps> = ({
             />
           </View>
           <View>
-            <Text style={styles.inputLabel}>{`Is this task urgent?`}</Text>
+            <Text
+              lightColor={Color.light.labelOnBackgroundForRead}
+              darkColor={Color.light.labelOnBackgroundForRead}
+              style={styles.inputLabel}
+            >{`Is this task urgent?`}</Text>
             <View
               style={{
                 ...Container.flexStart,
@@ -119,7 +123,11 @@ const PriorForm: React.FC<PriorFormProps> = ({
             />
           </View>
           <View>
-            <Text style={styles.inputLabel}>{`Is this task important?`}</Text>
+            <Text
+              lightColor={Color.light.labelOnBackgroundForRead}
+              darkColor={Color.dark.labelOnBackgroundForRead}
+              style={styles.inputLabel}
+            >{`Is this task important?`}</Text>
             <View
               style={{
                 ...Container.flexStart,
@@ -236,14 +244,14 @@ const styles = StyleSheet.create({
     paddingLeft: 33,
   },
   prevArrowIcon: {
-    width: 20,
-    height: 20,
+    width: 22,
+    height: 22,
   },
   prevButtonText: {
     ...Typography.p,
-    fontSize: 13,
+    fontSize: 14,
     textDecorationLine: "underline",
-    paddingLeft: 5,
+    paddingLeft: 10,
   },
   nextButtonWrapper: {
     width: "45%",

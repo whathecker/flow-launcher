@@ -104,7 +104,7 @@ exports[`Test PriorReviewHeader component Should renders PriorReviewHeader corre
         style={
           Array [
             Object {
-              "color": "#000000",
+              "color": "#554F4F",
             },
             Object {
               "fontFamily": "Lexend-SemiBold",
@@ -144,7 +144,7 @@ exports[`Test PriorReviewHeader component Should renders PriorReviewHeader corre
       style={
         Array [
           Object {
-            "color": "#000000",
+            "color": "#554F4F",
           },
           Object {
             "fontFamily": "Lexend-SemiBold",
@@ -160,7 +160,7 @@ exports[`Test PriorReviewHeader component Should renders PriorReviewHeader corre
       style={
         Array [
           Object {
-            "color": "#000000",
+            "color": "#554F4F",
           },
           Object {
             "fontFamily": "Lexend-Regular",

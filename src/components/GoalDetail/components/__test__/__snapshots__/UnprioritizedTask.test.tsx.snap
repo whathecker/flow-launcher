@@ -9,7 +9,7 @@ exports[`Test UnprioritizedTask component Should renders UnprioritizedTask corre
       },
       Object {
         "alignItems": "center",
-        "borderColor": "#636262",
+        "borderColor": "#848484",
         "borderRadius": 5,
         "borderWidth": 1,
         "flexDirection": "row",
@@ -27,7 +27,7 @@ exports[`Test UnprioritizedTask component Should renders UnprioritizedTask corre
     style={
       Array [
         Object {
-          "color": "#000000",
+          "color": "#554F4F",
         },
         Object {
           "fontFamily": "Lexend-Regular",

@@ -59,6 +59,16 @@ const PrioReviewBucket: React.FC<PrioReviewBucketProps> = ({
             renderItem={renderTaskReadable}
             renderSectionHeader={({ section: { title } }) => (
               <Text
+                lightColor={
+                  isTasksEmpty
+                    ? Color.light.labelOnBackgroundForRead
+                    : Color.light.textOnColorForRead
+                }
+                darkColor={
+                  isTasksEmpty
+                    ? Color.dark.labelOnBackgroundForRead
+                    : Color.dark.textOnColorForRead
+                }
                 style={{
                   textAlign: "left",
                   ...Typography.h4,
@@ -66,9 +76,6 @@ const PrioReviewBucket: React.FC<PrioReviewBucketProps> = ({
                   paddingLeft: "5%",
                   paddingBottom: "5%",
                   paddingTop: 5,
-                  color: isTasksEmpty
-                    ? Color.light.text
-                    : Color.light.whiteText,
                 }}
               >
                 {title}

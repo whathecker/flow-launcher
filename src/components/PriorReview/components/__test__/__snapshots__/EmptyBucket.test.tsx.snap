@@ -6,10 +6,9 @@ Array [
     style={
       Array [
         Object {
-          "color": "#000000",
+          "color": "#848484",
         },
         Object {
-          "color": "#000000",
           "fontFamily": "Lexend-SemiBold",
           "fontSize": 16,
           "paddingLeft": "5%",
@@ -24,7 +23,7 @@ Array [
     style={
       Array [
         Object {
-          "backgroundColor": "#fff",
+          "backgroundColor": "#FEFEF8",
         },
         Object {
           "alignItems": "center",
@@ -41,10 +40,9 @@ Array [
       style={
         Array [
           Object {
-            "color": "#000000",
+            "color": "#848484",
           },
           Object {
-            "color": "#848484",
             "fontFamily": "Lexend-Regular",
             "fontSize": 14,
           },

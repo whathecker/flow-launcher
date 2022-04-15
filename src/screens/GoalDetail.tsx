@@ -52,7 +52,11 @@ const GoalDetailScreen: React.FC<Props> = ({ route }: Props) => {
             Keyboard.dismiss();
           }}
         >
-          <View style={styles.grayOverlay}></View>
+          <View
+            lightColor={Color.light.overlay}
+            darkColor={Color.dark.overlay}
+            style={styles.grayOverlay}
+          ></View>
         </TouchableWithoutFeedback>
       ) : null}
       {addTaskFormOpened === true ? (
@@ -110,8 +114,9 @@ const styles = StyleSheet.create({
     marginTop: 10,
   },
   scrollAreaWrapper: {
+    //TODO: write a themed scroll view component
     backgroundColor: Color.light.background,
-    borderColor: Color.light.subtleLabel,
+    borderColor: Color.light.defaultBorder,
     borderWidth: 1,
     minHeight: "75%",
   },
@@ -153,7 +158,6 @@ const styles = StyleSheet.create({
     zIndex: 1200,
     width: "100%",
     height: "30%",
-    backgroundColor: Color.light.overlay,
     opacity: 0.35,
   },
 });

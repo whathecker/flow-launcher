@@ -30,7 +30,7 @@ const styles = StyleSheet.create({
   emptyTasksMsg: {
     ...Typography.p,
     fontSize: 14,
-    color: Color.light.subtleLabel,
+    color: Color.light.labelOnBackgroundForRead,
     paddingTop: 20,
   },
 });

@@ -55,11 +55,12 @@ exports[`Test AddGoalForm component Should renders AddGoalForm correctly 1`] = `
         style={
           Array [
             Object {
-              "color": "#655C5C",
+              "color": "#848484",
             },
             Object {
-              "fontFamily": "Lexend-SemiBold",
+              "fontFamily": "Lexend-Bold",
               "fontSize": 20,
+              "fontWeight": "bold",
               "paddingRight": 12,
             },
           ]
@@ -128,11 +129,12 @@ exports[`Test AddGoalForm component Should renders AddGoalForm correctly 1`] = `
         style={
           Array [
             Object {
-              "color": "#655C5C",
+              "color": "#848484",
             },
             Object {
-              "fontFamily": "Lexend-SemiBold",
+              "fontFamily": "Lexend-Bold",
               "fontSize": 20,
+              "fontWeight": "bold",
               "paddingRight": 12,
             },
           ]

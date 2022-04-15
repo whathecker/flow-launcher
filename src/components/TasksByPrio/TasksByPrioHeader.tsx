@@ -51,20 +51,22 @@ const TasksByPrioHeader: React.FC<TasksByPrioHeaderProps> = ({
         }}
       >
         <Text
+          lightColor={Color.light.textOnColorForRead}
+          darkColor={Color.dark.textOnColorForRead}
           style={{
             ...Typography.h4,
             fontSize: 22,
-            color: Color.light.whiteText,
             paddingBottom: "6%",
           }}
         >
           {goalTitle}
         </Text>
         <Text
+          lightColor={Color.light.textOnColorForRead}
+          darkColor={Color.dark.textOnColorForRead}
           style={{
             ...Typography.p,
             fontSize: 18,
-            color: Color.light.whiteText,
           }}
         >
           {label}

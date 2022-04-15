@@ -107,7 +107,7 @@ exports[`Test PriorHeader component Should renders PriorHeader correctly 1`] = `
         style={
           Array [
             Object {
-              "color": "#000000",
+              "color": "#554F4F",
             },
             Object {
               "fontFamily": "Lexend-SemiBold",

@@ -191,8 +191,8 @@ const TaskBucketByPrio: React.FC<TaskBucketByPrioProps> = ({
     : colorRenderer.getColorForPrioBucket(goalColor, prio);
 
   const textColor = isTasksEmpty
-    ? Color.light.subtleLabel
-    : Color.light.whiteText;
+    ? Color.light.labelOnBackgroundForRead
+    : Color.light.textOnColorForRead;
 
   return (
     <>

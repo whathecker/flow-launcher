@@ -4,7 +4,7 @@ import { StyleSheet } from "react-native";
 import { View, Text } from "../components/Themed";
 import { EmptyGoalList, GoalList } from "../components/Goals";
 import { Button } from "../components/shared";
-import { Container, Typography } from "../styles";
+import { Container, Typography, Color } from "../styles";
 import { GoalStackScreenProps } from "../types/navigation";
 import { GoalsContext } from "../contexts/goals";
 
@@ -20,13 +20,16 @@ const GoalsScreen: React.FC<Props> = ({ navigation }: Props) => {
     fetchGoals();
   }, [state.goals?.length]);
 
+  const lightHeaderText = Color.light.textOnBackgroundForRead;
+  const darkHeaderText = Color.dark.textOnBackgroundForRead;
+
   return (
     <>
       <View style={styles.headerWrapper}>
         <Text
           style={styles.headerText}
-          lightColor="#554F4F"
-          darkColor="#554F4F"
+          lightColor={lightHeaderText}
+          darkColor={darkHeaderText}
         >
           {`Your Goals`}
         </Text>

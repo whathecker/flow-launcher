@@ -1,7 +1,7 @@
 import React from "react";
 import { Image, StyleSheet } from "react-native";
 import { View, Text } from "../../Themed";
-import { Container, Typography } from "../../../styles";
+import { Container, Typography, Color } from "../../../styles";
 
 type AddGoalFormLabelProps = {
   text: string;
@@ -14,7 +14,11 @@ const AddGoalFormLabel: React.FC<AddGoalFormLabelProps> = ({
 }: AddGoalFormLabelProps) => {
   return (
     <View style={styles.labelWrapper}>
-      <Text lightColor="#655C5C" darkColor="#655C5C" style={styles.labelText}>
+      <Text
+        lightColor={Color.light.labelOnBackgroundForRead}
+        darkColor={Color.dark.labelOnBackgroundForRead}
+        style={styles.labelText}
+      >
         {text}
       </Text>
       {type === "motivation" ? (
@@ -39,7 +43,8 @@ const styles = StyleSheet.create({
     paddingBottom: 10,
   },
   labelText: {
-    ...Typography.h4,
+    ...Typography.h1,
+    fontSize: 20,
     paddingRight: 12,
   },
   icon: {

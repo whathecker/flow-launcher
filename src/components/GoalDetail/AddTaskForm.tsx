@@ -55,7 +55,7 @@ const AddTaskForm: React.FC<AddTaskFormProps> = ({
                 autoFocus={true}
                 onChangeText={handleChange("title")}
                 placeholder={"Write your task in a sentence"}
-                placeholderTextColor={Color.light.subtleLabel}
+                placeholderTextColor={Color.light.labelOnBackgroundForRead}
                 value={values.title}
               />
             </View>
@@ -66,7 +66,7 @@ const AddTaskForm: React.FC<AddTaskFormProps> = ({
                 scrollEnabled
                 onChangeText={handleChange("description")}
                 placeholder={"Write the description of your task"}
-                placeholderTextColor={Color.light.subtleLabel}
+                placeholderTextColor={Color.light.labelOnBackgroundForRead}
                 value={values.description}
               />
             </View>

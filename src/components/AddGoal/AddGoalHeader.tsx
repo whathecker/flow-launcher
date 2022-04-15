@@ -18,13 +18,7 @@ const AddGoalHeader: React.FC<AddGoalHeaderProps> = ({
         <CloseIcon pressHandler={backBtnHandler} />
       </View>
       <View style={styles.headerWrapper}>
-        <Text
-          style={styles.headerText}
-          lightColor="#554F4F"
-          darkColor="#554F4F"
-        >
-          {`New Goal`}
-        </Text>
+        <Text style={styles.headerText}>{`New Goal`}</Text>
         <Image
           style={styles.rocketImage}
           source={require(`../../../assets/images/rocket_1f680.png`)}

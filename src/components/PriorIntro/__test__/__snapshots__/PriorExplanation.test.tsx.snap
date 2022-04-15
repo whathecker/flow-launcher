@@ -58,7 +58,7 @@ Array [
         style={
           Array [
             Object {
-              "color": "#000000",
+              "color": "#554F4F",
             },
             Object {
               "fontFamily": "Lexend-SemiBold",
@@ -74,7 +74,7 @@ Array [
         style={
           Array [
             Object {
-              "color": "#000000",
+              "color": "#554F4F",
             },
             Object {
               "fontFamily": "Lexend-Regular",
@@ -143,7 +143,7 @@ Array [
         style={
           Array [
             Object {
-              "color": "#000000",
+              "color": "#554F4F",
             },
             Object {
               "fontFamily": "Lexend-SemiBold",
@@ -159,7 +159,7 @@ Array [
         style={
           Array [
             Object {
-              "color": "#000000",
+              "color": "#554F4F",
             },
             Object {
               "fontFamily": "Lexend-Regular",

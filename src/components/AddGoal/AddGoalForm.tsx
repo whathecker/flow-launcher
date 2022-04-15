@@ -7,7 +7,7 @@ import { View, TouchableWithoutFeedback } from "../Themed";
 import { AddGoalFormLabel, AddGoalErrMsg } from "./components";
 import { Button } from "../shared";
 
-import { Container, Typography } from "../../styles";
+import { Container, Typography, Color } from "../../styles";
 import { IAddGoalInput } from "../../types/core/entity";
 import { navigationRef } from "../../utils";
 import { Formik } from "formik";
@@ -55,7 +55,7 @@ const AddGoalForm: React.FC = () => {
                   multiline
                   onChangeText={handleChange("title")}
                   placeholder={`What do you want to achieve?`}
-                  placeholderTextColor={"#848484"}
+                  placeholderTextColor={Color.light.labelOnBackgroundForRead}
                   value={values.title}
                 />
                 {touched.title && errors.title && (
@@ -70,7 +70,7 @@ const AddGoalForm: React.FC = () => {
                   multiline
                   onChangeText={handleChange("motivation")}
                   placeholder={`Write down why you want to achieve this goal`}
-                  placeholderTextColor={"#848484"}
+                  placeholderTextColor={Color.light.labelOnBackgroundForRead}
                   value={values.motivation}
                 />
                 {touched.motivation && errors.motivation && (

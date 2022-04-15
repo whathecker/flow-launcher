@@ -12,9 +12,23 @@ const EmptyBucket: React.FC<EmptyBucketProps> = ({
 }: EmptyBucketProps) => {
   return (
     <>
-      <Text style={styles.header}>{title}</Text>
-      <View style={styles.innerWrapper}>
-        <Text style={styles.placeholderText}>{`No awaiting tasks`}</Text>
+      <Text
+        lightColor={Color.light.labelOnBackgroundForRead}
+        darkColor={Color.dark.labelOnBackgroundForRead}
+        style={styles.header}
+      >
+        {title}
+      </Text>
+      <View
+        lightColor={Color.light.emptyPrioBucket}
+        darkColor={Color.dark.emptyPrioBucket}
+        style={styles.innerWrapper}
+      >
+        <Text
+          lightColor={Color.light.labelOnBackgroundForRead}
+          darkColor={Color.dark.labelOnBackgroundForRead}
+          style={styles.placeholderText}
+        >{`No awaiting tasks`}</Text>
       </View>
     </>
   );
@@ -26,7 +40,6 @@ const styles = StyleSheet.create({
     fontSize: 16,
     paddingLeft: "5%",
     paddingTop: 5,
-    color: Color.light.text,
   },
   innerWrapper: {
     ...Container.centerAligned,
@@ -37,7 +50,6 @@ const styles = StyleSheet.create({
   placeholderText: {
     ...Typography.p,
     fontSize: 14,
-    color: Color.light.subtleLabel,
   },
 });
 

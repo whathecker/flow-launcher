@@ -106,7 +106,7 @@ exports[`Test GoalDetailHeader component Should renders GoalDetailHeader correct
         style={
           Array [
             Object {
-              "color": "#000000",
+              "color": "#554F4F",
             },
             Object {
               "fontFamily": "Lexend-SemiBold",
@@ -145,7 +145,7 @@ exports[`Test GoalDetailHeader component Should renders GoalDetailHeader correct
         style={
           Array [
             Object {
-              "color": "#000000",
+              "color": "#554F4F",
             },
             Object {
               "fontFamily": "Lexend-Regular",

@@ -23,7 +23,10 @@ export type TouchableWithoutFeedbackProps = ThemeProps &
 
 export const Text: React.FC<TextProps> = (props: TextProps) => {
   const { style, lightColor, darkColor, ...otherProps } = props;
-  const color = useThemeColor({ light: lightColor, dark: darkColor }, "text");
+  const color = useThemeColor(
+    { light: lightColor, dark: darkColor },
+    "textOnBackgroundForRead",
+  );
 
   return <DefaultText style={[{ color }, style]} {...otherProps} />;
 };

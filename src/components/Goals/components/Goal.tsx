@@ -1,7 +1,7 @@
 import React from "react";
 import { StyleSheet } from "react-native";
 import { Touchable, Text } from "../../Themed";
-import { Container, Typography, Shadow } from "../../../styles";
+import { Container, Typography, Shadow, Color } from "../../../styles";
 import { Goal as GoalEntity } from "../../../types/core/entity";
 import { navigationRef } from "../../../utils";
 
@@ -11,6 +11,9 @@ type GoalProps = {
 };
 
 const Goal: React.FC<GoalProps> = ({ goal, backgroundColor }: GoalProps) => {
+  const lightTextColor = Color.light.textOnColorForRead;
+  const darkTextColor = Color.dark.textOnColorForRead;
+
   return (
     <Touchable
       lightColor={backgroundColor}
@@ -23,12 +26,16 @@ const Goal: React.FC<GoalProps> = ({ goal, backgroundColor }: GoalProps) => {
         });
       }}
     >
-      <Text lightColor="white" darkColor="white" style={styles.goalTitleText}>
+      <Text
+        lightColor={lightTextColor}
+        darkColor={darkTextColor}
+        style={styles.goalTitleText}
+      >
         {goal.title}
       </Text>
       <Text
-        lightColor="white"
-        darkColor="white"
+        lightColor={lightTextColor}
+        darkColor={darkTextColor}
         style={styles.goalMotiviationText}
       >
         {goal.motivation}

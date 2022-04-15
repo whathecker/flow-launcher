@@ -43,7 +43,7 @@ exports[`Test Goal component Should renders Goal correctly 1`] = `
     style={
       Array [
         Object {
-          "color": "white",
+          "color": "#fff",
         },
         Object {
           "fontFamily": "Lexend-SemiBold",
@@ -60,7 +60,7 @@ exports[`Test Goal component Should renders Goal correctly 1`] = `
     style={
       Array [
         Object {
-          "color": "white",
+          "color": "#fff",
         },
         Object {
           "fontFamily": "Lexend-Regular",

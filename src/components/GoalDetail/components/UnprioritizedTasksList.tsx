@@ -69,7 +69,6 @@ const styles = StyleSheet.create({
   sellAllBtn: {
     ...Typography.p,
     textDecorationLine: "underline",
-    color: Color.light.text,
     fontSize: 14,
   },
 });

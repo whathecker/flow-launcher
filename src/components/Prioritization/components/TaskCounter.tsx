@@ -15,10 +15,11 @@ const TaskCounter: React.FC<TaskCounterProps> = ({
   return (
     <>
       <Text
+        lightColor={Color.light.labelOnBackgroundForRead}
+        darkColor={Color.dark.labelOnBackgroundForRead}
         style={{
           ...Typography.p,
           fontSize: 14,
-          color: Color.light.subtleLabel,
         }}
       >{`Task (${currentTaskCounter} of ${totalTasksLength})`}</Text>
     </>

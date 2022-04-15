@@ -28,7 +28,13 @@ const PrioritizedTasks: React.FC<PrioritizedTasksProps> = ({
   return (
     <View style={styles.wrapper}>
       <View style={styles.headerAreaWrapper}>
-        <Text style={styles.headerText}>{"Prioritized Tasks"}</Text>
+        <Text
+          lightColor={Color.light.labelOnBackgroundForRead}
+          darkColor={Color.dark.labelOnBackgroundForRead}
+          style={styles.headerText}
+        >
+          {"Prioritized Tasks"}
+        </Text>
       </View>
       {isTasksEmptty ? (
         <EmptyPrioritizedTasks />
@@ -73,7 +79,7 @@ const styles = StyleSheet.create({
     marginBottom: 10,
   },
   headerText: {
-    ...Typography.p,
+    ...Typography.h4,
     fontSize: 16,
   },
 });

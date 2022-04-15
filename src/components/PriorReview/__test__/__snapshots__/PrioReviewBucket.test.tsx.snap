@@ -9,7 +9,7 @@ exports[`Test PrioReviewBucket component Should renders PrioReviewBuckets correc
       },
       Object {
         "backgroundColor": "#C2571A",
-        "borderColor": "#636262",
+        "borderColor": "#848484",
         "borderRadius": 5,
         "borderWidth": 1,
         "marginBottom": "3%",
@@ -102,10 +102,9 @@ exports[`Test PrioReviewBucket component Should renders PrioReviewBuckets correc
             style={
               Array [
                 Object {
-                  "color": "#000000",
+                  "color": "#fff",
                 },
                 Object {
-                  "color": "#fff",
                   "fontFamily": "Lexend-SemiBold",
                   "fontSize": 16,
                   "paddingBottom": "5%",
@@ -131,7 +130,7 @@ exports[`Test PrioReviewBucket component Should renders PrioReviewBuckets correc
                 },
                 Object {
                   "alignItems": "center",
-                  "borderColor": "#636262",
+                  "borderColor": "#848484",
                   "borderRadius": 5,
                   "borderWidth": 1,
                   "flexDirection": "row",
@@ -151,7 +150,7 @@ exports[`Test PrioReviewBucket component Should renders PrioReviewBuckets correc
               style={
                 Array [
                   Object {
-                    "color": "#000000",
+                    "color": "#554F4F",
                   },
                   Object {
                     "fontFamily": "Lexend-Regular",
@@ -176,7 +175,7 @@ exports[`Test PrioReviewBucket component Should renders PrioReviewBuckets correc
                 },
                 Object {
                   "alignItems": "center",
-                  "borderColor": "#636262",
+                  "borderColor": "#848484",
                   "borderRadius": 5,
                   "borderWidth": 1,
                   "flexDirection": "row",
@@ -196,7 +195,7 @@ exports[`Test PrioReviewBucket component Should renders PrioReviewBuckets correc
               style={
                 Array [
                   Object {
-                    "color": "#000000",
+                    "color": "#554F4F",
                   },
                   Object {
                     "fontFamily": "Lexend-Regular",
@@ -228,7 +227,7 @@ exports[`Test PrioReviewBucket component Should renders PrioReviewBuckets correc
       },
       Object {
         "backgroundColor": "#0D9BC3",
-        "borderColor": "#636262",
+        "borderColor": "#848484",
         "borderRadius": 5,
         "borderWidth": 1,
         "marginBottom": "3%",
@@ -321,10 +320,9 @@ exports[`Test PrioReviewBucket component Should renders PrioReviewBuckets correc
             style={
               Array [
                 Object {
-                  "color": "#000000",
+                  "color": "#fff",
                 },
                 Object {
-                  "color": "#fff",
                   "fontFamily": "Lexend-SemiBold",
                   "fontSize": 16,
                   "paddingBottom": "5%",
@@ -350,7 +348,7 @@ exports[`Test PrioReviewBucket component Should renders PrioReviewBuckets correc
                 },
                 Object {
                   "alignItems": "center",
-                  "borderColor": "#636262",
+                  "borderColor": "#848484",
                   "borderRadius": 5,
                   "borderWidth": 1,
                   "flexDirection": "row",
@@ -370,7 +368,7 @@ exports[`Test PrioReviewBucket component Should renders PrioReviewBuckets correc
               style={
                 Array [
                   Object {
-                    "color": "#000000",
+                    "color": "#554F4F",
                   },
                   Object {
                     "fontFamily": "Lexend-Regular",
@@ -395,7 +393,7 @@ exports[`Test PrioReviewBucket component Should renders PrioReviewBuckets correc
                 },
                 Object {
                   "alignItems": "center",
-                  "borderColor": "#636262",
+                  "borderColor": "#848484",
                   "borderRadius": 5,
                   "borderWidth": 1,
                   "flexDirection": "row",
@@ -415,7 +413,7 @@ exports[`Test PrioReviewBucket component Should renders PrioReviewBuckets correc
               style={
                 Array [
                   Object {
-                    "color": "#000000",
+                    "color": "#554F4F",
                   },
                   Object {
                     "fontFamily": "Lexend-Regular",
@@ -447,7 +445,7 @@ exports[`Test PrioReviewBucket component Should renders PrioReviewBuckets correc
       },
       Object {
         "backgroundColor": "#FEFEF8",
-        "borderColor": "#636262",
+        "borderColor": "#848484",
         "borderRadius": 5,
         "borderWidth": 1,
         "marginBottom": "3%",
@@ -463,10 +461,9 @@ exports[`Test PrioReviewBucket component Should renders PrioReviewBuckets correc
     style={
       Array [
         Object {
-          "color": "#000000",
+          "color": "#848484",
         },
         Object {
-          "color": "#000000",
           "fontFamily": "Lexend-SemiBold",
           "fontSize": 16,
           "paddingLeft": "5%",
@@ -481,7 +478,7 @@ exports[`Test PrioReviewBucket component Should renders PrioReviewBuckets correc
     style={
       Array [
         Object {
-          "backgroundColor": "#fff",
+          "backgroundColor": "#FEFEF8",
         },
         Object {
           "alignItems": "center",
@@ -498,10 +495,9 @@ exports[`Test PrioReviewBucket component Should renders PrioReviewBuckets correc
       style={
         Array [
           Object {
-            "color": "#000000",
+            "color": "#848484",
           },
           Object {
-            "color": "#848484",
             "fontFamily": "Lexend-Regular",
             "fontSize": 14,
           },
@@ -523,7 +519,7 @@ exports[`Test PrioReviewBucket component Should renders PrioReviewBuckets correc
       },
       Object {
         "backgroundColor": "#EBC944",
-        "borderColor": "#636262",
+        "borderColor": "#848484",
         "borderRadius": 5,
         "borderWidth": 1,
         "marginBottom": "3%",
@@ -603,10 +599,9 @@ exports[`Test PrioReviewBucket component Should renders PrioReviewBuckets correc
             style={
               Array [
                 Object {
-                  "color": "#000000",
+                  "color": "#fff",
                 },
                 Object {
-                  "color": "#fff",
                   "fontFamily": "Lexend-SemiBold",
                   "fontSize": 16,
                   "paddingBottom": "5%",
@@ -632,7 +627,7 @@ exports[`Test PrioReviewBucket component Should renders PrioReviewBuckets correc
                 },
                 Object {
                   "alignItems": "center",
-                  "borderColor": "#636262",
+                  "borderColor": "#848484",
                   "borderRadius": 5,
                   "borderWidth": 1,
                   "flexDirection": "row",
@@ -652,7 +647,7 @@ exports[`Test PrioReviewBucket component Should renders PrioReviewBuckets correc
               style={
                 Array [
                   Object {
-                    "color": "#000000",
+                    "color": "#554F4F",
                   },
                   Object {
                     "fontFamily": "Lexend-Regular",

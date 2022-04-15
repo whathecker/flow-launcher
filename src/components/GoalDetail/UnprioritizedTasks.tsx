@@ -11,7 +11,13 @@ const UnprioritizedTasks: React.FC = () => {
   return (
     <View style={styles.wrapper}>
       <View style={styles.headerAreaWrapper}>
-        <Text style={styles.headerText}>{"Recently Added Tasks"}</Text>
+        <Text
+          lightColor={Color.light.labelOnBackgroundForRead}
+          darkColor={Color.dark.labelOnBackgroundForRead}
+          style={styles.headerText}
+        >
+          {"Recently Added Tasks"}
+        </Text>
       </View>
       {state.unprioTasks.length > 0 ? (
         <UnprioritizedTasksList tasks={state.unprioTasks} />
@@ -35,7 +41,7 @@ const styles = StyleSheet.create({
     marginBottom: 10,
   },
   headerText: {
-    ...Typography.p,
+    ...Typography.h4,
     fontSize: 16,
   },
 });

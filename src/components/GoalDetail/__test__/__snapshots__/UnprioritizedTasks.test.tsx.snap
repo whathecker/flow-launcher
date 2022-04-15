@@ -8,7 +8,7 @@ exports[`Test UnprioritizedTasks component Should renders UnprioritizedTasks cor
         "backgroundColor": "#fff",
       },
       Object {
-        "borderColor": "#636262",
+        "borderColor": "#848484",
         "borderRadius": 5,
         "borderWidth": 0.5,
         "padding": 20,
@@ -40,10 +40,10 @@ exports[`Test UnprioritizedTasks component Should renders UnprioritizedTasks cor
       style={
         Array [
           Object {
-            "color": "#000000",
+            "color": "#848484",
           },
           Object {
-            "fontFamily": "Lexend-Regular",
+            "fontFamily": "Lexend-SemiBold",
             "fontSize": 16,
           },
         ]
@@ -72,7 +72,7 @@ exports[`Test UnprioritizedTasks component Should renders UnprioritizedTasks cor
       style={
         Array [
           Object {
-            "color": "#000000",
+            "color": "#554F4F",
           },
           Object {
             "color": "#848484",

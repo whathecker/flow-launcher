@@ -21,7 +21,7 @@ exports[`Test EmptyUnprioritizedTasks component Should renders EmptyUnprioritize
     style={
       Array [
         Object {
-          "color": "#000000",
+          "color": "#554F4F",
         },
         Object {
           "color": "#848484",

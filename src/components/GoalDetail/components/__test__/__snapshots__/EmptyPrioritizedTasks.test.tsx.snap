@@ -30,7 +30,7 @@ exports[`Test EmptyPrioritizedTasks component Should renders EmptyPrioritizedTas
     style={
       Array [
         Object {
-          "color": "#000000",
+          "color": "#554F4F",
         },
         Object {
           "color": "#848484",
