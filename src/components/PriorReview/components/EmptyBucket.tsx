@@ -45,7 +45,6 @@ const styles = StyleSheet.create({
     ...Container.centerAligned,
     paddingTop: "12%",
     paddingBottom: "6%",
-    backgroundColor: "#FEFEF8",
   },
   placeholderText: {
     ...Typography.p,

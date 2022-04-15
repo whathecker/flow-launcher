@@ -482,7 +482,6 @@ exports[`Test PrioReviewBucket component Should renders PrioReviewBuckets correc
         },
         Object {
           "alignItems": "center",
-          "backgroundColor": "#FEFEF8",
           "flexDirection": "row",
           "justifyContent": "center",
           "paddingBottom": "6%",
