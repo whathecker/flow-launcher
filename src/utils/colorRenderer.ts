@@ -149,10 +149,10 @@ function _findColorShadeForFourthColor(
       color = "#D3B53D";
       break;
     case "mid":
-      color = "#0D5275";
+      color = "#EBC944";
       break;
     case "low":
-      color = "#EBC944";
+      color = "#EFD469";
       break;
     default:
       color = "#FEFEF8";

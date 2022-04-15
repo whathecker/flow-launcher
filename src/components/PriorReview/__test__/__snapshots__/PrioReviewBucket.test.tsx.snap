@@ -517,7 +517,7 @@ exports[`Test PrioReviewBucket component Should renders PrioReviewBuckets correc
         "backgroundColor": "#fff",
       },
       Object {
-        "backgroundColor": "#EBC944",
+        "backgroundColor": "#EFD469",
         "borderColor": "#848484",
         "borderRadius": 5,
         "borderWidth": 1,
@@ -537,7 +537,7 @@ exports[`Test PrioReviewBucket component Should renders PrioReviewBuckets correc
           "backgroundColor": "#fff",
         },
         Object {
-          "backgroundColor": "#EBC944",
+          "backgroundColor": "#EFD469",
         },
       ]
     }

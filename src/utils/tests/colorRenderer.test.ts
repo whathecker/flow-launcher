@@ -75,8 +75,8 @@ describe("Test color renderer module", () => {
 
     expect(highest).toBe("#BCA136");
     expect(high).toBe("#D3B53D");
-    expect(mid).toBe("#0D5275");
-    expect(low).toBe("#EBC944");
+    expect(mid).toBe("#EBC944");
+    expect(low).toBe("#EFD469");
     expect(na).toBe("#FEFEF8");
   });
 });
