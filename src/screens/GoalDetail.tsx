@@ -105,20 +105,22 @@ const GoalDetailScreen: React.FC<Props> = ({ route }: Props) => {
 
 const styles = StyleSheet.create({
   headerWrapper: {
-    height: "25%",
+    minHeight: "20%",
+    maxHeight: "25%",
     marginTop: 10,
   },
   scrollAreaWrapper: {
     backgroundColor: Color.light.background,
-    borderColor: Color.light.defaultBorder,
+    borderColor: Color.light.subtleLabel,
     borderWidth: 1,
-    height: 700,
+    height: "75%",
   },
   recentTasksWrapper: {
     ...Container.centerAligned,
     alignItems: "flex-start",
-    marginTop: 50,
-    height: 300,
+    marginTop: "5%",
+    marginBottom: "5%",
+    minHeight: 300,
   },
   prioritizedTasksWrapper: {
     ...Container.centerAligned,
