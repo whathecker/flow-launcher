@@ -3,7 +3,7 @@ import { TasksContext } from "../../contexts/tasks";
 import { StyleSheet } from "react-native";
 import { View, Text } from "../Themed";
 import { UnprioritizedTasksList, EmptyUnprioritizedTasks } from "./components";
-import { Typography, Color, Shadow } from "../../styles";
+import { Typography, Color } from "../../styles";
 
 const UnprioritizedTasks: React.FC = () => {
   const { state } = useContext(TasksContext);
@@ -34,7 +34,6 @@ const styles = StyleSheet.create({
     borderWidth: 0.5,
     borderColor: Color.light.defaultBorder,
     borderRadius: 5,
-    ...Shadow.regularbackDrop,
     padding: 20,
   },
   headerAreaWrapper: {

@@ -23,7 +23,7 @@ exports[`Test Button component Should renders Button correctly 1`] = `
       "paddingTop": 20,
       "shadowColor": "#171717",
       "shadowOffset": Object {
-        "height": 5,
+        "height": 3,
         "width": 3,
       },
       "shadowOpacity": 0.2,
@@ -73,7 +73,7 @@ exports[`Test Button component Should renders disabled Button correctly 1`] = `
       "paddingTop": 20,
       "shadowColor": "#171717",
       "shadowOffset": Object {
-        "height": 5,
+        "height": 3,
         "width": 3,
       },
       "shadowOpacity": 0.2,

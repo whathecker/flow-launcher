@@ -30,7 +30,7 @@ exports[`Test Goal component Should renders Goal correctly 1`] = `
       "paddingTop": 30,
       "shadowColor": "#171717",
       "shadowOffset": Object {
-        "height": 5,
+        "height": 3,
         "width": 3,
       },
       "shadowOpacity": 0.2,

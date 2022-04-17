@@ -65,7 +65,7 @@ exports[`Test PrioReviewBucket component Should renders PrioReviewBuckets correc
                 "title": "Test2",
               },
             ],
-            "title": "1. Do these before anything else",
+            "title": "Highest priority",
           },
         ]
       }
@@ -115,7 +115,7 @@ exports[`Test PrioReviewBucket component Should renders PrioReviewBuckets correc
               ]
             }
           >
-            1. Do these before anything else
+            Highest priority
           </Text>
         </View>
         <View
@@ -283,7 +283,7 @@ exports[`Test PrioReviewBucket component Should renders PrioReviewBuckets correc
                 "title": "Test4",
               },
             ],
-            "title": "2. Sort these important things out",
+            "title": "High priority",
           },
         ]
       }
@@ -333,7 +333,7 @@ exports[`Test PrioReviewBucket component Should renders PrioReviewBuckets correc
               ]
             }
           >
-            2. Sort these important things out
+            High priority
           </Text>
         </View>
         <View
@@ -472,13 +472,13 @@ exports[`Test PrioReviewBucket component Should renders PrioReviewBuckets correc
       ]
     }
   >
-    3. These can wait a bit
+    Mid priority
   </Text>
   <View
     style={
       Array [
         Object {
-          "backgroundColor": "#FEFEF8",
+          "backgroundColor": "#FDFCFC",
         },
         Object {
           "alignItems": "center",
@@ -561,7 +561,7 @@ exports[`Test PrioReviewBucket component Should renders PrioReviewBuckets correc
                 "title": "test5",
               },
             ],
-            "title": "4. These are for spare time",
+            "title": "Low priority",
           },
         ]
       }
@@ -611,7 +611,7 @@ exports[`Test PrioReviewBucket component Should renders PrioReviewBuckets correc
               ]
             }
           >
-            4. These are for spare time
+            Low priority
           </Text>
         </View>
         <View

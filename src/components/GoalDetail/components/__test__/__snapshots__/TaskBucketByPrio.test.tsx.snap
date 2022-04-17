@@ -13,16 +13,23 @@ exports[`Test TaskBucketByPrio component Should renders TaskBucketByPrio correct
   onStartShouldSetResponder={[Function]}
   style={
     Object {
-      "backgroundColor": "#EFD469",
+      "backgroundColor": "#fff",
       "borderColor": "#848484",
       "borderRadius": 5,
-      "borderWidth": 1,
+      "borderWidth": 0.5,
       "height": 120,
       "marginBottom": "3%",
       "marginTop": 5,
       "opacity": 1,
       "paddingBottom": "8%",
       "paddingTop": "4%",
+      "shadowColor": "#171717",
+      "shadowOffset": Object {
+        "height": 3,
+        "width": 3,
+      },
+      "shadowOpacity": 0.2,
+      "shadowRadius": 3,
       "width": "100%",
     }
   }
@@ -31,37 +38,49 @@ exports[`Test TaskBucketByPrio component Should renders TaskBucketByPrio correct
     style={
       Array [
         Object {
-          "backgroundColor": "#EFD469",
+          "backgroundColor": "#fff",
         },
         Object {
-          "backgroundColor": "#EFD469",
+          "alignItems": "center",
+          "flexDirection": "row",
+          "justifyContent": "flex-start",
           "paddingLeft": 15,
         },
       ]
     }
   >
+    <Image
+      source={1}
+      style={
+        Object {
+          "height": 32,
+          "width": 32,
+        }
+      }
+    />
     <Text
       style={
         Array [
           Object {
-            "color": "#fff",
+            "color": "#554F4F",
           },
           Object {
             "fontFamily": "Lexend-SemiBold",
             "fontSize": 15,
-            "fontWeight": "bold",
+            "paddingLeft": 18,
+            "paddingTop": 5,
           },
         ]
       }
     >
-      4. These are for spare time
+      Low priority
     </Text>
   </View>
   <View
     style={
       Array [
         Object {
-          "backgroundColor": "#EFD469",
+          "backgroundColor": "#fff",
         },
         Object {
           "paddingBottom": "2%",
@@ -75,7 +94,7 @@ exports[`Test TaskBucketByPrio component Should renders TaskBucketByPrio correct
       style={
         Array [
           Object {
-            "color": "#fff",
+            "color": "#554F4F",
           },
           Object {
             "fontFamily": "Lexend-Regular",
@@ -90,12 +109,12 @@ exports[`Test TaskBucketByPrio component Should renders TaskBucketByPrio correct
       style={
         Array [
           Object {
-            "backgroundColor": "#EFD469",
+            "backgroundColor": "#fff",
           },
           Object {
             "position": "absolute",
             "right": 15,
-            "top": -18,
+            "top": 42,
           },
         ]
       }
@@ -119,12 +138,12 @@ exports[`Test TaskBucketByPrio component Should renders TaskBucketByPrio correct
   style={
     Array [
       Object {
-        "backgroundColor": "#FEFEF8",
+        "backgroundColor": "#FDFCFC",
       },
       Object {
         "borderColor": "#848484",
         "borderRadius": 5,
-        "borderWidth": 1,
+        "borderWidth": 0.5,
         "height": 120,
         "marginBottom": "3%",
         "marginTop": 5,
@@ -139,14 +158,26 @@ exports[`Test TaskBucketByPrio component Should renders TaskBucketByPrio correct
     style={
       Array [
         Object {
-          "backgroundColor": "#FEFEF8",
+          "backgroundColor": "#FDFCFC",
         },
         Object {
+          "alignItems": "center",
+          "flexDirection": "row",
+          "justifyContent": "flex-start",
           "paddingLeft": 15,
         },
       ]
     }
   >
+    <Image
+      source={1}
+      style={
+        Object {
+          "height": 28,
+          "width": 28,
+        }
+      }
+    />
     <Text
       style={
         Array [
@@ -156,19 +187,20 @@ exports[`Test TaskBucketByPrio component Should renders TaskBucketByPrio correct
           Object {
             "fontFamily": "Lexend-SemiBold",
             "fontSize": 15,
-            "fontWeight": "bold",
+            "paddingLeft": 22,
+            "paddingTop": 5,
           },
         ]
       }
     >
-      3. These can wait a bit
+      Mid priority
     </Text>
   </View>
   <View
     style={
       Array [
         Object {
-          "backgroundColor": "#FEFEF8",
+          "backgroundColor": "#FDFCFC",
         },
         Object {
           "alignItems": "center",
@@ -211,16 +243,23 @@ exports[`Test TaskBucketByPrio component Should renders TaskBucketByPrio correct
   onStartShouldSetResponder={[Function]}
   style={
     Object {
-      "backgroundColor": "#D3B53D",
+      "backgroundColor": "#fff",
       "borderColor": "#848484",
       "borderRadius": 5,
-      "borderWidth": 1,
+      "borderWidth": 0.5,
       "height": 120,
       "marginBottom": "3%",
       "marginTop": 5,
       "opacity": 1,
       "paddingBottom": "8%",
       "paddingTop": "4%",
+      "shadowColor": "#171717",
+      "shadowOffset": Object {
+        "height": 3,
+        "width": 3,
+      },
+      "shadowOpacity": 0.2,
+      "shadowRadius": 3,
       "width": "100%",
     }
   }
@@ -229,37 +268,49 @@ exports[`Test TaskBucketByPrio component Should renders TaskBucketByPrio correct
     style={
       Array [
         Object {
-          "backgroundColor": "#D3B53D",
+          "backgroundColor": "#fff",
         },
         Object {
-          "backgroundColor": "#D3B53D",
+          "alignItems": "center",
+          "flexDirection": "row",
+          "justifyContent": "flex-start",
           "paddingLeft": 15,
         },
       ]
     }
   >
+    <Image
+      source={1}
+      style={
+        Object {
+          "height": 32,
+          "width": 32,
+        }
+      }
+    />
     <Text
       style={
         Array [
           Object {
-            "color": "#fff",
+            "color": "#554F4F",
           },
           Object {
             "fontFamily": "Lexend-SemiBold",
             "fontSize": 15,
-            "fontWeight": "bold",
+            "paddingLeft": 18,
+            "paddingTop": 5,
           },
         ]
       }
     >
-      2. Sort these important things out
+      High priority
     </Text>
   </View>
   <View
     style={
       Array [
         Object {
-          "backgroundColor": "#D3B53D",
+          "backgroundColor": "#fff",
         },
         Object {
           "paddingBottom": "2%",
@@ -273,7 +324,7 @@ exports[`Test TaskBucketByPrio component Should renders TaskBucketByPrio correct
       style={
         Array [
           Object {
-            "color": "#fff",
+            "color": "#554F4F",
           },
           Object {
             "fontFamily": "Lexend-Regular",
@@ -288,7 +339,7 @@ exports[`Test TaskBucketByPrio component Should renders TaskBucketByPrio correct
       style={
         Array [
           Object {
-            "color": "#fff",
+            "color": "#554F4F",
           },
           Object {
             "fontFamily": "Lexend-Regular",
@@ -305,12 +356,12 @@ exports[`Test TaskBucketByPrio component Should renders TaskBucketByPrio correct
       style={
         Array [
           Object {
-            "backgroundColor": "#D3B53D",
+            "backgroundColor": "#fff",
           },
           Object {
             "position": "absolute",
             "right": 15,
-            "top": -18,
+            "top": 42,
           },
         ]
       }
@@ -342,16 +393,23 @@ exports[`Test TaskBucketByPrio component Should renders TaskBucketByPrio correct
   onStartShouldSetResponder={[Function]}
   style={
     Object {
-      "backgroundColor": "#BCA136",
+      "backgroundColor": "#fff",
       "borderColor": "#848484",
       "borderRadius": 5,
-      "borderWidth": 1,
+      "borderWidth": 0.5,
       "height": 120,
       "marginBottom": "3%",
       "marginTop": 5,
       "opacity": 1,
       "paddingBottom": "8%",
       "paddingTop": "4%",
+      "shadowColor": "#171717",
+      "shadowOffset": Object {
+        "height": 3,
+        "width": 3,
+      },
+      "shadowOpacity": 0.2,
+      "shadowRadius": 3,
       "width": "100%",
     }
   }
@@ -360,37 +418,49 @@ exports[`Test TaskBucketByPrio component Should renders TaskBucketByPrio correct
     style={
       Array [
         Object {
-          "backgroundColor": "#BCA136",
+          "backgroundColor": "#fff",
         },
         Object {
-          "backgroundColor": "#BCA136",
+          "alignItems": "center",
+          "flexDirection": "row",
+          "justifyContent": "flex-start",
           "paddingLeft": 15,
         },
       ]
     }
   >
+    <Image
+      source={1}
+      style={
+        Object {
+          "height": 32,
+          "width": 32,
+        }
+      }
+    />
     <Text
       style={
         Array [
           Object {
-            "color": "#fff",
+            "color": "#554F4F",
           },
           Object {
             "fontFamily": "Lexend-SemiBold",
             "fontSize": 15,
-            "fontWeight": "bold",
+            "paddingLeft": 18,
+            "paddingTop": 5,
           },
         ]
       }
     >
-      1. Do these before anything else
+      Highest priority
     </Text>
   </View>
   <View
     style={
       Array [
         Object {
-          "backgroundColor": "#BCA136",
+          "backgroundColor": "#fff",
         },
         Object {
           "paddingBottom": "2%",
@@ -404,7 +474,7 @@ exports[`Test TaskBucketByPrio component Should renders TaskBucketByPrio correct
       style={
         Array [
           Object {
-            "color": "#fff",
+            "color": "#554F4F",
           },
           Object {
             "fontFamily": "Lexend-Regular",
@@ -419,7 +489,7 @@ exports[`Test TaskBucketByPrio component Should renders TaskBucketByPrio correct
       style={
         Array [
           Object {
-            "color": "#fff",
+            "color": "#554F4F",
           },
           Object {
             "fontFamily": "Lexend-Regular",
@@ -436,12 +506,12 @@ exports[`Test TaskBucketByPrio component Should renders TaskBucketByPrio correct
       style={
         Array [
           Object {
-            "backgroundColor": "#BCA136",
+            "backgroundColor": "#fff",
           },
           Object {
             "position": "absolute",
             "right": 15,
-            "top": -18,
+            "top": 42,
           },
         ]
       }

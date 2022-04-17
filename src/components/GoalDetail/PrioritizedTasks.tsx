@@ -3,7 +3,7 @@ import { TasksContext } from "../../contexts/tasks";
 import { StyleSheet } from "react-native";
 import { EmptyPrioritizedTasks, TaskBucketByPrio } from "./components";
 import { View, Text } from "../Themed";
-import { Color, Shadow, Typography } from "../../styles";
+import { Color, Typography } from "../../styles";
 import { GoalColor } from "../../types/core/entity";
 
 type PrioritizedTasksProps = { goalColor: GoalColor };
@@ -72,7 +72,6 @@ const styles = StyleSheet.create({
     borderWidth: 0.5,
     borderColor: Color.light.defaultBorder,
     borderRadius: 5,
-    ...Shadow.regularbackDrop,
     padding: 20,
   },
   headerAreaWrapper: {

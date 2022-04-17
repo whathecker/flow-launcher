@@ -7,7 +7,7 @@ const colors: Record<string, string> = {
   subtleGray: "#848484",
   strongDarkGray: "#3a3a39",
   subtleRed: "#c84827",
-  subtleBeige: "#FEFEF8",
+  subtleLightGray: "#FDFCFC",
 };
 
 type ColorPlacement = {
@@ -35,7 +35,7 @@ export const light: ColorPlacement = {
   primaryBtn: colors.primaryBrand,
   overlay: colors.strongDarkGray,
   errorMsg: colors.subtleRed,
-  emptyPrioBucket: colors.subtleBeige,
+  emptyPrioBucket: colors.subtleLightGray,
 };
 
 export const dark: ColorPlacement = {
@@ -49,5 +49,5 @@ export const dark: ColorPlacement = {
   primaryBtn: colors.primaryBrand,
   overlay: colors.strongDarkGray,
   errorMsg: colors.subtleRed,
-  emptyPrioBucket: colors.subtleBeige,
+  emptyPrioBucket: colors.subtleLightGray,
 };
