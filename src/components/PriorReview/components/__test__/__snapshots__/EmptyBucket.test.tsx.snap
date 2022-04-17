@@ -2,23 +2,47 @@
 
 exports[`Test EmptyBucket component Should renders EmptyBucket correctly 1`] = `
 Array [
-  <Text
+  <View
     style={
       Array [
         Object {
-          "color": "#848484",
+          "backgroundColor": "#fff",
         },
         Object {
-          "fontFamily": "Lexend-SemiBold",
-          "fontSize": 16,
-          "paddingLeft": "5%",
-          "paddingTop": 5,
+          "alignItems": "center",
+          "flexDirection": "row",
+          "justifyContent": "flex-start",
+          "paddingLeft": "6%",
         },
       ]
     }
   >
-    This should be title of empty prio bucket
-  </Text>,
+    <Image
+      source={1}
+      style={
+        Object {
+          "height": 30,
+          "width": 30,
+        }
+      }
+    />
+    <Text
+      style={
+        Array [
+          Object {
+            "color": "#848484",
+          },
+          Object {
+            "fontFamily": "Lexend-SemiBold",
+            "fontSize": 16,
+            "paddingLeft": "5%",
+          },
+        ]
+      }
+    >
+      This should be title of empty prio bucket
+    </Text>
+  </View>,
   <View
     style={
       Array [
@@ -48,7 +72,7 @@ Array [
         ]
       }
     >
-      No awaiting tasks
+      No tasks in this list
     </Text>
   </View>,
 ]

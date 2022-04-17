@@ -18,8 +18,8 @@ exports[`Test TaskReadable component Should renders TaskReadable correctly 1`] =
         "marginLeft": "7.5%",
         "marginRight": "7.5%",
         "marginTop": 5,
-        "paddingBottom": 8,
-        "paddingTop": 8,
+        "paddingBottom": 12,
+        "paddingTop": 12,
         "width": "85%",
       },
     ]

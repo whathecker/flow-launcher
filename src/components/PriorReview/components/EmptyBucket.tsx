@@ -1,5 +1,5 @@
 import React from "react";
-import { StyleSheet } from "react-native";
+import { StyleSheet, Image } from "react-native";
 import { View, Text } from "../../Themed";
 import { Container, Typography, Color } from "../../../styles";
 
@@ -12,13 +12,19 @@ const EmptyBucket: React.FC<EmptyBucketProps> = ({
 }: EmptyBucketProps) => {
   return (
     <>
-      <Text
-        lightColor={Color.light.labelOnBackgroundForRead}
-        darkColor={Color.dark.labelOnBackgroundForRead}
-        style={styles.header}
-      >
-        {title}
-      </Text>
+      <View style={{ ...Container.flexStart, paddingLeft: "6%" }}>
+        <Image
+          style={{ width: 30, height: 30 }}
+          source={require("../../../../assets/images/open-file-folder_1f4c2.png")}
+        />
+        <Text
+          lightColor={Color.light.labelOnBackgroundForRead}
+          darkColor={Color.dark.labelOnBackgroundForRead}
+          style={styles.header}
+        >
+          {title}
+        </Text>
+      </View>
       <View
         lightColor={Color.light.emptyPrioBucket}
         darkColor={Color.dark.emptyPrioBucket}
@@ -28,7 +34,7 @@ const EmptyBucket: React.FC<EmptyBucketProps> = ({
           lightColor={Color.light.labelOnBackgroundForRead}
           darkColor={Color.dark.labelOnBackgroundForRead}
           style={styles.placeholderText}
-        >{`No awaiting tasks`}</Text>
+        >{`No tasks in this list`}</Text>
       </View>
     </>
   );
@@ -39,7 +45,7 @@ const styles = StyleSheet.create({
     ...Typography.h4,
     fontSize: 16,
     paddingLeft: "5%",
-    paddingTop: 5,
+    //paddingTop: 5,
   },
   innerWrapper: {
     ...Container.centerAligned,
