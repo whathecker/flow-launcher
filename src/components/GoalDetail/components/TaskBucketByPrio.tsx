@@ -1,6 +1,13 @@
 import React from "react";
 import { Image } from "react-native";
 import { Touchable, View, Text } from "../../Themed";
+import {
+  HighestPrioIcon,
+  HighPrioIcon,
+  MidPrioIcon,
+  LowPrioIcon,
+  EmptyPrioIcon,
+} from "../../shared";
 import { Color, Container, Typography, Shadow } from "../../../styles";
 import { Task, GoalColor } from "../../../types/core/entity";
 import { PriorityTier } from "../../../types/core/value-object";
@@ -53,28 +60,16 @@ const ActiveBucket: React.FC<ActiveBucketProps> = ({
         }}
       >
         {prio === "highest" ? (
-          <Image
-            style={{ width: 32, height: 32 }}
-            source={require("../../../../assets/images/double-exclamation-mark_203c-fe0f.png")}
-          />
+          <HighestPrioIcon style={{ width: 32, height: 32 }} />
         ) : null}
         {prio === "high" ? (
-          <Image
-            style={{ width: 32, height: 32 }}
-            source={require("../../../../assets/images/glowing-star_1f31f.png")}
-          />
+          <HighPrioIcon style={{ width: 32, height: 32 }} />
         ) : null}
         {prio === "mid" ? (
-          <Image
-            style={{ width: 30, height: 30 }}
-            source={require("../../../../assets/images/mantelpiece-clock_1f570-fe0f.png")}
-          />
+          <MidPrioIcon style={{ width: 30, height: 30 }} />
         ) : null}
         {prio === "low" ? (
-          <Image
-            style={{ width: 32, height: 32 }}
-            source={require("../../../../assets/images/turtle_1f422.png")}
-          />
+          <LowPrioIcon style={{ width: 32, height: 32 }} />
         ) : null}
         <Text
           lightColor={Color.light.textOnBackgroundForRead}
@@ -162,10 +157,7 @@ const EmptyBucket: React.FC<EmptyBucketProps> = ({
         darkColor={Color.dark.emptyPrioBucket}
         style={{ ...Container.flexStart, paddingLeft: 15 }}
       >
-        <Image
-          style={{ width: 28, height: 28 }}
-          source={require("../../../../assets/images/open-file-folder_1f4c2.png")}
-        />
+        <EmptyPrioIcon style={{ width: 28, height: 28 }} />
         <Text
           lightColor={Color.light.labelOnBackgroundForRead}
           darkColor={Color.dark.labelOnBackgroundForRead}
