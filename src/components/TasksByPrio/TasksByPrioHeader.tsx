@@ -1,4 +1,5 @@
 import React from "react";
+import { StyleSheet } from "react-native";
 import { View, Text } from "../Themed";
 import {
   GoBackButtonWhite,
@@ -30,18 +31,12 @@ const TasksByPrioHeader: React.FC<TasksByPrioHeaderProps> = ({
       <View
         lightColor={backgroundColor}
         darkColor={backgroundColor}
-        style={{
-          marginTop: "13%",
-          ...Container.flexStart,
-        }}
+        style={styles.goBackBtnAreaWrapper}
       >
         <View
           lightColor={backgroundColor}
           darkColor={backgroundColor}
-          style={{
-            paddingLeft: "8%",
-            paddingTop: "2.5%",
-          }}
+          style={styles.goBackbtnWrapper}
         >
           <GoBackButtonWhite
             backgroundColor={backgroundColor}
@@ -52,37 +47,23 @@ const TasksByPrioHeader: React.FC<TasksByPrioHeaderProps> = ({
       <View
         lightColor={backgroundColor}
         darkColor={backgroundColor}
-        style={{
-          paddingTop: "7%",
-          paddingLeft: "12%",
-        }}
+        style={styles.labelAndTitleAreaWrapper}
       >
         <View
           lightColor={backgroundColor}
           darkColor={backgroundColor}
-          style={{ ...Container.flexStart, paddingBottom: "12%" }}
+          style={styles.prioLabelWrapper}
         >
           {prio === "highest" ? (
-            <HighestPrioIcon style={{ width: 32, height: 32 }} />
+            <HighestPrioIcon style={styles.prioIconImg} />
           ) : null}
-          {prio === "high" ? (
-            <HighPrioIcon style={{ width: 32, height: 32 }} />
-          ) : null}
-          {prio === "mid" ? (
-            <MidPrioIcon style={{ width: 32, height: 32 }} />
-          ) : null}
-          {prio === "low" ? (
-            <LowPrioIcon style={{ width: 32, height: 32 }} />
-          ) : null}
+          {prio === "high" ? <HighPrioIcon style={styles.prioIconImg} /> : null}
+          {prio === "mid" ? <MidPrioIcon style={styles.prioIconImg} /> : null}
+          {prio === "low" ? <LowPrioIcon style={styles.prioIconImg} /> : null}
           <Text
             lightColor={Color.light.textOnColorForRead}
             darkColor={Color.dark.textOnColorForRead}
-            style={{
-              ...Typography.p,
-              fontSize: 18,
-              paddingLeft: "3.5%",
-              paddingTop: "0.15%",
-            }}
+            style={styles.prioLabel}
           >
             {label}
           </Text>
@@ -90,11 +71,7 @@ const TasksByPrioHeader: React.FC<TasksByPrioHeaderProps> = ({
         <Text
           lightColor={Color.light.textOnColorForRead}
           darkColor={Color.dark.textOnColorForRead}
-          style={{
-            ...Typography.h4,
-            fontSize: 22,
-            paddingBottom: "6%",
-          }}
+          style={styles.goalTitle}
         >
           {goalTitle}
         </Text>
@@ -102,5 +79,39 @@ const TasksByPrioHeader: React.FC<TasksByPrioHeaderProps> = ({
     </View>
   );
 };
+
+const styles = StyleSheet.create({
+  goBackBtnAreaWrapper: {
+    marginTop: "13%",
+    ...Container.flexStart,
+  },
+  goBackbtnWrapper: {
+    paddingTop: "2.5%",
+    paddingLeft: "8%",
+  },
+  labelAndTitleAreaWrapper: {
+    paddingTop: "7%",
+    paddingLeft: "12%",
+  },
+  prioLabelWrapper: {
+    ...Container.flexStart,
+    paddingBottom: "12%",
+  },
+  prioIconImg: {
+    width: 32,
+    height: 32,
+  },
+  prioLabel: {
+    ...Typography.p,
+    fontSize: 18,
+    paddingLeft: "3.5%",
+    paddingTop: "0.15%",
+  },
+  goalTitle: {
+    ...Typography.h4,
+    fontSize: 22,
+    paddingBottom: "6%",
+  },
+});
 
 export default TasksByPrioHeader;
