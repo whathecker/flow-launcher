@@ -117,7 +117,446 @@ exports[`Test TasksByPrioHeader component Should renders TasksByPrioHeader corre
             Object {
               "fontFamily": "Lexend-Regular",
               "fontSize": 18,
-              "paddingLeft": "3%",
+              "paddingLeft": "3.5%",
+              "paddingTop": "0.15%",
+            },
+          ]
+        }
+      >
+        dummy label
+      </Text>
+    </View>
+    <Text
+      style={
+        Array [
+          Object {
+            "color": "#fff",
+          },
+          Object {
+            "fontFamily": "Lexend-SemiBold",
+            "fontSize": 22,
+            "paddingBottom": "6%",
+          },
+        ]
+      }
+    >
+      Mock goal
+    </Text>
+  </View>
+</View>
+`;
+
+exports[`Test TasksByPrioHeader component Should renders TasksByPrioHeader correctly 2`] = `
+<View
+  style={
+    Array [
+      Object {
+        "backgroundColor": "#BCA136",
+      },
+      undefined,
+    ]
+  }
+>
+  <View
+    style={
+      Array [
+        Object {
+          "backgroundColor": "#BCA136",
+        },
+        Object {
+          "alignItems": "center",
+          "flexDirection": "row",
+          "justifyContent": "flex-start",
+          "marginTop": "13%",
+        },
+      ]
+    }
+  >
+    <View
+      style={
+        Array [
+          Object {
+            "backgroundColor": "#BCA136",
+          },
+          Object {
+            "paddingLeft": "8%",
+            "paddingTop": "2.5%",
+          },
+        ]
+      }
+    >
+      <View
+        accessible={true}
+        focusable={true}
+        onClick={[Function]}
+        onResponderGrant={[Function]}
+        onResponderMove={[Function]}
+        onResponderRelease={[Function]}
+        onResponderTerminate={[Function]}
+        onResponderTerminationRequest={[Function]}
+        onStartShouldSetResponder={[Function]}
+        style={
+          Object {
+            "alignItems": "center",
+            "backgroundColor": "#BCA136",
+            "flexDirection": "row",
+            "justifyContent": "center",
+            "opacity": 1,
+          }
+        }
+      >
+        <Image
+          source={1}
+          style={
+            Object {
+              "height": 20,
+              "width": 20,
+            }
+          }
+        />
+      </View>
+    </View>
+  </View>
+  <View
+    style={
+      Array [
+        Object {
+          "backgroundColor": "#BCA136",
+        },
+        Object {
+          "paddingLeft": "12%",
+          "paddingTop": "7%",
+        },
+      ]
+    }
+  >
+    <View
+      style={
+        Array [
+          Object {
+            "backgroundColor": "#BCA136",
+          },
+          Object {
+            "alignItems": "center",
+            "flexDirection": "row",
+            "justifyContent": "flex-start",
+            "paddingBottom": "12%",
+          },
+        ]
+      }
+    >
+      <Image
+        source={1}
+        style={
+          Object {
+            "height": 32,
+            "width": 32,
+          }
+        }
+      />
+      <Text
+        style={
+          Array [
+            Object {
+              "color": "#fff",
+            },
+            Object {
+              "fontFamily": "Lexend-Regular",
+              "fontSize": 18,
+              "paddingLeft": "3.5%",
+              "paddingTop": "0.15%",
+            },
+          ]
+        }
+      >
+        dummy label
+      </Text>
+    </View>
+    <Text
+      style={
+        Array [
+          Object {
+            "color": "#fff",
+          },
+          Object {
+            "fontFamily": "Lexend-SemiBold",
+            "fontSize": 22,
+            "paddingBottom": "6%",
+          },
+        ]
+      }
+    >
+      Mock goal
+    </Text>
+  </View>
+</View>
+`;
+
+exports[`Test TasksByPrioHeader component Should renders TasksByPrioHeader correctly 3`] = `
+<View
+  style={
+    Array [
+      Object {
+        "backgroundColor": "#BCA136",
+      },
+      undefined,
+    ]
+  }
+>
+  <View
+    style={
+      Array [
+        Object {
+          "backgroundColor": "#BCA136",
+        },
+        Object {
+          "alignItems": "center",
+          "flexDirection": "row",
+          "justifyContent": "flex-start",
+          "marginTop": "13%",
+        },
+      ]
+    }
+  >
+    <View
+      style={
+        Array [
+          Object {
+            "backgroundColor": "#BCA136",
+          },
+          Object {
+            "paddingLeft": "8%",
+            "paddingTop": "2.5%",
+          },
+        ]
+      }
+    >
+      <View
+        accessible={true}
+        focusable={true}
+        onClick={[Function]}
+        onResponderGrant={[Function]}
+        onResponderMove={[Function]}
+        onResponderRelease={[Function]}
+        onResponderTerminate={[Function]}
+        onResponderTerminationRequest={[Function]}
+        onStartShouldSetResponder={[Function]}
+        style={
+          Object {
+            "alignItems": "center",
+            "backgroundColor": "#BCA136",
+            "flexDirection": "row",
+            "justifyContent": "center",
+            "opacity": 1,
+          }
+        }
+      >
+        <Image
+          source={1}
+          style={
+            Object {
+              "height": 20,
+              "width": 20,
+            }
+          }
+        />
+      </View>
+    </View>
+  </View>
+  <View
+    style={
+      Array [
+        Object {
+          "backgroundColor": "#BCA136",
+        },
+        Object {
+          "paddingLeft": "12%",
+          "paddingTop": "7%",
+        },
+      ]
+    }
+  >
+    <View
+      style={
+        Array [
+          Object {
+            "backgroundColor": "#BCA136",
+          },
+          Object {
+            "alignItems": "center",
+            "flexDirection": "row",
+            "justifyContent": "flex-start",
+            "paddingBottom": "12%",
+          },
+        ]
+      }
+    >
+      <Image
+        source={1}
+        style={
+          Object {
+            "height": 32,
+            "width": 32,
+          }
+        }
+      />
+      <Text
+        style={
+          Array [
+            Object {
+              "color": "#fff",
+            },
+            Object {
+              "fontFamily": "Lexend-Regular",
+              "fontSize": 18,
+              "paddingLeft": "3.5%",
+              "paddingTop": "0.15%",
+            },
+          ]
+        }
+      >
+        dummy label
+      </Text>
+    </View>
+    <Text
+      style={
+        Array [
+          Object {
+            "color": "#fff",
+          },
+          Object {
+            "fontFamily": "Lexend-SemiBold",
+            "fontSize": 22,
+            "paddingBottom": "6%",
+          },
+        ]
+      }
+    >
+      Mock goal
+    </Text>
+  </View>
+</View>
+`;
+
+exports[`Test TasksByPrioHeader component Should renders TasksByPrioHeader correctly 4`] = `
+<View
+  style={
+    Array [
+      Object {
+        "backgroundColor": "#BCA136",
+      },
+      undefined,
+    ]
+  }
+>
+  <View
+    style={
+      Array [
+        Object {
+          "backgroundColor": "#BCA136",
+        },
+        Object {
+          "alignItems": "center",
+          "flexDirection": "row",
+          "justifyContent": "flex-start",
+          "marginTop": "13%",
+        },
+      ]
+    }
+  >
+    <View
+      style={
+        Array [
+          Object {
+            "backgroundColor": "#BCA136",
+          },
+          Object {
+            "paddingLeft": "8%",
+            "paddingTop": "2.5%",
+          },
+        ]
+      }
+    >
+      <View
+        accessible={true}
+        focusable={true}
+        onClick={[Function]}
+        onResponderGrant={[Function]}
+        onResponderMove={[Function]}
+        onResponderRelease={[Function]}
+        onResponderTerminate={[Function]}
+        onResponderTerminationRequest={[Function]}
+        onStartShouldSetResponder={[Function]}
+        style={
+          Object {
+            "alignItems": "center",
+            "backgroundColor": "#BCA136",
+            "flexDirection": "row",
+            "justifyContent": "center",
+            "opacity": 1,
+          }
+        }
+      >
+        <Image
+          source={1}
+          style={
+            Object {
+              "height": 20,
+              "width": 20,
+            }
+          }
+        />
+      </View>
+    </View>
+  </View>
+  <View
+    style={
+      Array [
+        Object {
+          "backgroundColor": "#BCA136",
+        },
+        Object {
+          "paddingLeft": "12%",
+          "paddingTop": "7%",
+        },
+      ]
+    }
+  >
+    <View
+      style={
+        Array [
+          Object {
+            "backgroundColor": "#BCA136",
+          },
+          Object {
+            "alignItems": "center",
+            "flexDirection": "row",
+            "justifyContent": "flex-start",
+            "paddingBottom": "12%",
+          },
+        ]
+      }
+    >
+      <Image
+        source={1}
+        style={
+          Object {
+            "height": 32,
+            "width": 32,
+          }
+        }
+      />
+      <Text
+        style={
+          Array [
+            Object {
+              "color": "#fff",
+            },
+            Object {
+              "fontFamily": "Lexend-Regular",
+              "fontSize": 18,
+              "paddingLeft": "3.5%",
+              "paddingTop": "0.15%",
             },
           ]
         }

@@ -35,6 +35,7 @@ const TasksByPrioScreen: React.FC<Props> = ({ route }: Props) => {
         }}
       >
         <TasksByPrioHeader
+          prio={prio}
           goalTitle={state.goal!.title}
           label={headerLabel}
           backgroundColor={backgroundColor}

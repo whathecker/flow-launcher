@@ -1,8 +1,12 @@
-/* eslint-disable @typescript-eslint/no-unused-vars */
 import React from "react";
-import { Image } from "react-native";
 import { View, Text } from "../Themed";
-import { GoBackButtonWhite } from "../shared";
+import {
+  GoBackButtonWhite,
+  HighestPrioIcon,
+  HighPrioIcon,
+  MidPrioIcon,
+  LowPrioIcon,
+} from "../shared";
 import { Container, Typography, Color } from "../../styles";
 import { navigationRef } from "../../utils";
 import { PriorityTier } from "../../types/core/value-object";
@@ -29,7 +33,6 @@ const TasksByPrioHeader: React.FC<TasksByPrioHeaderProps> = ({
         style={{
           marginTop: "13%",
           ...Container.flexStart,
-          //minHeight: "50%",
         }}
       >
         <View
@@ -59,17 +62,26 @@ const TasksByPrioHeader: React.FC<TasksByPrioHeaderProps> = ({
           darkColor={backgroundColor}
           style={{ ...Container.flexStart, paddingBottom: "12%" }}
         >
-          <Image
-            style={{ width: 32, height: 32 }}
-            source={require("../../../assets/images/double-exclamation-mark_203c-fe0f.png")}
-          />
+          {prio === "highest" ? (
+            <HighestPrioIcon style={{ width: 32, height: 32 }} />
+          ) : null}
+          {prio === "high" ? (
+            <HighPrioIcon style={{ width: 32, height: 32 }} />
+          ) : null}
+          {prio === "mid" ? (
+            <MidPrioIcon style={{ width: 32, height: 32 }} />
+          ) : null}
+          {prio === "low" ? (
+            <LowPrioIcon style={{ width: 32, height: 32 }} />
+          ) : null}
           <Text
             lightColor={Color.light.textOnColorForRead}
             darkColor={Color.dark.textOnColorForRead}
             style={{
               ...Typography.p,
               fontSize: 18,
-              paddingLeft: "3%",
+              paddingLeft: "3.5%",
+              paddingTop: "0.15%",
             }}
           >
             {label}
