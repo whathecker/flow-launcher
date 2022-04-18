@@ -1,0 +1,61 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Test PrioIcons component Should renders all icons correctly 1`] = `
+<Image
+  source={1}
+  style={
+    Object {
+      "height": 32,
+      "width": 32,
+    }
+  }
+/>
+`;
+
+exports[`Test PrioIcons component Should renders all icons correctly 2`] = `
+<Image
+  source={1}
+  style={
+    Object {
+      "height": 32,
+      "width": 32,
+    }
+  }
+/>
+`;
+
+exports[`Test PrioIcons component Should renders all icons correctly 3`] = `
+<Image
+  source={1}
+  style={
+    Object {
+      "height": 32,
+      "width": 32,
+    }
+  }
+/>
+`;
+
+exports[`Test PrioIcons component Should renders all icons correctly 4`] = `
+<Image
+  source={1}
+  style={
+    Object {
+      "height": 32,
+      "width": 32,
+    }
+  }
+/>
+`;
+
+exports[`Test PrioIcons component Should renders all icons correctly 5`] = `
+<Image
+  source={1}
+  style={
+    Object {
+      "height": 32,
+      "width": 32,
+    }
+  }
+/>
+`;

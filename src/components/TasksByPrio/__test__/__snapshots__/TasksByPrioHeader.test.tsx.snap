@@ -5,11 +5,9 @@ exports[`Test TasksByPrioHeader component Should renders TasksByPrioHeader corre
   style={
     Array [
       Object {
-        "backgroundColor": "#fff",
-      },
-      Object {
         "backgroundColor": "#BCA136",
       },
+      undefined,
     ]
   }
 >
@@ -17,13 +15,11 @@ exports[`Test TasksByPrioHeader component Should renders TasksByPrioHeader corre
     style={
       Array [
         Object {
-          "backgroundColor": "#fff",
+          "backgroundColor": "#BCA136",
         },
         Object {
           "alignItems": "center",
-          "backgroundColor": "#BCA136",
           "flexDirection": "row",
-          "height": "40%",
           "justifyContent": "flex-start",
           "marginTop": "13%",
         },
@@ -34,12 +30,11 @@ exports[`Test TasksByPrioHeader component Should renders TasksByPrioHeader corre
       style={
         Array [
           Object {
-            "backgroundColor": "#fff",
+            "backgroundColor": "#BCA136",
           },
           Object {
-            "backgroundColor": "#BCA136",
             "paddingLeft": "8%",
-            "paddingTop": 0,
+            "paddingTop": "2.5%",
           },
         ]
       }
@@ -80,16 +75,56 @@ exports[`Test TasksByPrioHeader component Should renders TasksByPrioHeader corre
     style={
       Array [
         Object {
-          "backgroundColor": "#fff",
+          "backgroundColor": "#BCA136",
         },
         Object {
-          "backgroundColor": "#BCA136",
           "paddingLeft": "12%",
-          "paddingTop": "0.5%",
+          "paddingTop": "7%",
         },
       ]
     }
   >
+    <View
+      style={
+        Array [
+          Object {
+            "backgroundColor": "#BCA136",
+          },
+          Object {
+            "alignItems": "center",
+            "flexDirection": "row",
+            "justifyContent": "flex-start",
+            "paddingBottom": "12%",
+          },
+        ]
+      }
+    >
+      <Image
+        source={1}
+        style={
+          Object {
+            "height": 32,
+            "width": 32,
+          }
+        }
+      />
+      <Text
+        style={
+          Array [
+            Object {
+              "color": "#fff",
+            },
+            Object {
+              "fontFamily": "Lexend-Regular",
+              "fontSize": 18,
+              "paddingLeft": "3%",
+            },
+          ]
+        }
+      >
+        dummy label
+      </Text>
+    </View>
     <Text
       style={
         Array [
@@ -105,21 +140,6 @@ exports[`Test TasksByPrioHeader component Should renders TasksByPrioHeader corre
       }
     >
       Mock goal
-    </Text>
-    <Text
-      style={
-        Array [
-          Object {
-            "color": "#fff",
-          },
-          Object {
-            "fontFamily": "Lexend-Regular",
-            "fontSize": 18,
-          },
-        ]
-      }
-    >
-      dummy label
     </Text>
   </View>
 </View>

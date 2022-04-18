@@ -45,7 +45,6 @@ const styles = StyleSheet.create({
     ...Typography.h4,
     fontSize: 16,
     paddingLeft: "5%",
-    //paddingTop: 5,
   },
   innerWrapper: {
     ...Container.centerAligned,
