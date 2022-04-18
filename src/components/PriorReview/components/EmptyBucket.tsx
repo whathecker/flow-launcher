@@ -1,6 +1,7 @@
 import React from "react";
-import { StyleSheet, Image } from "react-native";
+import { StyleSheet } from "react-native";
 import { View, Text } from "../../Themed";
+import { EmptyPrioIcon } from "../../shared";
 import { Container, Typography, Color } from "../../../styles";
 
 type EmptyBucketProps = {
@@ -13,10 +14,7 @@ const EmptyBucket: React.FC<EmptyBucketProps> = ({
   return (
     <>
       <View style={{ ...Container.flexStart, paddingLeft: "6%" }}>
-        <Image
-          style={{ width: 30, height: 30 }}
-          source={require("../../../../assets/images/open-file-folder_1f4c2.png")}
-        />
+        <EmptyPrioIcon style={{ width: 30, height: 30 }} />
         <Text
           lightColor={Color.light.labelOnBackgroundForRead}
           darkColor={Color.dark.labelOnBackgroundForRead}

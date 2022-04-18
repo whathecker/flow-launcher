@@ -1,7 +1,13 @@
 import React from "react";
-import { SectionList, ListRenderItem, Image } from "react-native";
+import { SectionList, ListRenderItem } from "react-native";
 import { View, Text } from "../Themed";
 import { EmptyBucket, TaskReadable } from "./components";
+import {
+  HighestPrioIcon,
+  HighPrioIcon,
+  MidPrioIcon,
+  LowPrioIcon,
+} from "../shared";
 import { Typography, Color, Container } from "../../styles";
 import { Task } from "../../types/core/entity";
 import { PriorityTier } from "../../types/core/value-object";
@@ -73,28 +79,16 @@ const PrioReviewBucket: React.FC<PrioReviewBucketProps> = ({
                 }}
               >
                 {prio === "highest" ? (
-                  <Image
-                    style={{ width: 32, height: 32 }}
-                    source={require("../../../assets/images/double-exclamation-mark_203c-fe0f.png")}
-                  />
+                  <HighestPrioIcon style={{ width: 32, height: 32 }} />
                 ) : null}
                 {prio === "high" ? (
-                  <Image
-                    style={{ width: 32, height: 32 }}
-                    source={require("../../../assets/images/glowing-star_1f31f.png")}
-                  />
+                  <HighPrioIcon style={{ width: 32, height: 32 }} />
                 ) : null}
                 {prio === "mid" ? (
-                  <Image
-                    style={{ width: 30, height: 30 }}
-                    source={require("../../../assets/images/mantelpiece-clock_1f570-fe0f.png")}
-                  />
+                  <MidPrioIcon style={{ width: 30, height: 30 }} />
                 ) : null}
                 {prio === "low" ? (
-                  <Image
-                    style={{ width: 32, height: 32 }}
-                    source={require("../../../assets/images/turtle_1f422.png")}
-                  />
+                  <LowPrioIcon style={{ width: 32, height: 32 }} />
                 ) : null}
                 <Text
                   lightColor={lightTextColor}
