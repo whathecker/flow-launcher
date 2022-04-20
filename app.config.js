@@ -17,7 +17,7 @@ export default {
   splash: {
     image: "./assets/images/splash.png",
     resizeMode: "contain",
-    backgroundColor: "#ffffff",
+    backgroundColor: "#0FA858",
   },
   updates: {
     fallbackToCacheTimeout: 0,
@@ -32,7 +32,7 @@ export default {
     package: "com.koelkast.flowlauncher",
     adaptiveIcon: {
       foregroundImage: "./assets/images/adaptive-icon.png",
-      backgroundColor: "#FFFFFF",
+      backgroundColor: "#0FA858",
     },
   },
   web: {
