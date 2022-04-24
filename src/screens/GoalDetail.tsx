@@ -117,7 +117,7 @@ const styles = StyleSheet.create({
     //TODO: write a themed scroll view component
     backgroundColor: Color.light.background,
     borderColor: Color.light.defaultBorder,
-    borderWidth: 1,
+    borderWidth: 0.25,
     minHeight: "75%",
   },
   recentTasksWrapper: {
