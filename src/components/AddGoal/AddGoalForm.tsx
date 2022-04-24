@@ -52,11 +52,11 @@ const AddGoalForm: React.FC = () => {
                 <AddGoalFormLabel text="Goal" type="goal" />
                 <TextInput
                   style={styles.goalTitleInput}
-                  multiline
                   onChangeText={handleChange("title")}
                   placeholder={`What do you want to achieve?`}
                   placeholderTextColor={Color.light.labelOnBackgroundForRead}
                   value={values.title}
+                  autoFocus
                 />
                 {touched.title && errors.title && (
                   <AddGoalErrMsg msg={errors.title} />

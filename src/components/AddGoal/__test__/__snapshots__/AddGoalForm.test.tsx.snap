@@ -80,7 +80,7 @@ exports[`Test AddGoalForm component Should renders AddGoalForm correctly 1`] = `
     </View>
     <TextInput
       allowFontScaling={true}
-      multiline={true}
+      autoFocus={true}
       onChangeText={[Function]}
       placeholder="What do you want to achieve?"
       placeholderTextColor="#848484"
