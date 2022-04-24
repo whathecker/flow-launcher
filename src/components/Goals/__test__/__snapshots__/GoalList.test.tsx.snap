@@ -174,7 +174,7 @@ exports[`Test GoalList component Should renders GoalList correctly 1`] = `
           style={
             Object {
               "alignItems": "flex-start",
-              "backgroundColor": "#84C5E8",
+              "backgroundColor": "#42ABE3",
               "borderRadius": 10,
               "flexDirection": "column",
               "justifyContent": "center",
@@ -250,7 +250,7 @@ exports[`Test GoalList component Should renders GoalList correctly 1`] = `
           style={
             Object {
               "alignItems": "flex-start",
-              "backgroundColor": "#1C88BA",
+              "backgroundColor": "#F0B541",
               "borderRadius": 10,
               "flexDirection": "column",
               "justifyContent": "center",
@@ -326,7 +326,7 @@ exports[`Test GoalList component Should renders GoalList correctly 1`] = `
           style={
             Object {
               "alignItems": "flex-start",
-              "backgroundColor": "#F0B541",
+              "backgroundColor": "#1C88BA",
               "borderRadius": 10,
               "flexDirection": "column",
               "justifyContent": "center",

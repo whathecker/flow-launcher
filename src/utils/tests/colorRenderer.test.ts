@@ -2,9 +2,9 @@ import colorRenderer from "../colorRenderer";
 
 describe("Test color renderer module", () => {
   const colorOne = "#E9695B";
-  const colorTwo = "#84C5E8";
-  const colorThree = "#1C88BA";
-  const colorFour = "#F0B541";
+  const colorTwo = "#42ABE3";
+  const colorThree = "#F0B541";
+  const colorFour = "#1C88BA";
 
   it("Should render correct color for goal", () => {
     const firstColor = colorRenderer.assignColorForGoal(0);

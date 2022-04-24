@@ -6,13 +6,13 @@ const assignColorForGoal = (index: number): GoalColor => {
   let color;
   switch (_findColorToRender(index)) {
     case 1:
-      color = "#84C5E8";
+      color = "#42ABE3";
       break;
     case 2:
-      color = "#1C88BA";
+      color = "#F0B541";
       break;
     case 3:
-      color = "#F0B541";
+      color = "#1C88BA";
       break;
     default:
       color = "#E9695B";
