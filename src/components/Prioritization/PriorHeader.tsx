@@ -40,16 +40,16 @@ const PriorHeader: React.FC<PriorHeaderProps> = ({
 
 const styles = StyleSheet.create({
   wrapper: {
-    marginTop: 35,
-    marginBottom: 35,
+    marginTop: "8%",
+    marginBottom: "8%",
   },
   closeIconAreaWrapper: {
     ...Container.flexStart,
     height: "8%",
   },
   closeIconWrapper: {
-    paddingLeft: 25,
-    paddingTop: 30,
+    paddingLeft: "5%",
+    paddingTop: "12%",
     paddingBottom: 20,
   },
   headerAreaWrapper: {

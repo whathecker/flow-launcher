@@ -87,15 +87,15 @@ const styles = StyleSheet.create({
   },
   goBackbtnWrapper: {
     paddingTop: "2.5%",
-    paddingLeft: "8%",
+    paddingLeft: "5.5%",
   },
   labelAndTitleAreaWrapper: {
-    paddingTop: "7%",
-    paddingLeft: "12%",
+    paddingTop: "10%",
+    paddingLeft: "11%",
   },
   prioLabelWrapper: {
     ...Container.flexStart,
-    paddingBottom: "12%",
+    paddingBottom: "9%",
   },
   prioIconImg: {
     width: 32,
@@ -110,7 +110,7 @@ const styles = StyleSheet.create({
   goalTitle: {
     ...Typography.h4,
     fontSize: 22,
-    paddingBottom: "6%",
+    paddingBottom: "5%",
   },
 });
 

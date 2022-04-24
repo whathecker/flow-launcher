@@ -8,7 +8,8 @@ exports[`Test GoalDetailHeader component Should renders GoalDetailHeader correct
         "backgroundColor": "#fff",
       },
       Object {
-        "paddingBottom": 20,
+        "paddingBottom": "2%",
+        "paddingTop": "2%",
       },
     ]
   }
@@ -35,7 +36,7 @@ exports[`Test GoalDetailHeader component Should renders GoalDetailHeader correct
             "backgroundColor": "#fff",
           },
           Object {
-            "paddingLeft": 25,
+            "paddingLeft": "5%",
             "paddingTop": 0,
           },
         ]
@@ -80,7 +81,7 @@ exports[`Test GoalDetailHeader component Should renders GoalDetailHeader correct
           "backgroundColor": "#fff",
         },
         Object {
-          "paddingLeft": "8%",
+          "paddingLeft": "10%",
         },
       ]
     }

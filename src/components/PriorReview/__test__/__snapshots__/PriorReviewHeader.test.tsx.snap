@@ -8,7 +8,8 @@ exports[`Test PriorReviewHeader component Should renders PriorReviewHeader corre
         "backgroundColor": "#fff",
       },
       Object {
-        "paddingBottom": 15,
+        "paddingBottom": "2.5%",
+        "paddingTop": "2.5%",
       },
     ]
   }
@@ -35,7 +36,7 @@ exports[`Test PriorReviewHeader component Should renders PriorReviewHeader corre
             "backgroundColor": "#fff",
           },
           Object {
-            "paddingLeft": 25,
+            "paddingLeft": "5.5%",
             "paddingTop": 0,
           },
         ]
@@ -134,7 +135,7 @@ exports[`Test PriorReviewHeader component Should renders PriorReviewHeader corre
           "backgroundColor": "#fff",
         },
         Object {
-          "marginTop": "8%",
+          "marginTop": "6%",
           "paddingLeft": "10%",
         },
       ]

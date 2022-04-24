@@ -27,8 +27,8 @@ const styles = StyleSheet.create({
     ...Container.centerAligned,
   },
   closeIconImg: {
-    width: 20,
-    height: 20,
+    width: 18,
+    height: 18,
   },
 });
 

@@ -31,7 +31,7 @@ const styles = StyleSheet.create({
     justifyContent: "flex-start",
     width: "90%",
     height: "50%",
-    marginLeft: "5%",
+    marginLeft: "4.5%",
     marginRight: "5%",
   },
   headerAreaWrapper: {

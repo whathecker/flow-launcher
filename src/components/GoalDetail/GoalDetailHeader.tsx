@@ -1,7 +1,7 @@
 import React from "react";
 import { Image, StyleSheet } from "react-native";
 import { View, Text } from "../Themed";
-import { CloseIcon } from "../shared";
+import { GoBackButton } from "../shared";
 import { navigationRef } from "../../utils";
 import { Container, Typography } from "../../styles";
 
@@ -15,7 +15,7 @@ const GoalDetailHeader: React.FC<GoalDetailHeaderProps> = ({
   movitation,
 }: GoalDetailHeaderProps) => {
   return (
-    <View style={{ paddingBottom: 20 }}>
+    <View style={styles.wrapper}>
       <View
         style={{
           ...Container.flexStart,
@@ -23,14 +23,14 @@ const GoalDetailHeader: React.FC<GoalDetailHeaderProps> = ({
         }}
       >
         <View style={styles.closeIconWrapper}>
-          <CloseIcon
+          <GoBackButton
             pressHandler={() => {
               navigationRef.goBack();
             }}
           />
         </View>
       </View>
-      <View style={{ paddingLeft: "8%" }}>
+      <View style={{ paddingLeft: "10%" }}>
         <View style={styles.headerWrapper}>
           <Text style={styles.goalTitle}>{title}</Text>
           <Image
@@ -47,8 +47,12 @@ const GoalDetailHeader: React.FC<GoalDetailHeaderProps> = ({
 };
 
 const styles = StyleSheet.create({
+  wrapper: {
+    paddingTop: "2%",
+    paddingBottom: "2%",
+  },
   closeIconWrapper: {
-    paddingLeft: 25,
+    paddingLeft: "5%",
     paddingTop: 0,
   },
   headerWrapper: {

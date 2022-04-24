@@ -42,14 +42,15 @@ const PriorReviewHeader: React.FC<PriorReviewHeaderProps> = ({
 
 const styles = StyleSheet.create({
   wrapper: {
-    paddingBottom: 15,
+    paddingTop: "2.5%",
+    paddingBottom: "2.5%",
   },
   goBackBtnAreaWrapper: {
     ...Container.flexStart,
     height: "40%",
   },
   goBackBtnWrapper: {
-    paddingLeft: 25,
+    paddingLeft: "5.5%",
     paddingTop: 0,
   },
   headerAreaWrapper: {
@@ -70,7 +71,7 @@ const styles = StyleSheet.create({
   },
   goalAreaWrapper: {
     paddingLeft: "10%",
-    marginTop: "8%",
+    marginTop: "6%",
   },
   goalText: {
     ...Typography.h4,

@@ -94,7 +94,9 @@ const TasksList: React.FC<TasksListProps> = ({
             style={{
               width: "80%",
               ...Typography.p,
-              color: status ? Color.light.subtleLabel : Color.light.text,
+              color: status
+                ? Color.light.defaultBorder
+                : Color.light.textOnBackgroundForRead,
               fontSize: 15,
               paddingLeft: "2.5%",
               textDecorationLine: status ? "line-through" : "none",
@@ -137,10 +139,10 @@ const TasksList: React.FC<TasksListProps> = ({
 
 const styles = StyleSheet.create({
   wrapper: {
-    width: "80%",
+    width: "90%",
     height: "80%",
-    marginLeft: "13%",
-    marginRight: "12%",
+    marginLeft: "10%",
+    //marginRight: "2.5%",
     marginTop: "10%",
   },
   taskWrapper: {
