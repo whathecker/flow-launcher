@@ -13,6 +13,8 @@ type UnprioritizedTasksProp = {
 const UnprioritizedTasksList: React.FC<UnprioritizedTasksProp> = ({
   tasks,
 }: UnprioritizedTasksProp) => {
+  const overflow = tasks.length - 3;
+
   return (
     <View style={styles.wrapper}>
       {tasks[0] ? <UnprioritizedTask title={tasks[0].title} /> : null}
@@ -20,14 +22,15 @@ const UnprioritizedTasksList: React.FC<UnprioritizedTasksProp> = ({
       {tasks[2] ? <UnprioritizedTask title={tasks[2].title} /> : null}
       {tasks.length > 3 ? (
         <View style={styles.moreTasksIndicatorWrapper}>
-          <Text>{`...`}</Text>
+          <Text
+            lightColor={Color.light.labelOnBackgroundForRead}
+            darkColor={Color.dark.labelOnBackgroundForRead}
+            style={styles.moreTasksIndicator}
+          >{`${overflow} more tasks in the list ..`}</Text>
         </View>
       ) : null}
       {tasks.length > 0 ? (
         <View style={styles.buttonAreaWrapper}>
-          <Touchable>
-            <Text style={styles.sellAllBtn}>{`See All (90)`}</Text>
-          </Touchable>
           <Touchable
             onPress={() => {
               navigationRef.navigate("Prior");
@@ -47,18 +50,22 @@ const styles = StyleSheet.create({
     width: "90%",
     marginLeft: "5%",
     marginRight: "5%",
-    marginTop: 15,
-    marginBottom: 8,
+    marginTop: "5%",
+    marginBottom: "2.5%",
   },
   moreTasksIndicatorWrapper: {
-    marginTop: 5,
-    marginBottom: 5,
+    marginTop: "3.5%",
+    marginBottom: "3%",
+  },
+  moreTasksIndicator: {
+    ...Typography.p,
+    fontSize: 14,
   },
   buttonAreaWrapper: {
     ...Container.flexStart,
-    justifyContent: "space-between",
+    justifyContent: "flex-end",
     width: "100%",
-    paddingTop: 30,
+    paddingTop: "5%",
   },
   prioritizeBtn: {
     ...Typography.p,

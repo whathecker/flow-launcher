@@ -11,10 +11,10 @@ exports[`Test UnprioritizedTasksList component Should renders UnprioritizedTasks
         "alignItems": "center",
         "flexDirection": "column",
         "justifyContent": "center",
-        "marginBottom": 8,
+        "marginBottom": "2.5%",
         "marginLeft": "5%",
         "marginRight": "5%",
-        "marginTop": 15,
+        "marginTop": "5%",
         "width": "90%",
       },
     ]
@@ -141,8 +141,8 @@ exports[`Test UnprioritizedTasksList component Should renders UnprioritizedTasks
           "backgroundColor": "#fff",
         },
         Object {
-          "marginBottom": 5,
-          "marginTop": 5,
+          "marginBottom": "3%",
+          "marginTop": "3.5%",
         },
       ]
     }
@@ -151,13 +151,16 @@ exports[`Test UnprioritizedTasksList component Should renders UnprioritizedTasks
       style={
         Array [
           Object {
-            "color": "#554F4F",
+            "color": "#848484",
           },
-          undefined,
+          Object {
+            "fontFamily": "Lexend-Regular",
+            "fontSize": 14,
+          },
         ]
       }
     >
-      ...
+      1 more tasks in the list ..
     </Text>
   </View>
   <View
@@ -169,47 +172,13 @@ exports[`Test UnprioritizedTasksList component Should renders UnprioritizedTasks
         Object {
           "alignItems": "center",
           "flexDirection": "row",
-          "justifyContent": "space-between",
-          "paddingTop": 30,
+          "justifyContent": "flex-end",
+          "paddingTop": "5%",
           "width": "100%",
         },
       ]
     }
   >
-    <View
-      accessible={true}
-      focusable={false}
-      onClick={[Function]}
-      onResponderGrant={[Function]}
-      onResponderMove={[Function]}
-      onResponderRelease={[Function]}
-      onResponderTerminate={[Function]}
-      onResponderTerminationRequest={[Function]}
-      onStartShouldSetResponder={[Function]}
-      style={
-        Object {
-          "backgroundColor": "#fff",
-          "opacity": 1,
-        }
-      }
-    >
-      <Text
-        style={
-          Array [
-            Object {
-              "color": "#554F4F",
-            },
-            Object {
-              "fontFamily": "Lexend-Regular",
-              "fontSize": 14,
-              "textDecorationLine": "underline",
-            },
-          ]
-        }
-      >
-        See All (90)
-      </Text>
-    </View>
     <View
       accessible={true}
       focusable={true}
