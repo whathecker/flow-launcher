@@ -3,7 +3,7 @@ import { StyleSheet, Image } from "react-native";
 import { View, Text } from "../Themed";
 import { GoBackButton } from "../shared";
 import { Container, Typography } from "../../styles";
-import { navigationRef } from "../../utils";
+import { navigationRef, shortenText } from "../../utils";
 
 type PriorReviewHeaderProps = {
   title: string;
@@ -14,13 +14,6 @@ const PriorReviewHeader: React.FC<PriorReviewHeaderProps> = ({
   title,
   tasksCount,
 }: PriorReviewHeaderProps) => {
-  const _trimTitle = (input: string): string => {
-    if (input.length >= 30) {
-      return input.slice(0, 30) + "...";
-    } else {
-      return input;
-    }
-  };
   return (
     <View style={styles.wrapper}>
       <View style={styles.goBackBtnAreaWrapper}>
@@ -38,7 +31,7 @@ const PriorReviewHeader: React.FC<PriorReviewHeaderProps> = ({
         </View>
       </View>
       <View style={styles.goalAreaWrapper}>
-        <Text style={styles.goalText}>{_trimTitle(title)}</Text>
+        <Text style={styles.goalText}>{shortenText(title, 30)}</Text>
         <Text
           style={styles.taskCountText}
         >{`${tasksCount} tasks have been prioritised`}</Text>

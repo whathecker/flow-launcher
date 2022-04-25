@@ -8,7 +8,8 @@ exports[`Test GoalDetailHeader component Should renders GoalDetailHeader correct
         "backgroundColor": "#fff",
       },
       Object {
-        "paddingBottom": "2%",
+        "flexShrink": 1,
+        "marginBottom": "6.5%",
         "paddingTop": "2%",
       },
     ]
@@ -37,7 +38,6 @@ exports[`Test GoalDetailHeader component Should renders GoalDetailHeader correct
           },
           Object {
             "paddingLeft": "5%",
-            "paddingTop": 0,
           },
         ]
       }
@@ -81,7 +81,9 @@ exports[`Test GoalDetailHeader component Should renders GoalDetailHeader correct
           "backgroundColor": "#fff",
         },
         Object {
+          "paddingBottom": "5%",
           "paddingLeft": "10%",
+          "width": "95%",
         },
       ]
     }
@@ -96,9 +98,8 @@ exports[`Test GoalDetailHeader component Should renders GoalDetailHeader correct
             "alignItems": "center",
             "flexDirection": "row",
             "justifyContent": "flex-start",
-            "paddingBottom": 5,
-            "paddingTop": 0,
-            "width": "100%",
+            "paddingBottom": "0.5%",
+            "width": "90%",
           },
         ]
       }
@@ -112,7 +113,7 @@ exports[`Test GoalDetailHeader component Should renders GoalDetailHeader correct
             Object {
               "fontFamily": "Lexend-SemiBold",
               "fontSize": 20,
-              "marginRight": 15,
+              "marginRight": "3%",
             },
           ]
         }
@@ -136,8 +137,8 @@ exports[`Test GoalDetailHeader component Should renders GoalDetailHeader correct
             "backgroundColor": "#fff",
           },
           Object {
-            "paddingBottom": 5,
-            "paddingTop": 5,
+            "paddingBottom": "1.5%",
+            "paddingTop": "1.5%",
           },
         ]
       }
