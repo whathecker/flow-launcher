@@ -1,7 +1,13 @@
 /* eslint-disable @typescript-eslint/no-non-null-assertion */
-import React, { useState, useEffect, useContext } from "react";
+import React, { useState, useEffect, useContext, useRef } from "react";
 import { useKeyboard } from "../hooks";
-import { StyleSheet, Keyboard, ScrollView, Dimensions } from "react-native";
+import {
+  StyleSheet,
+  Keyboard,
+  ScrollView,
+  Dimensions,
+  Animated,
+} from "react-native";
 import { View, TouchableWithoutFeedback } from "../components/Themed";
 import { Container, Color, Shadow } from "../styles";
 import { GoalStackScreenProps } from "../types/navigation";
@@ -31,6 +37,10 @@ function _getDynamicMarginForKeyboardHeight(
 const GoalDetailScreen: React.FC<Props> = ({ route }: Props) => {
   const { goal, goalColor } = route.params;
   const [addTaskFormOpened, setAddTaskFormOpened] = useState(false);
+
+  const fadeAnimForm = useRef(new Animated.Value(0)).current;
+  const fadeAnimBackdrop = useRef(new Animated.Value(0)).current;
+
   const { fetchTasks } = useContext(TasksContext);
 
   const keyboardHeight = useKeyboard();
@@ -52,15 +62,13 @@ const GoalDetailScreen: React.FC<Props> = ({ route }: Props) => {
             Keyboard.dismiss();
           }}
         >
-          <View
-            lightColor={Color.light.overlay}
-            darkColor={Color.dark.overlay}
-            style={styles.grayOverlay}
-          ></View>
+          <Animated.View
+            style={[styles.grayOverlay, { opacity: fadeAnimBackdrop }]}
+          ></Animated.View>
         </TouchableWithoutFeedback>
       ) : null}
       {addTaskFormOpened === true ? (
-        <View
+        <Animated.View
           style={{
             position: "absolute",
             zIndex: 1300,
@@ -76,13 +84,14 @@ const GoalDetailScreen: React.FC<Props> = ({ route }: Props) => {
             borderColor: Color.light.defaultBorder,
             borderRadius: 5,
             ...Shadow.regularbackDrop,
+            opacity: fadeAnimForm,
           }}
         >
           <AddTaskForm
             goal_id={goal._id as string}
             addTaskFormOpenedHandler={setAddTaskFormOpened}
           />
-        </View>
+        </Animated.View>
       ) : null}
       <View style={styles.headerWrapper}>
         <GoalDetailHeader title={goal.title} movitation={goal.motivation} />
@@ -100,6 +109,19 @@ const GoalDetailScreen: React.FC<Props> = ({ route }: Props) => {
           ctaTxt="Add Task"
           pressHandler={() => {
             setAddTaskFormOpened(true);
+
+            Animated.parallel([
+              Animated.timing(fadeAnimBackdrop, {
+                toValue: 0.35,
+                duration: 200,
+                useNativeDriver: true,
+              }),
+              Animated.timing(fadeAnimForm, {
+                toValue: 1,
+                duration: 200,
+                useNativeDriver: true,
+              }),
+            ]).start();
           }}
         />
       </View>
@@ -159,6 +181,7 @@ const styles = StyleSheet.create({
     width: "100%",
     height: "30%",
     opacity: 0.35,
+    backgroundColor: Color.light.overlay,
   },
 });
 

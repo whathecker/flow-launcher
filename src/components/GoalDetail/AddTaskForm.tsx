@@ -46,7 +46,7 @@ const AddTaskForm: React.FC<AddTaskFormProps> = ({
     >
       {({ handleChange, handleSubmit, values }) => {
         return (
-          <View>
+          <View style={{ height: "100%" }}>
             <View style={styles.titleInputWrapper}>
               <TextInput
                 style={styles.titleInput}

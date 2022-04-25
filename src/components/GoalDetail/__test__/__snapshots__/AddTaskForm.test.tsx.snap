@@ -7,7 +7,9 @@ exports[`Test AddTaskForm component Should renders AddTaskForm correctly 1`] = `
       Object {
         "backgroundColor": "#fff",
       },
-      undefined,
+      Object {
+        "height": "100%",
+      },
     ]
   }
 >
