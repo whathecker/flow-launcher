@@ -180,7 +180,6 @@ const styles = StyleSheet.create({
     zIndex: 1200,
     width: "100%",
     height: "30%",
-    opacity: 0.35,
     backgroundColor: Color.light.overlay,
   },
 });
