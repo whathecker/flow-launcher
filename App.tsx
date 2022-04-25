@@ -1,4 +1,5 @@
 import "react-native-gesture-handler";
+import "react-native-get-random-values";
 import { SafeAreaProvider } from "react-native-safe-area-context";
 import React from "react";
 import Navigation from "./src/navigation";
