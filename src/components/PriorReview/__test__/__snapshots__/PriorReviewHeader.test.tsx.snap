@@ -8,6 +8,7 @@ exports[`Test PriorReviewHeader component Should renders PriorReviewHeader corre
         "backgroundColor": "#fff",
       },
       Object {
+        "flexShrink": 1,
         "paddingBottom": "2.5%",
         "paddingTop": "2.5%",
       },
@@ -110,7 +111,7 @@ exports[`Test PriorReviewHeader component Should renders PriorReviewHeader corre
             Object {
               "fontFamily": "Lexend-SemiBold",
               "fontSize": 22,
-              "paddingRight": 10,
+              "paddingRight": "3%",
             },
           ]
         }
@@ -135,8 +136,10 @@ exports[`Test PriorReviewHeader component Should renders PriorReviewHeader corre
           "backgroundColor": "#fff",
         },
         Object {
+          "flexShrink": 1,
           "marginTop": "6%",
           "paddingLeft": "10%",
+          "width": "90%",
         },
       ]
     }
@@ -148,9 +151,10 @@ exports[`Test PriorReviewHeader component Should renders PriorReviewHeader corre
             "color": "#554F4F",
           },
           Object {
+            "flexShrink": 1,
             "fontFamily": "Lexend-SemiBold",
             "fontSize": 20,
-            "paddingBottom": 5,
+            "paddingBottom": "3%",
           },
         ]
       }

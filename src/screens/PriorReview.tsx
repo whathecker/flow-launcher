@@ -9,7 +9,6 @@ import { Button } from "../components/shared";
 import { PriorStackScreenProps } from "../types/navigation";
 import { taskManager, navigationRef } from "../utils";
 import { Container, Color } from "../styles";
-import { GoalColor } from "../types/core/entity";
 
 type Props = PriorStackScreenProps<"PriorReview">;
 
@@ -28,26 +27,10 @@ const PriorReview: React.FC<Props> = ({ route }: Props) => {
         />
       </View>
       <ScrollView style={styles.priorityAreaWrapper}>
-        <PrioReviewBucket
-          tasks={tasksFilteredByPrio.highest}
-          prio="highest"
-          goalColor={state.goalColor as GoalColor}
-        />
-        <PrioReviewBucket
-          tasks={tasksFilteredByPrio.high}
-          prio="high"
-          goalColor={state.goalColor as GoalColor}
-        />
-        <PrioReviewBucket
-          tasks={tasksFilteredByPrio.mid}
-          prio="mid"
-          goalColor={state.goalColor as GoalColor}
-        />
-        <PrioReviewBucket
-          tasks={tasksFilteredByPrio.low}
-          prio="low"
-          goalColor={state.goalColor as GoalColor}
-        />
+        <PrioReviewBucket tasks={tasksFilteredByPrio.highest} prio="highest" />
+        <PrioReviewBucket tasks={tasksFilteredByPrio.high} prio="high" />
+        <PrioReviewBucket tasks={tasksFilteredByPrio.mid} prio="mid" />
+        <PrioReviewBucket tasks={tasksFilteredByPrio.low} prio="low" />
       </ScrollView>
       <View style={styles.buttonAreaWrapper}>
         <View style={{ width: "80%" }}>
@@ -89,6 +72,7 @@ const styles = StyleSheet.create({
   buttonAreaWrapper: {
     ...Container.centerAligned,
     height: "10%",
+    paddingBottom: "5%",
   },
 });
 

@@ -44,6 +44,7 @@ const styles = StyleSheet.create({
   wrapper: {
     paddingTop: "2.5%",
     paddingBottom: "2.5%",
+    flexShrink: 1,
   },
   goBackBtnAreaWrapper: {
     ...Container.flexStart,
@@ -63,20 +64,23 @@ const styles = StyleSheet.create({
   headerText: {
     ...Typography.h4,
     fontSize: 22,
-    paddingRight: 10,
+    paddingRight: "3%",
   },
   image: {
     width: 32,
     height: 32,
   },
   goalAreaWrapper: {
+    width: "90%",
     paddingLeft: "10%",
     marginTop: "6%",
+    flexShrink: 1,
   },
   goalText: {
+    flexShrink: 1,
     ...Typography.h4,
     fontSize: 20,
-    paddingBottom: 5,
+    paddingBottom: "3%",
   },
   taskCountText: {
     ...Typography.p,
