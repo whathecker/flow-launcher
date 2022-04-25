@@ -33,7 +33,9 @@ const UnprioritizedTasksList: React.FC<UnprioritizedTasksProp> = ({
         <View style={styles.buttonAreaWrapper}>
           <Touchable
             onPress={() => {
-              navigationRef.navigate("Prior");
+              navigationRef.navigate("PrioIntro", {
+                screen: "PriorizationIntro",
+              });
             }}
           >
             <Text style={styles.prioritizeBtn}>{`Start Prioritizing`}</Text>

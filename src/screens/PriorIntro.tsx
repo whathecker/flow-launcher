@@ -2,12 +2,13 @@ import React from "react";
 import { StyleSheet } from "react-native";
 import { View } from "../components/Themed";
 import { Container } from "../styles";
-import { PriorStackScreenProps } from "../types/navigation";
+import { StackActions } from "@react-navigation/native";
+import { PrioIntroStackScreenProps } from "../types/navigation";
 
 import { PriorIntroHeader, PriorExplanation } from "../components/PriorIntro";
 import { Button } from "../components/shared";
 
-type Props = PriorStackScreenProps<"PriorIntro">;
+type Props = PrioIntroStackScreenProps<"PriorizationIntro">;
 
 const PriorIntroScreen: React.FC<Props> = ({ navigation }: Props) => {
   return (
@@ -22,7 +23,9 @@ const PriorIntroScreen: React.FC<Props> = ({ navigation }: Props) => {
         <View style={{ width: "80%" }}>
           <Button
             ctaTxt="Start prioritizing!"
-            pressHandler={() => navigation.navigate("Prioritization")}
+            pressHandler={() =>
+              navigation.dispatch(StackActions.replace("Prior"))
+            }
           />
         </View>
       </View>

@@ -16,6 +16,7 @@ import {
 import {
   RootStackParamList,
   GoalStackParamList,
+  PrioIntroStackParamList,
   PriorStackParamList,
 } from "../types/navigation";
 import { navigationRef } from "../utils";
@@ -42,6 +43,7 @@ const RootNav: React.FC = () => {
       initialRouteName="Goal"
     >
       <RootStack.Screen name="Goal" component={GoalNav} />
+      <RootStack.Screen name="PrioIntro" component={PrioIntroNav} />
       <RootStack.Screen name="Prior" component={PriorNav} />
     </RootStack.Navigator>
   );
@@ -76,16 +78,25 @@ const GoalNav: React.FC = () => {
   );
 };
 
+const PrioIntroStack = createNativeStackNavigator<PrioIntroStackParamList>();
+
+const PrioIntroNav: React.FC = () => {
+  return (
+    <PrioIntroStack.Navigator>
+      <PrioIntroStack.Screen
+        name="PriorizationIntro"
+        options={{ headerShown: false }}
+        component={PriorIntroScreen}
+      />
+    </PrioIntroStack.Navigator>
+  );
+};
+
 const PriorStack = createNativeStackNavigator<PriorStackParamList>();
 
 const PriorNav: React.FC = () => {
   return (
     <PriorStack.Navigator>
-      <PriorStack.Screen
-        name="PriorIntro"
-        options={{ headerShown: false }}
-        component={PriorIntroScreen}
-      />
       <PriorStack.Screen
         name="Prioritization"
         options={{ headerShown: false }}
