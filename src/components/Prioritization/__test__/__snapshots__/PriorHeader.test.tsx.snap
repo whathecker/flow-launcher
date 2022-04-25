@@ -8,8 +8,8 @@ exports[`Test PriorHeader component Should renders PriorHeader correctly 1`] = `
         "backgroundColor": "#fff",
       },
       Object {
-        "marginBottom": "8%",
-        "marginTop": "8%",
+        "marginBottom": "10%",
+        "marginTop": "6%",
       },
     ]
   }
@@ -36,7 +36,7 @@ exports[`Test PriorHeader component Should renders PriorHeader correctly 1`] = `
             "backgroundColor": "#fff",
           },
           Object {
-            "paddingBottom": 20,
+            "paddingBottom": "5%",
             "paddingLeft": "5%",
             "paddingTop": "12%",
           },
@@ -112,7 +112,7 @@ exports[`Test PriorHeader component Should renders PriorHeader correctly 1`] = `
             Object {
               "fontFamily": "Lexend-SemiBold",
               "fontSize": 20,
-              "paddingRight": 10,
+              "paddingRight": "3%",
             },
           ]
         }
@@ -129,6 +129,37 @@ exports[`Test PriorHeader component Should renders PriorHeader correctly 1`] = `
         }
       />
     </View>
+  </View>
+  <View
+    style={
+      Array [
+        Object {
+          "backgroundColor": "#fff",
+        },
+        Object {
+          "marginTop": "8%",
+          "paddingLeft": "10%",
+          "width": "90%",
+        },
+      ]
+    }
+  >
+    <Text
+      style={
+        Array [
+          Object {
+            "color": "#554F4F",
+          },
+          Object {
+            "fontFamily": "Lexend-SemiBold",
+            "fontSize": 16,
+            "paddingBottom": "5%",
+          },
+        ]
+      }
+    >
+      Mock goal
+    </Text>
   </View>
 </View>
 `;

@@ -27,15 +27,15 @@ const PrioritizationScreen: React.FC<Props> = () => {
 
 const styles = StyleSheet.create({
   headerWrapper: {
-    height: "15%",
+    height: "22%",
   },
   headerText: {
     ...Typography.h1,
   },
   formAreaWrapper: {
     ...Container.centerAligned,
-    height: "90%",
-    paddingBottom: "20%",
+    height: "78%",
+    paddingBottom: "5%",
   },
 });
 
