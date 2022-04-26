@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/no-non-null-assertion */
-import React, { useState } from "react";
-import { StyleSheet, Image } from "react-native";
+import React, { useState, useRef, useEffect } from "react";
+import { StyleSheet, Image, Animated } from "react-native";
 import { Touchable, View, Text } from "../Themed";
 import { TaskCounter, TaskTitle } from "./components";
 import { Button, RadioButton } from "../shared";
@@ -66,9 +66,34 @@ const PriorForm: React.FC<PriorFormProps> = ({
     setImportanceValue(unprioritisedTasks[prevCounter].priority!.importance);
   };
 
+  const fadeAnim = useRef(new Animated.Value(0)).current;
+
+  useEffect(() => {
+    Animated.timing(fadeAnim, {
+      toValue: 1,
+      duration: 1100,
+      useNativeDriver: true,
+    }).start();
+  }, []);
+
+  const dimElements = (): void => {
+    Animated.sequence([
+      Animated.timing(fadeAnim, {
+        toValue: 0.05,
+        duration: 200,
+        useNativeDriver: true,
+      }),
+      Animated.timing(fadeAnim, {
+        toValue: 1,
+        duration: 200,
+        useNativeDriver: true,
+      }),
+    ]).start();
+  };
+
   return (
     <View style={styles.wrapper}>
-      <View style={styles.headerWrapper}>
+      <Animated.View style={[styles.headerWrapper, { opacity: fadeAnim }]}>
         <View style={{ marginBottom: 10 }}>
           <TaskCounter
             currentTaskIndex={activeTaskCounter}
@@ -78,7 +103,7 @@ const PriorForm: React.FC<PriorFormProps> = ({
         <View style={{ marginBottom: 10 }}>
           <TaskTitle title={activeTask.title} />
         </View>
-      </View>
+      </Animated.View>
       <View style={styles.inputAreaWrapper}>
         <View style={styles.inputWrapper}>
           <View style={styles.inputImageWrapper}>
@@ -87,7 +112,7 @@ const PriorForm: React.FC<PriorFormProps> = ({
               source={require(`../../../assets/images/alarm-clock_23f0.png`)}
             />
           </View>
-          <View>
+          <Animated.View style={{ opacity: fadeAnim }}>
             <Text
               lightColor={Color.light.labelOnBackgroundForRead}
               darkColor={Color.light.labelOnBackgroundForRead}
@@ -113,7 +138,7 @@ const PriorForm: React.FC<PriorFormProps> = ({
                 pressHandler={() => updateUrgencyVal("no")}
               />
             </View>
-          </View>
+          </Animated.View>
         </View>
         <View style={styles.inputWrapper}>
           <View style={styles.inputImageWrapper}>
@@ -122,7 +147,7 @@ const PriorForm: React.FC<PriorFormProps> = ({
               source={require(`../../../assets/images/exclamation-mark_2757.png`)}
             />
           </View>
-          <View>
+          <Animated.View style={{ opacity: fadeAnim }}>
             <Text
               lightColor={Color.light.labelOnBackgroundForRead}
               darkColor={Color.dark.labelOnBackgroundForRead}
@@ -148,14 +173,17 @@ const PriorForm: React.FC<PriorFormProps> = ({
                 pressHandler={() => updateImportanceVal("no")}
               />
             </View>
-          </View>
+          </Animated.View>
         </View>
       </View>
       <View style={styles.buttonAreaWrapper}>
         {activeTaskCounter > 0 ? (
           <Touchable
             style={styles.prevButtonWrapper}
-            onPress={() => renderPrevTask()}
+            onPress={() => {
+              renderPrevTask();
+              dimElements();
+            }}
           >
             <Image
               style={styles.prevArrowIcon}
@@ -187,7 +215,10 @@ const PriorForm: React.FC<PriorFormProps> = ({
             <Button
               ctaTxt="Next"
               disable={shouldNextBtnInactive(importanceValue, urgencyValue)}
-              pressHandler={() => renderNextTask()}
+              pressHandler={() => {
+                renderNextTask();
+                dimElements();
+              }}
             />
           )}
         </View>

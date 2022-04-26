@@ -16,6 +16,7 @@ const RadioButton: React.FC<RadioButtonProps> = ({
   pressHandler,
 }: RadioButtonProps) => {
   const isBtnActive = value === activeValue ? true : false;
+
   return (
     <Touchable
       onPress={pressHandler}
