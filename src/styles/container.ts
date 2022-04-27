@@ -12,6 +12,12 @@ export const centerAlignedVertical: ViewStyle = {
   alignItems: "center",
 };
 
+export const leftAlignedVertical: ViewStyle = {
+  flexDirection: "column",
+  justifyContent: "flex-start",
+  alignItems: "flex-start",
+};
+
 export const flexStart: ViewStyle = {
   flexDirection: "row",
   justifyContent: "flex-start",

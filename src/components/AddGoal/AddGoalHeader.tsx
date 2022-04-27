@@ -30,17 +30,20 @@ const AddGoalHeader: React.FC<AddGoalHeaderProps> = ({
 
 const styles = StyleSheet.create({
   wrapper: {
-    paddingTop: "0.2%",
-    paddingBottom: "0.5%",
-    ...Container.flexStart,
+    paddingTop: "8%",
+    paddingBottom: "5%",
+    paddingLeft: "10%",
+    ...Container.leftAlignedVertical,
+    flex: 1,
   },
   closeIconWrapper: {
-    paddingLeft: "10%",
-    paddingTop: 0,
+    flexDirection: "row",
+    flex: 3,
   },
   headerWrapper: {
-    ...Container.flexStart,
-    paddingTop: "37.5%",
+    flexDirection: "row",
+    flex: 5,
+    paddingTop: "3.5%",
     paddingLeft: "4.5%",
   },
   rocketImage: {

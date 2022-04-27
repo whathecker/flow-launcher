@@ -30,11 +30,11 @@ const AddGoalScreen: React.FC<Props> = ({ navigation }: Props) => {
 const styles = StyleSheet.create({
   headerAreaWrapper: {
     ...Container.flexStart,
-    height: "15%",
+    height: "20%",
   },
   formAreaWrapper: {
     ...Container.flexStart,
-    height: "85%",
+    height: "80%",
   },
 });
 

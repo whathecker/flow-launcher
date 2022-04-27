@@ -8,11 +8,13 @@ exports[`Test AddGoalHeader component Should renders AddGoalHeader correctly 1`]
         "backgroundColor": "#fff",
       },
       Object {
-        "alignItems": "center",
-        "flexDirection": "row",
+        "alignItems": "flex-start",
+        "flex": 1,
+        "flexDirection": "column",
         "justifyContent": "flex-start",
-        "paddingBottom": "0.5%",
-        "paddingTop": "0.2%",
+        "paddingBottom": "5%",
+        "paddingLeft": "10%",
+        "paddingTop": "8%",
       },
     ]
   }
@@ -24,8 +26,8 @@ exports[`Test AddGoalHeader component Should renders AddGoalHeader correctly 1`]
           "backgroundColor": "#fff",
         },
         Object {
-          "paddingLeft": "10%",
-          "paddingTop": 0,
+          "flex": 3,
+          "flexDirection": "row",
         },
       ]
     }
@@ -68,11 +70,10 @@ exports[`Test AddGoalHeader component Should renders AddGoalHeader correctly 1`]
           "backgroundColor": "#fff",
         },
         Object {
-          "alignItems": "center",
+          "flex": 5,
           "flexDirection": "row",
-          "justifyContent": "flex-start",
           "paddingLeft": "4.5%",
-          "paddingTop": "37.5%",
+          "paddingTop": "3.5%",
         },
       ]
     }
