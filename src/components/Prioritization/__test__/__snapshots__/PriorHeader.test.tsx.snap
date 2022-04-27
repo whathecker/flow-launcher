@@ -8,8 +8,9 @@ exports[`Test PriorHeader component Should renders PriorHeader correctly 1`] = `
         "backgroundColor": "#fff",
       },
       Object {
-        "marginBottom": "10%",
-        "marginTop": "6%",
+        "flex": 1,
+        "paddingLeft": "8%",
+        "paddingTop": "4%",
       },
     ]
   }
@@ -21,10 +22,8 @@ exports[`Test PriorHeader component Should renders PriorHeader correctly 1`] = `
           "backgroundColor": "#fff",
         },
         Object {
-          "alignItems": "center",
+          "flex": 4,
           "flexDirection": "row",
-          "height": "8%",
-          "justifyContent": "flex-start",
         },
       ]
     }
@@ -36,9 +35,7 @@ exports[`Test PriorHeader component Should renders PriorHeader correctly 1`] = `
             "backgroundColor": "#fff",
           },
           Object {
-            "paddingBottom": "5%",
-            "paddingLeft": "5%",
-            "paddingTop": "12%",
+            "paddingTop": "3%",
           },
         ]
       }
@@ -82,8 +79,9 @@ exports[`Test PriorHeader component Should renders PriorHeader correctly 1`] = `
           "backgroundColor": "#fff",
         },
         Object {
-          "marginTop": "10%",
-          "paddingLeft": "10%",
+          "flex": 3,
+          "paddingLeft": "6%",
+          "paddingTop": "1.5%",
         },
       ]
     }
@@ -137,8 +135,10 @@ exports[`Test PriorHeader component Should renders PriorHeader correctly 1`] = `
           "backgroundColor": "#fff",
         },
         Object {
-          "marginTop": "8%",
-          "paddingLeft": "10%",
+          "flex": 3,
+          "paddingBottom": "2%",
+          "paddingLeft": "6%",
+          "paddingTop": "2%",
           "width": "90%",
         },
       ]
@@ -153,7 +153,6 @@ exports[`Test PriorHeader component Should renders PriorHeader correctly 1`] = `
           Object {
             "fontFamily": "Lexend-SemiBold",
             "fontSize": 16,
-            "paddingBottom": "5%",
           },
         ]
       }

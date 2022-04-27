@@ -38,21 +38,32 @@ const PriorHeader: React.FC<PriorHeaderProps> = ({
 
 const styles = StyleSheet.create({
   wrapper: {
-    marginTop: "6%",
-    marginBottom: "10%",
+    flex: 1,
+    //flexDirection: "column",
+    //justifyContent: "flex-start",
+    //alignItems: "flex-start",
+    paddingTop: "4%",
+    paddingLeft: "8%",
+    //marginTop: "6%",
+    //marginBottom: "10%",
+    //flexShrink: 1,
   },
   closeIconAreaWrapper: {
-    ...Container.flexStart,
-    height: "8%",
+    flex: 4,
+    flexDirection: "row",
+    //justifyContent: "flex-start",
+    //...Container.flexStart,
+    //height: "8%",
   },
   closeIconWrapper: {
-    paddingLeft: "5%",
-    paddingTop: "12%",
-    paddingBottom: "5%",
+    paddingTop: "3%",
+    //paddingBottom: "5%",
   },
   headerAreaWrapper: {
-    marginTop: "10%",
-    paddingLeft: "10%",
+    flex: 3,
+    paddingTop: "1.5%",
+    //marginTop: "10%",
+    paddingLeft: "6%",
   },
   headerWrapper: {
     ...Container.flexStart,
@@ -68,14 +79,15 @@ const styles = StyleSheet.create({
     height: 32,
   },
   goalAreaWrapper: {
+    flex: 3,
     width: "90%",
-    paddingLeft: "10%",
-    marginTop: "8%",
+    paddingTop: "2%",
+    paddingBottom: "2%",
+    paddingLeft: "6%",
   },
   goalText: {
     ...Typography.h4,
     fontSize: 16,
-    paddingBottom: "5%",
   },
   motivationText: {
     ...Typography.p,
