@@ -33,7 +33,7 @@ const PriorReview: React.FC<Props> = ({ route }: Props) => {
         <PrioReviewBucket tasks={tasksFilteredByPrio.low} prio="low" />
       </ScrollView>
       <View style={styles.buttonAreaWrapper}>
-        <View style={{ width: "80%" }}>
+        <View style={{ width: "80%", flexShrink: 1 }}>
           <Button
             ctaTxt="Confirm Result"
             pressHandler={async () => {
@@ -64,7 +64,7 @@ const styles = StyleSheet.create({
   },
   priorityAreaWrapper: {
     backgroundColor: Color.light.background,
-    height: "65%",
+    height: "68%",
     paddingTop: "1%",
     paddingBottom: "1%",
     paddingLeft: "10%",
@@ -72,7 +72,8 @@ const styles = StyleSheet.create({
   buttonAreaWrapper: {
     ...Container.centerAligned,
     height: "10%",
-    paddingBottom: "5%",
+    marginBottom: "5%",
+    //paddingBottom: "5%",
   },
 });
 

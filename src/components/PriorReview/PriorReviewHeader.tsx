@@ -42,28 +42,31 @@ const PriorReviewHeader: React.FC<PriorReviewHeaderProps> = ({
 
 const styles = StyleSheet.create({
   wrapper: {
-    paddingTop: "2.5%",
+    flex: 1,
+    paddingTop: "5%",
     paddingBottom: "2.5%",
-    flexShrink: 1,
   },
   goBackBtnAreaWrapper: {
+    flex: 3,
     ...Container.flexStart,
-    height: "40%",
+    //height: "40%",
   },
   goBackBtnWrapper: {
     paddingLeft: "5.5%",
     paddingTop: 0,
   },
   headerAreaWrapper: {
+    flex: 3,
     paddingLeft: "10%",
   },
   headerWrapper: {
+    paddingTop: "2.5%",
     ...Container.flexStart,
     width: "100%",
   },
   headerText: {
     ...Typography.h4,
-    fontSize: 22,
+    fontSize: 20,
     paddingRight: "3%",
   },
   image: {
@@ -71,20 +74,21 @@ const styles = StyleSheet.create({
     height: 32,
   },
   goalAreaWrapper: {
+    flex: 4,
     width: "90%",
-    paddingLeft: "10%",
-    marginTop: "6%",
+    paddingLeft: "12%",
+    marginTop: "8%",
     flexShrink: 1,
   },
   goalText: {
     flexShrink: 1,
     ...Typography.h4,
-    fontSize: 20,
-    paddingBottom: "3%",
+    fontSize: 18,
+    paddingBottom: "8.5%",
   },
   taskCountText: {
     ...Typography.p,
-    fontSize: 16,
+    fontSize: 13,
   },
 });
 
