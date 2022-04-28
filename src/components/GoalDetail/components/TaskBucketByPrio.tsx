@@ -55,6 +55,7 @@ const ActiveBucket: React.FC<ActiveBucketProps> = ({
     >
       <View
         style={{
+          width: "95%",
           ...Container.flexStart,
           paddingLeft: 15,
         }}
@@ -86,6 +87,7 @@ const ActiveBucket: React.FC<ActiveBucketProps> = ({
       </View>
       <View
         style={{
+          width: "95%",
           paddingTop: "6%",
           paddingBottom: "2%",
           paddingLeft: "10%",
@@ -114,8 +116,8 @@ const ActiveBucket: React.FC<ActiveBucketProps> = ({
         <View
           style={{
             position: "absolute",
-            top: 42,
-            right: 15,
+            top: 45,
+            right: 5,
           }}
         >
           <Image
@@ -155,7 +157,7 @@ const EmptyBucket: React.FC<EmptyBucketProps> = ({
       <View
         lightColor={Color.light.emptyPrioBucket}
         darkColor={Color.dark.emptyPrioBucket}
-        style={{ ...Container.flexStart, paddingLeft: 15 }}
+        style={{ width: "95%", ...Container.flexStart, paddingLeft: 15 }}
       >
         <EmptyPrioIcon style={{ width: 28, height: 28 }} />
         <Text
@@ -175,6 +177,7 @@ const EmptyBucket: React.FC<EmptyBucketProps> = ({
         lightColor={Color.light.emptyPrioBucket}
         darkColor={Color.dark.emptyPrioBucket}
         style={{
+          width: "95%",
           ...Container.centerAligned,
           paddingTop: "9.5%",
         }}
