@@ -46,7 +46,7 @@ const AddTaskForm: React.FC<AddTaskFormProps> = ({
     >
       {({ handleChange, handleSubmit, values }) => {
         return (
-          <View style={{ height: "100%" }}>
+          <View style={{ flex: 1 }}>
             <View style={styles.titleInputWrapper}>
               <TextInput
                 style={styles.titleInput}
@@ -91,8 +91,7 @@ const styles = StyleSheet.create({
     width: "95%",
     paddingLeft: 20,
     paddingTop: 30,
-    height: "28%",
-    maxHeight: "28%",
+    flex: 2,
   },
   titleInput: {
     ...Typography.p,
@@ -102,8 +101,7 @@ const styles = StyleSheet.create({
     width: "95%",
     paddingLeft: 20,
     paddingBottom: 20,
-    height: "50%",
-    maxHeight: "50%",
+    flex: 5,
   },
   descInput: {
     ...Typography.p,
@@ -111,10 +109,11 @@ const styles = StyleSheet.create({
   },
   buttonAreaWrapper: {
     ...Container.flexStart,
-    height: "18%",
+    flex: 3,
     justifyContent: "flex-end",
     marginTop: "1.5%",
-    marginRight: 5,
+    paddingRight: "1.5%",
+    paddingBottom: "1.5%",
   },
   buttonWrapper: {
     width: "50%",
