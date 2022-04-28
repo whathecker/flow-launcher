@@ -242,6 +242,7 @@ const styles = StyleSheet.create({
     paddingLeft: "8%",
   },
   inputAreaWrapper: {
+    width: "99.5%",
     flex: 6,
     marginTop: "2.5%",
     marginBottom: "2.5%",
@@ -266,6 +267,7 @@ const styles = StyleSheet.create({
     height: 50,
   },
   buttonAreaWrapper: {
+    width: "99.5%",
     flex: 2,
     ...Container.flexStart,
     justifyContent: "space-between",
