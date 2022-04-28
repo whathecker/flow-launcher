@@ -7,7 +7,11 @@ exports[`Test TasksByPrioHeader component Should renders TasksByPrioHeader corre
       Object {
         "backgroundColor": "#BCA136",
       },
-      undefined,
+      Object {
+        "flex": 1,
+        "flexDirection": "column",
+        "flexShrink": 1,
+      },
     ]
   }
 >
@@ -19,9 +23,10 @@ exports[`Test TasksByPrioHeader component Should renders TasksByPrioHeader corre
         },
         Object {
           "alignItems": "center",
+          "flex": 4,
           "flexDirection": "row",
           "justifyContent": "flex-start",
-          "marginTop": "13%",
+          "paddingTop": "4%",
         },
       ]
     }
@@ -34,7 +39,6 @@ exports[`Test TasksByPrioHeader component Should renders TasksByPrioHeader corre
           },
           Object {
             "paddingLeft": "5.5%",
-            "paddingTop": "2.5%",
           },
         ]
       }
@@ -78,8 +82,8 @@ exports[`Test TasksByPrioHeader component Should renders TasksByPrioHeader corre
           "backgroundColor": "#BCA136",
         },
         Object {
+          "flex": 6,
           "paddingLeft": "11%",
-          "paddingTop": "10%",
         },
       ]
     }
@@ -92,9 +96,11 @@ exports[`Test TasksByPrioHeader component Should renders TasksByPrioHeader corre
           },
           Object {
             "alignItems": "center",
+            "flex": 5,
             "flexDirection": "row",
+            "flexShrink": 1,
             "justifyContent": "flex-start",
-            "paddingBottom": "9%",
+            "paddingBottom": "2.5%",
           },
         ]
       }
@@ -103,8 +109,8 @@ exports[`Test TasksByPrioHeader component Should renders TasksByPrioHeader corre
         source={1}
         style={
           Object {
-            "height": 32,
-            "width": 32,
+            "height": 28,
+            "width": 28,
           }
         }
       />
@@ -116,7 +122,7 @@ exports[`Test TasksByPrioHeader component Should renders TasksByPrioHeader corre
             },
             Object {
               "fontFamily": "Lexend-Regular",
-              "fontSize": 18,
+              "fontSize": 16,
               "paddingLeft": "3.5%",
               "paddingTop": "0.15%",
             },
@@ -126,22 +132,39 @@ exports[`Test TasksByPrioHeader component Should renders TasksByPrioHeader corre
         dummy label
       </Text>
     </View>
-    <Text
+    <View
       style={
         Array [
           Object {
-            "color": "#fff",
+            "backgroundColor": "#BCA136",
           },
           Object {
-            "fontFamily": "Lexend-SemiBold",
-            "fontSize": 22,
-            "paddingBottom": "5%",
+            "alignItems": "center",
+            "flex": 5,
+            "flexDirection": "row",
+            "justifyContent": "flex-start",
+            "width": "90%",
           },
         ]
       }
     >
-      Mock goal
-    </Text>
+      <Text
+        style={
+          Array [
+            Object {
+              "color": "#fff",
+            },
+            Object {
+              "fontFamily": "Lexend-SemiBold",
+              "fontSize": 20,
+              "paddingBottom": "5%",
+            },
+          ]
+        }
+      >
+        Mock goal
+      </Text>
+    </View>
   </View>
 </View>
 `;
@@ -153,7 +176,11 @@ exports[`Test TasksByPrioHeader component Should renders TasksByPrioHeader corre
       Object {
         "backgroundColor": "#BCA136",
       },
-      undefined,
+      Object {
+        "flex": 1,
+        "flexDirection": "column",
+        "flexShrink": 1,
+      },
     ]
   }
 >
@@ -165,9 +192,10 @@ exports[`Test TasksByPrioHeader component Should renders TasksByPrioHeader corre
         },
         Object {
           "alignItems": "center",
+          "flex": 4,
           "flexDirection": "row",
           "justifyContent": "flex-start",
-          "marginTop": "13%",
+          "paddingTop": "4%",
         },
       ]
     }
@@ -180,7 +208,6 @@ exports[`Test TasksByPrioHeader component Should renders TasksByPrioHeader corre
           },
           Object {
             "paddingLeft": "5.5%",
-            "paddingTop": "2.5%",
           },
         ]
       }
@@ -224,8 +251,8 @@ exports[`Test TasksByPrioHeader component Should renders TasksByPrioHeader corre
           "backgroundColor": "#BCA136",
         },
         Object {
+          "flex": 6,
           "paddingLeft": "11%",
-          "paddingTop": "10%",
         },
       ]
     }
@@ -238,9 +265,11 @@ exports[`Test TasksByPrioHeader component Should renders TasksByPrioHeader corre
           },
           Object {
             "alignItems": "center",
+            "flex": 5,
             "flexDirection": "row",
+            "flexShrink": 1,
             "justifyContent": "flex-start",
-            "paddingBottom": "9%",
+            "paddingBottom": "2.5%",
           },
         ]
       }
@@ -249,8 +278,8 @@ exports[`Test TasksByPrioHeader component Should renders TasksByPrioHeader corre
         source={1}
         style={
           Object {
-            "height": 32,
-            "width": 32,
+            "height": 28,
+            "width": 28,
           }
         }
       />
@@ -262,7 +291,7 @@ exports[`Test TasksByPrioHeader component Should renders TasksByPrioHeader corre
             },
             Object {
               "fontFamily": "Lexend-Regular",
-              "fontSize": 18,
+              "fontSize": 16,
               "paddingLeft": "3.5%",
               "paddingTop": "0.15%",
             },
@@ -272,22 +301,39 @@ exports[`Test TasksByPrioHeader component Should renders TasksByPrioHeader corre
         dummy label
       </Text>
     </View>
-    <Text
+    <View
       style={
         Array [
           Object {
-            "color": "#fff",
+            "backgroundColor": "#BCA136",
           },
           Object {
-            "fontFamily": "Lexend-SemiBold",
-            "fontSize": 22,
-            "paddingBottom": "5%",
+            "alignItems": "center",
+            "flex": 5,
+            "flexDirection": "row",
+            "justifyContent": "flex-start",
+            "width": "90%",
           },
         ]
       }
     >
-      Mock goal
-    </Text>
+      <Text
+        style={
+          Array [
+            Object {
+              "color": "#fff",
+            },
+            Object {
+              "fontFamily": "Lexend-SemiBold",
+              "fontSize": 20,
+              "paddingBottom": "5%",
+            },
+          ]
+        }
+      >
+        Mock goal
+      </Text>
+    </View>
   </View>
 </View>
 `;
@@ -299,7 +345,11 @@ exports[`Test TasksByPrioHeader component Should renders TasksByPrioHeader corre
       Object {
         "backgroundColor": "#BCA136",
       },
-      undefined,
+      Object {
+        "flex": 1,
+        "flexDirection": "column",
+        "flexShrink": 1,
+      },
     ]
   }
 >
@@ -311,9 +361,10 @@ exports[`Test TasksByPrioHeader component Should renders TasksByPrioHeader corre
         },
         Object {
           "alignItems": "center",
+          "flex": 4,
           "flexDirection": "row",
           "justifyContent": "flex-start",
-          "marginTop": "13%",
+          "paddingTop": "4%",
         },
       ]
     }
@@ -326,7 +377,6 @@ exports[`Test TasksByPrioHeader component Should renders TasksByPrioHeader corre
           },
           Object {
             "paddingLeft": "5.5%",
-            "paddingTop": "2.5%",
           },
         ]
       }
@@ -370,8 +420,8 @@ exports[`Test TasksByPrioHeader component Should renders TasksByPrioHeader corre
           "backgroundColor": "#BCA136",
         },
         Object {
+          "flex": 6,
           "paddingLeft": "11%",
-          "paddingTop": "10%",
         },
       ]
     }
@@ -384,9 +434,11 @@ exports[`Test TasksByPrioHeader component Should renders TasksByPrioHeader corre
           },
           Object {
             "alignItems": "center",
+            "flex": 5,
             "flexDirection": "row",
+            "flexShrink": 1,
             "justifyContent": "flex-start",
-            "paddingBottom": "9%",
+            "paddingBottom": "2.5%",
           },
         ]
       }
@@ -395,8 +447,8 @@ exports[`Test TasksByPrioHeader component Should renders TasksByPrioHeader corre
         source={1}
         style={
           Object {
-            "height": 32,
-            "width": 32,
+            "height": 28,
+            "width": 28,
           }
         }
       />
@@ -408,7 +460,7 @@ exports[`Test TasksByPrioHeader component Should renders TasksByPrioHeader corre
             },
             Object {
               "fontFamily": "Lexend-Regular",
-              "fontSize": 18,
+              "fontSize": 16,
               "paddingLeft": "3.5%",
               "paddingTop": "0.15%",
             },
@@ -418,22 +470,39 @@ exports[`Test TasksByPrioHeader component Should renders TasksByPrioHeader corre
         dummy label
       </Text>
     </View>
-    <Text
+    <View
       style={
         Array [
           Object {
-            "color": "#fff",
+            "backgroundColor": "#BCA136",
           },
           Object {
-            "fontFamily": "Lexend-SemiBold",
-            "fontSize": 22,
-            "paddingBottom": "5%",
+            "alignItems": "center",
+            "flex": 5,
+            "flexDirection": "row",
+            "justifyContent": "flex-start",
+            "width": "90%",
           },
         ]
       }
     >
-      Mock goal
-    </Text>
+      <Text
+        style={
+          Array [
+            Object {
+              "color": "#fff",
+            },
+            Object {
+              "fontFamily": "Lexend-SemiBold",
+              "fontSize": 20,
+              "paddingBottom": "5%",
+            },
+          ]
+        }
+      >
+        Mock goal
+      </Text>
+    </View>
   </View>
 </View>
 `;
@@ -445,7 +514,11 @@ exports[`Test TasksByPrioHeader component Should renders TasksByPrioHeader corre
       Object {
         "backgroundColor": "#BCA136",
       },
-      undefined,
+      Object {
+        "flex": 1,
+        "flexDirection": "column",
+        "flexShrink": 1,
+      },
     ]
   }
 >
@@ -457,9 +530,10 @@ exports[`Test TasksByPrioHeader component Should renders TasksByPrioHeader corre
         },
         Object {
           "alignItems": "center",
+          "flex": 4,
           "flexDirection": "row",
           "justifyContent": "flex-start",
-          "marginTop": "13%",
+          "paddingTop": "4%",
         },
       ]
     }
@@ -472,7 +546,6 @@ exports[`Test TasksByPrioHeader component Should renders TasksByPrioHeader corre
           },
           Object {
             "paddingLeft": "5.5%",
-            "paddingTop": "2.5%",
           },
         ]
       }
@@ -516,8 +589,8 @@ exports[`Test TasksByPrioHeader component Should renders TasksByPrioHeader corre
           "backgroundColor": "#BCA136",
         },
         Object {
+          "flex": 6,
           "paddingLeft": "11%",
-          "paddingTop": "10%",
         },
       ]
     }
@@ -530,9 +603,11 @@ exports[`Test TasksByPrioHeader component Should renders TasksByPrioHeader corre
           },
           Object {
             "alignItems": "center",
+            "flex": 5,
             "flexDirection": "row",
+            "flexShrink": 1,
             "justifyContent": "flex-start",
-            "paddingBottom": "9%",
+            "paddingBottom": "2.5%",
           },
         ]
       }
@@ -541,8 +616,8 @@ exports[`Test TasksByPrioHeader component Should renders TasksByPrioHeader corre
         source={1}
         style={
           Object {
-            "height": 32,
-            "width": 32,
+            "height": 28,
+            "width": 28,
           }
         }
       />
@@ -554,7 +629,7 @@ exports[`Test TasksByPrioHeader component Should renders TasksByPrioHeader corre
             },
             Object {
               "fontFamily": "Lexend-Regular",
-              "fontSize": 18,
+              "fontSize": 16,
               "paddingLeft": "3.5%",
               "paddingTop": "0.15%",
             },
@@ -564,22 +639,39 @@ exports[`Test TasksByPrioHeader component Should renders TasksByPrioHeader corre
         dummy label
       </Text>
     </View>
-    <Text
+    <View
       style={
         Array [
           Object {
-            "color": "#fff",
+            "backgroundColor": "#BCA136",
           },
           Object {
-            "fontFamily": "Lexend-SemiBold",
-            "fontSize": 22,
-            "paddingBottom": "5%",
+            "alignItems": "center",
+            "flex": 5,
+            "flexDirection": "row",
+            "justifyContent": "flex-start",
+            "width": "90%",
           },
         ]
       }
     >
-      Mock goal
-    </Text>
+      <Text
+        style={
+          Array [
+            Object {
+              "color": "#fff",
+            },
+            Object {
+              "fontFamily": "Lexend-SemiBold",
+              "fontSize": 20,
+              "paddingBottom": "5%",
+            },
+          ]
+        }
+      >
+        Mock goal
+      </Text>
+    </View>
   </View>
 </View>
 `;

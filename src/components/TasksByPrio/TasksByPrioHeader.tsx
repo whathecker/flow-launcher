@@ -27,7 +27,11 @@ const TasksByPrioHeader: React.FC<TasksByPrioHeaderProps> = ({
   backgroundColor,
 }: TasksByPrioHeaderProps) => {
   return (
-    <View lightColor={backgroundColor} darkColor={backgroundColor}>
+    <View
+      style={styles.wrapper}
+      lightColor={backgroundColor}
+      darkColor={backgroundColor}
+    >
       <View
         lightColor={backgroundColor}
         darkColor={backgroundColor}
@@ -68,48 +72,66 @@ const TasksByPrioHeader: React.FC<TasksByPrioHeaderProps> = ({
             {label}
           </Text>
         </View>
-        <Text
-          lightColor={Color.light.textOnColorForRead}
-          darkColor={Color.dark.textOnColorForRead}
-          style={styles.goalTitle}
+        <View
+          style={styles.goalTitleWrapper}
+          lightColor={backgroundColor}
+          darkColor={backgroundColor}
         >
-          {goalTitle}
-        </Text>
+          <Text
+            lightColor={Color.light.textOnColorForRead}
+            darkColor={Color.dark.textOnColorForRead}
+            style={styles.goalTitle}
+          >
+            {goalTitle}
+          </Text>
+        </View>
       </View>
     </View>
   );
 };
 
 const styles = StyleSheet.create({
+  wrapper: {
+    flex: 1,
+    flexDirection: "column",
+    flexShrink: 1,
+  },
   goBackBtnAreaWrapper: {
-    marginTop: "13%",
+    flex: 4,
     ...Container.flexStart,
+    paddingTop: "4%",
   },
   goBackbtnWrapper: {
-    paddingTop: "2.5%",
     paddingLeft: "5.5%",
   },
   labelAndTitleAreaWrapper: {
-    paddingTop: "10%",
+    flex: 6,
     paddingLeft: "11%",
   },
   prioLabelWrapper: {
+    flex: 5,
+    flexShrink: 1,
     ...Container.flexStart,
-    paddingBottom: "9%",
+    paddingBottom: "2.5%",
   },
   prioIconImg: {
-    width: 32,
-    height: 32,
+    width: 28,
+    height: 28,
   },
   prioLabel: {
     ...Typography.p,
-    fontSize: 18,
+    fontSize: 16,
     paddingLeft: "3.5%",
     paddingTop: "0.15%",
   },
+  goalTitleWrapper: {
+    flex: 5,
+    ...Container.flexStart,
+    width: "90%",
+  },
   goalTitle: {
     ...Typography.h4,
-    fontSize: 22,
+    fontSize: 20,
     paddingBottom: "5%",
   },
 });
