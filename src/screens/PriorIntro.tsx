@@ -41,7 +41,7 @@ const styles = StyleSheet.create({
   explanationAreaWrapper: {
     ...Container.centerAlignedVertical,
     height: "46%",
-    paddingTop: 100,
+    paddingTop: "15%",
   },
   buttonWrapper: {
     ...Container.centerAligned,

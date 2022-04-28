@@ -1,7 +1,20 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Test PriorIntroHeader component Should renders PriorIntroHeader correctly 1`] = `
-Array [
+<View
+  style={
+    Array [
+      Object {
+        "backgroundColor": "#fff",
+      },
+      Object {
+        "flex": 1,
+        "flexDirection": "column",
+        "width": "95%",
+      },
+    ]
+  }
+>
   <View
     style={
       Array [
@@ -10,11 +23,12 @@ Array [
         },
         Object {
           "alignItems": "center",
+          "flex": 4,
           "flexDirection": "row",
-          "height": "50%",
           "justifyContent": "flex-start",
           "marginLeft": "4.5%",
           "marginRight": "5%",
+          "paddingTop": "2.5%",
           "width": "90%",
         },
       ]
@@ -50,7 +64,7 @@ Array [
         }
       />
     </View>
-  </View>,
+  </View>
   <View
     style={
       Array [
@@ -59,7 +73,9 @@ Array [
         },
         Object {
           "alignItems": "center",
+          "flex": 6,
           "flexDirection": "column",
+          "flexShrink": 1,
           "justifyContent": "center",
         },
       ]
@@ -69,8 +85,8 @@ Array [
       source={1}
       style={
         Object {
-          "height": 50,
-          "width": 50,
+          "height": 36,
+          "width": 36,
         }
       }
     />
@@ -82,7 +98,7 @@ Array [
           },
           Object {
             "fontFamily": "Lexend-SemiBold",
-            "fontSize": 24,
+            "fontSize": 20,
             "paddingBottom": 5,
             "paddingTop": 10,
           },
@@ -106,6 +122,6 @@ Array [
     >
       We will ask two questions for each task
     </Text>
-  </View>,
-]
+  </View>
+</View>
 `;

@@ -5,7 +5,7 @@ import { Container, Typography } from "../../styles";
 
 const PriorExplanation: React.FC = () => {
   return (
-    <>
+    <View>
       <View style={styles.explanationBlockWrapper}>
         <View style={styles.imageAreaWrapper}>
           <Image
@@ -36,27 +36,31 @@ const PriorExplanation: React.FC = () => {
           </Text>
         </View>
       </View>
-    </>
+    </View>
   );
 };
 
 const styles = StyleSheet.create({
+  wrapper: {
+    flex: 1,
+    flexDirection: "column",
+  },
   explanationBlockWrapper: {
+    flex: 5,
     ...Container.flexStart,
     width: "70%",
-    height: "50%",
     marginTop: 5,
     marginBottom: 5,
   },
   imageAreaWrapper: {
-    width: "35%",
+    width: "30%",
   },
   image: {
-    width: 60,
-    height: 60,
+    width: 52,
+    height: 52,
   },
   instructionAreaWrapper: {
-    width: "65%",
+    width: "70%",
   },
   instructionHeader: {
     ...Typography.h4,
@@ -65,7 +69,7 @@ const styles = StyleSheet.create({
   },
   instructionSubHeader: {
     ...Typography.p,
-    fontSize: 14,
+    fontSize: 13,
   },
 });
 

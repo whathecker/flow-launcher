@@ -7,7 +7,7 @@ import { navigationRef } from "../../utils";
 
 const PriorIntroHeader: React.FC = () => {
   return (
-    <>
+    <View style={styles.wrapper}>
       <View style={styles.closeIconAreaWrapper}>
         <CloseIcon pressHandler={() => navigationRef.goBack()} />
       </View>
@@ -21,29 +21,37 @@ const PriorIntroHeader: React.FC = () => {
           style={styles.subHeaderText}
         >{`We will ask two questions for each task`}</Text>
       </View>
-    </>
+    </View>
   );
 };
 
 const styles = StyleSheet.create({
+  wrapper: {
+    flex: 1,
+    flexDirection: "column",
+    width: "95%",
+  },
   closeIconAreaWrapper: {
+    flex: 4,
     ...Container.flexStart,
     justifyContent: "flex-start",
     width: "90%",
-    height: "50%",
+    paddingTop: "2.5%",
     marginLeft: "4.5%",
     marginRight: "5%",
   },
   headerAreaWrapper: {
     ...Container.centerAlignedVertical,
+    flex: 6,
+    flexShrink: 1,
   },
   headerImage: {
-    width: 50,
-    height: 50,
+    width: 36,
+    height: 36,
   },
   headerText: {
     ...Typography.h4,
-    fontSize: 24,
+    fontSize: 20,
     paddingTop: 10,
     paddingBottom: 5,
   },
