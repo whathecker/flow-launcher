@@ -85,8 +85,8 @@ exports[`Test PriorIntroHeader component Should renders PriorIntroHeader correct
       source={1}
       style={
         Object {
-          "height": 36,
-          "width": 36,
+          "height": 42,
+          "width": 42,
         }
       }
     />
@@ -98,7 +98,7 @@ exports[`Test PriorIntroHeader component Should renders PriorIntroHeader correct
           },
           Object {
             "fontFamily": "Lexend-SemiBold",
-            "fontSize": 20,
+            "fontSize": 22,
             "paddingBottom": 5,
             "paddingTop": 10,
           },
@@ -115,7 +115,7 @@ exports[`Test PriorIntroHeader component Should renders PriorIntroHeader correct
           },
           Object {
             "fontFamily": "Lexend-Regular",
-            "fontSize": 14,
+            "fontSize": 16,
           },
         ]
       }

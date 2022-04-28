@@ -45,8 +45,8 @@ exports[`Test PriorExplanation component Should renders PriorExplanation correct
         source={1}
         style={
           Object {
-            "height": 52,
-            "width": 52,
+            "height": 60,
+            "width": 60,
           }
         }
       />
@@ -71,7 +71,7 @@ exports[`Test PriorExplanation component Should renders PriorExplanation correct
             },
             Object {
               "fontFamily": "Lexend-SemiBold",
-              "fontSize": 16,
+              "fontSize": 18,
               "marginBottom": 6,
             },
           ]
@@ -87,7 +87,7 @@ exports[`Test PriorExplanation component Should renders PriorExplanation correct
             },
             Object {
               "fontFamily": "Lexend-Regular",
-              "fontSize": 13,
+              "fontSize": 15,
             },
           ]
         }
@@ -130,8 +130,8 @@ exports[`Test PriorExplanation component Should renders PriorExplanation correct
         source={1}
         style={
           Object {
-            "height": 52,
-            "width": 52,
+            "height": 60,
+            "width": 60,
           }
         }
       />
@@ -156,7 +156,7 @@ exports[`Test PriorExplanation component Should renders PriorExplanation correct
             },
             Object {
               "fontFamily": "Lexend-SemiBold",
-              "fontSize": 16,
+              "fontSize": 18,
               "marginBottom": 6,
             },
           ]
@@ -172,7 +172,7 @@ exports[`Test PriorExplanation component Should renders PriorExplanation correct
             },
             Object {
               "fontFamily": "Lexend-Regular",
-              "fontSize": 13,
+              "fontSize": 15,
             },
           ]
         }
