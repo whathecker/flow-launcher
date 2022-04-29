@@ -94,7 +94,7 @@ const styles = StyleSheet.create({
     paddingTop: 5,
   },
   buttonWrapper: {
-    width: "90%",
+    width: "80%",
   },
 });
 
