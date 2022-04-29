@@ -197,6 +197,7 @@ const PriorForm: React.FC<PriorFormProps> = ({
         <View style={styles.nextButtonWrapper}>
           {activeTaskCounter === unprioritisedTasks.length - 1 ? (
             <Button
+              fontSize={16}
               ctaTxt="Review Result"
               disable={shouldNextBtnInactive(importanceValue, urgencyValue)}
               pressHandler={() => {

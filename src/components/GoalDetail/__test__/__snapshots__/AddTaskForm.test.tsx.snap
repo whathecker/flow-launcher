@@ -147,10 +147,15 @@ exports[`Test AddTaskForm component Should renders AddTaskForm correctly 1`] = `
               Object {
                 "color": "#fff",
               },
-              Object {
-                "fontFamily": "Lexend-Regular",
-                "fontSize": 18,
-              },
+              Array [
+                Object {
+                  "fontFamily": "Lexend-Regular",
+                  "fontSize": 18,
+                },
+                Object {
+                  "fontSize": 18,
+                },
+              ],
             ]
           }
         >

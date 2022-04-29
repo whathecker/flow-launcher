@@ -7,12 +7,14 @@ type ButtonProps = {
   ctaTxt: string;
   pressHandler: () => void;
   disable?: boolean;
+  fontSize?: number;
 };
 
 const Button: React.FC<ButtonProps> = ({
   ctaTxt,
   pressHandler,
   disable,
+  fontSize = 18,
 }: ButtonProps) => {
   const backgroundColor = disable ? "#848785" : "#0FA858";
   return (
@@ -23,7 +25,11 @@ const Button: React.FC<ButtonProps> = ({
       darkColor={backgroundColor}
       disabled={disable}
     >
-      <Text style={styles.buttonText} lightColor="#fff" darkColor="#fff">
+      <Text
+        style={[styles.buttonText, { fontSize: fontSize }]}
+        lightColor="#fff"
+        darkColor="#fff"
+      >
         {ctaTxt}
       </Text>
     </Touchable>
