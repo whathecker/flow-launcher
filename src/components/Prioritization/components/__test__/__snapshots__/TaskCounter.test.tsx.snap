@@ -5,10 +5,9 @@ exports[`Test TaskCounter component Should renders TaskCounter correctly 1`] = `
   style={
     Array [
       Object {
-        "color": "#000000",
+        "color": "#848484",
       },
       Object {
-        "color": "#848484",
         "fontFamily": "Lexend-Regular",
         "fontSize": 14,
       },

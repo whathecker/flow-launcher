@@ -13,43 +13,46 @@ const AddGoalHeader: React.FC<AddGoalHeaderProps> = ({
   backBtnHandler,
 }: AddGoalHeaderProps) => {
   return (
-    <>
+    <View style={styles.wrapper}>
       <View style={styles.closeIconWrapper}>
         <CloseIcon pressHandler={backBtnHandler} />
       </View>
       <View style={styles.headerWrapper}>
-        <Text
-          style={styles.headerText}
-          lightColor="#554F4F"
-          darkColor="#554F4F"
-        >
-          {`New Goal`}
-        </Text>
+        <Text style={styles.headerText}>{`New Goal`}</Text>
         <Image
           style={styles.rocketImage}
           source={require(`../../../assets/images/rocket_1f680.png`)}
         />
       </View>
-    </>
+    </View>
   );
 };
 
 const styles = StyleSheet.create({
+  wrapper: {
+    paddingTop: "8%",
+    paddingBottom: "5%",
+    paddingLeft: "10%",
+    ...Container.leftAlignedVertical,
+    flex: 1,
+  },
   closeIconWrapper: {
-    paddingLeft: 25,
-    paddingTop: 0,
+    flexDirection: "row",
+    flex: 3,
   },
   headerWrapper: {
-    ...Container.flexStart,
-    paddingLeft: 15,
-    paddingTop: 80,
+    flexDirection: "row",
+    flex: 5,
+    paddingTop: "3.5%",
+    paddingLeft: "4.5%",
   },
   rocketImage: {
-    width: 32,
-    height: 32,
+    width: 28,
+    height: 28,
   },
   headerText: {
     ...Typography.h1,
+    fontSize: 22,
     paddingRight: 12,
   },
 });

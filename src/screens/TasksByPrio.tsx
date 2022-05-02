@@ -30,11 +30,12 @@ const TasksByPrioScreen: React.FC<Props> = ({ route }: Props) => {
     <>
       <View
         style={{
-          height: "25%",
+          height: "28%",
           backgroundColor: backgroundColor,
         }}
       >
         <TasksByPrioHeader
+          prio={prio}
           goalTitle={state.goal!.title}
           label={headerLabel}
           backgroundColor={backgroundColor}
@@ -42,7 +43,7 @@ const TasksByPrioScreen: React.FC<Props> = ({ route }: Props) => {
       </View>
       <View
         style={{
-          height: "75%",
+          height: "72%",
           backgroundColor: backgroundColor,
           paddingBottom: "5%",
         }}

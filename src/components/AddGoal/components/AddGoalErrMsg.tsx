@@ -1,7 +1,7 @@
 import React from "react";
 import { StyleSheet } from "react-native";
 import { View, Text } from "../../Themed";
-import { Typography } from "../../../styles";
+import { Typography, Color } from "../../../styles";
 
 type AddGoalErrMsgProps = {
   msg: string;
@@ -13,8 +13,8 @@ const AddGoalErrMsg: React.FC<AddGoalErrMsgProps> = ({
   return (
     <View style={styles.errorMsgWrapper}>
       <Text
-        lightColor="#c84827"
-        darkColor="#c84827"
+        lightColor={Color.light.errorMsg}
+        darkColor={Color.dark.errorMsg}
         style={styles.errorMsgText}
       >
         {msg}

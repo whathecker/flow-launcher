@@ -4,6 +4,7 @@ import { GoalsContext } from "../../contexts/goals";
 import { TextInput, StyleSheet } from "react-native";
 import { View } from "../Themed";
 import { Button } from "../shared";
+
 import { Container, Typography, Color } from "../../styles";
 
 import { IAddTaskInput } from "../../types/core/entity";
@@ -45,15 +46,16 @@ const AddTaskForm: React.FC<AddTaskFormProps> = ({
     >
       {({ handleChange, handleSubmit, values }) => {
         return (
-          <View>
+          <View style={{ flex: 1 }}>
             <View style={styles.titleInputWrapper}>
               <TextInput
                 style={styles.titleInput}
                 multiline
+                scrollEnabled
                 autoFocus={true}
                 onChangeText={handleChange("title")}
                 placeholder={"Write your task in a sentence"}
-                placeholderTextColor={Color.light.subtleLabel}
+                placeholderTextColor={Color.light.labelOnBackgroundForRead}
                 value={values.title}
               />
             </View>
@@ -61,9 +63,10 @@ const AddTaskForm: React.FC<AddTaskFormProps> = ({
               <TextInput
                 style={styles.descInput}
                 multiline
+                scrollEnabled
                 onChangeText={handleChange("description")}
                 placeholder={"Write the description of your task"}
-                placeholderTextColor={Color.light.subtleLabel}
+                placeholderTextColor={Color.light.labelOnBackgroundForRead}
                 value={values.description}
               />
             </View>
@@ -85,28 +88,32 @@ const AddTaskForm: React.FC<AddTaskFormProps> = ({
 
 const styles = StyleSheet.create({
   titleInputWrapper: {
+    width: "95%",
     paddingLeft: 20,
     paddingTop: 30,
-    height: "20%",
+    flex: 2,
   },
   titleInput: {
     ...Typography.p,
     fontSize: 22,
   },
   descInputWrapper: {
+    width: "95%",
     paddingLeft: 20,
-    paddingTop: 20,
-    height: "60.5%",
+    paddingBottom: 20,
+    flex: 5,
   },
   descInput: {
     ...Typography.p,
     fontSize: 16,
-    height: "125%",
   },
   buttonAreaWrapper: {
     ...Container.flexStart,
+    flex: 3,
     justifyContent: "flex-end",
-    marginRight: 5,
+    marginTop: "1.5%",
+    paddingRight: "1.5%",
+    paddingBottom: "1.5%",
   },
   buttonWrapper: {
     width: "50%",

@@ -10,7 +10,7 @@ exports[`Test EmptyPrioritizedTasks component Should renders EmptyPrioritizedTas
       Object {
         "alignItems": "center",
         "flexDirection": "column",
-        "height": "80%",
+        "height": 280,
         "justifyContent": "center",
         "padding": 20,
       },
@@ -30,7 +30,7 @@ exports[`Test EmptyPrioritizedTasks component Should renders EmptyPrioritizedTas
     style={
       Array [
         Object {
-          "color": "#000000",
+          "color": "#554F4F",
         },
         Object {
           "color": "#848484",

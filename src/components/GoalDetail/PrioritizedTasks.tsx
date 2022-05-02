@@ -3,7 +3,7 @@ import { TasksContext } from "../../contexts/tasks";
 import { StyleSheet } from "react-native";
 import { EmptyPrioritizedTasks, TaskBucketByPrio } from "./components";
 import { View, Text } from "../Themed";
-import { Color, Shadow, Typography } from "../../styles";
+import { Color, Typography } from "../../styles";
 import { GoalColor } from "../../types/core/entity";
 
 type PrioritizedTasksProps = { goalColor: GoalColor };
@@ -28,7 +28,13 @@ const PrioritizedTasks: React.FC<PrioritizedTasksProps> = ({
   return (
     <View style={styles.wrapper}>
       <View style={styles.headerAreaWrapper}>
-        <Text style={styles.headerText}>{"Prioritized Tasks"}</Text>
+        <Text
+          lightColor={Color.light.labelOnBackgroundForRead}
+          darkColor={Color.dark.labelOnBackgroundForRead}
+          style={styles.headerText}
+        >
+          {"Prioritized Tasks"}
+        </Text>
       </View>
       {isTasksEmptty ? (
         <EmptyPrioritizedTasks />
@@ -66,14 +72,13 @@ const styles = StyleSheet.create({
     borderWidth: 0.5,
     borderColor: Color.light.defaultBorder,
     borderRadius: 5,
-    ...Shadow.regularbackDrop,
     padding: 20,
   },
   headerAreaWrapper: {
     marginBottom: 10,
   },
   headerText: {
-    ...Typography.p,
+    ...Typography.h4,
     fontSize: 16,
   },
 });

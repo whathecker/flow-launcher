@@ -77,35 +77,19 @@ describe("Test PrioReviewBucket component", () => {
 
   it("Should renders PrioReviewBuckets correctly", () => {
     const treeHighest = renderer
-      .create(
-        <PrioReviewBucket
-          prio="highest"
-          tasks={result.highest}
-          goalColor="#E9695B"
-        />,
-      )
+      .create(<PrioReviewBucket prio="highest" tasks={result.highest} />)
       .toJSON();
 
     const treeHigh = renderer
-      .create(
-        <PrioReviewBucket
-          prio="high"
-          tasks={result.high}
-          goalColor="#84C5E8"
-        />,
-      )
+      .create(<PrioReviewBucket prio="high" tasks={result.high} />)
       .toJSON();
 
     const treeMid = renderer
-      .create(
-        <PrioReviewBucket prio="mid" tasks={result.mid} goalColor="#1C88BA" />,
-      )
+      .create(<PrioReviewBucket prio="mid" tasks={result.mid} />)
       .toJSON();
 
     const treeLow = renderer
-      .create(
-        <PrioReviewBucket prio="low" tasks={result.low} goalColor="#F0B541" />,
-      )
+      .create(<PrioReviewBucket prio="low" tasks={result.low} />)
       .toJSON();
 
     expect(treeHighest).toMatchSnapshot();

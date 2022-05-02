@@ -1,7 +1,20 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Test PriorIntroHeader component Should renders PriorIntroHeader correctly 1`] = `
-Array [
+<View
+  style={
+    Array [
+      Object {
+        "backgroundColor": "#fff",
+      },
+      Object {
+        "flex": 1,
+        "flexDirection": "column",
+        "width": "95%",
+      },
+    ]
+  }
+>
   <View
     style={
       Array [
@@ -10,11 +23,12 @@ Array [
         },
         Object {
           "alignItems": "center",
+          "flex": 4,
           "flexDirection": "row",
-          "height": "50%",
           "justifyContent": "flex-start",
-          "marginLeft": "5%",
+          "marginLeft": "4.5%",
           "marginRight": "5%",
+          "paddingTop": "2.5%",
           "width": "90%",
         },
       ]
@@ -44,13 +58,13 @@ Array [
         source={1}
         style={
           Object {
-            "height": 20,
-            "width": 20,
+            "height": 18,
+            "width": 18,
           }
         }
       />
     </View>
-  </View>,
+  </View>
   <View
     style={
       Array [
@@ -59,7 +73,9 @@ Array [
         },
         Object {
           "alignItems": "center",
+          "flex": 6,
           "flexDirection": "column",
+          "flexShrink": 1,
           "justifyContent": "center",
         },
       ]
@@ -69,8 +85,8 @@ Array [
       source={1}
       style={
         Object {
-          "height": 50,
-          "width": 50,
+          "height": 42,
+          "width": 42,
         }
       }
     />
@@ -78,11 +94,11 @@ Array [
       style={
         Array [
           Object {
-            "color": "#000000",
+            "color": "#554F4F",
           },
           Object {
             "fontFamily": "Lexend-SemiBold",
-            "fontSize": 24,
+            "fontSize": 22,
             "paddingBottom": 5,
             "paddingTop": 10,
           },
@@ -95,17 +111,17 @@ Array [
       style={
         Array [
           Object {
-            "color": "#000000",
+            "color": "#554F4F",
           },
           Object {
             "fontFamily": "Lexend-Regular",
-            "fontSize": 14,
+            "fontSize": 16,
           },
         ]
       }
     >
       We will ask two questions for each task
     </Text>
-  </View>,
-]
+  </View>
+</View>
 `;

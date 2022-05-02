@@ -8,7 +8,9 @@ exports[`Test PriorReviewHeader component Should renders PriorReviewHeader corre
         "backgroundColor": "#fff",
       },
       Object {
-        "paddingBottom": 15,
+        "flex": 1,
+        "paddingBottom": "2.5%",
+        "paddingTop": "5%",
       },
     ]
   }
@@ -21,8 +23,8 @@ exports[`Test PriorReviewHeader component Should renders PriorReviewHeader corre
         },
         Object {
           "alignItems": "center",
+          "flex": 3,
           "flexDirection": "row",
-          "height": "40%",
           "justifyContent": "flex-start",
         },
       ]
@@ -35,7 +37,7 @@ exports[`Test PriorReviewHeader component Should renders PriorReviewHeader corre
             "backgroundColor": "#fff",
           },
           Object {
-            "paddingLeft": 25,
+            "paddingLeft": "5.5%",
             "paddingTop": 0,
           },
         ]
@@ -80,6 +82,7 @@ exports[`Test PriorReviewHeader component Should renders PriorReviewHeader corre
           "backgroundColor": "#fff",
         },
         Object {
+          "flex": 3,
           "paddingLeft": "10%",
         },
       ]
@@ -95,6 +98,7 @@ exports[`Test PriorReviewHeader component Should renders PriorReviewHeader corre
             "alignItems": "center",
             "flexDirection": "row",
             "justifyContent": "flex-start",
+            "paddingTop": "2.5%",
             "width": "100%",
           },
         ]
@@ -104,12 +108,12 @@ exports[`Test PriorReviewHeader component Should renders PriorReviewHeader corre
         style={
           Array [
             Object {
-              "color": "#000000",
+              "color": "#554F4F",
             },
             Object {
               "fontFamily": "Lexend-SemiBold",
-              "fontSize": 22,
-              "paddingRight": 10,
+              "fontSize": 20,
+              "paddingRight": "3%",
             },
           ]
         }
@@ -134,8 +138,11 @@ exports[`Test PriorReviewHeader component Should renders PriorReviewHeader corre
           "backgroundColor": "#fff",
         },
         Object {
+          "flex": 4,
+          "flexShrink": 1,
           "marginTop": "8%",
-          "paddingLeft": "10%",
+          "paddingLeft": "12%",
+          "width": "90%",
         },
       ]
     }
@@ -144,12 +151,13 @@ exports[`Test PriorReviewHeader component Should renders PriorReviewHeader corre
       style={
         Array [
           Object {
-            "color": "#000000",
+            "color": "#554F4F",
           },
           Object {
+            "flexShrink": 1,
             "fontFamily": "Lexend-SemiBold",
-            "fontSize": 20,
-            "paddingBottom": 5,
+            "fontSize": 18,
+            "paddingBottom": "8.5%",
           },
         ]
       }
@@ -160,11 +168,11 @@ exports[`Test PriorReviewHeader component Should renders PriorReviewHeader corre
       style={
         Array [
           Object {
-            "color": "#000000",
+            "color": "#554F4F",
           },
           Object {
             "fontFamily": "Lexend-Regular",
-            "fontSize": 16,
+            "fontSize": 13,
           },
         ]
       }

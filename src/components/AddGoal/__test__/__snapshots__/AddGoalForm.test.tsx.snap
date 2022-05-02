@@ -55,11 +55,12 @@ exports[`Test AddGoalForm component Should renders AddGoalForm correctly 1`] = `
         style={
           Array [
             Object {
-              "color": "#655C5C",
+              "color": "#848484",
             },
             Object {
-              "fontFamily": "Lexend-SemiBold",
+              "fontFamily": "Lexend-Bold",
               "fontSize": 20,
+              "fontWeight": "bold",
               "paddingRight": 12,
             },
           ]
@@ -79,7 +80,7 @@ exports[`Test AddGoalForm component Should renders AddGoalForm correctly 1`] = `
     </View>
     <TextInput
       allowFontScaling={true}
-      multiline={true}
+      autoFocus={true}
       onChangeText={[Function]}
       placeholder="What do you want to achieve?"
       placeholderTextColor="#848484"
@@ -128,11 +129,12 @@ exports[`Test AddGoalForm component Should renders AddGoalForm correctly 1`] = `
         style={
           Array [
             Object {
-              "color": "#655C5C",
+              "color": "#848484",
             },
             Object {
-              "fontFamily": "Lexend-SemiBold",
+              "fontFamily": "Lexend-Bold",
               "fontSize": 20,
+              "fontWeight": "bold",
               "paddingRight": 12,
             },
           ]
@@ -209,7 +211,7 @@ exports[`Test AddGoalForm component Should renders AddGoalForm correctly 1`] = `
           "paddingTop": 20,
           "shadowColor": "#171717",
           "shadowOffset": Object {
-            "height": 5,
+            "height": 3,
             "width": 3,
           },
           "shadowOpacity": 0.2,
@@ -224,10 +226,15 @@ exports[`Test AddGoalForm component Should renders AddGoalForm correctly 1`] = `
             Object {
               "color": "#fff",
             },
-            Object {
-              "fontFamily": "Lexend-Regular",
-              "fontSize": 18,
-            },
+            Array [
+              Object {
+                "fontFamily": "Lexend-Regular",
+                "fontSize": 18,
+              },
+              Object {
+                "fontSize": 18,
+              },
+            ],
           ]
         }
       >

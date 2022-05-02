@@ -5,10 +5,9 @@ exports[`Test TaskTitle component Should renders TaskTitle correctly 1`] = `
   style={
     Array [
       Object {
-        "color": "#000000",
+        "color": "#554F4F",
       },
       Object {
-        "color": "#848484",
         "fontFamily": "Lexend-SemiBold",
         "fontSize": 18,
       },

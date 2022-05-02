@@ -20,7 +20,7 @@ const EmptyPrioritizedTasks: React.FC = () => {
 const styles = StyleSheet.create({
   emptyTasksMsgWrapper: {
     ...Container.centerAlignedVertical,
-    height: "80%",
+    height: 280,
     padding: 20,
   },
   emptyTasksImage: {
@@ -30,7 +30,7 @@ const styles = StyleSheet.create({
   emptyTasksMsg: {
     ...Typography.p,
     fontSize: 14,
-    color: Color.light.subtleLabel,
+    color: Color.light.labelOnBackgroundForRead,
     paddingTop: 20,
   },
 });

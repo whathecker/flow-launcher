@@ -2,24 +2,6 @@
 
 exports[`Test EmptyBucket component Should renders EmptyBucket correctly 1`] = `
 Array [
-  <Text
-    style={
-      Array [
-        Object {
-          "color": "#000000",
-        },
-        Object {
-          "color": "#000000",
-          "fontFamily": "Lexend-SemiBold",
-          "fontSize": 16,
-          "paddingLeft": "5%",
-          "paddingTop": 5,
-        },
-      ]
-    }
-  >
-    This should be title of empty prio bucket
-  </Text>,
   <View
     style={
       Array [
@@ -28,7 +10,47 @@ Array [
         },
         Object {
           "alignItems": "center",
-          "backgroundColor": "#FEFEF8",
+          "flexDirection": "row",
+          "justifyContent": "flex-start",
+          "paddingLeft": "6%",
+        },
+      ]
+    }
+  >
+    <Image
+      source={1}
+      style={
+        Object {
+          "height": 30,
+          "width": 30,
+        }
+      }
+    />
+    <Text
+      style={
+        Array [
+          Object {
+            "color": "#848484",
+          },
+          Object {
+            "fontFamily": "Lexend-SemiBold",
+            "fontSize": 16,
+            "paddingLeft": "5%",
+          },
+        ]
+      }
+    >
+      This should be title of empty prio bucket
+    </Text>
+  </View>,
+  <View
+    style={
+      Array [
+        Object {
+          "backgroundColor": "#FDFCFC",
+        },
+        Object {
+          "alignItems": "center",
           "flexDirection": "row",
           "justifyContent": "center",
           "paddingBottom": "6%",
@@ -41,17 +63,16 @@ Array [
       style={
         Array [
           Object {
-            "color": "#000000",
+            "color": "#848484",
           },
           Object {
-            "color": "#848484",
             "fontFamily": "Lexend-Regular",
             "fontSize": 14,
           },
         ]
       }
     >
-      No awaiting tasks
+      No tasks in this list
     </Text>
   </View>,
 ]

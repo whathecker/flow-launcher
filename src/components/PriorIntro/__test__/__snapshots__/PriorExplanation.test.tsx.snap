@@ -1,7 +1,16 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Test PriorExplanation component Should renders PriorExplanation correctly 1`] = `
-Array [
+<View
+  style={
+    Array [
+      Object {
+        "backgroundColor": "#fff",
+      },
+      undefined,
+    ]
+  }
+>
   <View
     style={
       Array [
@@ -10,8 +19,8 @@ Array [
         },
         Object {
           "alignItems": "center",
+          "flex": 5,
           "flexDirection": "row",
-          "height": "50%",
           "justifyContent": "flex-start",
           "marginBottom": 5,
           "marginTop": 5,
@@ -27,7 +36,7 @@ Array [
             "backgroundColor": "#fff",
           },
           Object {
-            "width": "35%",
+            "width": "30%",
           },
         ]
       }
@@ -49,7 +58,7 @@ Array [
             "backgroundColor": "#fff",
           },
           Object {
-            "width": "65%",
+            "width": "70%",
           },
         ]
       }
@@ -58,11 +67,11 @@ Array [
         style={
           Array [
             Object {
-              "color": "#000000",
+              "color": "#554F4F",
             },
             Object {
               "fontFamily": "Lexend-SemiBold",
-              "fontSize": 16,
+              "fontSize": 18,
               "marginBottom": 6,
             },
           ]
@@ -74,11 +83,11 @@ Array [
         style={
           Array [
             Object {
-              "color": "#000000",
+              "color": "#554F4F",
             },
             Object {
               "fontFamily": "Lexend-Regular",
-              "fontSize": 14,
+              "fontSize": 15,
             },
           ]
         }
@@ -86,7 +95,7 @@ Array [
         Answer ‘yes’ if there is any time pressure to finish the task.
       </Text>
     </View>
-  </View>,
+  </View>
   <View
     style={
       Array [
@@ -95,8 +104,8 @@ Array [
         },
         Object {
           "alignItems": "center",
+          "flex": 5,
           "flexDirection": "row",
-          "height": "50%",
           "justifyContent": "flex-start",
           "marginBottom": 5,
           "marginTop": 5,
@@ -112,7 +121,7 @@ Array [
             "backgroundColor": "#fff",
           },
           Object {
-            "width": "35%",
+            "width": "30%",
           },
         ]
       }
@@ -134,7 +143,7 @@ Array [
             "backgroundColor": "#fff",
           },
           Object {
-            "width": "65%",
+            "width": "70%",
           },
         ]
       }
@@ -143,11 +152,11 @@ Array [
         style={
           Array [
             Object {
-              "color": "#000000",
+              "color": "#554F4F",
             },
             Object {
               "fontFamily": "Lexend-SemiBold",
-              "fontSize": 16,
+              "fontSize": 18,
               "marginBottom": 6,
             },
           ]
@@ -159,11 +168,11 @@ Array [
         style={
           Array [
             Object {
-              "color": "#000000",
+              "color": "#554F4F",
             },
             Object {
               "fontFamily": "Lexend-Regular",
-              "fontSize": 14,
+              "fontSize": 15,
             },
           ]
         }
@@ -171,6 +180,6 @@ Array [
         Think twice, and mark ‘yes’ if the task is crucial to achieving your goal.
       </Text>
     </View>
-  </View>,
-]
+  </View>
+</View>
 `;

@@ -1,18 +1,33 @@
 {
   "build": {
     "release": {},
-    "development": {
-      "developmentClient": true,
-      "distribution": "internal"
+    "dev-simulator": {
+      "ios": {
+        "simulator": true,
+        "developmentClient": true,
+        "distribution": "internal"
+      }
     },
-    "preview": {
-      "distribution": "internal"
+    "dev-device": {
+      "ios": {
+        "developmentClient": true,
+        "distribution": "internal"
+      }
+    },
+    "preview-simulator": {
+      "ios": {
+        "simulator": true,
+        "distribution": "internal"
+      }
+    },
+    "preview-device": {
+      "ios": {
+        "simulator": true,
+        "distribution": "internal"
+      }
     }
   },
   "submit": {
     "release": {}
-  },
-  "cli": {
-    "version": ">= 0.38.3"
   }
 }

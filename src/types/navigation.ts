@@ -9,6 +9,7 @@ import { PriorityTier } from "./core/value-object";
 export type RootStackParamList = {
   Goal: NavigatorScreenParams<GoalStackParamList> | undefined;
   Prior: NavigatorScreenParams<PriorStackParamList> | undefined;
+  PrioIntro: NavigatorScreenParams<PrioIntroStackParamList> | undefined;
 };
 
 export type RootStackScreenProps<Screen extends keyof RootStackParamList> =
@@ -27,8 +28,17 @@ export type GoalStackScreenProps<Screen extends keyof GoalStackParamList> =
     NativeStackScreenProps<RootStackParamList>
   >;
 
+export type PrioIntroStackParamList = {
+  PriorizationIntro: undefined;
+};
+export type PrioIntroStackScreenProps<
+  Screen extends keyof PrioIntroStackParamList,
+> = CompositeScreenProps<
+  NativeStackScreenProps<PrioIntroStackParamList, Screen>,
+  NativeStackScreenProps<RootStackParamList>
+>;
+
 export type PriorStackParamList = {
-  PriorIntro: undefined;
   Prioritization: undefined;
   PriorReview: { tasks: Task[] };
 };

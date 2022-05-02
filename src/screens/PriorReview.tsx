@@ -9,7 +9,6 @@ import { Button } from "../components/shared";
 import { PriorStackScreenProps } from "../types/navigation";
 import { taskManager, navigationRef } from "../utils";
 import { Container, Color } from "../styles";
-import { GoalColor } from "../types/core/entity";
 
 type Props = PriorStackScreenProps<"PriorReview">;
 
@@ -28,29 +27,13 @@ const PriorReview: React.FC<Props> = ({ route }: Props) => {
         />
       </View>
       <ScrollView style={styles.priorityAreaWrapper}>
-        <PrioReviewBucket
-          tasks={tasksFilteredByPrio.highest}
-          prio="highest"
-          goalColor={state.goalColor as GoalColor}
-        />
-        <PrioReviewBucket
-          tasks={tasksFilteredByPrio.high}
-          prio="high"
-          goalColor={state.goalColor as GoalColor}
-        />
-        <PrioReviewBucket
-          tasks={tasksFilteredByPrio.mid}
-          prio="mid"
-          goalColor={state.goalColor as GoalColor}
-        />
-        <PrioReviewBucket
-          tasks={tasksFilteredByPrio.low}
-          prio="low"
-          goalColor={state.goalColor as GoalColor}
-        />
+        <PrioReviewBucket tasks={tasksFilteredByPrio.highest} prio="highest" />
+        <PrioReviewBucket tasks={tasksFilteredByPrio.high} prio="high" />
+        <PrioReviewBucket tasks={tasksFilteredByPrio.mid} prio="mid" />
+        <PrioReviewBucket tasks={tasksFilteredByPrio.low} prio="low" />
       </ScrollView>
       <View style={styles.buttonAreaWrapper}>
-        <View style={{ width: "80%" }}>
+        <View style={{ width: "80%", flexShrink: 1 }}>
           <Button
             ctaTxt="Confirm Result"
             pressHandler={async () => {
@@ -81,7 +64,7 @@ const styles = StyleSheet.create({
   },
   priorityAreaWrapper: {
     backgroundColor: Color.light.background,
-    height: "65%",
+    height: "68%",
     paddingTop: "1%",
     paddingBottom: "1%",
     paddingLeft: "10%",
@@ -89,6 +72,8 @@ const styles = StyleSheet.create({
   buttonAreaWrapper: {
     ...Container.centerAligned,
     height: "10%",
+    marginBottom: "5%",
+    //paddingBottom: "5%",
   },
 });
 

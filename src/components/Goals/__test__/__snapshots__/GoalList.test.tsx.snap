@@ -114,7 +114,7 @@ exports[`Test GoalList component Should renders GoalList correctly 1`] = `
               "paddingTop": 30,
               "shadowColor": "#171717",
               "shadowOffset": Object {
-                "height": 5,
+                "height": 3,
                 "width": 3,
               },
               "shadowOpacity": 0.2,
@@ -127,7 +127,7 @@ exports[`Test GoalList component Should renders GoalList correctly 1`] = `
             style={
               Array [
                 Object {
-                  "color": "white",
+                  "color": "#fff",
                 },
                 Object {
                   "fontFamily": "Lexend-SemiBold",
@@ -144,7 +144,7 @@ exports[`Test GoalList component Should renders GoalList correctly 1`] = `
             style={
               Array [
                 Object {
-                  "color": "white",
+                  "color": "#fff",
                 },
                 Object {
                   "fontFamily": "Lexend-Regular",
@@ -174,7 +174,7 @@ exports[`Test GoalList component Should renders GoalList correctly 1`] = `
           style={
             Object {
               "alignItems": "flex-start",
-              "backgroundColor": "#84C5E8",
+              "backgroundColor": "#42ABE3",
               "borderRadius": 10,
               "flexDirection": "column",
               "justifyContent": "center",
@@ -190,7 +190,7 @@ exports[`Test GoalList component Should renders GoalList correctly 1`] = `
               "paddingTop": 30,
               "shadowColor": "#171717",
               "shadowOffset": Object {
-                "height": 5,
+                "height": 3,
                 "width": 3,
               },
               "shadowOpacity": 0.2,
@@ -203,7 +203,7 @@ exports[`Test GoalList component Should renders GoalList correctly 1`] = `
             style={
               Array [
                 Object {
-                  "color": "white",
+                  "color": "#fff",
                 },
                 Object {
                   "fontFamily": "Lexend-SemiBold",
@@ -220,83 +220,7 @@ exports[`Test GoalList component Should renders GoalList correctly 1`] = `
             style={
               Array [
                 Object {
-                  "color": "white",
-                },
-                Object {
-                  "fontFamily": "Lexend-Regular",
-                  "fontSize": 16,
-                },
-              ]
-            }
-          >
-            this is my motivation
-          </Text>
-        </View>
-      </View>
-      <View
-        onLayout={[Function]}
-        style={null}
-      >
-        <View
-          accessible={true}
-          focusable={true}
-          onClick={[Function]}
-          onResponderGrant={[Function]}
-          onResponderMove={[Function]}
-          onResponderRelease={[Function]}
-          onResponderTerminate={[Function]}
-          onResponderTerminationRequest={[Function]}
-          onStartShouldSetResponder={[Function]}
-          style={
-            Object {
-              "alignItems": "flex-start",
-              "backgroundColor": "#1C88BA",
-              "borderRadius": 10,
-              "flexDirection": "column",
-              "justifyContent": "center",
-              "marginBottom": 15,
-              "marginLeft": "5%",
-              "marginRight": "5%",
-              "marginTop": 15,
-              "minHeight": 200,
-              "opacity": 1,
-              "paddingBottom": 30,
-              "paddingLeft": 40,
-              "paddingRight": 60,
-              "paddingTop": 30,
-              "shadowColor": "#171717",
-              "shadowOffset": Object {
-                "height": 5,
-                "width": 3,
-              },
-              "shadowOpacity": 0.2,
-              "shadowRadius": 3,
-              "width": "90%",
-            }
-          }
-        >
-          <Text
-            style={
-              Array [
-                Object {
-                  "color": "white",
-                },
-                Object {
-                  "fontFamily": "Lexend-SemiBold",
-                  "fontSize": 18,
-                  "paddingBottom": 20,
-                  "textAlign": "left",
-                },
-              ]
-            }
-          >
-            dummy goal -3
-          </Text>
-          <Text
-            style={
-              Array [
-                Object {
-                  "color": "white",
+                  "color": "#fff",
                 },
                 Object {
                   "fontFamily": "Lexend-Regular",
@@ -342,7 +266,7 @@ exports[`Test GoalList component Should renders GoalList correctly 1`] = `
               "paddingTop": 30,
               "shadowColor": "#171717",
               "shadowOffset": Object {
-                "height": 5,
+                "height": 3,
                 "width": 3,
               },
               "shadowOpacity": 0.2,
@@ -355,7 +279,83 @@ exports[`Test GoalList component Should renders GoalList correctly 1`] = `
             style={
               Array [
                 Object {
-                  "color": "white",
+                  "color": "#fff",
+                },
+                Object {
+                  "fontFamily": "Lexend-SemiBold",
+                  "fontSize": 18,
+                  "paddingBottom": 20,
+                  "textAlign": "left",
+                },
+              ]
+            }
+          >
+            dummy goal -3
+          </Text>
+          <Text
+            style={
+              Array [
+                Object {
+                  "color": "#fff",
+                },
+                Object {
+                  "fontFamily": "Lexend-Regular",
+                  "fontSize": 16,
+                },
+              ]
+            }
+          >
+            this is my motivation
+          </Text>
+        </View>
+      </View>
+      <View
+        onLayout={[Function]}
+        style={null}
+      >
+        <View
+          accessible={true}
+          focusable={true}
+          onClick={[Function]}
+          onResponderGrant={[Function]}
+          onResponderMove={[Function]}
+          onResponderRelease={[Function]}
+          onResponderTerminate={[Function]}
+          onResponderTerminationRequest={[Function]}
+          onStartShouldSetResponder={[Function]}
+          style={
+            Object {
+              "alignItems": "flex-start",
+              "backgroundColor": "#1C88BA",
+              "borderRadius": 10,
+              "flexDirection": "column",
+              "justifyContent": "center",
+              "marginBottom": 15,
+              "marginLeft": "5%",
+              "marginRight": "5%",
+              "marginTop": 15,
+              "minHeight": 200,
+              "opacity": 1,
+              "paddingBottom": 30,
+              "paddingLeft": 40,
+              "paddingRight": 60,
+              "paddingTop": 30,
+              "shadowColor": "#171717",
+              "shadowOffset": Object {
+                "height": 3,
+                "width": 3,
+              },
+              "shadowOpacity": 0.2,
+              "shadowRadius": 3,
+              "width": "90%",
+            }
+          }
+        >
+          <Text
+            style={
+              Array [
+                Object {
+                  "color": "#fff",
                 },
                 Object {
                   "fontFamily": "Lexend-SemiBold",
@@ -372,7 +372,7 @@ exports[`Test GoalList component Should renders GoalList correctly 1`] = `
             style={
               Array [
                 Object {
-                  "color": "white",
+                  "color": "#fff",
                 },
                 Object {
                   "fontFamily": "Lexend-Regular",
@@ -418,7 +418,7 @@ exports[`Test GoalList component Should renders GoalList correctly 1`] = `
               "paddingTop": 30,
               "shadowColor": "#171717",
               "shadowOffset": Object {
-                "height": 5,
+                "height": 3,
                 "width": 3,
               },
               "shadowOpacity": 0.2,
@@ -431,7 +431,7 @@ exports[`Test GoalList component Should renders GoalList correctly 1`] = `
             style={
               Array [
                 Object {
-                  "color": "white",
+                  "color": "#fff",
                 },
                 Object {
                   "fontFamily": "Lexend-SemiBold",
@@ -448,7 +448,7 @@ exports[`Test GoalList component Should renders GoalList correctly 1`] = `
             style={
               Array [
                 Object {
-                  "color": "white",
+                  "color": "#fff",
                 },
                 Object {
                   "fontFamily": "Lexend-Regular",

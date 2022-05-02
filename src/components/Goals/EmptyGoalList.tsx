@@ -1,9 +1,12 @@
 import React from "react";
 import { Image, StyleSheet } from "react-native";
 import { View, Text } from "../Themed";
-import { Typography } from "../../styles";
+import { Typography, Color } from "../../styles";
 
 const EmptyGoalList: React.FC = () => {
+  const lightQuoteColor = Color.light.labelOnBackgroundForRead;
+  const darkQuoteColor = Color.dark.labelOnBackgroundForRead;
+
   return (
     <>
       <View style={styles.blockWrapper}>
@@ -13,11 +16,23 @@ const EmptyGoalList: React.FC = () => {
         />
       </View>
       <View style={styles.blockWrapper}>
-        <Text style={styles.text}>{`The journey of a thousand miles`}</Text>
-        <Text style={styles.text}>{`begins with a single step.`}</Text>
+        <Text
+          lightColor={lightQuoteColor}
+          darkColor={darkQuoteColor}
+          style={styles.text}
+        >{`The journey of a thousand miles`}</Text>
+        <Text
+          lightColor={lightQuoteColor}
+          darkColor={darkQuoteColor}
+          style={styles.text}
+        >{`begins with a single step.`}</Text>
       </View>
       <View style={styles.blockWrapper}>
-        <Text style={styles.text}>{`LAO TZU`}</Text>
+        <Text
+          lightColor={lightQuoteColor}
+          darkColor={darkQuoteColor}
+          style={styles.text}
+        >{`LAO TZU`}</Text>
       </View>
     </>
   );

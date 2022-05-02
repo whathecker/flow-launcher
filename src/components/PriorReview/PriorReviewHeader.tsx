@@ -3,7 +3,7 @@ import { StyleSheet, Image } from "react-native";
 import { View, Text } from "../Themed";
 import { GoBackButton } from "../shared";
 import { Container, Typography } from "../../styles";
-import { navigationRef } from "../../utils";
+import { navigationRef, shortenText } from "../../utils";
 
 type PriorReviewHeaderProps = {
   title: string;
@@ -31,7 +31,7 @@ const PriorReviewHeader: React.FC<PriorReviewHeaderProps> = ({
         </View>
       </View>
       <View style={styles.goalAreaWrapper}>
-        <Text style={styles.goalText}>{title}</Text>
+        <Text style={styles.goalText}>{shortenText(title, 30)}</Text>
         <Text
           style={styles.taskCountText}
         >{`${tasksCount} tasks have been prioritised`}</Text>
@@ -42,44 +42,53 @@ const PriorReviewHeader: React.FC<PriorReviewHeaderProps> = ({
 
 const styles = StyleSheet.create({
   wrapper: {
-    paddingBottom: 15,
+    flex: 1,
+    paddingTop: "5%",
+    paddingBottom: "2.5%",
   },
   goBackBtnAreaWrapper: {
+    flex: 3,
     ...Container.flexStart,
-    height: "40%",
+    //height: "40%",
   },
   goBackBtnWrapper: {
-    paddingLeft: 25,
+    paddingLeft: "5.5%",
     paddingTop: 0,
   },
   headerAreaWrapper: {
+    flex: 3,
     paddingLeft: "10%",
   },
   headerWrapper: {
+    paddingTop: "2.5%",
     ...Container.flexStart,
     width: "100%",
   },
   headerText: {
     ...Typography.h4,
-    fontSize: 22,
-    paddingRight: 10,
+    fontSize: 20,
+    paddingRight: "3%",
   },
   image: {
     width: 32,
     height: 32,
   },
   goalAreaWrapper: {
-    paddingLeft: "10%",
+    flex: 4,
+    width: "90%",
+    paddingLeft: "12%",
     marginTop: "8%",
+    flexShrink: 1,
   },
   goalText: {
+    flexShrink: 1,
     ...Typography.h4,
-    fontSize: 20,
-    paddingBottom: 5,
+    fontSize: 18,
+    paddingBottom: "8.5%",
   },
   taskCountText: {
     ...Typography.p,
-    fontSize: 16,
+    fontSize: 13,
   },
 });
 

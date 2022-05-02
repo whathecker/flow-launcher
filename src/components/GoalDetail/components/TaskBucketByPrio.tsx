@@ -1,83 +1,112 @@
 import React from "react";
 import { Image } from "react-native";
 import { Touchable, View, Text } from "../../Themed";
-import { Color, Container, Typography } from "../../../styles";
+import {
+  HighestPrioIcon,
+  HighPrioIcon,
+  MidPrioIcon,
+  LowPrioIcon,
+  EmptyPrioIcon,
+} from "../../shared";
+import { Color, Container, Typography, Shadow } from "../../../styles";
 import { Task, GoalColor } from "../../../types/core/entity";
 import { PriorityTier } from "../../../types/core/value-object";
-import { colorRenderer, labelRenderer, navigationRef } from "../../../utils";
+import { labelRenderer, navigationRef } from "../../../utils";
 
 type ActiveBucketProps = {
   prio: PriorityTier;
-  backgroundColor: string;
-  textColor: string;
+  goalColor: string;
   tasks: Task[];
 };
+
+function _trimTaskTitle(input: string): string {
+  if (input.length > 10) {
+    return input.slice(0, 20).concat(" ...");
+  } else {
+    return input;
+  }
+}
 
 const ActiveBucket: React.FC<ActiveBucketProps> = ({
   prio,
   tasks,
-  backgroundColor,
-  textColor,
+  goalColor,
 }: ActiveBucketProps) => {
   return (
     <Touchable
       onPress={() => {
         navigationRef.navigate("TasksByPrio", {
-          backgroundColor: backgroundColor,
+          backgroundColor: goalColor,
           prio: prio,
         });
       }}
       style={{
         width: "100%",
         height: 120,
-        backgroundColor: backgroundColor,
         marginTop: 5,
         marginBottom: "3%",
         paddingTop: "4%",
         paddingBottom: "8%",
-        borderWidth: 1,
+        borderWidth: 0.5,
         borderColor: Color.light.defaultBorder,
         borderRadius: 5,
+        ...Shadow.regularbackDrop,
       }}
     >
       <View
         style={{
-          backgroundColor: backgroundColor,
+          width: "95%",
+          ...Container.flexStart,
           paddingLeft: 15,
         }}
       >
+        {prio === "highest" ? (
+          <HighestPrioIcon style={{ width: 32, height: 32 }} />
+        ) : null}
+        {prio === "high" ? (
+          <HighPrioIcon style={{ width: 32, height: 32 }} />
+        ) : null}
+        {prio === "mid" ? (
+          <MidPrioIcon style={{ width: 30, height: 30 }} />
+        ) : null}
+        {prio === "low" ? (
+          <LowPrioIcon style={{ width: 32, height: 32 }} />
+        ) : null}
         <Text
+          lightColor={Color.light.textOnBackgroundForRead}
+          darkColor={Color.dark.textOnBackgroundForRead}
           style={{
             ...Typography.h4,
             fontSize: 15,
-            fontWeight: "bold",
-            color: textColor,
+            paddingTop: 5,
+            paddingLeft: 18,
           }}
         >
           {labelRenderer.renderPrioBucketLabel(prio)}
         </Text>
       </View>
-
       <View
         style={{
-          backgroundColor: backgroundColor,
+          width: "95%",
           paddingTop: "6%",
           paddingBottom: "2%",
           paddingLeft: "10%",
         }}
       >
         <Text
+          lightColor={Color.light.textOnBackgroundForRead}
+          darkColor={Color.dark.textOnBackgroundForRead}
           style={{
             ...Typography.p,
-            color: textColor,
             fontSize: 13,
           }}
-        >{`${tasks[0].title}`}</Text>
+        >{`${_trimTaskTitle(tasks[0].title)}`}</Text>
         {tasks.length > 1 ? (
           <Text
+            lightColor={Color.light.textOnBackgroundForRead}
+            darkColor={Color.dark.textOnBackgroundForRead}
             style={{
               ...Typography.p,
-              color: textColor,
               fontSize: 13,
               textDecorationLine: "underline",
               paddingTop: 5,
@@ -86,15 +115,14 @@ const ActiveBucket: React.FC<ActiveBucketProps> = ({
         ) : null}
         <View
           style={{
-            backgroundColor: backgroundColor,
             position: "absolute",
-            top: -18,
-            right: 15,
+            top: 45,
+            right: 5,
           }}
         >
           <Image
             style={{ width: 18, height: 18 }}
-            source={require(`../../../../assets/images/right-arrow-white.png`)}
+            source={require(`../../../../assets/images/right-arrow_gray.png`)}
           />
         </View>
       </View>
@@ -104,62 +132,64 @@ const ActiveBucket: React.FC<ActiveBucketProps> = ({
 
 type EmptyBucketProps = {
   prio: PriorityTier;
-  backgroundColor: string;
-  textColor: string;
   tasks?: Task[];
 };
 
 const EmptyBucket: React.FC<EmptyBucketProps> = ({
   prio,
-  backgroundColor,
-  textColor,
 }: EmptyBucketProps) => {
   return (
     <View
+      lightColor={Color.light.emptyPrioBucket}
+      darkColor={Color.dark.emptyPrioBucket}
       style={{
         width: "100%",
         height: 120,
-        backgroundColor: backgroundColor,
         marginTop: 5,
         marginBottom: "3%",
         paddingTop: "4%",
         paddingBottom: "8%",
-        borderWidth: 1,
+        borderWidth: 0.5,
         borderColor: Color.light.defaultBorder,
         borderRadius: 5,
       }}
     >
       <View
-        style={{
-          backgroundColor: backgroundColor,
-          paddingLeft: 15,
-        }}
+        lightColor={Color.light.emptyPrioBucket}
+        darkColor={Color.dark.emptyPrioBucket}
+        style={{ width: "95%", ...Container.flexStart, paddingLeft: 15 }}
       >
+        <EmptyPrioIcon style={{ width: 28, height: 28 }} />
         <Text
+          lightColor={Color.light.labelOnBackgroundForRead}
+          darkColor={Color.dark.labelOnBackgroundForRead}
           style={{
             ...Typography.h4,
             fontSize: 15,
-            fontWeight: "bold",
-            color: textColor,
+            paddingTop: 5,
+            paddingLeft: 22,
           }}
         >
           {labelRenderer.renderPrioBucketLabel(prio)}
         </Text>
       </View>
       <View
+        lightColor={Color.light.emptyPrioBucket}
+        darkColor={Color.dark.emptyPrioBucket}
         style={{
+          width: "95%",
           ...Container.centerAligned,
-          backgroundColor: backgroundColor,
-          paddingTop: "8%",
+          paddingTop: "9.5%",
         }}
       >
         <Text
+          lightColor={Color.light.labelOnBackgroundForRead}
+          darkColor={Color.dark.labelOnBackgroundForRead}
           style={{
             ...Typography.p,
             fontSize: 12,
-            color: textColor,
           }}
-        >{`No awaiting tasks`}</Text>
+        >{`No tasks in this list`}</Text>
       </View>
     </View>
   );
@@ -178,29 +208,12 @@ const TaskBucketByPrio: React.FC<TaskBucketByPrioProps> = ({
 }: TaskBucketByPrioProps) => {
   const isTasksEmpty = tasks.length === 0;
 
-  const backgroundColor = isTasksEmpty
-    ? "#FEFEF8"
-    : colorRenderer.getColorForPrioBucket(goalColor, prio);
-
-  const textColor = isTasksEmpty
-    ? Color.light.subtleLabel
-    : Color.light.whiteText;
-
   return (
     <>
       {isTasksEmpty ? (
-        <EmptyBucket
-          prio={prio}
-          backgroundColor={backgroundColor}
-          textColor={textColor}
-        />
+        <EmptyBucket prio={prio} />
       ) : (
-        <ActiveBucket
-          prio={prio}
-          tasks={tasks}
-          backgroundColor={backgroundColor}
-          textColor={textColor}
-        />
+        <ActiveBucket prio={prio} tasks={tasks} goalColor={goalColor} />
       )}
     </>
   );

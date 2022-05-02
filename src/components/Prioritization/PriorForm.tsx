@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/no-non-null-assertion */
-import React, { useState } from "react";
-import { StyleSheet, Image } from "react-native";
+import React, { useState, useRef, useEffect } from "react";
+import { StyleSheet, Image, Animated } from "react-native";
 import { Touchable, View, Text } from "../Themed";
 import { TaskCounter, TaskTitle } from "./components";
 import { Button, RadioButton } from "../shared";
@@ -66,9 +66,34 @@ const PriorForm: React.FC<PriorFormProps> = ({
     setImportanceValue(unprioritisedTasks[prevCounter].priority!.importance);
   };
 
+  const fadeAnim = useRef(new Animated.Value(0)).current;
+
+  useEffect(() => {
+    Animated.timing(fadeAnim, {
+      toValue: 1,
+      duration: 1100,
+      useNativeDriver: true,
+    }).start();
+  }, []);
+
+  const dimElements = (): void => {
+    Animated.sequence([
+      Animated.timing(fadeAnim, {
+        toValue: 0.05,
+        duration: 200,
+        useNativeDriver: true,
+      }),
+      Animated.timing(fadeAnim, {
+        toValue: 1,
+        duration: 200,
+        useNativeDriver: true,
+      }),
+    ]).start();
+  };
+
   return (
     <View style={styles.wrapper}>
-      <View style={styles.headerWrapper}>
+      <Animated.View style={[styles.headerWrapper, { opacity: fadeAnim }]}>
         <View style={{ marginBottom: 10 }}>
           <TaskCounter
             currentTaskIndex={activeTaskCounter}
@@ -78,7 +103,7 @@ const PriorForm: React.FC<PriorFormProps> = ({
         <View style={{ marginBottom: 10 }}>
           <TaskTitle title={activeTask.title} />
         </View>
-      </View>
+      </Animated.View>
       <View style={styles.inputAreaWrapper}>
         <View style={styles.inputWrapper}>
           <View style={styles.inputImageWrapper}>
@@ -87,8 +112,12 @@ const PriorForm: React.FC<PriorFormProps> = ({
               source={require(`../../../assets/images/alarm-clock_23f0.png`)}
             />
           </View>
-          <View>
-            <Text style={styles.inputLabel}>{`Is this task urgent?`}</Text>
+          <Animated.View style={{ opacity: fadeAnim }}>
+            <Text
+              lightColor={Color.light.labelOnBackgroundForRead}
+              darkColor={Color.light.labelOnBackgroundForRead}
+              style={styles.inputLabel}
+            >{`Is this task urgent?`}</Text>
             <View
               style={{
                 ...Container.flexStart,
@@ -109,7 +138,7 @@ const PriorForm: React.FC<PriorFormProps> = ({
                 pressHandler={() => updateUrgencyVal("no")}
               />
             </View>
-          </View>
+          </Animated.View>
         </View>
         <View style={styles.inputWrapper}>
           <View style={styles.inputImageWrapper}>
@@ -118,8 +147,12 @@ const PriorForm: React.FC<PriorFormProps> = ({
               source={require(`../../../assets/images/exclamation-mark_2757.png`)}
             />
           </View>
-          <View>
-            <Text style={styles.inputLabel}>{`Is this task important?`}</Text>
+          <Animated.View style={{ opacity: fadeAnim }}>
+            <Text
+              lightColor={Color.light.labelOnBackgroundForRead}
+              darkColor={Color.dark.labelOnBackgroundForRead}
+              style={styles.inputLabel}
+            >{`Is this task important?`}</Text>
             <View
               style={{
                 ...Container.flexStart,
@@ -140,14 +173,17 @@ const PriorForm: React.FC<PriorFormProps> = ({
                 pressHandler={() => updateImportanceVal("no")}
               />
             </View>
-          </View>
+          </Animated.View>
         </View>
       </View>
       <View style={styles.buttonAreaWrapper}>
         {activeTaskCounter > 0 ? (
           <Touchable
             style={styles.prevButtonWrapper}
-            onPress={() => renderPrevTask()}
+            onPress={() => {
+              renderPrevTask();
+              dimElements();
+            }}
           >
             <Image
               style={styles.prevArrowIcon}
@@ -161,6 +197,7 @@ const PriorForm: React.FC<PriorFormProps> = ({
         <View style={styles.nextButtonWrapper}>
           {activeTaskCounter === unprioritisedTasks.length - 1 ? (
             <Button
+              fontSize={16}
               ctaTxt="Review Result"
               disable={shouldNextBtnInactive(importanceValue, urgencyValue)}
               pressHandler={() => {
@@ -179,7 +216,10 @@ const PriorForm: React.FC<PriorFormProps> = ({
             <Button
               ctaTxt="Next"
               disable={shouldNextBtnInactive(importanceValue, urgencyValue)}
-              pressHandler={() => renderNextTask()}
+              pressHandler={() => {
+                renderNextTask();
+                dimElements();
+              }}
             />
           )}
         </View>
@@ -190,43 +230,49 @@ const PriorForm: React.FC<PriorFormProps> = ({
 
 const styles = StyleSheet.create({
   wrapper: {
-    width: "80%",
-    height: "85%",
+    flexDirection: "column",
+    width: "85%",
     borderColor: Color.light.defaultBorder,
     borderRadius: 8,
     borderWidth: 0.5,
   },
   headerWrapper: {
-    paddingTop: "10%",
+    flex: 2,
+    width: "95%",
+    marginTop: "8%",
     paddingLeft: "8%",
-    height: "18%",
   },
   inputAreaWrapper: {
-    paddingTop: "10%",
+    width: "99.5%",
+    flex: 6,
+    marginTop: "2.5%",
+    marginBottom: "2.5%",
     paddingLeft: "8%",
-    height: "65%",
   },
   inputWrapper: {
     ...Container.flexStart,
     width: "80%",
-    marginTop: 10,
-    marginBottom: 20,
+    marginTop: "2.5%",
+    marginBottom: "2%",
   },
   inputImageWrapper: {
     width: "35%",
   },
   inputLabel: {
     ...Typography.h4,
-    fontSize: 16,
-    marginBottom: 15,
+    fontSize: 15,
+    marginBottom: 8,
   },
   image: {
-    width: 60,
-    height: 60,
+    width: 50,
+    height: 50,
   },
   buttonAreaWrapper: {
+    width: "99.5%",
+    flex: 2,
     ...Container.flexStart,
     justifyContent: "space-between",
+    marginBottom: "3%",
   },
   prevButtonWrapper: {
     ...Container.flexStart,
@@ -234,14 +280,14 @@ const styles = StyleSheet.create({
     paddingLeft: 33,
   },
   prevArrowIcon: {
-    width: 20,
-    height: 20,
+    width: 22,
+    height: 22,
   },
   prevButtonText: {
     ...Typography.p,
-    fontSize: 13,
+    fontSize: 14,
     textDecorationLine: "underline",
-    paddingLeft: 5,
+    paddingLeft: 10,
   },
   nextButtonWrapper: {
     width: "45%",

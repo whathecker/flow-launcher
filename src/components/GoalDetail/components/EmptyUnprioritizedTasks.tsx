@@ -14,13 +14,13 @@ const EmptyUnprioritizedTasks: React.FC = () => {
 const styles = StyleSheet.create({
   emptyTasksMsgWrapper: {
     ...Container.centerAligned,
-    height: "55%",
+    height: 100,
     padding: 20,
   },
   emptyTasksMsg: {
     ...Typography.p,
     fontSize: 14,
-    color: Color.light.subtleLabel,
+    color: Color.light.labelOnBackgroundForRead,
   },
 });
 

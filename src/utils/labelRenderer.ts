@@ -4,16 +4,16 @@ const renderPrioBucketLabel = (prio: PriorityTier): string => {
   let label = "";
   switch (prio) {
     case "highest":
-      label = "1. Do these before anything else";
+      label = "Highest priority";
       break;
     case "high":
-      label = "2. Sort these important things out";
+      label = "High priority";
       break;
     case "mid":
-      label = "3. These can wait a bit";
+      label = "Mid priority";
       break;
     case "low":
-      label = "4. These are for spare time";
+      label = "Low priority";
       break;
     default:
       // TODO: Add error handling here

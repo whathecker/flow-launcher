@@ -1,5 +1,6 @@
 import { ViewStyle } from "react-native";
 
+//TODO: rename this to centerAlignedHorizontal
 export const centerAligned: ViewStyle = {
   flexDirection: "row",
   justifyContent: "center",
@@ -10,6 +11,12 @@ export const centerAlignedVertical: ViewStyle = {
   flexDirection: "column",
   justifyContent: "center",
   alignItems: "center",
+};
+
+export const leftAlignedVertical: ViewStyle = {
+  flexDirection: "column",
+  justifyContent: "flex-start",
+  alignItems: "flex-start",
 };
 
 export const flexStart: ViewStyle = {

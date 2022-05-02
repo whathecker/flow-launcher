@@ -8,10 +8,9 @@ exports[`Test PrioReviewBucket component Should renders PrioReviewBuckets correc
         "backgroundColor": "#fff",
       },
       Object {
-        "backgroundColor": "#C2571A",
-        "borderColor": "#636262",
+        "borderColor": "#848484",
         "borderRadius": 5,
-        "borderWidth": 1,
+        "borderWidth": 0.5,
         "marginBottom": "3%",
         "marginTop": 5,
         "paddingBottom": "8%",
@@ -27,9 +26,7 @@ exports[`Test PrioReviewBucket component Should renders PrioReviewBuckets correc
         Object {
           "backgroundColor": "#fff",
         },
-        Object {
-          "backgroundColor": "#C2571A",
-        },
+        undefined,
       ]
     }
   >
@@ -65,7 +62,8 @@ exports[`Test PrioReviewBucket component Should renders PrioReviewBuckets correc
                 "title": "Test2",
               },
             ],
-            "title": "1. Do these before anything else",
+            "prio": "highest",
+            "title": "Highest priority",
           },
         ]
       }
@@ -98,26 +96,51 @@ exports[`Test PrioReviewBucket component Should renders PrioReviewBuckets correc
           onLayout={[Function]}
           style={null}
         >
-          <Text
+          <View
             style={
               Array [
                 Object {
-                  "color": "#000000",
+                  "backgroundColor": "#fff",
                 },
                 Object {
-                  "color": "#fff",
-                  "fontFamily": "Lexend-SemiBold",
-                  "fontSize": 16,
+                  "alignItems": "center",
+                  "flexDirection": "row",
+                  "justifyContent": "flex-start",
                   "paddingBottom": "5%",
-                  "paddingLeft": "5%",
-                  "paddingTop": 5,
-                  "textAlign": "left",
+                  "paddingLeft": "6%",
                 },
               ]
             }
           >
-            1. Do these before anything else
-          </Text>
+            <Image
+              source={1}
+              style={
+                Object {
+                  "height": 32,
+                  "width": 32,
+                }
+              }
+            />
+            <Text
+              style={
+                Array [
+                  Object {
+                    "color": "#554F4F",
+                  },
+                  Object {
+                    "fontFamily": "Lexend-SemiBold",
+                    "fontSize": 16,
+                    "paddingBottom": "5%",
+                    "paddingLeft": "5%",
+                    "paddingTop": "2%",
+                    "textAlign": "left",
+                  },
+                ]
+              }
+            >
+              Highest priority
+            </Text>
+          </View>
         </View>
         <View
           onLayout={[Function]}
@@ -131,7 +154,7 @@ exports[`Test PrioReviewBucket component Should renders PrioReviewBuckets correc
                 },
                 Object {
                   "alignItems": "center",
-                  "borderColor": "#636262",
+                  "borderColor": "#848484",
                   "borderRadius": 5,
                   "borderWidth": 1,
                   "flexDirection": "row",
@@ -140,8 +163,10 @@ exports[`Test PrioReviewBucket component Should renders PrioReviewBuckets correc
                   "marginLeft": "7.5%",
                   "marginRight": "7.5%",
                   "marginTop": 5,
-                  "paddingBottom": 8,
-                  "paddingTop": 8,
+                  "paddingBottom": "3%",
+                  "paddingLeft": "3%",
+                  "paddingRight": "3%",
+                  "paddingTop": "3%",
                   "width": "85%",
                 },
               ]
@@ -151,7 +176,7 @@ exports[`Test PrioReviewBucket component Should renders PrioReviewBuckets correc
               style={
                 Array [
                   Object {
-                    "color": "#000000",
+                    "color": "#554F4F",
                   },
                   Object {
                     "fontFamily": "Lexend-Regular",
@@ -176,7 +201,7 @@ exports[`Test PrioReviewBucket component Should renders PrioReviewBuckets correc
                 },
                 Object {
                   "alignItems": "center",
-                  "borderColor": "#636262",
+                  "borderColor": "#848484",
                   "borderRadius": 5,
                   "borderWidth": 1,
                   "flexDirection": "row",
@@ -185,8 +210,10 @@ exports[`Test PrioReviewBucket component Should renders PrioReviewBuckets correc
                   "marginLeft": "7.5%",
                   "marginRight": "7.5%",
                   "marginTop": 5,
-                  "paddingBottom": 8,
-                  "paddingTop": 8,
+                  "paddingBottom": "3%",
+                  "paddingLeft": "3%",
+                  "paddingRight": "3%",
+                  "paddingTop": "3%",
                   "width": "85%",
                 },
               ]
@@ -196,7 +223,7 @@ exports[`Test PrioReviewBucket component Should renders PrioReviewBuckets correc
               style={
                 Array [
                   Object {
-                    "color": "#000000",
+                    "color": "#554F4F",
                   },
                   Object {
                     "fontFamily": "Lexend-Regular",
@@ -227,10 +254,9 @@ exports[`Test PrioReviewBucket component Should renders PrioReviewBuckets correc
         "backgroundColor": "#fff",
       },
       Object {
-        "backgroundColor": "#0D9BC3",
-        "borderColor": "#636262",
+        "borderColor": "#848484",
         "borderRadius": 5,
-        "borderWidth": 1,
+        "borderWidth": 0.5,
         "marginBottom": "3%",
         "marginTop": 5,
         "paddingBottom": "8%",
@@ -246,9 +272,7 @@ exports[`Test PrioReviewBucket component Should renders PrioReviewBuckets correc
         Object {
           "backgroundColor": "#fff",
         },
-        Object {
-          "backgroundColor": "#0D9BC3",
-        },
+        undefined,
       ]
     }
   >
@@ -284,7 +308,8 @@ exports[`Test PrioReviewBucket component Should renders PrioReviewBuckets correc
                 "title": "Test4",
               },
             ],
-            "title": "2. Sort these important things out",
+            "prio": "high",
+            "title": "High priority",
           },
         ]
       }
@@ -317,26 +342,51 @@ exports[`Test PrioReviewBucket component Should renders PrioReviewBuckets correc
           onLayout={[Function]}
           style={null}
         >
-          <Text
+          <View
             style={
               Array [
                 Object {
-                  "color": "#000000",
+                  "backgroundColor": "#fff",
                 },
                 Object {
-                  "color": "#fff",
-                  "fontFamily": "Lexend-SemiBold",
-                  "fontSize": 16,
+                  "alignItems": "center",
+                  "flexDirection": "row",
+                  "justifyContent": "flex-start",
                   "paddingBottom": "5%",
-                  "paddingLeft": "5%",
-                  "paddingTop": 5,
-                  "textAlign": "left",
+                  "paddingLeft": "6%",
                 },
               ]
             }
           >
-            2. Sort these important things out
-          </Text>
+            <Image
+              source={1}
+              style={
+                Object {
+                  "height": 32,
+                  "width": 32,
+                }
+              }
+            />
+            <Text
+              style={
+                Array [
+                  Object {
+                    "color": "#554F4F",
+                  },
+                  Object {
+                    "fontFamily": "Lexend-SemiBold",
+                    "fontSize": 16,
+                    "paddingBottom": "5%",
+                    "paddingLeft": "5%",
+                    "paddingTop": "2%",
+                    "textAlign": "left",
+                  },
+                ]
+              }
+            >
+              High priority
+            </Text>
+          </View>
         </View>
         <View
           onLayout={[Function]}
@@ -350,7 +400,7 @@ exports[`Test PrioReviewBucket component Should renders PrioReviewBuckets correc
                 },
                 Object {
                   "alignItems": "center",
-                  "borderColor": "#636262",
+                  "borderColor": "#848484",
                   "borderRadius": 5,
                   "borderWidth": 1,
                   "flexDirection": "row",
@@ -359,8 +409,10 @@ exports[`Test PrioReviewBucket component Should renders PrioReviewBuckets correc
                   "marginLeft": "7.5%",
                   "marginRight": "7.5%",
                   "marginTop": 5,
-                  "paddingBottom": 8,
-                  "paddingTop": 8,
+                  "paddingBottom": "3%",
+                  "paddingLeft": "3%",
+                  "paddingRight": "3%",
+                  "paddingTop": "3%",
                   "width": "85%",
                 },
               ]
@@ -370,7 +422,7 @@ exports[`Test PrioReviewBucket component Should renders PrioReviewBuckets correc
               style={
                 Array [
                   Object {
-                    "color": "#000000",
+                    "color": "#554F4F",
                   },
                   Object {
                     "fontFamily": "Lexend-Regular",
@@ -395,7 +447,7 @@ exports[`Test PrioReviewBucket component Should renders PrioReviewBuckets correc
                 },
                 Object {
                   "alignItems": "center",
-                  "borderColor": "#636262",
+                  "borderColor": "#848484",
                   "borderRadius": 5,
                   "borderWidth": 1,
                   "flexDirection": "row",
@@ -404,8 +456,10 @@ exports[`Test PrioReviewBucket component Should renders PrioReviewBuckets correc
                   "marginLeft": "7.5%",
                   "marginRight": "7.5%",
                   "marginTop": 5,
-                  "paddingBottom": 8,
-                  "paddingTop": 8,
+                  "paddingBottom": "3%",
+                  "paddingLeft": "3%",
+                  "paddingRight": "3%",
+                  "paddingTop": "3%",
                   "width": "85%",
                 },
               ]
@@ -415,7 +469,7 @@ exports[`Test PrioReviewBucket component Should renders PrioReviewBuckets correc
               style={
                 Array [
                   Object {
-                    "color": "#000000",
+                    "color": "#554F4F",
                   },
                   Object {
                     "fontFamily": "Lexend-Regular",
@@ -443,13 +497,12 @@ exports[`Test PrioReviewBucket component Should renders PrioReviewBuckets correc
   style={
     Array [
       Object {
-        "backgroundColor": "#fff",
+        "backgroundColor": "#FDFCFC",
       },
       Object {
-        "backgroundColor": "#FEFEF8",
-        "borderColor": "#636262",
+        "borderColor": "#848484",
         "borderRadius": 5,
-        "borderWidth": 1,
+        "borderWidth": 0.5,
         "marginBottom": "3%",
         "marginTop": 5,
         "paddingBottom": "8%",
@@ -459,24 +512,6 @@ exports[`Test PrioReviewBucket component Should renders PrioReviewBuckets correc
     ]
   }
 >
-  <Text
-    style={
-      Array [
-        Object {
-          "color": "#000000",
-        },
-        Object {
-          "color": "#000000",
-          "fontFamily": "Lexend-SemiBold",
-          "fontSize": 16,
-          "paddingLeft": "5%",
-          "paddingTop": 5,
-        },
-      ]
-    }
-  >
-    3. These can wait a bit
-  </Text>
   <View
     style={
       Array [
@@ -485,7 +520,47 @@ exports[`Test PrioReviewBucket component Should renders PrioReviewBuckets correc
         },
         Object {
           "alignItems": "center",
-          "backgroundColor": "#FEFEF8",
+          "flexDirection": "row",
+          "justifyContent": "flex-start",
+          "paddingLeft": "6%",
+        },
+      ]
+    }
+  >
+    <Image
+      source={1}
+      style={
+        Object {
+          "height": 30,
+          "width": 30,
+        }
+      }
+    />
+    <Text
+      style={
+        Array [
+          Object {
+            "color": "#848484",
+          },
+          Object {
+            "fontFamily": "Lexend-SemiBold",
+            "fontSize": 16,
+            "paddingLeft": "5%",
+          },
+        ]
+      }
+    >
+      Mid priority
+    </Text>
+  </View>
+  <View
+    style={
+      Array [
+        Object {
+          "backgroundColor": "#FDFCFC",
+        },
+        Object {
+          "alignItems": "center",
           "flexDirection": "row",
           "justifyContent": "center",
           "paddingBottom": "6%",
@@ -498,17 +573,16 @@ exports[`Test PrioReviewBucket component Should renders PrioReviewBuckets correc
       style={
         Array [
           Object {
-            "color": "#000000",
+            "color": "#848484",
           },
           Object {
-            "color": "#848484",
             "fontFamily": "Lexend-Regular",
             "fontSize": 14,
           },
         ]
       }
     >
-      No awaiting tasks
+      No tasks in this list
     </Text>
   </View>
 </View>
@@ -522,10 +596,9 @@ exports[`Test PrioReviewBucket component Should renders PrioReviewBuckets correc
         "backgroundColor": "#fff",
       },
       Object {
-        "backgroundColor": "#EBC944",
-        "borderColor": "#636262",
+        "borderColor": "#848484",
         "borderRadius": 5,
-        "borderWidth": 1,
+        "borderWidth": 0.5,
         "marginBottom": "3%",
         "marginTop": 5,
         "paddingBottom": "8%",
@@ -541,9 +614,7 @@ exports[`Test PrioReviewBucket component Should renders PrioReviewBuckets correc
         Object {
           "backgroundColor": "#fff",
         },
-        Object {
-          "backgroundColor": "#EBC944",
-        },
+        undefined,
       ]
     }
   >
@@ -566,7 +637,8 @@ exports[`Test PrioReviewBucket component Should renders PrioReviewBuckets correc
                 "title": "test5",
               },
             ],
-            "title": "4. These are for spare time",
+            "prio": "low",
+            "title": "Low priority",
           },
         ]
       }
@@ -599,26 +671,51 @@ exports[`Test PrioReviewBucket component Should renders PrioReviewBuckets correc
           onLayout={[Function]}
           style={null}
         >
-          <Text
+          <View
             style={
               Array [
                 Object {
-                  "color": "#000000",
+                  "backgroundColor": "#fff",
                 },
                 Object {
-                  "color": "#fff",
-                  "fontFamily": "Lexend-SemiBold",
-                  "fontSize": 16,
+                  "alignItems": "center",
+                  "flexDirection": "row",
+                  "justifyContent": "flex-start",
                   "paddingBottom": "5%",
-                  "paddingLeft": "5%",
-                  "paddingTop": 5,
-                  "textAlign": "left",
+                  "paddingLeft": "6%",
                 },
               ]
             }
           >
-            4. These are for spare time
-          </Text>
+            <Image
+              source={1}
+              style={
+                Object {
+                  "height": 32,
+                  "width": 32,
+                }
+              }
+            />
+            <Text
+              style={
+                Array [
+                  Object {
+                    "color": "#554F4F",
+                  },
+                  Object {
+                    "fontFamily": "Lexend-SemiBold",
+                    "fontSize": 16,
+                    "paddingBottom": "5%",
+                    "paddingLeft": "5%",
+                    "paddingTop": "2%",
+                    "textAlign": "left",
+                  },
+                ]
+              }
+            >
+              Low priority
+            </Text>
+          </View>
         </View>
         <View
           onLayout={[Function]}
@@ -632,7 +729,7 @@ exports[`Test PrioReviewBucket component Should renders PrioReviewBuckets correc
                 },
                 Object {
                   "alignItems": "center",
-                  "borderColor": "#636262",
+                  "borderColor": "#848484",
                   "borderRadius": 5,
                   "borderWidth": 1,
                   "flexDirection": "row",
@@ -641,8 +738,10 @@ exports[`Test PrioReviewBucket component Should renders PrioReviewBuckets correc
                   "marginLeft": "7.5%",
                   "marginRight": "7.5%",
                   "marginTop": 5,
-                  "paddingBottom": 8,
-                  "paddingTop": 8,
+                  "paddingBottom": "3%",
+                  "paddingLeft": "3%",
+                  "paddingRight": "3%",
+                  "paddingTop": "3%",
                   "width": "85%",
                 },
               ]
@@ -652,7 +751,7 @@ exports[`Test PrioReviewBucket component Should renders PrioReviewBuckets correc
               style={
                 Array [
                   Object {
-                    "color": "#000000",
+                    "color": "#554F4F",
                   },
                   Object {
                     "fontFamily": "Lexend-Regular",

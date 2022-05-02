@@ -2,27 +2,43 @@ import React from "react";
 import { SectionList, ListRenderItem } from "react-native";
 import { View, Text } from "../Themed";
 import { EmptyBucket, TaskReadable } from "./components";
-import { Typography, Color } from "../../styles";
-import { Task, GoalColor } from "../../types/core/entity";
+import {
+  HighestPrioIcon,
+  HighPrioIcon,
+  MidPrioIcon,
+  LowPrioIcon,
+} from "../shared";
+import { Typography, Color, Container } from "../../styles";
+import { Task } from "../../types/core/entity";
 import { PriorityTier } from "../../types/core/value-object";
-import { colorRenderer, labelRenderer } from "../../utils";
+import { labelRenderer } from "../../utils";
 
 type PrioReviewBucketProps = {
   prio: PriorityTier;
   tasks: Task[];
-  goalColor: GoalColor;
 };
 
 const PrioReviewBucket: React.FC<PrioReviewBucketProps> = ({
   prio,
   tasks,
-  goalColor,
 }: PrioReviewBucketProps) => {
-  const backgroundColor = colorRenderer.getColorForPrioBucket(goalColor, prio);
   const isTasksEmpty = tasks.length === 0;
+  const lightBackgroundColor = isTasksEmpty
+    ? Color.light.emptyPrioBucket
+    : Color.light.background;
+  const darkBackgroundColor = isTasksEmpty
+    ? Color.dark.emptyPrioBucket
+    : Color.dark.background;
+  const lightTextColor = isTasksEmpty
+    ? Color.light.labelOnBackgroundForRead
+    : Color.light.textOnBackgroundForRead;
+  const darkTextColor = isTasksEmpty
+    ? Color.dark.labelOnBackgroundForRead
+    : Color.dark.textOnBackgroundForRead;
 
   const sectionData = [
     {
+      prio: prio,
       title: labelRenderer.renderPrioBucketLabel(prio),
       data: tasks,
     },
@@ -34,14 +50,15 @@ const PrioReviewBucket: React.FC<PrioReviewBucketProps> = ({
 
   return (
     <View
+      lightColor={lightBackgroundColor}
+      darkColor={darkBackgroundColor}
       style={{
         width: "90%",
-        backgroundColor: isTasksEmpty ? "#FEFEF8" : backgroundColor,
         marginTop: 5,
         marginBottom: "3%",
         paddingTop: "4%",
         paddingBottom: "8%",
-        borderWidth: 1,
+        borderWidth: 0.5,
         borderColor: Color.light.defaultBorder,
         borderRadius: 5,
       }}
@@ -49,30 +66,45 @@ const PrioReviewBucket: React.FC<PrioReviewBucketProps> = ({
       {isTasksEmpty ? (
         <EmptyBucket title={labelRenderer.renderPrioBucketLabel(prio)} />
       ) : (
-        <View
-          style={{
-            backgroundColor: backgroundColor,
-          }}
-        >
+        <View lightColor={lightBackgroundColor} darkColor={darkBackgroundColor}>
           <SectionList
             sections={sectionData}
             renderItem={renderTaskReadable}
-            renderSectionHeader={({ section: { title } }) => (
-              <Text
+            renderSectionHeader={({ section: { prio, title } }) => (
+              <View
                 style={{
-                  textAlign: "left",
-                  ...Typography.h4,
-                  fontSize: 16,
-                  paddingLeft: "5%",
+                  ...Container.flexStart,
+                  paddingLeft: "6%",
                   paddingBottom: "5%",
-                  paddingTop: 5,
-                  color: isTasksEmpty
-                    ? Color.light.text
-                    : Color.light.whiteText,
                 }}
               >
-                {title}
-              </Text>
+                {prio === "highest" ? (
+                  <HighestPrioIcon style={{ width: 32, height: 32 }} />
+                ) : null}
+                {prio === "high" ? (
+                  <HighPrioIcon style={{ width: 32, height: 32 }} />
+                ) : null}
+                {prio === "mid" ? (
+                  <MidPrioIcon style={{ width: 30, height: 30 }} />
+                ) : null}
+                {prio === "low" ? (
+                  <LowPrioIcon style={{ width: 32, height: 32 }} />
+                ) : null}
+                <Text
+                  lightColor={lightTextColor}
+                  darkColor={darkTextColor}
+                  style={{
+                    textAlign: "left",
+                    ...Typography.h4,
+                    fontSize: 16,
+                    paddingLeft: "5%",
+                    paddingBottom: "5%",
+                    paddingTop: "2%",
+                  }}
+                >
+                  {title}
+                </Text>
+              </View>
             )}
           />
         </View>

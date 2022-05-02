@@ -1,8 +1,8 @@
 import React from "react";
 import { Image, StyleSheet } from "react-native";
 import { View, Text } from "../Themed";
-import { CloseIcon } from "../shared";
-import { navigationRef } from "../../utils";
+import { GoBackButton } from "../shared";
+import { navigationRef, shortenText } from "../../utils";
 import { Container, Typography } from "../../styles";
 
 type GoalDetailHeaderProps = {
@@ -15,7 +15,7 @@ const GoalDetailHeader: React.FC<GoalDetailHeaderProps> = ({
   movitation,
 }: GoalDetailHeaderProps) => {
   return (
-    <View style={{ paddingBottom: 20 }}>
+    <View style={styles.wrapper}>
       <View
         style={{
           ...Container.flexStart,
@@ -23,23 +23,25 @@ const GoalDetailHeader: React.FC<GoalDetailHeaderProps> = ({
         }}
       >
         <View style={styles.closeIconWrapper}>
-          <CloseIcon
+          <GoBackButton
             pressHandler={() => {
               navigationRef.goBack();
             }}
           />
         </View>
       </View>
-      <View style={{ paddingLeft: "8%" }}>
+      <View style={{ width: "95%", paddingLeft: "10%", paddingBottom: "5%" }}>
         <View style={styles.headerWrapper}>
-          <Text style={styles.goalTitle}>{title}</Text>
+          <Text style={styles.goalTitle}>{shortenText(title, 50)}</Text>
           <Image
             style={styles.rocketImage}
             source={require(`../../../assets/images/rocket_1f680.png`)}
           />
         </View>
         <View style={styles.motivationWrapper}>
-          <Text style={styles.motivationText}>{movitation}</Text>
+          <Text style={styles.motivationText}>
+            {shortenText(movitation, 80)}
+          </Text>
         </View>
       </View>
     </View>
@@ -47,15 +49,18 @@ const GoalDetailHeader: React.FC<GoalDetailHeaderProps> = ({
 };
 
 const styles = StyleSheet.create({
+  wrapper: {
+    paddingTop: "2%",
+    marginBottom: "6.5%",
+    flexShrink: 1,
+  },
   closeIconWrapper: {
-    paddingLeft: 25,
-    paddingTop: 0,
+    paddingLeft: "5%",
   },
   headerWrapper: {
+    width: "90%",
     ...Container.flexStart,
-    width: "100%",
-    paddingTop: 0,
-    paddingBottom: 5,
+    paddingBottom: "0.5%",
   },
   rocketImage: {
     width: 32,
@@ -63,11 +68,11 @@ const styles = StyleSheet.create({
   },
   goalTitle: {
     ...Typography.h4,
-    marginRight: 15,
+    marginRight: "3%",
   },
   motivationWrapper: {
-    paddingTop: 5,
-    paddingBottom: 5,
+    paddingTop: "1.5%",
+    paddingBottom: "1.5%",
   },
   motivationText: {
     ...Typography.p,

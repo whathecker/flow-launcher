@@ -10,10 +10,11 @@ const TaskTitle: React.FC<TaskTitleProps> = ({ title }: TaskTitleProps) => {
   return (
     <>
       <Text
+        lightColor={Color.light.textOnBackgroundForRead}
+        darkColor={Color.dark.textOnBackgroundForRead}
         style={{
           ...Typography.h4,
           fontSize: 18,
-          color: Color.light.subtleLabel,
         }}
       >
         {title}

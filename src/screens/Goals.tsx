@@ -4,7 +4,7 @@ import { StyleSheet } from "react-native";
 import { View, Text } from "../components/Themed";
 import { EmptyGoalList, GoalList } from "../components/Goals";
 import { Button } from "../components/shared";
-import { Container, Typography } from "../styles";
+import { Container, Typography, Color } from "../styles";
 import { GoalStackScreenProps } from "../types/navigation";
 import { GoalsContext } from "../contexts/goals";
 
@@ -20,24 +20,29 @@ const GoalsScreen: React.FC<Props> = ({ navigation }: Props) => {
     fetchGoals();
   }, [state.goals?.length]);
 
+  const lightHeaderText = Color.light.textOnBackgroundForRead;
+  const darkHeaderText = Color.dark.textOnBackgroundForRead;
+
   return (
     <>
       <View style={styles.headerWrapper}>
         <Text
           style={styles.headerText}
-          lightColor="#554F4F"
-          darkColor="#554F4F"
+          lightColor={lightHeaderText}
+          darkColor={darkHeaderText}
         >
           {`Your Goals`}
         </Text>
       </View>
-      <View style={styles.goalsAreaWrapper}>
-        {isGoalListEmpty ? (
+      {isGoalListEmpty ? (
+        <View style={styles.emptyGoalsWrapper}>
           <EmptyGoalList />
-        ) : (
+        </View>
+      ) : (
+        <View style={styles.goalsAreaWrapper}>
           <GoalList goals={state.goals!} />
-        )}
-      </View>
+        </View>
+      )}
       <View style={styles.buttonAreaWrapper}>
         <View style={styles.buttonWrapper}>
           <Button
@@ -63,15 +68,17 @@ const styles = StyleSheet.create({
   headerText: {
     ...Typography.h1,
   },
+  emptyGoalsWrapper: {
+    ...Container.centerAlignedVertical,
+    justifyContent: "center",
+    width: "100%",
+    height: "70%",
+  },
   goalsAreaWrapper: {
     ...Container.centerAlignedVertical,
     justifyContent: "flex-start",
     width: "100%",
     height: "70%",
-  },
-  goalAreaBodyWrapper: {
-    paddingTop: 5,
-    paddingBottom: 18,
   },
   bodyImage: {
     width: 95,
@@ -87,7 +94,7 @@ const styles = StyleSheet.create({
     paddingTop: 5,
   },
   buttonWrapper: {
-    width: "90%",
+    width: "80%",
   },
 });
 
