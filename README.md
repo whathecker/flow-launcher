@@ -1,6 +1,6 @@
 # flow-launcher
 
-Launch your flow at your will and stay productive all the time 🚀🚀💫💫
+Launch your flow at your will and stay productive all the time 🚀🚀💫💫 (It's a goal-based to-do app I built for fun & learning RN)
 
 ## Expo dependency
 
