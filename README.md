@@ -1,7 +1,7 @@
 # flow-launcher
 
-Launch your flow at your will and stay productive all the time 🚀🚀💫💫 (It's a goal-based to-do app I built for fun & learning RN)
-
+Launch your flow at your will and stay productive all the time 🚀🚀💫💫 (It's a goal-based to-do app I built for fun & learning RN)  
+ 
 ## Expo dependency
 
 - This project uses Expo managed workflow
@@ -26,7 +26,7 @@ After you have the custom development client installed in the device (or a simul
   expo start --dev-client
 ```
 
-or
+or,
 
 ```
   yarn start
